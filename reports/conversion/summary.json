@@ -1,0 +1,128 @@
+{
+  "classes": [
+    "helmet",
+    "head",
+    "head_with_helmet",
+    "person_with_helmet",
+    "person_no_helmet",
+    "face"
+  ],
+  "n_label_files": 5000,
+  "n_objects_xml": 75578,
+  "n_objects_yolo": 75578,
+  "xml_class_counts": {
+    "helmet": 19252,
+    "head_with_helmet": 16048,
+    "person_with_helmet": 14767,
+    "face": 14135,
+    "head": 6120,
+    "person_no_helmet": 5248,
+    "person": 8
+  },
+  "yolo_class_counts": {
+    "helmet": 19252,
+    "head": 6120,
+    "head_with_helmet": 16048,
+    "person_with_helmet": 14775,
+    "person_no_helmet": 5248,
+    "face": 14135
+  },
+  "remapped_objects": [
+    {
+      "file": "hard_hat_workers1016",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        75,
+        125,
+        232,
+        325
+      ]
+    },
+    {
+      "file": "hard_hat_workers1016",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        256,
+        105,
+        284,
+        176
+      ]
+    },
+    {
+      "file": "hard_hat_workers1303",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        87,
+        94,
+        211,
+        374
+      ]
+    },
+    {
+      "file": "hard_hat_workers1303",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        242,
+        133,
+        370,
+        378
+      ]
+    },
+    {
+      "file": "hard_hat_workers1571",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        325,
+        130,
+        393,
+        329
+      ]
+    },
+    {
+      "file": "hard_hat_workers1571",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        380,
+        139,
+        416,
+        318
+      ]
+    },
+    {
+      "file": "hard_hat_workers1595",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        211,
+        74,
+        262,
+        251
+      ]
+    },
+    {
+      "file": "hard_hat_workers380",
+      "from": "person",
+      "to": "person_with_helmet",
+      "box": [
+        259,
+        33,
+        335,
+        286
+      ]
+    }
+  ],
+  "empty_label_files": [],
+  "max_pixel_error": 0.0003,
+  "checks": {
+    "objects xml == yolo": true,
+    "class counts match after remap": true,
+    "no empty label files": true,
+    "max pixel error <= 1.0": true
+  }
+}

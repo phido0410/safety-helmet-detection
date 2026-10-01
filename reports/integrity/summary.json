@@ -1,0 +1,43 @@
+{
+  "root": "data/SHEL5K",
+  "n_images": 5000,
+  "n_xml": 5000,
+  "n_objects": 75578,
+  "n_classes": 7,
+  "class_counts": {
+    "helmet": 19252,
+    "head_with_helmet": 16048,
+    "person_with_helmet": 14767,
+    "face": 14135,
+    "head": 6120,
+    "person_no_helmet": 5248,
+    "person": 8
+  },
+  "raw_class_names": {
+    "'helmet'": 19252,
+    "'head_with_helmet'": 16048,
+    "'person_with_helmet'": 14767,
+    "'face'": 14135,
+    "'head'": 6120,
+    "'person_no_helmet'": 5248,
+    "'person'": 8
+  },
+  "images_without_xml": [],
+  "xmls_without_image": [],
+  "duplicate_image_stems": [],
+  "duplicate_xml_stems": [],
+  "xml_without_objects": [],
+  "parse_errors": [],
+  "size_mismatches": [],
+  "invalid_boxes": [],
+  "checks": {
+    "images == 5000": true,
+    "objects == 75570": false,
+    "classes == 6": false,
+    "every image has xml": true,
+    "every xml has image": true,
+    "no parse errors": true,
+    "xml size == image size": true,
+    "all boxes valid": true
+  }
+}

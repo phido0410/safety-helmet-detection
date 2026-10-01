@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm định nhãn SHEL5K</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #667085; --line: #d9dde5;
+    --accent: #2f5bd3; --ok: #1f8a4c; --warn: #b54708;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 2; }
+  header h1 { font-size: 16px; margin: 0 12px 0 0; }
+  .tabs button { border: 1px solid var(--line); background: var(--panel); padding: 6px 12px; cursor: pointer; }
+  .tabs button:first-child { border-radius: 6px 0 0 6px; }
+  .tabs button:last-child { border-radius: 0 6px 6px 0; border-left: 0; }
+  .tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .progress { flex: 1; min-width: 160px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+  .bar { flex: 1; height: 8px; background: #e6e9ef; border-radius: 4px; overflow: hidden; }
+  .bar > div { height: 100%; background: var(--ok); width: 0; }
+  button.btn { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 6px 10px; cursor: pointer; font: inherit; }
+  button.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; padding: 16px; }
+  @media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+  .stage { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .stage-top { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .stage-top .name { font-weight: 600; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 8px; }
+  .legend label { display: inline-flex; gap: 5px; align-items: center; cursor: pointer; user-select: none; }
+  .sw { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+  canvas { max-width: 100%; height: auto; display: block; border-radius: 4px; background: #111; }
+  aside { display: flex; flex-direction: column; gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; }
+  .row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; padding: 4px 0; }
+  .row small { color: var(--muted); display: block; }
+  .stepper { display: inline-flex; align-items: center; }
+  .stepper button { width: 28px; height: 28px; border: 1px solid var(--line); background: #fff; cursor: pointer; font-size: 16px; }
+  .stepper button:first-child { border-radius: 6px 0 0 6px; }
+  .stepper button:last-child { border-radius: 0 6px 6px 0; }
+  .stepper input { width: 42px; height: 28px; text-align: center; border: 1px solid var(--line); border-left: 0; border-right: 0; font: inherit; }
+  textarea { width: 100%; min-height: 56px; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 6px; }
+  .flag { display: grid; grid-template-columns: 24px 1fr; gap: 6px; padding: 6px 0; border-top: 1px dashed var(--line); }
+  .flag:first-of-type { border-top: 0; }
+  .flag b { font-size: 15px; }
+  .flag select { width: 100%; font: inherit; padding: 3px; }
+  .muted { color: var(--muted); }
+  .nav { display: flex; gap: 8px; }
+  .nav button { flex: 1; }
+  .status { font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #eef1f6; color: var(--muted); }
+  .status.done { background: #e3f4ea; color: var(--ok); }
+  .reason { color: var(--warn); }
+  details summary { cursor: pointer; font-weight: 600; }
+  details ul { padding-left: 18px; margin: 6px 0 0; }
+  .crit-title { font-weight: 600; margin: 10px 0 4px; }
+  table.classes { border-collapse: collapse; width: 100%; }
+  table.classes td { padding: 3px 4px; vertical-align: top; }
+  table.classes td:first-child { width: 18px; padding-top: 6px; }
+  .empty { padding: 40px 16px; color: var(--muted); }
+  .empty code { background: #eef1f6; padding: 1px 5px; border-radius: 4px; }
+  kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; font-size: 12px; background: #fff; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kiểm định nhãn SHEL5K</h1>
+  <div class="tabs"><button data-set="random" class="active">Mẫu ngẫu nhiên</button><button data-set="targeted">Kiểm tra riêng</button></div>
+  <div class="progress"><span id="progText"></span><div class="bar"><div id="progBar"></div></div></div>
+  <button class="btn" id="nextTodo">Ảnh chưa xem tiếp theo</button>
+  <button class="btn" id="importBtn">Nhập CSV</button>
+  <button class="btn primary" id="exportBtn">Xuất CSV</button>
+  <input type="file" id="importFile" accept=".csv" hidden>
+</header>
+<main>
+  <section class="stage">
+    <div class="stage-top">
+      <span class="name" id="name"></span>
+      <span class="status" id="status"></span>
+      <span class="muted" id="counts"></span>
+      <label style="margin-left:auto">Phóng to
+        <select id="zoom"><option value="1.5">1,5×</option><option value="2" selected>2×</option><option value="2.5">2,5×</option></select>
+      </label>
+      <label><input type="checkbox" id="showNums" checked> Số hộp</label>
+    </div>
+    <div class="reason" id="reason"></div>
+    <div class="legend" id="legend"></div>
+    <canvas id="cv"></canvas>
+  </section>
+  <aside>
+    <div class="card">
+      <h2>Lỗi trong ảnh (đếm theo hộp)</h2>
+      <div id="counters"></div>
+      <div class="row"><span>Ảnh có vùng phản chiếu gương</span><input type="checkbox" id="mirror"></div>
+      <textarea id="note" placeholder="Ghi chú: trường hợp không chắc chắn, mô tả lỗi…"></textarea>
+    </div>
+    <div class="card">
+      <h2>Gợi ý của YOLO (khung nét đứt)</h2>
+      <div id="flags"></div>
+    </div>
+    <div class="card nav">
+      <button class="btn" id="prev">← Trước</button>
+      <button class="btn primary" id="next">Đã xem, tiếp →</button>
+    </div>
+    <div class="card">
+      <details>
+        <summary>Tiêu chí tóm tắt</summary>
+        <p class="crit-title">Sáu lớp cần kiểm tra</p>
+        <table class="classes">
+          <tr><td><span class="sw" style="background:#76ff03"></span></td><td><b>head_with_helmet</b> (2): đầu <i>có</i> đội mũ; hộp bao cả đầu lẫn mũ.</td></tr>
+          <tr><td><span class="sw" style="background:#ff9100"></span></td><td><b>head</b> (1): đầu <i>không</i> đội mũ bảo hộ. Mọi loại mũ khác (mũ vải, mũ lưỡi trai, nón…) đều tính là không đội mũ bảo hộ; nếu dữ liệu gán chúng là có mũ thì tính <b>Sai lớp</b> và ghi chú <code>mũ khác</code>.</td></tr>
+          <tr><td><span class="sw" style="background:#00e5ff"></span></td><td><b>helmet</b> (0): hộp chỉ bao riêng chiếc mũ bảo hộ (nhỏ hơn head_with_helmet).</td></tr>
+          <tr><td><span class="sw" style="background:#2979ff"></span></td><td><b>person_with_helmet</b> (3): toàn bộ phần nhìn thấy của một người <i>có</i> đội mũ.</td></tr>
+          <tr><td><span class="sw" style="background:#ff1744"></span></td><td><b>person_no_helmet</b> (4): toàn bộ phần nhìn thấy của một người <i>không</i> đội mũ. <b>Lớp vi phạm, ưu tiên kiểm tra kỹ nhất.</b></td></tr>
+          <tr><td><span class="sw" style="background:#e040fb"></span></td><td><b>face</b> (5): khuôn mặt nhìn thấy được; người quay lưng thì không có.</td></tr>
+        </table>
+        <p class="muted">Một người đội mũ, quay mặt về camera thường có đủ 4 hộp: person_with_helmet ⊃ head_with_helmet ⊃ helmet, cùng face.
+          Người không đội mũ có 3 hộp: person_no_helmet ⊃ head, cùng face.</p>
+        <p class="crit-title">Những chỗ hay sai nhất (ưu tiên soi)</p>
+        <ul>
+          <li>Trạng thái mũ của <b>person</b> không khớp với <b>head</b> của cùng người đó (vd. person_no_helmet nhưng đầu là head_with_helmet).</li>
+          <li><b>head</b> ↔ <b>head_with_helmet</b> bị nhầm khi mũ nhỏ, tối hoặc bị che.</li>
+          <li>Người ở rìa ảnh, bị che một phần hoặc đứng xa không có hộp <b>person_*</b>.</li>
+        </ul>
+        <p class="crit-title">Các loại lỗi</p>
+        <ul>
+          <li><b>Sai lớp</b>: đúng vị trí, sai lớp (vd. đội mũ nhưng gán person_no_helmet).</li>
+          <li><b>Thiếu</b>: đối tượng nhìn thấy ≥ 50% và cạnh ngắn ≥ 8 px (ảnh gốc) nhưng không có hộp. Đếm từng hộp lẽ ra phải có.</li>
+          <li><b>Trùng</b>: ≥ 2 hộp cùng lớp cho một đối tượng.</li>
+          <li><b>Không khít</b>: cạnh lệch hơn ~20% kích thước hộp hoặc cắt mất phần lớn đối tượng.</li>
+          <li><b>Thừa</b>: hộp không ứng với đối tượng nào.</li>
+          <li><b>Phản chiếu</b>: đối tượng trong vùng gương, có nhãn hay không có nhãn, đều đếm riêng; không tính vào "Thiếu" hay "Thừa".</li>
+          <li>Không chắc chắn → không tính lỗi, ghi chú.</li>
+          <li><b>Gợi ý YOLO chồng một phần</b> lên hộp người đã có (IoU 0–0,5): thường là người đã có nhãn → "Không phải lỗi"; nếu hộp gốc lệch quá tiêu chí thì cộng "Hộp không khít".</li>
+        </ul>
+        <p class="muted">Phím tắt: <kbd>←</kbd> <kbd>→</kbd> chuyển ảnh, <kbd>Enter</kbd> đã xem và tiếp.</p>
+      </details>
+    </div>
+  </aside>
+</main>
+<script>
+const DATA = /*__AUDIT_DATA__*/null;
+const KEY = "shel5k_label_audit_v1";
+const COLORS = ["#00e5ff", "#ff9100", "#76ff03", "#2979ff", "#ff1744", "#e040fb"];
+const FIELDS = [
+  ["wrong_class", "Sai lớp"], ["missing", "Thiếu nhãn", "gồm cả gợi ý YOLO đã xác nhận"], ["duplicate", "Trùng nhãn"],
+  ["loose", "Hộp không khít"], ["spurious", "Hộp thừa"], ["mirror_unlabeled", "Không nhãn trong vùng phản chiếu", "không cộng vào Thiếu"],
+  ["mirror_labeled", "Có nhãn trong vùng phản chiếu", "không tính là Hộp thừa"],
+];
+const FLAG_OPTIONS = [["", "— chưa xét —"], ["yes", "Đúng là thiếu nhãn"], ["no", "Không phải lỗi"], ["mirror", "Trong vùng phản chiếu"]];
+
+let store = {};
+try { store = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { store = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} };
+
+let currentSet = "random";
+let idx = 0;
+const hidden = new Set();
+const img = new Image();
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+
+const items = () => DATA.items.filter((it) => it.set === currentSet);
+const rec = (stem) => (store[stem] ??= { reviewed: false, mirror: false, note: "", flags: {} });
+
+function buildLegend() {
+  const el = document.getElementById("legend");
+  el.innerHTML = "";
+  DATA.meta.classes.forEach((c, i) => {
+    const lab = document.createElement("label");
+    lab.innerHTML = `<input type="checkbox" ${hidden.has(i) ? "" : "checked"}><span class="sw" style="background:${COLORS[i]}"></span>${i} ${c}`;
+    lab.querySelector("input").onchange = (e) => { e.target.checked ? hidden.delete(i) : hidden.add(i); draw(); };
+    el.appendChild(lab);
+  });
+}
+
+function draw() {
+  const it = items()[idx];
+  if (!it || !img.complete || !img.naturalWidth) return;
+  const z = parseFloat(document.getElementById("zoom").value);
+  const W = img.naturalWidth * z, H = img.naturalHeight * z;
+  cv.width = W; cv.height = H;
+  ctx.drawImage(img, 0, 0, W, H);
+  const nums = document.getElementById("showNums").checked;
+  ctx.font = "bold 12px sans-serif";
+  it.labels.forEach(([c, x1, y1, x2, y2], k) => {
+    if (hidden.has(c)) return;
+    ctx.strokeStyle = COLORS[c]; ctx.lineWidth = 2; ctx.setLineDash([]);
+    ctx.strokeRect(x1 * W, y1 * H, (x2 - x1) * W, (y2 - y1) * H);
+    if (nums) {
+      const t = String(k + 1), tw = ctx.measureText(t).width + 6;
+      ctx.fillStyle = COLORS[c]; ctx.fillRect(x1 * W, y1 * H, tw, 15);
+      ctx.fillStyle = "#000"; ctx.fillText(t, x1 * W + 3, y1 * H + 12);
+    }
+  });
+  it.flags.forEach((f, k) => {
+    const [x1, y1, x2, y2] = f.box, L = String.fromCharCode(65 + k);
+    ctx.setLineDash([8, 5]); ctx.lineWidth = 4; ctx.strokeStyle = "#000";
+    ctx.strokeRect(x1 * W, y1 * H, (x2 - x1) * W, (y2 - y1) * H);
+    ctx.lineWidth = 2; ctx.strokeStyle = "#fff";
+    ctx.strokeRect(x1 * W, y1 * H, (x2 - x1) * W, (y2 - y1) * H);
+    ctx.setLineDash([]); ctx.font = "bold 16px sans-serif";
+    ctx.fillStyle = "#fff"; ctx.fillRect(x2 * W - 20, y1 * H, 20, 20);
+    ctx.fillStyle = "#000"; ctx.fillText(L, x2 * W - 15, y1 * H + 16);
+    ctx.font = "bold 12px sans-serif";
+  });
+}
+
+function renderCounters(r) {
+  const el = document.getElementById("counters");
+  el.innerHTML = "";
+  FIELDS.forEach(([key, label, hint]) => {
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<span>${label}${hint ? `<small>${hint}</small>` : ""}</span>
+      <span class="stepper"><button type="button">−</button><input type="number" min="0" value="${r[key] ?? 0}"><button type="button">+</button></span>`;
+    const [minus, plus] = row.querySelectorAll("button"), input = row.querySelector("input");
+    const set = (v) => { r[key] = Math.max(0, v | 0); input.value = r[key]; save(); };
+    minus.onclick = () => set((r[key] ?? 0) - 1);
+    plus.onclick = () => set((r[key] ?? 0) + 1);
+    input.oninput = () => set(parseInt(input.value || "0", 10));
+    el.appendChild(row);
+  });
+}
+
+function renderFlags(it, r) {
+  const el = document.getElementById("flags");
+  if (!it.flags.length) { el.innerHTML = '<span class="muted">Không có gợi ý nào cho ảnh này.</span>'; return; }
+  el.innerHTML = "";
+  it.flags.forEach((f, k) => {
+    const L = String.fromCharCode(65 + k);
+    const div = document.createElement("div");
+    div.className = "flag";
+    div.innerHTML = `<b>${L}</b><div><div class="muted">person, tin cậy ${f.conf.toFixed(2)}, IoU lớn nhất với nhãn người: ${f.best_iou.toFixed(2)}</div>
+      <select>${FLAG_OPTIONS.map(([v, t]) => `<option value="${v}">${t}</option>`).join("")}</select></div>`;
+    const sel = div.querySelector("select");
+    sel.value = r.flags[k] ?? "";
+    sel.onchange = () => { r.flags[k] = sel.value; save(); };
+    el.appendChild(div);
+  });
+}
+
+function render() {
+  const list = items();
+  idx = Math.max(0, Math.min(idx, list.length - 1));
+  const it = list[idx], r = rec(it.stem);
+  document.getElementById("name").textContent = `${idx + 1}/${list.length} · ${it.stem}`;
+  const st = document.getElementById("status");
+  st.textContent = r.reviewed ? "Đã xem" : "Chưa xem";
+  st.className = "status" + (r.reviewed ? " done" : "");
+  const per = DATA.meta.classes.map((c, i) => it.labels.filter((l) => l[0] === i).length);
+  document.getElementById("counts").textContent = `${it.labels.length} hộp (` + per.map((n, i) => `${i}:${n}`).join(" ") + ")";
+  document.getElementById("reason").textContent = it.reason ? `Lý do kiểm tra riêng: ${it.reason}` : "";
+  document.getElementById("mirror").checked = !!r.mirror;
+  document.getElementById("note").value = r.note || "";
+  renderCounters(r);
+  renderFlags(it, r);
+  const done = list.filter((x) => store[x.stem]?.reviewed).length;
+  document.getElementById("progText").textContent = `Đã xem ${done}/${list.length}`;
+  document.getElementById("progBar").style.width = (100 * done / list.length) + "%";
+  img.onload = draw;
+  img.src = `${DATA.meta.image_dir}/${it.stem}.png`;
+}
+
+function go(delta, markReviewed) {
+  if (markReviewed) { rec(items()[idx].stem).reviewed = true; save(); }
+  idx = Math.max(0, Math.min(idx + delta, items().length - 1));
+  render();
+}
+
+document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => {
+  document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("active", x === b));
+  currentSet = b.dataset.set; idx = 0; render();
+});
+document.getElementById("prev").onclick = () => go(-1, false);
+document.getElementById("next").onclick = () => go(1, true);
+document.getElementById("zoom").onchange = draw;
+document.getElementById("showNums").onchange = draw;
+document.getElementById("mirror").onchange = (e) => { rec(items()[idx].stem).mirror = e.target.checked; save(); };
+document.getElementById("note").oninput = (e) => { rec(items()[idx].stem).note = e.target.value; save(); };
+document.getElementById("nextTodo").onclick = () => {
+  const list = items(), k = list.findIndex((x, i) => i > idx && !store[x.stem]?.reviewed);
+  const j = k >= 0 ? k : list.findIndex((x) => !store[x.stem]?.reviewed);
+  if (j >= 0) { idx = j; render(); } else alert("Đã xem hết ảnh trong nhóm này.");
+};
+document.addEventListener("keydown", (e) => {
+  if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) return;
+  if (e.key === "ArrowRight") go(1, false);
+  else if (e.key === "ArrowLeft") go(-1, false);
+  else if (e.key === "Enter") go(1, true);
+});
+
+const COLS = ["set", "filename", "n_boxes", "reviewed", ...FIELDS.map((f) => f[0]), "mirror", "n_yolo_flags",
+  "yolo_confirmed", "yolo_rejected", "yolo_mirror", "yolo_unreviewed", "yolo_decisions", "note"];
+const esc = (v) => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+
+document.getElementById("exportBtn").onclick = () => {
+  const lines = [COLS.join(",")];
+  DATA.items.forEach((it) => {
+    const r = store[it.stem] || { flags: {} };
+    const dec = it.flags.map((_, k) => r.flags?.[k] || "");
+    const row = {
+      set: it.set, filename: it.stem, n_boxes: it.labels.length, reviewed: r.reviewed ? 1 : 0, mirror: r.mirror ? 1 : 0,
+      n_yolo_flags: it.flags.length, yolo_confirmed: dec.filter((d) => d === "yes").length, yolo_rejected: dec.filter((d) => d === "no").length,
+      yolo_mirror: dec.filter((d) => d === "mirror").length, yolo_unreviewed: dec.filter((d) => !d).length,
+      yolo_decisions: dec.map((d, k) => `${String.fromCharCode(65 + k)}:${d || "-"}`).join(" "), note: r.note,
+    };
+    FIELDS.forEach(([k]) => row[k] = r[k] ?? 0);
+    lines.push(COLS.map((c) => esc(row[c])).join(","));
+  });
+  const blob = new Blob(["﻿" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "label_audit_results.csv";
+  a.click();
+};
+
+function parseCSV(text) {
+  const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (q) { if (ch === '"' && text[i + 1] === '"') { cur += '"'; i++; } else if (ch === '"') q = false; else cur += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === ",") { row.push(cur); cur = ""; }
+    else if (ch === "\n") { row.push(cur); rows.push(row); row = []; cur = ""; }
+    else if (ch !== "\r") cur += ch;
+  }
+  if (cur || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+document.getElementById("importBtn").onclick = () => document.getElementById("importFile").click();
+document.getElementById("importFile").onchange = async (e) => {
+  const file = e.target.files[0]; if (!file) return;
+  const [head, ...rows] = parseCSV((await file.text()).replace(/^﻿/, ""));
+  const col = (name) => head.indexOf(name);
+  rows.forEach((cells) => {
+    const stem = cells[col("filename")]; if (!stem) return;
+    const r = rec(stem);
+    r.reviewed = cells[col("reviewed")] === "1"; r.mirror = cells[col("mirror")] === "1"; r.note = cells[col("note")] || "";
+    FIELDS.forEach(([k]) => r[k] = parseInt(cells[col(k)] || "0", 10));
+    (cells[col("yolo_decisions")] || "").split(" ").filter(Boolean).forEach((p) => {
+      const [L, d] = p.split(":"); r.flags[L.charCodeAt(0) - 65] = d === "-" ? "" : d;
+    });
+  });
+  save(); render();
+  alert(`Đã nhập ${rows.length} dòng.`);
+};
+
+if (DATA) {
+  buildLegend();
+  render();
+} else {
+  document.querySelector(".stage").innerHTML = `<div class="empty">Đây là file mẫu, chưa có dữ liệu ảnh.
+    Hãy chạy <code>.venv/bin/python scripts/prepare_label_audit.py</code> rồi mở <code>reports/audit/review.html</code>.</div>`;
+}
+</script>
+</body>
+</html>

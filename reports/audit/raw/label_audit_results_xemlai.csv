@@ -1,0 +1,25 @@
+﻿set,filename,n_boxes,reviewed,wrong_class,missing,duplicate,loose,spurious,mirror_unlabeled,mirror_labeled,mirror,n_yolo_flags,yolo_confirmed,yolo_rejected,yolo_mirror,yolo_unreviewed,yolo_decisions,note
+random,hard_hat_workers1020,28,1,0,1,0,0,0,0,0,0,2,1,1,0,0,A:yes B:no,
+random,hard_hat_workers1082,45,1,0,1,0,0,0,0,0,0,2,1,1,0,0,A:yes B:no,
+random,hard_hat_workers1335,40,1,0,1,0,0,0,0,3,1,3,1,1,1,0,A:mirror B:no C:yes,
+random,hard_hat_workers1431,21,1,0,1,0,0,0,0,2,1,1,1,0,0,0,A:yes,
+random,hard_hat_workers2574,20,1,0,1,0,0,0,0,0,0,1,1,0,0,0,A:yes,
+random,hard_hat_workers2617,12,1,0,1,0,0,0,0,0,0,1,1,0,0,0,A:yes,
+random,hard_hat_workers2935,15,1,0,0,0,0,0,0,0,0,1,0,1,0,0,A:no,
+random,hard_hat_workers294,13,1,0,0,0,0,0,0,2,1,1,0,1,0,0,A:no,
+random,hard_hat_workers331,7,1,0,0,0,0,0,0,0,0,1,0,0,0,1,A:-,
+random,hard_hat_workers3688,5,1,0,0,0,0,0,0,1,1,1,0,0,1,0,A:mirror,
+random,hard_hat_workers3995,34,1,0,2,0,0,0,0,0,0,2,2,0,0,0,A:yes B:yes,
+random,hard_hat_workers4342,7,1,0,0,0,0,0,0,0,0,1,0,1,0,0,A:no,
+random,hard_hat_workers4449,29,1,0,1,0,0,0,0,0,0,1,1,0,0,0,A:yes,
+random,hard_hat_workers4996,13,1,0,0,0,0,0,0,0,0,1,0,1,0,0,A:no,
+random,hard_hat_workers699,9,1,0,0,0,0,0,0,0,1,1,0,0,1,0,A:mirror,
+random,hard_hat_workers708,8,1,0,0,0,0,0,0,0,0,1,0,1,0,0,A:no,
+random,hard_hat_workers801,23,1,0,0,0,0,0,0,2,1,1,0,1,0,0,A:no,
+random,hard_hat_workers896,13,1,0,0,0,0,0,0,3,1,1,0,1,0,0,A:no,
+targeted,hard_hat_workers1404,31,1,0,5,1,0,0,0,0,0,1,0,1,0,0,A:no,"đúng là bị trùng box
+thiếu 1 nhãn head_with_helmet
+và 3 nhãn person_with_helmet
+
+"
+targeted,hard_hat_workers2534,6,1,0,1,0,0,0,0,0,0,0,0,0,0,0,,"Thiếu nhãn helmet, nhãn head bị gán nhầm"

@@ -1,0 +1,10 @@
+# Môi trường local: Python 3.11.4 (arm64), MacBook Air M1, dùng MPS.
+# Trên Google Colab: giữ bản torch/torchvision có CUDA sẵn của Colab, chỉ cài: pip install ultralytics==8.4.164
+ultralytics==8.4.164
+torch==2.14.0
+torchvision==0.29.0
+numpy==2.4.6
+pandas==3.0.6
+opencv-python==5.0.0.93
+matplotlib==3.11.2
+pillow==12.3.0

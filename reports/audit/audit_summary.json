@@ -1,0 +1,96 @@
+{
+  "random_sample": {
+    "images_reviewed": 300,
+    "boxes": 4231,
+    "images_with_error": 35,
+    "image_error_rate": 0.11666666666666667,
+    "image_error_rate_ci95": [
+      0.08509263799927805,
+      0.15793399166565264
+    ],
+    "estimated_images_with_error_in_dataset": 583,
+    "errors": {
+      "wrong_class": {
+        "name": "Sai lớp",
+        "count": 0,
+        "denominator": 4231,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0009071413674598831
+        ],
+        "images_affected": 0,
+        "estimated_boxes_in_dataset": 0
+      },
+      "missing": {
+        "name": "Thiếu nhãn",
+        "count": 45,
+        "denominator": 4276,
+        "rate": 0.010523854069223574,
+        "ci95": [
+          0.00787454171833121,
+          0.014051877240725597
+        ],
+        "images_affected": 34,
+        "estimated_boxes_in_dataset": 804
+      },
+      "duplicate": {
+        "name": "Trùng nhãn",
+        "count": 1,
+        "denominator": 4231,
+        "rate": 0.0002363507445048452,
+        "ci95": [
+          4.172185517215606e-05,
+          0.0013376921942222769
+        ],
+        "images_affected": 1,
+        "estimated_boxes_in_dataset": 18
+      },
+      "loose": {
+        "name": "Hộp không khít",
+        "count": 0,
+        "denominator": 4231,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0009071413674598831
+        ],
+        "images_affected": 0,
+        "estimated_boxes_in_dataset": 0
+      },
+      "spurious": {
+        "name": "Hộp thừa",
+        "count": 0,
+        "denominator": 4231,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0009071413674598831
+        ],
+        "images_affected": 0,
+        "estimated_boxes_in_dataset": 0
+      }
+    },
+    "mirror_images": 135,
+    "mirror_unlabeled_boxes": 0,
+    "mirror_labeled_boxes": 383,
+    "yolo": {
+      "flags": 147,
+      "confirmed": 44,
+      "rejected": 58,
+      "in_mirror": 44,
+      "undecided": 1,
+      "precision": 0.3013698630136986
+    }
+  },
+  "targeted": {
+    "images_reviewed": 20,
+    "errors": {
+      "wrong_class": 0,
+      "missing": 12,
+      "duplicate": 10,
+      "loose": 1,
+      "spurious": 0
+    }
+  }
+}

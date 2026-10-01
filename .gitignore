@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Dữ liệu và trọng số (quá lớn cho GitHub)
+data/
+runs/
+*.pt
+*.onnx
+*.mlpackage/
