@@ -1,0 +1,27 @@
+Ảnh: 5000 | XML: 5000 | Đối tượng: 75578 | Số lớp: 7
+
+Số đối tượng theo lớp:
+  'helmet'                         19252
+  'head_with_helmet'               16048
+  'person_with_helmet'             14767
+  'face'                           14135
+  'head'                            6120
+  'person_no_helmet'                5248
+  'person'                             8
+
+Ảnh thiếu XML: 0 | XML thiếu ảnh: 0
+XML không có đối tượng: 0 | XML lỗi đọc: 0
+Kích thước XML khác ảnh thật: 0 | Hộp tọa độ không hợp lệ: 0
+Tên tệp trùng — ảnh: 0 | XML: 0
+
+Kiểm tra:
+  [OK ] images == 5000
+  [LỆCH] objects == 75570
+  [LỆCH] classes == 6
+  [OK ] every image has xml
+  [OK ] every xml has image
+  [OK ] no parse errors
+  [OK ] xml size == image size
+  [OK ] all boxes valid
+
+Đã ghi reports/integrity/objects.csv và reports/integrity/summary.json

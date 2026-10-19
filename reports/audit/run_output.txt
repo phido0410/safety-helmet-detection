@@ -1,0 +1,14 @@
+Mẫu ngẫu nhiên: 300 ảnh, 4231 hộp
+Ảnh có ít nhất 1 lỗi: 35 (11.67%, KTC95% 8.51%–15.79%)
+
+Loại lỗi          Số hộp    Tỉ lệ            KTC 95%  Ước tính toàn bộ
+Sai lớp                0    0.00%        0.00%–0.09%                 0
+Thiếu nhãn            45    1.05%        0.79%–1.41%               804
+Trùng nhãn             1    0.02%        0.00%–0.13%                18
+Hộp không khít         0    0.00%        0.00%–0.09%                 0
+Hộp thừa               0    0.00%        0.00%–0.09%                 0
+
+Ảnh có vùng phản chiếu: 135 | Hộp trong vùng phản chiếu: không nhãn 0, có nhãn 383
+YOLO gợi ý: 147 | đúng lỗi: 44 | không phải lỗi: 58 | vùng phản chiếu: 44 | chưa xét: 1 | độ chính xác gợi ý: 30.14%
+
+Đã ghi reports/audit/audit_summary.json

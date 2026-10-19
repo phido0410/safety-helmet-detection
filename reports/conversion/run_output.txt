@@ -1,0 +1,20 @@
+Tệp nhãn: 5000 | Đối tượng XML: 75578 | Đối tượng YOLO: 75578
+Đã ánh xạ lớp: 8 hộp (person -> person_with_helmet)
+
+Số đối tượng theo lớp (YOLO):
+  0 helmet                 19252
+  1 head                    6120
+  2 head_with_helmet       16048
+  3 person_with_helmet     14775
+  4 person_no_helmet        5248
+  5 face                   14135
+
+Sai số tọa độ lớn nhất khi khôi phục: 0.0003 px
+
+Kiểm tra:
+  [OK ] objects xml == yolo
+  [OK ] class counts match after remap
+  [OK ] no empty label files
+  [OK ] max pixel error <= 1.0
+
+Đã ghi nhãn vào data/SHEL5K_yolo/labels và báo cáo vào reports/conversion/summary.json
