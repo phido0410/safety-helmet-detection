@@ -1,0 +1,14 @@
+Ảnh: 5000 | đã cắt dải đệm: 4965 | không còn nhãn sau khi cắt: 0
+Hộp: 75578 → 66434 (xóa 8 nhãn trùng, bỏ 9136 hộp trong dải đệm; 2804 hộp bị cắt bớt theo biên)
+
+Lớp                    trước     sau          train            val           test
+helmet                 19252   15566   10937 (70.3%)    2329 (15.0%)    2300 (14.8%)
+head                    6120    5411    3786 (70.0%)     813 (15.0%)     812 (15.0%)
+head_with_helmet       16048   13887    9729 (70.1%)    2079 (15.0%)    2079 (15.0%)
+person_with_helmet     14775   13857    9699 (70.0%)    2078 (15.0%)    2080 (15.0%)
+person_no_helmet        5248    4980    3487 (70.0%)     750 (15.1%)     743 (14.9%)
+face                   14135   12733    8912 (70.0%)    1906 (15.0%)    1915 (15.0%)
+Số ảnh                          5000    3522 (70.4%)     751 (15.0%)     727 (14.5%)
+
+98 nhóm ảnh gần trùng đều nằm trọn trong một tập
+Đã ghi data/SHEL5K_processed và reports/preprocessing

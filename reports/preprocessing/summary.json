@@ -1,0 +1,70 @@
+{
+  "seed": 42,
+  "images": 5000,
+  "duplicates_removed": 8,
+  "boxes_in_pad_removed": 9136,
+  "boxes_clipped": 2804,
+  "boxes_before": 75578,
+  "boxes_after": 66434,
+  "images_cropped": 4965,
+  "images_without_labels_after": 0,
+  "per_class": {
+    "helmet": {
+      "before": 19252,
+      "after": 15566
+    },
+    "head": {
+      "before": 6120,
+      "after": 5411
+    },
+    "head_with_helmet": {
+      "before": 16048,
+      "after": 13887
+    },
+    "person_with_helmet": {
+      "before": 14775,
+      "after": 13857
+    },
+    "person_no_helmet": {
+      "before": 5248,
+      "after": 4980
+    },
+    "face": {
+      "before": 14135,
+      "after": 12733
+    }
+  },
+  "splits": {
+    "train": {
+      "images": 3522,
+      "boxes": 46550,
+      "helmet": 10937,
+      "head": 3786,
+      "head_with_helmet": 9729,
+      "person_with_helmet": 9699,
+      "person_no_helmet": 3487,
+      "face": 8912
+    },
+    "val": {
+      "images": 751,
+      "boxes": 9955,
+      "helmet": 2329,
+      "head": 813,
+      "head_with_helmet": 2079,
+      "person_with_helmet": 2078,
+      "person_no_helmet": 750,
+      "face": 1906
+    },
+    "test": {
+      "images": 727,
+      "boxes": 9929,
+      "helmet": 2300,
+      "head": 812,
+      "head_with_helmet": 2079,
+      "person_with_helmet": 2080,
+      "person_no_helmet": 743,
+      "face": 1915
+    }
+  },
+  "groups_kept_together": 98
+}
