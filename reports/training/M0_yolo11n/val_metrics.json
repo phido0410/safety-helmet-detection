@@ -1,0 +1,90 @@
+{
+  "run": "M0_yolo11n",
+  "model": "yolo11n.pt",
+  "epochs": 100,
+  "imgsz": 640,
+  "batch": 16,
+  "device": "Tesla T4",
+  "train_hours": 1.59,
+  "val": {
+    "metrics/precision(B)": 0.902209520635571,
+    "metrics/recall(B)": 0.8360867909521802,
+    "metrics/mAP50(B)": 0.8971269929552815,
+    "metrics/mAP50-95(B)": 0.5899599164356198,
+    "fitness": 0.5899599164356198
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 690,
+      "Instances": 2329,
+      "Box-P": 0.95335,
+      "Box-R": 0.8774,
+      "Box-F1": 0.9138,
+      "mAP50": 0.92915,
+      "mAP75": 0.70497,
+      "mAP50-95": 0.61267
+    },
+    {
+      "Class": "head",
+      "Images": 170,
+      "Instances": 813,
+      "Box-P": 0.9167,
+      "Box-R": 0.82575,
+      "Box-F1": 0.86885,
+      "mAP50": 0.89216,
+      "mAP75": 0.66238,
+      "mAP50-95": 0.5762
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 680,
+      "Instances": 2079,
+      "Box-P": 0.92067,
+      "Box-R": 0.90431,
+      "Box-F1": 0.91242,
+      "mAP50": 0.94542,
+      "mAP75": 0.79051,
+      "mAP50-95": 0.66205
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 686,
+      "Instances": 2078,
+      "Box-P": 0.89607,
+      "Box-R": 0.87584,
+      "Box-F1": 0.88584,
+      "mAP50": 0.92508,
+      "mAP75": 0.76311,
+      "mAP50-95": 0.68146
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 201,
+      "Instances": 750,
+      "Box-P": 0.84741,
+      "Box-R": 0.784,
+      "Box-F1": 0.81447,
+      "mAP50": 0.86377,
+      "mAP75": 0.71703,
+      "mAP50-95": 0.63065
+    },
+    {
+      "Class": "face",
+      "Images": 631,
+      "Instances": 1906,
+      "Box-P": 0.87906,
+      "Box-R": 0.74921,
+      "Box-F1": 0.80896,
+      "mAP50": 0.82719,
+      "mAP75": 0.27339,
+      "mAP50-95": 0.37673
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 1.0660628082567591,
+    "inference": 4.47722776830481,
+    "loss": 0.0008481038602671403,
+    "postprocess": 2.7110165619209807
+  }
+}

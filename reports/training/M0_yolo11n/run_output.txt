@@ -1,0 +1,118 @@
+train: 3522 ảnh, 3522 file nhãn, 46550 hộp
+val  : 751 ảnh, 751 file nhãn, 9955 hộp
+test : 727 ảnh, 727 file nhãn, 9929 hộp
+Ultralytics 8.4.164 🚀 Python-3.13.15 torch-2.11.0+cu130 CUDA:0 (Tesla T4, 14913MiB)
+Transferred 448/499 items from pretrained weights
+optimizer: AdamW(lr=0.001, momentum=0.9) with parameter groups 81 weight(decay=0.0), 88 weight(decay=0.0005), 87 bias(decay=0.0)
+[M0_yolo11n] epoch 1/100 | 68 s, còn ~112 phút | loss box 1.357 cls 2.058 dfl 1.214 | mAP50 0.737 mAP50-95 0.445 | R person_no_helmet 0.663
+[M0_yolo11n] epoch 2/100 | 59 s, còn ~97 phút | loss box 1.306 cls 1.152 dfl 1.172 | mAP50 0.676 mAP50-95 0.382 | R person_no_helmet 0.669
+[M0_yolo11n] epoch 3/100 | 58 s, còn ~95 phút | loss box 1.319 cls 1.107 dfl 1.179 | mAP50 0.779 mAP50-95 0.474 | R person_no_helmet 0.683
+[M0_yolo11n] epoch 4/100 | 58 s, còn ~93 phút | loss box 1.323 cls 1.057 dfl 1.172 | mAP50 0.798 mAP50-95 0.482 | R person_no_helmet 0.716
+[M0_yolo11n] epoch 5/100 | 58 s, còn ~92 phút | loss box 1.292 cls 1.006 dfl 1.157 | mAP50 0.817 mAP50-95 0.494 | R person_no_helmet 0.662
+[M0_yolo11n] epoch 6/100 | 59 s, còn ~92 phút | loss box 1.273 cls 0.959 dfl 1.144 | mAP50 0.820 mAP50-95 0.494 | R person_no_helmet 0.700
+[M0_yolo11n] epoch 7/100 | 58 s, còn ~91 phút | loss box 1.269 cls 0.926 dfl 1.144 | mAP50 0.821 mAP50-95 0.506 | R person_no_helmet 0.773
+[M0_yolo11n] epoch 8/100 | 58 s, còn ~89 phút | loss box 1.253 cls 0.905 dfl 1.136 | mAP50 0.836 mAP50-95 0.511 | R person_no_helmet 0.628
+[M0_yolo11n] epoch 9/100 | 57 s, còn ~87 phút | loss box 1.245 cls 0.878 dfl 1.131 | mAP50 0.829 mAP50-95 0.509 | R person_no_helmet 0.696
+[M0_yolo11n] epoch 10/100 | 58 s, còn ~87 phút | loss box 1.233 cls 0.874 dfl 1.128 | mAP50 0.827 mAP50-95 0.507 | R person_no_helmet 0.590
+[M0_yolo11n] epoch 11/100 | 58 s, còn ~86 phút | loss box 1.236 cls 0.858 dfl 1.125 | mAP50 0.846 mAP50-95 0.517 | R person_no_helmet 0.732
+[M0_yolo11n] epoch 12/100 | 58 s, còn ~85 phút | loss box 1.231 cls 0.849 dfl 1.125 | mAP50 0.855 mAP50-95 0.528 | R person_no_helmet 0.719
+[M0_yolo11n] epoch 13/100 | 58 s, còn ~83 phút | loss box 1.214 cls 0.821 dfl 1.111 | mAP50 0.855 mAP50-95 0.537 | R person_no_helmet 0.739
+[M0_yolo11n] epoch 14/100 | 58 s, còn ~83 phút | loss box 1.209 cls 0.817 dfl 1.112 | mAP50 0.859 mAP50-95 0.538 | R person_no_helmet 0.703
+[M0_yolo11n] epoch 15/100 | 58 s, còn ~82 phút | loss box 1.199 cls 0.798 dfl 1.107 | mAP50 0.864 mAP50-95 0.544 | R person_no_helmet 0.707
+[M0_yolo11n] epoch 16/100 | 57 s, còn ~80 phút | loss box 1.204 cls 0.793 dfl 1.105 | mAP50 0.859 mAP50-95 0.535 | R person_no_helmet 0.729
+[M0_yolo11n] epoch 17/100 | 57 s, còn ~79 phút | loss box 1.194 cls 0.793 dfl 1.101 | mAP50 0.856 mAP50-95 0.540 | R person_no_helmet 0.708
+[M0_yolo11n] epoch 18/100 | 58 s, còn ~79 phút | loss box 1.182 cls 0.781 dfl 1.099 | mAP50 0.861 mAP50-95 0.545 | R person_no_helmet 0.703
+[M0_yolo11n] epoch 19/100 | 58 s, còn ~78 phút | loss box 1.188 cls 0.778 dfl 1.100 | mAP50 0.859 mAP50-95 0.547 | R person_no_helmet 0.731
+[M0_yolo11n] epoch 20/100 | 57 s, còn ~76 phút | loss box 1.179 cls 0.764 dfl 1.093 | mAP50 0.869 mAP50-95 0.551 | R person_no_helmet 0.724
+[M0_yolo11n] epoch 21/100 | 58 s, còn ~76 phút | loss box 1.177 cls 0.763 dfl 1.093 | mAP50 0.870 mAP50-95 0.549 | R person_no_helmet 0.706
+[M0_yolo11n] epoch 22/100 | 57 s, còn ~75 phút | loss box 1.172 cls 0.756 dfl 1.090 | mAP50 0.876 mAP50-95 0.555 | R person_no_helmet 0.717
+[M0_yolo11n] epoch 23/100 | 57 s, còn ~73 phút | loss box 1.178 cls 0.758 dfl 1.093 | mAP50 0.871 mAP50-95 0.553 | R person_no_helmet 0.712
+[M0_yolo11n] epoch 24/100 | 57 s, còn ~72 phút | loss box 1.166 cls 0.750 dfl 1.085 | mAP50 0.869 mAP50-95 0.552 | R person_no_helmet 0.696
+[M0_yolo11n] epoch 25/100 | 57 s, còn ~71 phút | loss box 1.168 cls 0.747 dfl 1.089 | mAP50 0.872 mAP50-95 0.554 | R person_no_helmet 0.764
+[M0_yolo11n] epoch 26/100 | 57 s, còn ~70 phút | loss box 1.161 cls 0.741 dfl 1.083 | mAP50 0.871 mAP50-95 0.554 | R person_no_helmet 0.689
+[M0_yolo11n] epoch 27/100 | 57 s, còn ~69 phút | loss box 1.155 cls 0.735 dfl 1.082 | mAP50 0.880 mAP50-95 0.562 | R person_no_helmet 0.717
+[M0_yolo11n] epoch 28/100 | 56 s, còn ~68 phút | loss box 1.162 cls 0.740 dfl 1.085 | mAP50 0.877 mAP50-95 0.558 | R person_no_helmet 0.723
+[M0_yolo11n] epoch 29/100 | 57 s, còn ~67 phút | loss box 1.155 cls 0.729 dfl 1.081 | mAP50 0.879 mAP50-95 0.562 | R person_no_helmet 0.770
+[M0_yolo11n] epoch 30/100 | 57 s, còn ~66 phút | loss box 1.151 cls 0.726 dfl 1.075 | mAP50 0.879 mAP50-95 0.561 | R person_no_helmet 0.759
+[M0_yolo11n] epoch 31/100 | 57 s, còn ~66 phút | loss box 1.148 cls 0.724 dfl 1.079 | mAP50 0.883 mAP50-95 0.566 | R person_no_helmet 0.763
+[M0_yolo11n] epoch 32/100 | 57 s, còn ~64 phút | loss box 1.152 cls 0.722 dfl 1.078 | mAP50 0.880 mAP50-95 0.565 | R person_no_helmet 0.753
+[M0_yolo11n] epoch 33/100 | 57 s, còn ~64 phút | loss box 1.140 cls 0.717 dfl 1.076 | mAP50 0.880 mAP50-95 0.564 | R person_no_helmet 0.709
+[M0_yolo11n] epoch 34/100 | 57 s, còn ~62 phút | loss box 1.139 cls 0.718 dfl 1.074 | mAP50 0.871 mAP50-95 0.558 | R person_no_helmet 0.771
+[M0_yolo11n] epoch 35/100 | 57 s, còn ~61 phút | loss box 1.139 cls 0.712 dfl 1.073 | mAP50 0.883 mAP50-95 0.569 | R person_no_helmet 0.708
+[M0_yolo11n] epoch 36/100 | 56 s, còn ~60 phút | loss box 1.138 cls 0.705 dfl 1.069 | mAP50 0.884 mAP50-95 0.570 | R person_no_helmet 0.747
+[M0_yolo11n] epoch 37/100 | 57 s, còn ~59 phút | loss box 1.134 cls 0.702 dfl 1.069 | mAP50 0.884 mAP50-95 0.568 | R person_no_helmet 0.710
+[M0_yolo11n] epoch 38/100 | 57 s, còn ~59 phút | loss box 1.128 cls 0.695 dfl 1.069 | mAP50 0.881 mAP50-95 0.566 | R person_no_helmet 0.739
+[M0_yolo11n] epoch 39/100 | 57 s, còn ~58 phút | loss box 1.136 cls 0.697 dfl 1.071 | mAP50 0.885 mAP50-95 0.572 | R person_no_helmet 0.729
+[M0_yolo11n] epoch 40/100 | 57 s, còn ~57 phút | loss box 1.122 cls 0.695 dfl 1.065 | mAP50 0.889 mAP50-95 0.576 | R person_no_helmet 0.753
+[M0_yolo11n] epoch 41/100 | 57 s, còn ~56 phút | loss box 1.117 cls 0.683 dfl 1.060 | mAP50 0.885 mAP50-95 0.575 | R person_no_helmet 0.767
+[M0_yolo11n] epoch 42/100 | 58 s, còn ~56 phút | loss box 1.122 cls 0.683 dfl 1.063 | mAP50 0.888 mAP50-95 0.576 | R person_no_helmet 0.741
+[M0_yolo11n] epoch 43/100 | 58 s, còn ~55 phút | loss box 1.120 cls 0.680 dfl 1.061 | mAP50 0.889 mAP50-95 0.576 | R person_no_helmet 0.763
+[M0_yolo11n] epoch 44/100 | 57 s, còn ~53 phút | loss box 1.116 cls 0.679 dfl 1.063 | mAP50 0.890 mAP50-95 0.575 | R person_no_helmet 0.727
+[M0_yolo11n] epoch 45/100 | 57 s, còn ~52 phút | loss box 1.110 cls 0.677 dfl 1.060 | mAP50 0.890 mAP50-95 0.575 | R person_no_helmet 0.767
+[M0_yolo11n] epoch 46/100 | 57 s, còn ~51 phút | loss box 1.111 cls 0.676 dfl 1.059 | mAP50 0.892 mAP50-95 0.579 | R person_no_helmet 0.775
+[M0_yolo11n] epoch 47/100 | 58 s, còn ~51 phút | loss box 1.107 cls 0.672 dfl 1.055 | mAP50 0.889 mAP50-95 0.575 | R person_no_helmet 0.744
+[M0_yolo11n] epoch 48/100 | 57 s, còn ~49 phút | loss box 1.111 cls 0.674 dfl 1.062 | mAP50 0.889 mAP50-95 0.577 | R person_no_helmet 0.753
+[M0_yolo11n] epoch 49/100 | 57 s, còn ~49 phút | loss box 1.104 cls 0.670 dfl 1.056 | mAP50 0.890 mAP50-95 0.576 | R person_no_helmet 0.751
+[M0_yolo11n] epoch 50/100 | 57 s, còn ~48 phút | loss box 1.097 cls 0.658 dfl 1.051 | mAP50 0.892 mAP50-95 0.577 | R person_no_helmet 0.768
+[M0_yolo11n] epoch 51/100 | 57 s, còn ~46 phút | loss box 1.104 cls 0.662 dfl 1.050 | mAP50 0.891 mAP50-95 0.579 | R person_no_helmet 0.769
+[M0_yolo11n] epoch 52/100 | 57 s, còn ~46 phút | loss box 1.105 cls 0.656 dfl 1.049 | mAP50 0.897 mAP50-95 0.582 | R person_no_helmet 0.771
+[M0_yolo11n] epoch 53/100 | 57 s, còn ~45 phút | loss box 1.089 cls 0.656 dfl 1.048 | mAP50 0.888 mAP50-95 0.578 | R person_no_helmet 0.767
+[M0_yolo11n] epoch 54/100 | 60 s, còn ~46 phút | loss box 1.092 cls 0.650 dfl 1.048 | mAP50 0.894 mAP50-95 0.582 | R person_no_helmet 0.773
+[M0_yolo11n] epoch 55/100 | 58 s, còn ~44 phút | loss box 1.098 cls 0.653 dfl 1.050 | mAP50 0.893 mAP50-95 0.579 | R person_no_helmet 0.768
+[M0_yolo11n] epoch 56/100 | 58 s, còn ~42 phút | loss box 1.097 cls 0.654 dfl 1.050 | mAP50 0.893 mAP50-95 0.580 | R person_no_helmet 0.771
+[M0_yolo11n] epoch 57/100 | 58 s, còn ~42 phút | loss box 1.088 cls 0.648 dfl 1.045 | mAP50 0.894 mAP50-95 0.582 | R person_no_helmet 0.761
+[M0_yolo11n] epoch 58/100 | 58 s, còn ~41 phút | loss box 1.086 cls 0.644 dfl 1.046 | mAP50 0.892 mAP50-95 0.580 | R person_no_helmet 0.761
+[M0_yolo11n] epoch 59/100 | 58 s, còn ~40 phút | loss box 1.086 cls 0.643 dfl 1.044 | mAP50 0.897 mAP50-95 0.582 | R person_no_helmet 0.766
+[M0_yolo11n] epoch 60/100 | 59 s, còn ~39 phút | loss box 1.084 cls 0.642 dfl 1.042 | mAP50 0.899 mAP50-95 0.583 | R person_no_helmet 0.787
+[M0_yolo11n] epoch 61/100 | 58 s, còn ~38 phút | loss box 1.081 cls 0.637 dfl 1.043 | mAP50 0.894 mAP50-95 0.582 | R person_no_helmet 0.769
+[M0_yolo11n] epoch 62/100 | 58 s, còn ~37 phút | loss box 1.074 cls 0.636 dfl 1.041 | mAP50 0.897 mAP50-95 0.585 | R person_no_helmet 0.772
+[M0_yolo11n] epoch 63/100 | 58 s, còn ~36 phút | loss box 1.079 cls 0.636 dfl 1.041 | mAP50 0.894 mAP50-95 0.583 | R person_no_helmet 0.749
+[M0_yolo11n] epoch 64/100 | 58 s, còn ~35 phút | loss box 1.070 cls 0.630 dfl 1.039 | mAP50 0.897 mAP50-95 0.586 | R person_no_helmet 0.784
+[M0_yolo11n] epoch 65/100 | 58 s, còn ~34 phút | loss box 1.070 cls 0.626 dfl 1.035 | mAP50 0.895 mAP50-95 0.584 | R person_no_helmet 0.757
+[M0_yolo11n] epoch 66/100 | 58 s, còn ~33 phút | loss box 1.070 cls 0.628 dfl 1.038 | mAP50 0.898 mAP50-95 0.586 | R person_no_helmet 0.805
+[M0_yolo11n] epoch 67/100 | 59 s, còn ~32 phút | loss box 1.068 cls 0.622 dfl 1.035 | mAP50 0.895 mAP50-95 0.583 | R person_no_helmet 0.783
+[M0_yolo11n] epoch 68/100 | 58 s, còn ~31 phút | loss box 1.063 cls 0.627 dfl 1.037 | mAP50 0.898 mAP50-95 0.586 | R person_no_helmet 0.783
+[M0_yolo11n] epoch 69/100 | 58 s, còn ~30 phút | loss box 1.062 cls 0.618 dfl 1.030 | mAP50 0.896 mAP50-95 0.584 | R person_no_helmet 0.762
+[M0_yolo11n] epoch 70/100 | 58 s, còn ~29 phút | loss box 1.063 cls 0.625 dfl 1.036 | mAP50 0.900 mAP50-95 0.586 | R person_no_helmet 0.771
+[M0_yolo11n] epoch 71/100 | 57 s, còn ~28 phút | loss box 1.064 cls 0.616 dfl 1.035 | mAP50 0.897 mAP50-95 0.587 | R person_no_helmet 0.788
+[M0_yolo11n] epoch 72/100 | 57 s, còn ~27 phút | loss box 1.049 cls 0.608 dfl 1.029 | mAP50 0.897 mAP50-95 0.585 | R person_no_helmet 0.760
+[M0_yolo11n] epoch 73/100 | 58 s, còn ~26 phút | loss box 1.056 cls 0.613 dfl 1.030 | mAP50 0.895 mAP50-95 0.586 | R person_no_helmet 0.770
+[M0_yolo11n] epoch 74/100 | 58 s, còn ~25 phút | loss box 1.054 cls 0.610 dfl 1.030 | mAP50 0.896 mAP50-95 0.588 | R person_no_helmet 0.779
+[M0_yolo11n] epoch 75/100 | 58 s, còn ~24 phút | loss box 1.046 cls 0.608 dfl 1.026 | mAP50 0.894 mAP50-95 0.585 | R person_no_helmet 0.767
+[M0_yolo11n] epoch 76/100 | 58 s, còn ~23 phút | loss box 1.048 cls 0.607 dfl 1.028 | mAP50 0.899 mAP50-95 0.586 | R person_no_helmet 0.785
+[M0_yolo11n] epoch 77/100 | 57 s, còn ~22 phút | loss box 1.052 cls 0.606 dfl 1.027 | mAP50 0.898 mAP50-95 0.587 | R person_no_helmet 0.786
+[M0_yolo11n] epoch 78/100 | 58 s, còn ~21 phút | loss box 1.048 cls 0.605 dfl 1.026 | mAP50 0.896 mAP50-95 0.586 | R person_no_helmet 0.775
+[M0_yolo11n] epoch 79/100 | 58 s, còn ~20 phút | loss box 1.042 cls 0.601 dfl 1.025 | mAP50 0.899 mAP50-95 0.588 | R person_no_helmet 0.793
+[M0_yolo11n] epoch 80/100 | 58 s, còn ~19 phút | loss box 1.040 cls 0.595 dfl 1.023 | mAP50 0.896 mAP50-95 0.586 | R person_no_helmet 0.755
+[M0_yolo11n] epoch 81/100 | 57 s, còn ~18 phút | loss box 1.038 cls 0.597 dfl 1.025 | mAP50 0.900 mAP50-95 0.588 | R person_no_helmet 0.775
+[M0_yolo11n] epoch 82/100 | 58 s, còn ~17 phút | loss box 1.037 cls 0.593 dfl 1.021 | mAP50 0.899 mAP50-95 0.588 | R person_no_helmet 0.784
+[M0_yolo11n] epoch 83/100 | 57 s, còn ~16 phút | loss box 1.041 cls 0.598 dfl 1.021 | mAP50 0.898 mAP50-95 0.586 | R person_no_helmet 0.791
+[M0_yolo11n] epoch 84/100 | 58 s, còn ~15 phút | loss box 1.029 cls 0.589 dfl 1.016 | mAP50 0.899 mAP50-95 0.588 | R person_no_helmet 0.770
+[M0_yolo11n] epoch 85/100 | 58 s, còn ~14 phút | loss box 1.032 cls 0.590 dfl 1.019 | mAP50 0.898 mAP50-95 0.587 | R person_no_helmet 0.777
+[M0_yolo11n] epoch 86/100 | 58 s, còn ~13 phút | loss box 1.028 cls 0.587 dfl 1.016 | mAP50 0.898 mAP50-95 0.589 | R person_no_helmet 0.784
+[M0_yolo11n] epoch 87/100 | 57 s, còn ~12 phút | loss box 1.024 cls 0.581 dfl 1.015 | mAP50 0.897 mAP50-95 0.588 | R person_no_helmet 0.778
+[M0_yolo11n] epoch 88/100 | 57 s, còn ~11 phút | loss box 1.031 cls 0.588 dfl 1.016 | mAP50 0.897 mAP50-95 0.589 | R person_no_helmet 0.780
+[M0_yolo11n] epoch 89/100 | 57 s, còn ~10 phút | loss box 1.019 cls 0.574 dfl 1.015 | mAP50 0.898 mAP50-95 0.587 | R person_no_helmet 0.784
+[M0_yolo11n] epoch 90/100 | 57 s, còn ~10 phút | loss box 1.024 cls 0.580 dfl 1.011 | mAP50 0.896 mAP50-95 0.588 | R person_no_helmet 0.776
+[M0_yolo11n] epoch 91/100 | 58 s, còn ~9 phút | loss box 1.007 cls 0.514 dfl 1.002 | mAP50 0.896 mAP50-95 0.585 | R person_no_helmet 0.778
+[M0_yolo11n] epoch 92/100 | 55 s, còn ~7 phút | loss box 0.999 cls 0.506 dfl 0.997 | mAP50 0.896 mAP50-95 0.585 | R person_no_helmet 0.773
+[M0_yolo11n] epoch 93/100 | 55 s, còn ~6 phút | loss box 0.994 cls 0.503 dfl 0.997 | mAP50 0.898 mAP50-95 0.585 | R person_no_helmet 0.774
+[M0_yolo11n] epoch 94/100 | 55 s, còn ~5 phút | loss box 0.995 cls 0.503 dfl 0.994 | mAP50 0.898 mAP50-95 0.587 | R person_no_helmet 0.769
+[M0_yolo11n] epoch 95/100 | 55 s, còn ~5 phút | loss box 0.989 cls 0.496 dfl 0.994 | mAP50 0.897 mAP50-95 0.587 | R person_no_helmet 0.776
+[M0_yolo11n] epoch 96/100 | 55 s, còn ~4 phút | loss box 0.987 cls 0.496 dfl 0.995 | mAP50 0.897 mAP50-95 0.587 | R person_no_helmet 0.774
+[M0_yolo11n] epoch 97/100 | 55 s, còn ~3 phút | loss box 0.981 cls 0.492 dfl 0.989 | mAP50 0.898 mAP50-95 0.587 | R person_no_helmet 0.784
+[M0_yolo11n] epoch 98/100 | 54 s, còn ~2 phút | loss box 0.983 cls 0.492 dfl 0.986 | mAP50 0.897 mAP50-95 0.587 | R person_no_helmet 0.782
+[M0_yolo11n] epoch 99/100 | 55 s, còn ~1 phút | loss box 0.978 cls 0.490 dfl 0.991 | mAP50 0.898 mAP50-95 0.588 | R person_no_helmet 0.783
+[M0_yolo11n] epoch 100/100 | 55 s, còn ~0 phút | loss box 0.978 cls 0.489 dfl 0.986 | mAP50 0.897 mAP50-95 0.588 | R person_no_helmet 0.780
+100 epochs completed in 1.595 hours.
+                   all        751       9955      0.902      0.836      0.897       0.59
+                helmet        690       2329      0.953      0.877      0.929      0.613
+                  head        170        813      0.917      0.826      0.892      0.576
+      head_with_helmet        680       2079      0.921      0.904      0.945      0.662
+    person_with_helmet        686       2078      0.896      0.876      0.925      0.681
+      person_no_helmet        201        750      0.847      0.784      0.864      0.631
+                  face        631       1906      0.879      0.749      0.827      0.377
+Speed: 1.1ms preprocess, 4.5ms inference, 0.0ms loss, 2.7ms postprocess per image
+mAP@0.5 = 0.897  (mục tiêu ≥ 0,85: đạt)
+Recall person_no_helmet = 0.784  (mục tiêu ≥ 0,80: chưa đạt)
+Tốc độ (ms/ảnh): {'preprocess': 1.07, 'inference': 4.48, 'loss': 0.0, 'postprocess': 2.71}
