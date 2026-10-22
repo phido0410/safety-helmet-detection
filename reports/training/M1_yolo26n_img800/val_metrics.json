@@ -1,0 +1,90 @@
+{
+  "run": "M1_yolo26n_img800",
+  "model": "yolo26n.pt",
+  "epochs": 100,
+  "imgsz": 800,
+  "batch": 16,
+  "device": "Tesla T4",
+  "train_hours": 2.24,
+  "val": {
+    "metrics/precision(B)": 0.9111637661476757,
+    "metrics/recall(B)": 0.8491188949238797,
+    "metrics/mAP50(B)": 0.9094991276697572,
+    "metrics/mAP50-95(B)": 0.5992736271970347,
+    "fitness": 0.5992736271970347
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 690,
+      "Instances": 2329,
+      "Box-P": 0.94887,
+      "Box-R": 0.89051,
+      "Box-F1": 0.91877,
+      "mAP50": 0.94475,
+      "mAP75": 0.71579,
+      "mAP50-95": 0.62435
+    },
+    {
+      "Class": "head",
+      "Images": 170,
+      "Instances": 813,
+      "Box-P": 0.93289,
+      "Box-R": 0.83782,
+      "Box-F1": 0.8828,
+      "mAP50": 0.904,
+      "mAP75": 0.66917,
+      "mAP50-95": 0.58238
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 680,
+      "Instances": 2079,
+      "Box-P": 0.92343,
+      "Box-R": 0.91074,
+      "Box-F1": 0.91704,
+      "mAP50": 0.95285,
+      "mAP75": 0.79711,
+      "mAP50-95": 0.6643
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 686,
+      "Instances": 2078,
+      "Box-P": 0.90431,
+      "Box-R": 0.88306,
+      "Box-F1": 0.89356,
+      "mAP50": 0.93174,
+      "mAP75": 0.76809,
+      "mAP50-95": 0.69095
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 201,
+      "Instances": 750,
+      "Box-P": 0.85784,
+      "Box-R": 0.7965,
+      "Box-F1": 0.82603,
+      "mAP50": 0.86554,
+      "mAP75": 0.73185,
+      "mAP50-95": 0.64431
+    },
+    {
+      "Class": "face",
+      "Images": 631,
+      "Instances": 1906,
+      "Box-P": 0.89965,
+      "Box-R": 0.77608,
+      "Box-F1": 0.83331,
+      "mAP50": 0.85811,
+      "mAP75": 0.28319,
+      "mAP50-95": 0.38934
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 1.4333070213053383,
+    "inference": 5.313942166444776,
+    "loss": 0.000814340877981747,
+    "postprocess": 2.0763056617846822
+  }
+}

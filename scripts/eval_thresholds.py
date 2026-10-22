@@ -3,6 +3,7 @@
 Dùng để (1) xác nhận kết quả huấn luyện trên Colab tái lập được, (2) xem Recall lớp vi phạm thay đổi theo ngưỡng.
 
     .venv/bin/python scripts/eval_thresholds.py --weights runs/M0_yolo11n/weights/best.pt --out reports/training/M0_yolo11n
+    (thêm --imgsz 800 cho mô hình huấn luyện ở ảnh 800)
 """
 import argparse, os
 from pathlib import Path
@@ -17,10 +18,11 @@ ap.add_argument("--out", required=True)
 ap.add_argument("--data", default="data/SHEL5K_processed/data.yaml")
 ap.add_argument("--cls", default="person_no_helmet")
 ap.add_argument("--target", type=float, default=0.80)
+ap.add_argument("--imgsz", type=int, default=640)  # đánh giá ở đúng kích thước ảnh đã huấn luyện
 args = ap.parse_args()
 
 model = YOLO(args.weights)
-v = model.val(data=args.data, split="val", imgsz=640, batch=16, plots=False, verbose=False, device="mps",
+v = model.val(data=args.data, split="val", imgsz=args.imgsz, batch=16, plots=False, verbose=False, device="mps",
               project=os.environ.get("TMPDIR", "/tmp"), name="eval_thresholds", exist_ok=True)
 k = list(v.box.ap_class_index).index(list(model.names.values()).index(args.cls))
 conf = np.linspace(0, 1, 1000)  # lưới ngưỡng Ultralytics dùng cho p_curve, r_curve

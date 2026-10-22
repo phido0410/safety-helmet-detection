@@ -1,0 +1,90 @@
+{
+  "run": "M1_yolo26n",
+  "model": "yolo26n.pt",
+  "epochs": 100,
+  "imgsz": 640,
+  "batch": 16,
+  "device": "Tesla T4",
+  "train_hours": 1.75,
+  "val": {
+    "metrics/precision(B)": 0.9117959921240769,
+    "metrics/recall(B)": 0.8270843238551794,
+    "metrics/mAP50(B)": 0.8961916627092954,
+    "metrics/mAP50-95(B)": 0.5877294127650029,
+    "fitness": 0.5877294127650029
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 690,
+      "Instances": 2329,
+      "Box-P": 0.95086,
+      "Box-R": 0.87377,
+      "Box-F1": 0.91069,
+      "mAP50": 0.93306,
+      "mAP75": 0.69617,
+      "mAP50-95": 0.60837
+    },
+    {
+      "Class": "head",
+      "Images": 170,
+      "Instances": 813,
+      "Box-P": 0.93571,
+      "Box-R": 0.82288,
+      "Box-F1": 0.87567,
+      "mAP50": 0.89232,
+      "mAP75": 0.65816,
+      "mAP50-95": 0.57225
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 680,
+      "Instances": 2079,
+      "Box-P": 0.9197,
+      "Box-R": 0.90909,
+      "Box-F1": 0.91436,
+      "mAP50": 0.94912,
+      "mAP75": 0.78912,
+      "mAP50-95": 0.66069
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 686,
+      "Instances": 2078,
+      "Box-P": 0.90131,
+      "Box-R": 0.87024,
+      "Box-F1": 0.8855,
+      "mAP50": 0.92931,
+      "mAP75": 0.76999,
+      "mAP50-95": 0.68681
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 201,
+      "Instances": 750,
+      "Box-P": 0.86356,
+      "Box-R": 0.77638,
+      "Box-F1": 0.81765,
+      "mAP50": 0.86348,
+      "mAP75": 0.71374,
+      "mAP50-95": 0.63507
+    },
+    {
+      "Class": "face",
+      "Images": 631,
+      "Instances": 1906,
+      "Box-P": 0.89964,
+      "Box-R": 0.71015,
+      "Box-F1": 0.79374,
+      "mAP50": 0.80986,
+      "mAP75": 0.25487,
+      "mAP50-95": 0.36318
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 1.0572688002690114,
+    "inference": 4.588703006658481,
+    "loss": 0.0008020732386258447,
+    "postprocess": 1.4075982170459869
+  }
+}
