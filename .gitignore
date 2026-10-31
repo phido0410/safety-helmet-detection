@@ -17,3 +17,5 @@ runs/
 
 # Thư viện Node của script tạo báo cáo
 node_modules/
+docs/report_builder/snippets/
+~$*
