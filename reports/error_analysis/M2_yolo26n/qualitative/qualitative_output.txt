@@ -1,0 +1,16 @@
+Bỏ sót, nhầm lớp person_no_helmet: 30 ca
+  Bị che khuất: 15 (50%, KTC 95% 33%–67%)
+  Nhỏ, ở xa: 6 (20%, KTC 95% 10%–37%)
+  Thiếu sáng, ngược sáng: 4 (13%, KTC 95% 5%–30%)
+  Góc nhìn khó, bị cắt: 2 (7%, KTC 95% 2%–21%)
+  Mũ khó phân biệt: 2 (7%, KTC 95% 2%–21%)
+  Lỗi nhãn: 1 (3%, KTC 95% 1%–17%)
+Báo nhầm person_no_helmet: 30 ca
+  Hộp lệch, trùng: 12 (40%, KTC 95% 25%–58%)
+  Nhầm người đội mũ: 9 (30%, KTC 95% 17%–48%)
+  Lỗi nhãn, mô hình đúng: 7 (23%, KTC 95% 12%–41%)
+  Khác, không rõ: 2 (7%, KTC 95% 2%–21%)
+Bỏ sót face: 20 ca
+  Quay nghiêng, cúi, bị che một phần: 9 (45%, KTC 95% 26%–66%)
+  Nhỏ, ở xa: 8 (40%, KTC 95% 22%–61%)
+  Thiếu sáng, ngược sáng: 3 (15%, KTC 95% 5%–36%)

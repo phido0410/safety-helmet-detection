@@ -1,0 +1,61 @@
+case_id,image,kind,box,conf,area,light,blur,cover,edge,pool,pattern
+pnh01,hard_hat_workers963,bỏ sót,"[237.0, 303.0, 249.0, 349.0]",,552.009308006208,tối,bình thường,0.1666715961606625,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh02,hard_hat_workers3529,bỏ sót,"[4.0, 264.0, 12.0, 282.0]",,143.99989799644803,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh03,hard_hat_workers2388,bỏ sót,"[151.0, 106.0, 158.0, 126.0]",,140.000864001024,bình thường,bình thường,0.28573257674249,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh04,hard_hat_workers4883,bỏ sót,"[191.0, 69.0, 198.0, 85.0]",,112.00240200864002,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh05,hard_hat_workers2879,bỏ sót,"[112.0, 225.0, 123.0, 257.0]",,351.994485016512,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh06,hard_hat_workers1608,bỏ sót,"[383.0, 117.0, 416.0, 275.0]",,5213.941439975422,bình thường,bình thường,0.9999997125841956,chạm mép ảnh,139,^bỏ sót|^nhầm lớp →
+pnh07,hard_hat_workers3184,nhầm lớp → person_with_helmet,"[189.0, 90.0, 199.0, 117.0]",,269.995025995968,bình thường,bình thường,0.0148136183499325,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh08,hard_hat_workers3534,bỏ sót,"[288.0, 124.0, 324.0, 266.0]",,5111.976767978496,bình thường,bình thường,0.8333333953541883,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh09,hard_hat_workers787,bỏ sót,"[377.0, 150.0, 384.0, 165.0]",,105.000648000768,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh10,hard_hat_workers3344,bỏ sót,"[308.0, 74.0, 341.0, 128.0]",,1782.0058200039678,tối,mờ (10% thấp nhất),0.5370410029687573,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh11,hard_hat_workers4806,nhầm lớp → person_with_helmet,"[259.0, 32.0, 305.0, 120.0]",,4047.99545599488,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh12,hard_hat_workers879,nhầm lớp → person_with_helmet,"[141.0, 3.0, 185.0, 139.0]",,5983.990243992801,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh13,hard_hat_workers360,bỏ sót,"[127.0, 155.0, 147.0, 246.0]",,1820.00231199904,tối,bình thường,0.2730710260119179,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh14,hard_hat_workers1811,bỏ sót,"[396.0, 206.0, 405.0, 228.0]",,198.00256598304003,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh15,hard_hat_workers360,bỏ sót,"[225.0, 60.0, 236.0, 87.0]",,296.99830397952,tối,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh16,hard_hat_workers3534,bỏ sót,"[388.0, 131.0, 410.0, 232.0]",,2222.01039595808,bình thường,bình thường,0.5909047880332332,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh17,hard_hat_workers1608,bỏ sót,"[290.0, 97.0, 326.0, 276.0]",,6443.968367985409,bình thường,bình thường,0.8888876450177619,chạm mép ảnh,139,^bỏ sót|^nhầm lớp →
+pnh18,hard_hat_workers2172,nhầm lớp → person_with_helmet,"[2.0, 231.0, 68.0, 416.0]",,12210.008971996162,bình thường,bình thường,0.0,chạm mép ảnh,139,^bỏ sót|^nhầm lớp →
+pnh19,hard_hat_workers963,bỏ sót,"[247.0, 302.0, 257.0, 353.0]",,509.99818700147193,tối,bình thường,0.1804011755451043,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh20,hard_hat_workers4682,nhầm lớp → person_with_helmet,"[157.0, 150.0, 206.0, 225.0]",,3674.97859203072,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh21,hard_hat_workers263,nhầm lớp → person_with_helmet,"[345.0, 122.0, 376.0, 156.0]",,1053.999463991552,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh22,hard_hat_workers4883,bỏ sót,"[163.0, 65.0, 173.0, 90.0]",,249.993520032256,bình thường,bình thường,1.0000008954801245,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh23,hard_hat_workers3578,bỏ sót,"[362.0, 101.0, 380.0, 206.0]",,1889.992943983872,tối,bình thường,0.2275001905438233,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh24,hard_hat_workers1370,bỏ sót,"[257.0, 26.0, 278.0, 154.0]",,2688.010943993856,bình thường,bình thường,0.9523780739312072,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh25,hard_hat_workers3551,bỏ sót,"[107.0, 86.0, 137.0, 148.0]",,1859.98702001632,bình thường,bình thường,0.9999996936424818,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh26,hard_hat_workers2095,nhầm lớp → person_with_helmet,"[268.0, 79.0, 286.0, 128.0]",,881.994630003552,tối,bình thường,0.1111198841572159,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh27,hard_hat_workers946,bỏ sót,"[260.0, 126.0, 266.0, 142.0]",,95.998270006496,bình thường,bình thường,0.0,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh28,hard_hat_workers3493,bỏ sót,"[236.0, 38.0, 253.0, 84.0]",,781.99318399488,bình thường,bình thường,0.7173922498192107,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh29,hard_hat_workers1697,bỏ sót,"[51.0, 238.0, 75.0, 349.0]",,2663.9807879942396,bình thường,bình thường,0.9999999718077492,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh30,hard_hat_workers1697,bỏ sót,"[260.0, 254.0, 283.0, 371.0]",,2690.961156,bình thường,bình thường,0.9999998280760672,không chạm mép,139,^bỏ sót|^nhầm lớp →
+pnh31,hard_hat_workers3385,báo nhầm: nhầm lớp ← person_with_helmet,"[229.60000610351562, 120.4000015258789, 278.20001220703125, 277.0]",0.8924694657325745,7607.4453125,bình thường,bình thường,,,136,^báo nhầm
+pnh32,hard_hat_workers2478,báo nhầm: trùng,"[154.5, 85.0999984741211, 182.10000610351562, 219.8000030517578]",0.3824789226055145,3707.783447265625,bình thường,mờ (10% thấp nhất),,,136,^báo nhầm
+pnh33,hard_hat_workers2888,báo nhầm: nền,"[393.0, 43.79999923706055, 416.0, 290.6000061035156]",0.7550919651985168,5681.56005859375,bình thường,bình thường,,,136,^báo nhầm
+pnh34,hard_hat_workers2473,báo nhầm: nền,"[383.5, 28.100000381469727, 416.0, 275.20001220703125]",0.454866886138916,8027.77685546875,bình thường,bình thường,,,136,^báo nhầm
+pnh35,hard_hat_workers682,báo nhầm: nền,"[110.5, 138.10000610351562, 169.5, 204.8000030517578]",0.3164304196834564,3936.770751953125,sáng,bình thường,,,136,^báo nhầm
+pnh36,hard_hat_workers3003,báo nhầm: nhầm lớp ← person_with_helmet,"[405.29998779296875, 81.0999984741211, 412.70001220703125, 100.9000015258789]",0.468711793422699,146.12353515625,bình thường,bình thường,,,136,^báo nhầm
+pnh37,hard_hat_workers1507,báo nhầm: nền,"[38.599998474121094, 65.4000015258789, 56.5, 101.69999694824219]",0.7200957536697388,647.8751220703125,bình thường,bình thường,,,136,^báo nhầm
+pnh38,hard_hat_workers3705,báo nhầm: nền,"[67.9000015258789, 58.400001525878906, 146.0, 248.39999389648438]",0.9177600741386414,14840.798828125,bình thường,bình thường,,,136,^báo nhầm
+pnh39,hard_hat_workers1873,báo nhầm: lệch vị trí,"[362.70001220703125, 117.0999984741211, 416.0, 312.0]",0.8812375664710999,10381.412109375,bình thường,bình thường,,,136,^báo nhầm
+pnh40,hard_hat_workers3003,báo nhầm: nhầm lớp ← person_with_helmet,"[155.0, 114.0999984741211, 164.10000610351562, 132.60000610351562]",0.2816401720046997,168.9639129638672,bình thường,bình thường,,,136,^báo nhầm
+pnh41,hard_hat_workers2478,báo nhầm: trùng,"[143.3000030517578, 81.19999694824219, 175.0, 223.5]",0.5463851690292358,4519.89208984375,bình thường,mờ (10% thấp nhất),,,136,^báo nhầm
+pnh42,hard_hat_workers2658,báo nhầm: lệch vị trí,"[355.6000061035156, 133.1999969482422, 373.8999938964844, 188.39999389648438]",0.3097478151321411,1008.2470703125,bình thường,bình thường,,,136,^báo nhầm
+pnh43,hard_hat_workers2042,báo nhầm: nhầm lớp ← person_with_helmet,"[260.1000061035156, 122.19999694824219, 299.3999938964844, 220.39999389648438]",0.8678339719772339,3860.0869140625,bình thường,bình thường,,,136,^báo nhầm
+pnh44,hard_hat_workers2388,báo nhầm: trùng,"[156.10000610351562, 102.80000305175781, 164.1999969482422, 126.9000015258789]",0.4191013276576996,194.9356231689453,bình thường,bình thường,,,136,^báo nhầm
+pnh45,hard_hat_workers2145,báo nhầm: nền,"[97.30000305175781, 182.10000610351562, 186.0, 367.8999938964844]",0.3872034549713135,16475.84765625,bình thường,bình thường,,,136,^báo nhầm
+pnh46,hard_hat_workers247,báo nhầm: nền,"[3.5999999046325684, 148.39999389648438, 12.699999809265137, 168.39999389648438]",0.3266229033470154,182.09141540527344,bình thường,bình thường,,,136,^báo nhầm
+pnh47,hard_hat_workers963,báo nhầm: nền,"[45.5, 295.1000061035156, 64.4000015258789, 369.1000061035156]",0.6340325474739075,1399.4302978515625,tối,bình thường,,,136,^báo nhầm
+pnh48,hard_hat_workers4361,báo nhầm: lệch vị trí,"[176.6999969482422, 92.80000305175781, 202.60000610351562, 201.0]",0.8000264167785645,2794.658935546875,sáng,bình thường,,,136,^báo nhầm
+pnh49,hard_hat_workers1163,báo nhầm: nền,"[173.3000030517578, 15.399999618530273, 208.10000610351562, 119.19999694824219]",0.4235114455223083,3606.45068359375,bình thường,bình thường,,,136,^báo nhầm
+pnh50,hard_hat_workers4538,báo nhầm: lệch vị trí,"[398.79998779296875, 87.30000305175781, 416.0, 191.39999389648438]",0.3054811060428619,1785.12109375,bình thường,bình thường,,,136,^báo nhầm
+pnh51,hard_hat_workers4866,báo nhầm: lệch vị trí,"[0.10000000149011612, 60.900001525878906, 21.200000762939453, 199.10000610351562]",0.7065539360046387,2914.3212890625,bình thường,bình thường,,,136,^báo nhầm
+pnh52,hard_hat_workers528,báo nhầm: lệch vị trí,"[42.099998474121094, 59.20000076293945, 79.5999984741211, 160.5]",0.2918127477169037,3799.616943359375,tối,bình thường,,,136,^báo nhầm
+pnh53,hard_hat_workers2042,báo nhầm: nhầm lớp ← person_with_helmet,"[148.6999969482422, 101.5, 195.10000610351562, 270.0]",0.8642592430114746,7826.65185546875,bình thường,bình thường,,,136,^báo nhầm
+pnh54,hard_hat_workers1824,báo nhầm: lệch vị trí,"[12.899999618530273, 97.0999984741211, 20.299999237060547, 116.5999984741211]",0.5014712810516357,145.6370849609375,sáng,bình thường,,,136,^báo nhầm
+pnh55,hard_hat_workers1849,báo nhầm: nhầm lớp ← person_with_helmet,"[66.5999984741211, 203.1999969482422, 84.5, 255.0]",0.4349051415920257,925.3807983398438,bình thường,bình thường,,,136,^báo nhầm
+pnh56,hard_hat_workers1469,báo nhầm: nhầm lớp ← person_with_helmet,"[185.3000030517578, 119.5999984741211, 208.3000030517578, 166.89999389648438]",0.6436594724655151,1091.63427734375,bình thường,bình thường,,,136,^báo nhầm
+pnh57,hard_hat_workers3022,báo nhầm: lệch vị trí,"[333.8999938964844, 149.6999969482422, 411.8999938964844, 264.8999938964844]",0.6937041878700256,8983.7412109375,bình thường,bình thường,,,136,^báo nhầm
+pnh58,hard_hat_workers3154,báo nhầm: nền,"[267.20001220703125, 42.79999923706055, 322.1000061035156, 107.69999694824219]",0.5638640522956848,3557.7626953125,bình thường,bình thường,,,136,^báo nhầm
+pnh59,hard_hat_workers148,báo nhầm: trùng,"[232.8000030517578, 84.5999984741211, 263.3999938964844, 161.1999969482422]",0.3560553789138794,2340.04248046875,bình thường,bình thường,,,136,^báo nhầm
+pnh60,hard_hat_workers3131,báo nhầm: nền,"[347.8999938964844, 0.5, 416.0, 270.0]",0.4115174114704132,18343.166015625,bình thường,bình thường,,,136,^báo nhầm

@@ -1,0 +1,66 @@
+runs/M2_yolo26n/weights/best.pt, tập test, lớp face: 1915 hộp ở 604 ảnh (conf 0.399, IoU 0.5)
+Kết quả: đúng 1443 (75.4%), bỏ sót 460 (24.0%), nhầm lớp → head 12 (0.6%)
+Tỉ lệ lỗi chung (bỏ sót + nhầm lớp): 24.6%; điểm yếu = nhóm có tỉ lệ lỗi ≥ 1.5 lần (37.0%) và ≥ 30 hộp
+Độ sáng ảnh (5.000 ảnh, Tuần 3) so với trung vị: p1 0.33, p5 0.53, p95 1.42, p99 1.61
+
+Theo kích thước
+               số hộp tỉ trọng nhầm lớp  bỏ sót tỉ lệ lỗi điểm yếu
+kích thước                                                        
+nhỏ (< 32²)      1724    90.0%     0.7%   26.1%     26.8%         
+vừa (32²–96²)     190     9.9%     0.0%    4.7%      4.7%         
+lớn (≥ 96²)         1     0.1%     0.0%  100.0%    100.0%         
+
+Theo độ sáng
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường    1615    84.3%     0.6%  21.7%     22.4%         
+sáng            137     7.2%     0.0%  26.3%     26.3%         
+tối             163     8.5%     1.2%  44.8%     46.0%       có
+
+Theo mật độ
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng      140     7.3%     0.0%  15.0%     15.0%         
+6–15 đối tượng     469    24.5%     0.0%  21.7%     21.7%         
+> 15 đối tượng    1306    68.2%     0.9%  25.8%     26.7%         
+
+Theo độ sáng, chỉ hộp ≥ 32²
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường     158    82.7%     0.0%   5.1%      5.1%         
+sáng             18     9.4%     0.0%   0.0%      0.0%         
+tối              15     7.9%     0.0%  13.3%     13.3%         
+
+Theo mật độ, chỉ hộp ≥ 32²
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng       55    28.8%     0.0%   7.3%      7.3%         
+6–15 đối tượng      90    47.1%     0.0%   5.6%      5.6%         
+> 15 đối tượng      46    24.1%     0.0%   2.2%      2.2%         
+
+Theo che khuất (chồng lấn lớn nhất với đối tượng cùng nhóm)
+                 số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+che khuất                                                          
+không chồng lấn    1878    98.1%     0.6%  23.7%     24.3%         
+chồng lấn ≤ 30%      37     1.9%     2.7%  40.5%     43.2%       có
+
+Theo vị trí
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+vị trí                                                            
+chạm mép ảnh        12     0.6%     8.3%  16.7%     25.0%         
+không chạm mép    1903    99.4%     0.6%  24.1%     24.6%         
+
+Theo độ mờ
+                    số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ mờ                                                                 
+bình thường           1746    91.2%     0.6%  24.5%     25.1%         
+mờ (10% thấp nhất)     169     8.8%     1.2%  18.9%     20.1%         
+
+Theo che khuất, chỉ hộp ≥ 32²
+                 số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+che khuất                                                          
+không chồng lấn     188    98.4%     0.0%   5.3%      5.3%         
+chồng lấn ≤ 30%       3     1.6%     0.0%   0.0%      0.0%         
+
+Báo nhầm (dự đoán face không ghép được nhãn): 159; Precision = 1443 / (1443 + 159) = 0.901
+  nền 78 (49.1%), lệch vị trí 66 (41.5%), trùng 8 (5.0%), nhầm lớp ← head 7 (4.4%)

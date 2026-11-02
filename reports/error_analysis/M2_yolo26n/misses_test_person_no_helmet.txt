@@ -1,0 +1,68 @@
+runs/M2_yolo26n/weights/best.pt, tập test, lớp person_no_helmet: 743 hộp ở 173 ảnh (conf 0.258, IoU 0.5)
+Kết quả: đúng 604 (81.3%), bỏ sót 109 (14.7%), nhầm lớp → person_with_helmet 29 (3.9%), nhầm lớp → head 1 (0.1%)
+Tỉ lệ lỗi chung (bỏ sót + nhầm lớp): 18.7%; điểm yếu = nhóm có tỉ lệ lỗi ≥ 1.5 lần (28.1%) và ≥ 30 hộp
+Độ sáng ảnh (5.000 ảnh, Tuần 3) so với trung vị: p1 0.33, p5 0.53, p95 1.42, p99 1.61
+
+Theo kích thước
+               số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+kích thước                                                       
+nhỏ (< 32²)        96    12.9%    12.5%  51.0%     63.5%       có
+vừa (32²–96²)     430    57.9%     2.6%  13.0%     15.6%         
+lớn (≥ 96²)       217    29.2%     3.2%   1.8%      5.1%         
+
+Theo độ sáng
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường     626    84.3%     4.5%  12.5%     16.9%         
+sáng             35     4.7%     2.9%  11.4%     14.3%         
+tối              82    11.0%     1.2%  32.9%     34.1%       có
+
+Theo mật độ
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng        6     0.8%    16.7%   0.0%     16.7%         
+6–15 đối tượng     115    15.5%    11.3%  25.2%     36.5%       có
+> 15 đối tượng     622    83.7%     2.6%  12.9%     15.4%         
+
+Theo độ sáng, chỉ hộp ≥ 32²
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường     547    84.5%     3.3%   7.5%     10.8%         
+sáng             32     4.9%     0.0%   6.2%      6.2%         
+tối              68    10.5%     0.0%  25.0%     25.0%         
+
+Theo mật độ, chỉ hộp ≥ 32²
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng        6     0.9%    16.7%   0.0%     16.7%         
+6–15 đối tượng      87    13.4%    11.5%  13.8%     25.3%         
+> 15 đối tượng     554    85.6%     1.3%   8.7%      9.9%         
+
+Theo che khuất (chồng lấn lớn nhất với đối tượng cùng nhóm)
+                 số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+che khuất                                                          
+không chồng lấn     161    21.7%     6.2%  18.6%     24.8%         
+chồng lấn ≤ 30%     273    36.7%     4.0%   8.1%     12.1%         
+chồng lấn > 30%     309    41.6%     2.9%  18.4%     21.4%         
+
+Theo vị trí
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+vị trí                                                            
+chạm mép ảnh       155    20.9%     3.2%   4.5%      7.7%         
+không chạm mép     588    79.1%     4.3%  17.3%     21.6%         
+
+Theo độ mờ
+                    số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ mờ                                                                 
+bình thường            666    89.6%     4.4%  15.0%     19.4%         
+mờ (10% thấp nhất)      77    10.4%     1.3%  11.7%     13.0%         
+
+Theo che khuất, chỉ hộp ≥ 32²
+                 số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+che khuất                                                          
+không chồng lấn     121    18.7%     5.8%   4.1%      9.9%         
+chồng lấn ≤ 30%     243    37.6%     1.6%   4.1%      5.8%         
+chồng lấn > 30%     283    43.7%     2.5%  15.9%     18.4%         
+
+Báo nhầm (dự đoán person_no_helmet không ghép được nhãn): 136; Precision = 604 / (604 + 136) = 0.816
+  lệch vị trí 48 (35.3%), nền 42 (30.9%), nhầm lớp ← person_with_helmet 37 (27.2%), trùng 9 (6.6%)

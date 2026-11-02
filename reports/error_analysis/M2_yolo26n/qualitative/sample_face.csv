@@ -1,0 +1,21 @@
+case_id,image,kind,box,conf,area,light,blur,cover,edge,pool,pattern
+face01,hard_hat_workers1524,bỏ sót,"[65.0, 126.0, 83.0, 181.0]",,989.989540951424,tối,bình thường,0.0181792513277076,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face02,hard_hat_workers1715,bỏ sót,"[302.0, 121.0, 312.0, 133.0]",,119.998185990592,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face03,hard_hat_workers1346,bỏ sót,"[183.0, 111.0, 194.0, 128.0]",,186.9972740064,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face04,hard_hat_workers360,bỏ sót,"[244.0, 113.0, 251.0, 122.0]",,63.0013380048,tối,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face05,hard_hat_workers3529,bỏ sót,"[256.0, 282.0, 261.0, 288.0]",,29.9989400048,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face06,hard_hat_workers4646,bỏ sót,"[82.0, 68.0, 90.0, 88.0]",,160.0015600038,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face07,hard_hat_workers3239,bỏ sót,"[182.0, 161.0, 187.0, 168.0]",,34.99827802016,tối,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face08,hard_hat_workers1132,bỏ sót,"[45.0, 127.0, 51.0, 133.0]",,36.000239997696,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face09,hard_hat_workers2362,bỏ sót,"[315.0, 171.0, 320.0, 180.0]",,45.000455974656,sáng,mờ (10% thấp nhất),0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face10,hard_hat_workers1697,bỏ sót,"[240.0, 251.0, 249.0, 264.0]",,117.004212,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face11,hard_hat_workers1715,bỏ sót,"[161.0, 137.0, 172.0, 142.0]",,54.999843994368,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face12,hard_hat_workers2963,bỏ sót,"[113.0, 71.0, 119.0, 80.0]",,53.999753999776,sáng,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face13,hard_hat_workers4163,bỏ sót,"[264.0, 116.0, 268.0, 123.0]",,27.99758805168,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face14,hard_hat_workers2929,bỏ sót,"[243.0, 106.0, 288.0, 149.0]",,1934.990434005824,tối,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face15,hard_hat_workers932,bỏ sót,"[271.0, 109.0, 282.0, 121.0]",,131.99688001843202,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face16,hard_hat_workers855,bỏ sót,"[145.0, 78.0, 150.0, 85.0]",,34.999788998304005,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face17,hard_hat_workers2506,bỏ sót,"[94.0, 59.0, 101.0, 72.0]",,91.001144003328,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face18,hard_hat_workers1860,bỏ sót,"[179.0, 103.0, 188.0, 112.0]",,81.00200701008002,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face19,hard_hat_workers528,nhầm lớp → head,"[73.0, 47.0, 84.0, 58.0]",,120.998471001408,tối,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →
+face20,hard_hat_workers1715,bỏ sót,"[180.0, 136.0, 191.0, 143.0]",,76.99604603558399,bình thường,bình thường,0.0,không chạm mép,472,^bỏ sót|^nhầm lớp →

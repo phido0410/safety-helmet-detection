@@ -1,0 +1,81 @@
+case_id,group,image,kind,box,conf,category,note
+pnh01,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers963,bỏ sót,"[237.0, 303.0, 249.0, 349.0]",,"Thiếu sáng, ngược sáng","cảnh đêm, người trong bóng tối"
+pnh02,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3529,bỏ sót,"[4.0, 264.0, 12.0, 282.0]",,"Nhỏ, ở xa",
+pnh03,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers2388,bỏ sót,"[151.0, 106.0, 158.0, 126.0]",,Bị che khuất,đứng sau người phía trước
+pnh04,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers4883,bỏ sót,"[191.0, 69.0, 198.0, 85.0]",,"Nhỏ, ở xa",
+pnh05,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers2879,bỏ sót,"[112.0, 225.0, 123.0, 257.0]",,Bị che khuất,chồng lên hai người khác
+pnh06,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1608,bỏ sót,"[383.0, 117.0, 416.0, 275.0]",,"Góc nhìn khó, bị cắt",bị cắt ở mép ảnh
+pnh07,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3184,nhầm lớp → person_with_helmet,"[189.0, 90.0, 199.0, 117.0]",,"Nhỏ, ở xa","người nhỏ, mờ; mô hình đoán có mũ"
+pnh08,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3534,bỏ sót,"[288.0, 124.0, 324.0, 266.0]",,Bị che khuất,giữa đám đông
+pnh09,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers787,bỏ sót,"[377.0, 150.0, 384.0, 165.0]",,"Nhỏ, ở xa",
+pnh10,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3344,bỏ sót,"[308.0, 74.0, 341.0, 128.0]",,Bị che khuất,ngồi sau người khác
+pnh11,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers4806,nhầm lớp → person_with_helmet,"[259.0, 32.0, 305.0, 120.0]",,Mũ khó phân biệt,đội mũ vải tối màu
+pnh12,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers879,nhầm lớp → person_with_helmet,"[141.0, 3.0, 185.0, 139.0]",,"Góc nhìn khó, bị cắt",quay lưng
+pnh13,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers360,bỏ sót,"[127.0, 155.0, 147.0, 246.0]",,Bị che khuất,cảnh đêm đông người
+pnh14,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1811,bỏ sót,"[396.0, 206.0, 405.0, 228.0]",,"Nhỏ, ở xa",
+pnh15,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers360,bỏ sót,"[225.0, 60.0, 236.0, 87.0]",,Bị che khuất,bị cột biển báo che
+pnh16,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3534,bỏ sót,"[388.0, 131.0, 410.0, 232.0]",,Bị che khuất,đứng sau nhóm người
+pnh17,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1608,bỏ sót,"[290.0, 97.0, 326.0, 276.0]",,Bị che khuất,đứng sau người khác
+pnh18,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers2172,nhầm lớp → person_with_helmet,"[2.0, 231.0, 68.0, 416.0]",,Lỗi nhãn,người đội mũ bảo hộ (có quai dưới cằm) nhưng nhãn là không đội; mô hình đoán đúng (sinh viên xác nhận)
+pnh19,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers963,bỏ sót,"[247.0, 302.0, 257.0, 353.0]",,"Thiếu sáng, ngược sáng",cảnh đêm
+pnh20,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers4682,nhầm lớp → person_with_helmet,"[157.0, 150.0, 206.0, 225.0]",,Bị che khuất,cành cây che vùng đầu
+pnh21,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers263,nhầm lớp → person_with_helmet,"[345.0, 122.0, 376.0, 156.0]",,Mũ khó phân biệt,"áo phao cam sát đầu, người bên cạnh đội mũ cam"
+pnh22,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers4883,bỏ sót,"[163.0, 65.0, 173.0, 90.0]",,Bị che khuất,đứng sau người ở tiền cảnh
+pnh23,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3578,bỏ sót,"[362.0, 101.0, 380.0, 206.0]",,"Thiếu sáng, ngược sáng",cảnh đêm
+pnh24,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1370,bỏ sót,"[257.0, 26.0, 278.0, 154.0]",,Bị che khuất,bị người phía trước che
+pnh25,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3551,bỏ sót,"[107.0, 86.0, 137.0, 148.0]",,Bị che khuất,giữa đám đông
+pnh26,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers2095,nhầm lớp → person_with_helmet,"[268.0, 79.0, 286.0, 128.0]",,"Thiếu sáng, ngược sáng","ngược sáng, chỉ thấy bóng người"
+pnh27,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers946,bỏ sót,"[260.0, 126.0, 266.0, 142.0]",,"Nhỏ, ở xa",
+pnh28,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers3493,bỏ sót,"[236.0, 38.0, 253.0, 84.0]",,Bị che khuất,chỉ thấy đầu sau người khác
+pnh29,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1697,bỏ sót,"[51.0, 238.0, 75.0, 349.0]",,Bị che khuất,giữa nhóm người khiêng cáng
+pnh30,"Bỏ sót, nhầm lớp person_no_helmet",hard_hat_workers1697,bỏ sót,"[260.0, 254.0, 283.0, 371.0]",,Bị che khuất,bị thang che
+pnh31,Báo nhầm person_no_helmet,hard_hat_workers3385,báo nhầm: nhầm lớp ← person_with_helmet,"[229.60000610351562, 120.4000015258789, 278.20001220703125, 277.0]",0.8924694657325745,"Lỗi nhãn, mô hình đúng","người áo xanh không đội mũ nhưng nhãn là đội mũ, mũ xanh là của người phía sau (sinh viên xác nhận)"
+pnh32,Báo nhầm person_no_helmet,hard_hat_workers2478,báo nhầm: trùng,"[154.5, 85.0999984741211, 182.10000610351562, 219.8000030517578]",0.3824789226055145,"Hộp lệch, trùng",hộp thứ hai trên cùng người
+pnh33,Báo nhầm person_no_helmet,hard_hat_workers2888,báo nhầm: nền,"[393.0, 43.79999923706055, 416.0, 290.6000061035156]",0.7550919651985168,"Lỗi nhãn, mô hình đúng",người ở mép ảnh không có nhãn
+pnh34,Báo nhầm person_no_helmet,hard_hat_workers2473,báo nhầm: nền,"[383.5, 28.100000381469727, 416.0, 275.20001220703125]",0.454866886138916,"Lỗi nhãn, mô hình đúng",người ở mép ảnh không có nhãn
+pnh35,Báo nhầm person_no_helmet,hard_hat_workers682,báo nhầm: nền,"[110.5, 138.10000610351562, 169.5, 204.8000030517578]",0.3164304196834564,Nhầm người đội mũ,"người đội mũ trên cột điện, hộp chỉ phủ một phần thân"
+pnh36,Báo nhầm person_no_helmet,hard_hat_workers3003,báo nhầm: nhầm lớp ← person_with_helmet,"[405.29998779296875, 81.0999984741211, 412.70001220703125, 100.9000015258789]",0.468711793422699,Nhầm người đội mũ,người rất nhỏ ở xa
+pnh37,Báo nhầm person_no_helmet,hard_hat_workers1507,báo nhầm: nền,"[38.599998474121094, 65.4000015258789, 56.5, 101.69999694824219]",0.7200957536697388,"Lỗi nhãn, mô hình đúng",người ở tiền cảnh không có nhãn
+pnh38,Báo nhầm person_no_helmet,hard_hat_workers3705,báo nhầm: nền,"[67.9000015258789, 58.400001525878906, 146.0, 248.39999389648438]",0.9177600741386414,"Lỗi nhãn, mô hình đúng",có nhãn face nhưng thiếu nhãn người
+pnh39,Báo nhầm person_no_helmet,hard_hat_workers1873,báo nhầm: lệch vị trí,"[362.70001220703125, 117.0999984741211, 416.0, 312.0]",0.8812375664710999,"Hộp lệch, trùng",người ở mép ảnh
+pnh40,Báo nhầm person_no_helmet,hard_hat_workers3003,báo nhầm: nhầm lớp ← person_with_helmet,"[155.0, 114.0999984741211, 164.10000610351562, 132.60000610351562]",0.2816401720046997,Nhầm người đội mũ,"người cúi ở công trường, hộp phủ một phần"
+pnh41,Báo nhầm person_no_helmet,hard_hat_workers2478,báo nhầm: trùng,"[143.3000030517578, 81.19999694824219, 175.0, 223.5]",0.5463851690292358,"Hộp lệch, trùng",
+pnh42,Báo nhầm person_no_helmet,hard_hat_workers2658,báo nhầm: lệch vị trí,"[355.6000061035156, 133.1999969482422, 373.8999938964844, 188.39999389648438]",0.3097478151321411,"Hộp lệch, trùng",
+pnh43,Báo nhầm person_no_helmet,hard_hat_workers2042,báo nhầm: nhầm lớp ← person_with_helmet,"[260.1000061035156, 122.19999694824219, 299.3999938964844, 220.39999389648438]",0.8678339719772339,Nhầm người đội mũ,ô che vùng đầu
+pnh44,Báo nhầm person_no_helmet,hard_hat_workers2388,báo nhầm: trùng,"[156.10000610351562, 102.80000305175781, 164.1999969482422, 126.9000015258789]",0.4191013276576996,"Hộp lệch, trùng",
+pnh45,Báo nhầm person_no_helmet,hard_hat_workers2145,báo nhầm: nền,"[97.30000305175781, 182.10000610351562, 186.0, 367.8999938964844]",0.3872034549713135,Nhầm người đội mũ,"người đội mũ trên cột, hộp phủ một phần thân"
+pnh46,Báo nhầm person_no_helmet,hard_hat_workers247,báo nhầm: nền,"[3.5999999046325684, 148.39999389648438, 12.699999809265137, 168.39999389648438]",0.3266229033470154,"Khác, không rõ","bóng mờ trong ảnh xám, không rõ là người"
+pnh47,Báo nhầm person_no_helmet,hard_hat_workers963,báo nhầm: nền,"[45.5, 295.1000061035156, 64.4000015258789, 369.1000061035156]",0.6340325474739075,"Lỗi nhãn, mô hình đúng",người cởi trần không đội mũ không có nhãn
+pnh48,Báo nhầm person_no_helmet,hard_hat_workers4361,báo nhầm: lệch vị trí,"[176.6999969482422, 92.80000305175781, 202.60000610351562, 201.0]",0.8000264167785645,"Hộp lệch, trùng",
+pnh49,Báo nhầm person_no_helmet,hard_hat_workers1163,báo nhầm: nền,"[173.3000030517578, 15.399999618530273, 208.10000610351562, 119.19999694824219]",0.4235114455223083,Nhầm người đội mũ,người trên thang có đội mũ
+pnh50,Báo nhầm person_no_helmet,hard_hat_workers4538,báo nhầm: lệch vị trí,"[398.79998779296875, 87.30000305175781, 416.0, 191.39999389648438]",0.3054811060428619,"Hộp lệch, trùng",
+pnh51,Báo nhầm person_no_helmet,hard_hat_workers4866,báo nhầm: lệch vị trí,"[0.10000000149011612, 60.900001525878906, 21.200000762939453, 199.10000610351562]",0.7065539360046387,"Hộp lệch, trùng",
+pnh52,Báo nhầm person_no_helmet,hard_hat_workers528,báo nhầm: lệch vị trí,"[42.099998474121094, 59.20000076293945, 79.5999984741211, 160.5]",0.2918127477169037,"Hộp lệch, trùng",
+pnh53,Báo nhầm person_no_helmet,hard_hat_workers2042,báo nhầm: nhầm lớp ← person_with_helmet,"[148.6999969482422, 101.5, 195.10000610351562, 270.0]",0.8642592430114746,Nhầm người đội mũ,ô che vùng đầu
+pnh54,Báo nhầm person_no_helmet,hard_hat_workers1824,báo nhầm: lệch vị trí,"[12.899999618530273, 97.0999984741211, 20.299999237060547, 116.5999984741211]",0.5014712810516357,"Hộp lệch, trùng",
+pnh55,Báo nhầm person_no_helmet,hard_hat_workers1849,báo nhầm: nhầm lớp ← person_with_helmet,"[66.5999984741211, 203.1999969482422, 84.5, 255.0]",0.4349051415920257,Nhầm người đội mũ,ngược sáng trong đường hầm
+pnh56,Báo nhầm person_no_helmet,hard_hat_workers1469,báo nhầm: nhầm lớp ← person_with_helmet,"[185.3000030517578, 119.5999984741211, 208.3000030517578, 166.89999389648438]",0.6436594724655151,Nhầm người đội mũ,
+pnh57,Báo nhầm person_no_helmet,hard_hat_workers3022,báo nhầm: lệch vị trí,"[333.8999938964844, 149.6999969482422, 411.8999938964844, 264.8999938964844]",0.6937041878700256,"Hộp lệch, trùng",
+pnh58,Báo nhầm person_no_helmet,hard_hat_workers3154,báo nhầm: nền,"[267.20001220703125, 42.79999923706055, 322.1000061035156, 107.69999694824219]",0.5638640522956848,"Lỗi nhãn, mô hình đúng",có nhãn face nhưng thiếu nhãn người
+pnh59,Báo nhầm person_no_helmet,hard_hat_workers148,báo nhầm: trùng,"[232.8000030517578, 84.5999984741211, 263.3999938964844, 161.1999969482422]",0.3560553789138794,"Hộp lệch, trùng",
+pnh60,Báo nhầm person_no_helmet,hard_hat_workers3131,báo nhầm: nền,"[347.8999938964844, 0.5, 416.0, 270.0]",0.4115174114704132,"Khác, không rõ","người bị cắt ở mép, không thấy đầu, không có nhãn"
+face01,Bỏ sót face,hard_hat_workers1524,bỏ sót,"[65.0, 126.0, 83.0, 181.0]",,"Quay nghiêng, cúi, bị che một phần","nghiêng mặt, đeo khẩu trang"
+face02,Bỏ sót face,hard_hat_workers1715,bỏ sót,"[302.0, 121.0, 312.0, 133.0]",,"Nhỏ, ở xa",
+face03,Bỏ sót face,hard_hat_workers1346,bỏ sót,"[183.0, 111.0, 194.0, 128.0]",,"Quay nghiêng, cúi, bị che một phần","ngửa mặt, vành mũ che"
+face04,Bỏ sót face,hard_hat_workers360,bỏ sót,"[244.0, 113.0, 251.0, 122.0]",,"Thiếu sáng, ngược sáng",đèn chói phía sau
+face05,Bỏ sót face,hard_hat_workers3529,bỏ sót,"[256.0, 282.0, 261.0, 288.0]",,"Nhỏ, ở xa",
+face06,Bỏ sót face,hard_hat_workers4646,bỏ sót,"[82.0, 68.0, 90.0, 88.0]",,"Quay nghiêng, cúi, bị che một phần",bị người khác che
+face07,Bỏ sót face,hard_hat_workers3239,bỏ sót,"[182.0, 161.0, 187.0, 168.0]",,"Thiếu sáng, ngược sáng",
+face08,Bỏ sót face,hard_hat_workers1132,bỏ sót,"[45.0, 127.0, 51.0, 133.0]",,"Nhỏ, ở xa",
+face09,Bỏ sót face,hard_hat_workers2362,bỏ sót,"[315.0, 171.0, 320.0, 180.0]",,"Nhỏ, ở xa",
+face10,Bỏ sót face,hard_hat_workers1697,bỏ sót,"[240.0, 251.0, 249.0, 264.0]",,"Quay nghiêng, cúi, bị che một phần",bị thanh thang che
+face11,Bỏ sót face,hard_hat_workers1715,bỏ sót,"[161.0, 137.0, 172.0, 142.0]",,"Nhỏ, ở xa","mặt nhỏ, ảnh mờ"
+face12,Bỏ sót face,hard_hat_workers2963,bỏ sót,"[113.0, 71.0, 119.0, 80.0]",,"Nhỏ, ở xa",
+face13,Bỏ sót face,hard_hat_workers4163,bỏ sót,"[264.0, 116.0, 268.0, 123.0]",,"Quay nghiêng, cúi, bị che một phần",quay nghiêng
+face14,Bỏ sót face,hard_hat_workers2929,bỏ sót,"[243.0, 106.0, 288.0, 149.0]",,"Quay nghiêng, cúi, bị che một phần","cúi mặt, hộp lớn"
+face15,Bỏ sót face,hard_hat_workers932,bỏ sót,"[271.0, 109.0, 282.0, 121.0]",,"Quay nghiêng, cúi, bị che một phần",bị người phía trước che
+face16,Bỏ sót face,hard_hat_workers855,bỏ sót,"[145.0, 78.0, 150.0, 85.0]",,"Nhỏ, ở xa",
+face17,Bỏ sót face,hard_hat_workers2506,bỏ sót,"[94.0, 59.0, 101.0, 72.0]",,"Quay nghiêng, cúi, bị che một phần",bị người khác che một phần
+face18,Bỏ sót face,hard_hat_workers1860,bỏ sót,"[179.0, 103.0, 188.0, 112.0]",,"Quay nghiêng, cúi, bị che một phần",cúi nhìn giấy
+face19,Bỏ sót face,hard_hat_workers528,nhầm lớp → head,"[73.0, 47.0, 84.0, 58.0]",,"Thiếu sáng, ngược sáng","ảnh tối, mô hình đoán là head"
+face20,Bỏ sót face,hard_hat_workers1715,bỏ sót,"[180.0, 136.0, 191.0, 143.0]",,"Nhỏ, ở xa","mặt nhỏ, ảnh mờ"
