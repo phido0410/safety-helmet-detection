@@ -1,0 +1,93 @@
+{
+  "run": "M2b_yolo26n_clspw10",
+  "model": "yolo26n.pt",
+  "epochs": 100,
+  "imgsz": 800,
+  "batch": 16,
+  "hyp": {
+    "cls_pw": 1.0
+  },
+  "device": "Tesla T4",
+  "train_hours": 2.61,
+  "val": {
+    "metrics/precision(B)": 0.9102704736616247,
+    "metrics/recall(B)": 0.8510356636693079,
+    "metrics/mAP50(B)": 0.9070089751567417,
+    "metrics/mAP50-95(B)": 0.5979828067955212,
+    "fitness": 0.5979828067955212
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 690,
+      "Instances": 2329,
+      "Box-P": 0.94646,
+      "Box-R": 0.89395,
+      "Box-F1": 0.91945,
+      "mAP50": 0.94264,
+      "mAP75": 0.70484,
+      "mAP50-95": 0.61851
+    },
+    {
+      "Class": "head",
+      "Images": 170,
+      "Instances": 813,
+      "Box-P": 0.92176,
+      "Box-R": 0.84256,
+      "Box-F1": 0.88038,
+      "mAP50": 0.89955,
+      "mAP75": 0.66192,
+      "mAP50-95": 0.58293
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 680,
+      "Instances": 2079,
+      "Box-P": 0.91715,
+      "Box-R": 0.91583,
+      "Box-F1": 0.91649,
+      "mAP50": 0.94787,
+      "mAP75": 0.79552,
+      "mAP50-95": 0.66505
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 686,
+      "Instances": 2078,
+      "Box-P": 0.89456,
+      "Box-R": 0.89557,
+      "Box-F1": 0.89507,
+      "mAP50": 0.93212,
+      "mAP75": 0.77396,
+      "mAP50-95": 0.69063
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 201,
+      "Instances": 750,
+      "Box-P": 0.89487,
+      "Box-R": 0.77867,
+      "Box-F1": 0.83273,
+      "mAP50": 0.86567,
+      "mAP75": 0.72728,
+      "mAP50-95": 0.6452
+    },
+    {
+      "Class": "face",
+      "Images": 631,
+      "Instances": 1906,
+      "Box-P": 0.88682,
+      "Box-R": 0.77964,
+      "Box-F1": 0.82979,
+      "mAP50": 0.85421,
+      "mAP75": 0.2735,
+      "mAP50-95": 0.38559
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 2.018034711048369,
+    "inference": 6.467638994687252,
+    "loss": 0.0009149960039143815,
+    "postprocess": 2.9652412143812725
+  }
+}

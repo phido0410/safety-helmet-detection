@@ -1,0 +1,16 @@
+Chỉ số trên tập test của best.pt (theo test_metrics.json; lớp vi phạm ở ngưỡng chọn trên val; thời gian xử lý = tiền xử lý + suy luận + hậu xử lý, đo trên tập val, GPU T4)
+                     model  imgsz  hours  mAP50  mAP50-95      P      R  R_pri  AP50_pri  conf_val  R_at_conf  P_at_conf      ms
+run                                                                                                                             
+M0_yolo11n         yolo11n    640   1.59  0.896     0.584  0.910  0.834  0.792     0.864     0.346      0.808      0.827   8.254
+M1_yolo26n         yolo26n    640   1.75  0.889     0.579  0.911  0.828  0.791     0.856     0.277      0.807      0.815   7.054
+M1_yolo26n_img800  yolo26n    800   2.24  0.908     0.597  0.914  0.848  0.797     0.876     0.373      0.794      0.868   8.824
+M2_yolo26n         yolo26n    800   2.26  0.906     0.594  0.907  0.844  0.785     0.867     0.359      0.785      0.870  10.187
+
+AP@0.5 theo lớp
+run                      M0_yolo11n  M1_yolo26n  M1_yolo26n_img800  M2_yolo26n
+AP50 helmet                   0.929       0.925              0.941       0.942
+AP50 head                     0.880       0.878              0.897       0.893
+AP50 head_with_helmet         0.944       0.947              0.951       0.951
+AP50 person_with_helmet       0.933       0.938              0.943       0.940
+AP50 person_no_helmet         0.864       0.856              0.876       0.867
+AP50 face                     0.827       0.793              0.839       0.844

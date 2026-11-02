@@ -1,0 +1,98 @@
+{
+  "run": "M2_yolo26n",
+  "model": "yolo26n.pt",
+  "epochs": 100,
+  "imgsz": 800,
+  "batch": 16,
+  "hyp": {
+    "cls_pw": 0.5,
+    "scale": [
+      0.3,
+      1.5
+    ],
+    "hsv_v": 0.6
+  },
+  "device": "Tesla T4",
+  "train_hours": 2.26,
+  "val": {
+    "metrics/precision(B)": 0.9154169100333188,
+    "metrics/recall(B)": 0.8479234464227957,
+    "metrics/mAP50(B)": 0.9117099619957109,
+    "metrics/mAP50-95(B)": 0.5994177694672023,
+    "fitness": 0.5994177694672023
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 690,
+      "Instances": 2329,
+      "Box-P": 0.95426,
+      "Box-R": 0.88673,
+      "Box-F1": 0.91926,
+      "mAP50": 0.94362,
+      "mAP75": 0.70977,
+      "mAP50-95": 0.62161
+    },
+    {
+      "Class": "head",
+      "Images": 170,
+      "Instances": 813,
+      "Box-P": 0.92274,
+      "Box-R": 0.84379,
+      "Box-F1": 0.8815,
+      "mAP50": 0.90145,
+      "mAP75": 0.66765,
+      "mAP50-95": 0.58142
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 680,
+      "Instances": 2079,
+      "Box-P": 0.91847,
+      "Box-R": 0.91198,
+      "Box-F1": 0.91521,
+      "mAP50": 0.95453,
+      "mAP75": 0.79549,
+      "mAP50-95": 0.66396
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 686,
+      "Instances": 2078,
+      "Box-P": 0.89803,
+      "Box-R": 0.8898,
+      "Box-F1": 0.89389,
+      "mAP50": 0.9347,
+      "mAP75": 0.77563,
+      "mAP50-95": 0.69379
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 201,
+      "Instances": 750,
+      "Box-P": 0.8982,
+      "Box-R": 0.78817,
+      "Box-F1": 0.8396,
+      "mAP50": 0.87611,
+      "mAP75": 0.73795,
+      "mAP50-95": 0.65128
+    },
+    {
+      "Class": "face",
+      "Images": 631,
+      "Instances": 1906,
+      "Box-P": 0.9008,
+      "Box-R": 0.76707,
+      "Box-F1": 0.82857,
+      "mAP50": 0.85985,
+      "mAP75": 0.26766,
+      "mAP50-95": 0.38444
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 1.8120346391484399,
+    "inference": 5.421028912117578,
+    "loss": 0.0008293994669862846,
+    "postprocess": 2.9536694181091754
+  }
+}

@@ -1,0 +1,39 @@
+runs/M2_yolo26n/weights/best.pt, tập val, lớp person_no_helmet: 750 hộp ở 201 ảnh (conf 0.25, IoU 0.5)
+Kết quả: đúng 619 (82.5%), bỏ sót 88 (11.7%), nhầm lớp → person_with_helmet 39 (5.2%), nhầm lớp → head 2 (0.3%), nhầm lớp → head_with_helmet 1 (0.1%), nhầm lớp → helmet 1 (0.1%)
+Tỉ lệ lỗi chung (bỏ sót + nhầm lớp): 17.5%; điểm yếu = nhóm có tỉ lệ lỗi ≥ 1.5 lần (26.2%) và ≥ 30 hộp
+Độ sáng ảnh (5.000 ảnh, Tuần 3) so với trung vị: p1 0.33, p5 0.53, p95 1.42, p99 1.61
+
+Theo kích thước
+               số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+kích thước                                                       
+nhỏ (< 32²)        88    11.7%    12.5%  47.7%     60.2%       có
+vừa (32²–96²)     380    50.7%     5.0%   8.9%     13.9%         
+lớn (≥ 96²)       282    37.6%     4.6%   4.3%      8.9%         
+
+Theo độ sáng
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường     676    90.1%     4.7%  10.8%     15.5%         
+sáng             39     5.2%    15.4%  10.3%     25.6%         
+tối              35     4.7%    14.3%  31.4%     45.7%       có
+
+Theo mật độ
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng       11     1.5%     0.0%  45.5%     45.5%         
+6–15 đối tượng     141    18.8%    12.8%  17.0%     29.8%       có
+> 15 đối tượng     598    79.7%     4.2%   9.9%     14.0%         
+
+Theo độ sáng, chỉ hộp ≥ 32²
+             số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+độ sáng                                                        
+bình thường     606    91.5%     3.8%   6.4%     10.2%         
+sáng             29     4.4%    17.2%   0.0%     17.2%         
+tối              27     4.1%    14.8%  25.9%     40.7%         
+
+Theo mật độ, chỉ hộp ≥ 32²
+                số hộp tỉ trọng nhầm lớp bỏ sót tỉ lệ lỗi điểm yếu
+mật độ                                                            
+1–5 đối tượng       11     1.7%     0.0%  45.5%     45.5%         
+6–15 đối tượng     118    17.8%    11.9%  11.0%     22.9%         
+> 15 đối tượng     533    80.5%     3.4%   5.3%      8.6%         

@@ -1,0 +1,9 @@
+Đánh giá lại runs/M2_yolo26n/weights/best.pt trên tập val: mAP@0.5 = 0.912, mAP@0.5:0.95 = 0.599
+Ngưỡng chung (F1 trung bình 6 lớp lớn nhất): 0.399
+person_no_helmet, IoU 0,5:
+  conf 0.100: Recall 0.871  Precision 0.719
+  conf 0.150: Recall 0.852  Precision 0.774
+  conf 0.200: Recall 0.844  Precision 0.801
+  conf 0.250: Recall 0.831  Precision 0.826
+  conf 0.399: Recall 0.787  Precision 0.899
+  ngưỡng lớn nhất còn Recall >= 0.80: conf 0.359, Precision 0.878

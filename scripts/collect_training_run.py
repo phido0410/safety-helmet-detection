@@ -15,19 +15,19 @@ FILES = ["results.csv", "epoch_log.csv", "val_metrics.json", "args.yaml", "fig_c
 KEEP = {
     "EXPECTED.items()": ("train:", "val  :", "test :"),
     "model.train(": ("Ultralytics ", "Transferred", "optimizer: AdamW", "optimizer: SGD", "Resuming training", "[",
-                     "epochs completed"),
+                     "epochs completed", "Class weights"),
     "best.val(": ("all ", "helmet ", "head ", "head_with_helmet ", "person_with_helmet ", "person_no_helmet ",
                   "face ", "Speed:", "mAP@0.5 =", "Recall ", "Tốc độ"),
 }
 
 
-def notebook_lines(nb_path):
+def notebook_lines(nb_path, run):
     for cell in json.loads(Path(nb_path).read_text())["cells"]:
         keep = next((v for k, v in KEEP.items() if k in "".join(cell["source"])), None)
-        for o in cell.get("outputs", []) if keep else []:
-            if o.get("name") != "stdout":
-                continue
-            text = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", "".join(o["text"]))
+        text = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", "".join(
+            "".join(o["text"]) for o in cell.get("outputs", []) if o.get("name") == "stdout"))
+        # phiên bị ngắt giữa chừng: các ô chưa chạy lại vẫn giữ output của lần chạy trước (thư mục runs/ khác)
+        if keep and all(r == run for r in re.findall(r"/runs/([\w.-]+)", text)):
             yield from (l.rstrip() for l in re.split(r"[\r\n]", text)
                         if (l.strip().startswith(keep) or "epochs completed" in l) and "it/s" not in l and "s/it" not in l and "Fast image" not in l)
 
@@ -43,7 +43,7 @@ def main():
         shutil.copy(src / f, dst / Path(f).name)
 
     # bỏ dòng lặp (dòng phiên bản in lại khi đánh giá best.pt, kiểm tra dữ liệu ở mỗi phiên)
-    lines = list(dict.fromkeys(l for nb in args.nb for l in notebook_lines(nb)))
+    lines = list(dict.fromkeys(l for nb in args.nb for l in notebook_lines(nb, args.run)))
     out, prev = [], 0
     for l in lines:
         m = re.match(rf"\[{re.escape(args.run)}\] epoch (\d+)/", l)

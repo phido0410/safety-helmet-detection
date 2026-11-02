@@ -1,0 +1,16 @@
+Chỉ số trên tập val của best.pt (theo val_metrics.json; thời gian xử lý = tiền xử lý + suy luận + hậu xử lý, đo trên tập val, GPU T4)
+                       model  imgsz  hours  mAP50  mAP50-95      P      R  R_pri  AP50_pri  conf_R80  P_at_R80      ms
+run                                                                                                                   
+M1_yolo26n_img800    yolo26n    800   2.24  0.909     0.599  0.911  0.849  0.796     0.866     0.373     0.856   8.824
+M2a_yolo26n_clspw05  yolo26n    800   2.24  0.910     0.600  0.916  0.847  0.789     0.868     0.336     0.858  10.747
+M2b_yolo26n_clspw10  yolo26n    800   2.61  0.907     0.598  0.910  0.851  0.779     0.866     0.269     0.871  11.451
+M2_yolo26n           yolo26n    800   2.26  0.912     0.599  0.915  0.848  0.788     0.876     0.359     0.878  10.187
+
+AP@0.5 theo lớp
+run                      M1_yolo26n_img800  M2a_yolo26n_clspw05  M2b_yolo26n_clspw10  M2_yolo26n
+AP50 helmet                          0.945                0.945                0.943       0.944
+AP50 head                            0.904                0.903                0.900       0.901
+AP50 head_with_helmet                0.953                0.950                0.948       0.955
+AP50 person_with_helmet              0.932                0.931                0.932       0.935
+AP50 person_no_helmet                0.866                0.868                0.866       0.876
+AP50 face                            0.858                0.865                0.854       0.860
