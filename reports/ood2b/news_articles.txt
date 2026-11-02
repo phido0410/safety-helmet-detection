@@ -1,0 +1,23 @@
+# Tập ngoài miền thứ hai, đợt 2 (OOD-2b, tuần 9): đợt 1 (reports/ood2) chỉ được 52 ảnh nên anh chốt tìm thêm cho đủ ~100 ảnh,
+# thu thập và gán nhãn xong trước khi M3 huấn luyện xong. Bài báo KHÁC danh sách reports/ood và reports/ood2; tìm ngày
+# 2026-11-02 (công nhân, phụ hồ, công trường, nắng nóng, Vành đai 3, an toàn lao động). Tiêu chí gán nhãn như OOD-1, OOD-2.
+# Ảnh thuộc bản quyền tòa soạn: chỉ dùng nội bộ để đánh giá, không commit, không phát tán.
+https://tienphong.vn/cong-nhan-cong-trinh-boc-kin-nguoi-duoi-nang-nong-nhu-nung-post1854028.tpo
+https://tienphong.vn/cong-nhan-cang-minh-ung-pho-truoc-thoi-tiet-nang-nong-nhu-do-lua-post1854239.tpo
+https://tienphong.vn/cang-minh-duoi-nang-hon-40-do-c-tren-cong-truong-vanh-dai-1-post1849694.tpo
+https://tienphong.vn/cong-nhan-doi-nang-hon-40-do-day-nhanh-tien-do-duong-vanh-dai-3-tphcm-post1597410.tpo
+https://www.sggp.org.vn/dien-mao-duong-vanh-dai-3-doan-vuot-song-sai-gon-post829210.html
+https://baodauthau.vn/vuot-kho-ve-thoi-tiet-tang-toc-thi-cong-vanh-dai-3-tphcm-post170755.html
+https://plo.vn/theo-chan-to-cam-coc-du-an-vanh-dai-3-tphcm-post702245.html
+https://vnexpress.net/tron-nong-duoi-gam-cau-4732836.html
+https://tapchicongthuong.vn/cong-nhan-nganh-dien-tp-hcm--bam-tru--giua-troi-nang-nong-41-do-c-120042.htm
+https://giaoduc.net.vn/nhoc-nhan-phan-nu-phu-ho-post63222.gd
+https://baolaocai.vn/tho-xay-va-lo-hong-ve-an-toan-lao-dong-post899904.html
+https://baophapluat.vn/nha-thau-hua-suong-cong-nhan-buc-xuc-dinh-cong-post103840.html
+https://diendandoanhnghiep.vn/khanh-hoa-nhieu-cong-trinh-cao-oc-bo-quen-an-toan-lao-dong-133700.html
+https://daidoanket.vn/ha-noi-bao-dam-an-toan-lao-dong-thi-cong-tai-cac-du-an.html
+https://baolaocai.vn/bao-ve-suc-khoe-nguoi-lao-dong-trong-nhung-ngay-nang-nong-post368697.html
+https://nhandan.vn/bao-dam-an-toan-va-suc-khoe-nguoi-lao-dong-mua-nang-nong-post807585.html
+https://baodautu.vn/doi-phu-duong-da-bot-nhoc-nhan-gian-nan-d210784.html
+https://news.baohaiphong.vn/print/521983.html
+https://news.baohaiphong.vn/print/519757.html

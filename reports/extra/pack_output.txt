@@ -1,0 +1,2 @@
+data/M3_extra.zip: 563 MB, 12906 file, MD5 7b2190ff6a7161a46647c06b1adb02c5
+EXTRA_EXPECTED = {'openimages': {'train': (771, 3380), 'val': (64, 214)}, 'sh17': {'train': (4491, 20272), 'val': (1127, 5165)}}

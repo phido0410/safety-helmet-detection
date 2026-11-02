@@ -1,0 +1,34 @@
+# Tập ngoài miền thứ hai (OOD-2, tuần 9): bài báo Việt Nam có ảnh công trường, KHÁC danh sách của tập thứ nhất
+# (reports/ood/news_articles.txt); tìm ngày 2026-11-02 qua tìm kiếm web (công nhân, phụ hồ, công trường, nắng nóng, an toàn
+# lao động, thi công xuyên Tết). Thu thập và gán nhãn trước khi huấn luyện M3. Ảnh thuộc bản quyền tòa soạn: chỉ dùng nội bộ
+# để đánh giá, không commit, không phát tán.
+# Bỏ các bài trên laodong.vn: trang chặn truy cập tự động bằng thử thách cookie, không vượt qua.
+https://www.sggp.org.vn/nhung-nguoi-phu-nu-noi-cong-truong-xay-dung-post510854.html
+https://www.sggp.org.vn/ron-rang-cong-truong-ngay-giap-tet-post779468.html
+https://baophapluat.vn/tho-ho-post84261.html
+https://baophapluat.vn/phan-ma-hong-tren-cong-trinh-xay-dung-post77251.html
+https://baophapluat.vn/nhon-nhip-thi-cong-xuyen-tet-tai-cac-cong-truong-khu-vuc-dong-nam-bo.html
+https://baovanhoa.vn/doi-song/nang-nhu-do-lua-nguoi-lao-dong-xu-nghe-oan-minh-muu-sinh-219053.html
+https://baovanhoa.vn/multimedia/nhung-phan-doi-phu-nu-gong-minh-giua-nang-he-218517.html
+https://vnexpress.net/buon-vui-nghe-nu-phu-ho-1978484.html
+https://vnexpress.net/nhoc-nhan-doi-nu-phu-ho-2090521.html
+https://www.baokontum.com.vn/ghi-chep-phong-su/nhoc-nhan-nghe-tho-xay-8958.html
+https://baohatinh.vn/muu-sinh-duoi-nang-gat-dau-he-o-ha-tinh-post230664.html
+https://plo.vn/hang-ngan-cong-nhan-thi-cong-cao-toc-xuyen-tet-o-dbscl-post832285.html
+https://baodauthau.vn/tet-tren-nhung-cong-trinh-trong-diem-quoc-gia-post193669.html
+https://nhandan.vn/bao-dam-an-toan-tai-cac-cong-trinh-xay-dung-post708121.html
+https://nhandan.vn/post-817933.html
+https://nhandan.vn/ocop/tren-cong-truong-cac-du-an-trong-diem-post857979.html
+https://nhandan.vn/ocop/thi-cong-xuyen-tet-tuyen-cao-toc-can-tho-ca-mau-post858185.html
+https://vietbao.vn/nong-nhu-do-lua-cong-nhan-van-bam-tru-tren-dai-cong-truong-593427.html
+https://nongnghiepmoitruong.vn/nguoi-lao-dong-quay-quat-duoi-nang-nong-gay-gat-d813075.html
+https://thanhtra.com.vn/thong-tin-doanh-nghiep-49F64E63D/nang-nong-anh-huong-doi-song-nguoi-lao-dong-nhu-the-nao-CA25556D.html
+https://lsvn.vn/quang-ngai-kien-quyet-xu-ly-vi-pham-an-toan-lao-dong-trong-thi-cong-xay-dung-a174583.html
+https://vnbusiness.vn/hai-phong-chan-chinh-viec-chap-hanh-phap-luat-ve-an-toan-lao-dong.html
+https://moc.gov.vn/vn/tin-tuc/1237/85169/phu-yen-chu-dong-cac-giai-phap-dam-bao-an-toan-tai-cong-trinh-xay-dung.aspx
+https://daibieunhandan.vn/thi-cong-3-ca-4-kip-lam-xuyen-tet-tren-cac-tuyen-cao-toc-mien-tay-10358561.html
+https://daibieunhandan.vn/cong-nhan-may-moc-lam-viec-xuyen-tet-tren-cong-trinh-trong-diem-cua-dong-nai-10358242.html
+https://www.sggp.org.vn/thi-cong-xuyen-tet-som-dua-du-an-giao-thong-trong-diem-vao-khai-thac-post726796.html
+https://tienphong.vn/thu-tuong-cham-lo-doi-song-cong-nhan-lam-xuyen-tet-tren-cong-truong-post1702438.html
+https://baodauthau.vn/ron-ra-sac-xuan-tren-nhung-dai-cong-truong-post133508.html
+https://baodauthau.vn/xuan-tren-nhung-cong-trinh-trong-diem-quoc-gia-post149855.html

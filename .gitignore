@@ -19,3 +19,8 @@ runs/
 node_modules/
 docs/report_builder/snippets/
 ~$*
+
+# demo/: file sinh bởi scripts/export_demo.py (mô hình, onnxruntime-web, dữ liệu kiểm tra)
+demo/model/
+demo/vendor/
+demo/test/fixtures/

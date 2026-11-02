@@ -1,0 +1,341 @@
+image,box,x1,y1,x2,y2,cls,note,headwear
+commons_108352249.jpg,,,,,,skip_image,"người quá nhỏ (cao 60-90 px, đầu ~8-12 px, ảnh đen trắng mờ), không phán đoán được mũ",
+commons_32168773.jpg,0,,,,,pwh,,
+commons_32168773.jpg,1,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+commons_32168773.jpg,2,,,,,drop,đầu ngoài khung ảnh,
+commons_32168773.jpg,3,,,,,drop,đầu ngoài khung ảnh,
+commons_32168773.jpg,4,,,,,drop,đầu ngoài khung ảnh,
+commons_80522934.jpg,0,,,,,pnh,,đầu trần
+commons_80522934.jpg,1,,,,,pnh,,đầu trần
+commons_80522967.jpg,0,,,,,pnh,mũ len,mũ khác
+commons_80523066.jpg,0,,,,,pnh,,đầu trần
+commons_80523066.jpg,1,,,,,pnh,mũ cối nhựa xanh (không phải mũ bảo hộ),mũ cối
+commons_80523066.jpg,2,,,,,pnh,nón lá,nón lá
+commons_80523066.jpg,3,,,,,pnh,nón lá,nón lá
+commons_80523066.jpg,4,,,,,pnh,,đầu trần
+commons_80523066.jpg,5,,,,,pnh,nón lá,nón lá
+mixkit_1436_000.0s.jpg,0,,,,,pwh,,
+mixkit_1436_000.0s.jpg,1,,,,,pwh,,
+mixkit_1436_003.0s.jpg,0,,,,,pwh,,
+mixkit_1436_003.0s.jpg,1,,,,,pwh,,
+mixkit_1436_009.0s.jpg,0,,,,,pwh,,
+mixkit_1436_009.0s.jpg,1,,,,,pwh,,
+mixkit_1436_015.0s.jpg,0,,,,,pwh,,
+mixkit_1436_015.0s.jpg,1,,,,,pwh,,
+mixkit_1442_000.0s.jpg,0,,,,,pwh,,
+mixkit_1442_000.0s.jpg,1,,,,,drop,"chỉ thấy chân, đầu ngoài khung",
+mixkit_1442_003.0s.jpg,0,,,,,pwh,,
+mixkit_1442_003.0s.jpg,1,,,,,drop,"chỉ thấy chân, đầu ngoài khung",
+mixkit_1442_006.0s.jpg,0,,,,,pwh,,
+mixkit_1442_006.0s.jpg,1,,,,,drop,"chỉ thấy chân, đầu ngoài khung",
+mixkit_1442_009.0s.jpg,0,,,,,pwh,,
+mixkit_1457_000.0s.jpg,,,,,,skip_image,"chỉ thấy chân, không còn người gán được",
+mixkit_1457_003.0s.jpg,,,,,,skip_image,"chỉ thấy chân, không còn người gán được",
+mixkit_1457_006.0s.jpg,,,,,,skip_image,"chỉ thấy chân, không còn người gán được",
+mixkit_1459_000.0s.jpg,0,,,,,pnh,,đầu trần
+mixkit_1459_000.0s.jpg,1,,,,,pnh,"mũ vải tối màu; người thứ ba sau lưng người 0 bị che gần hết, không gán",mũ vải
+mixkit_23170_000.0s.jpg,0,,,,,pwh,,
+mixkit_23170_000.0s.jpg,1,,,,,pwh,,
+mixkit_23170_003.0s.jpg,0,,,,,pwh,,
+mixkit_23170_006.0s.jpg,0,,,,,pwh,,
+mixkit_23170_006.0s.jpg,1,,,,,pwh,,
+mixkit_23170_006.0s.jpg,2,,,,,drop,người trên mái quá nhỏ (cao 38 px),
+mixkit_23170_009.0s.jpg,0,,,,,pwh,,
+mixkit_23170_009.0s.jpg,1,,,,,pwh,,
+mixkit_23170_009.0s.jpg,2,,,,,drop,người trên mái quá nhỏ,
+mixkit_23170_009.0s.jpg,3,,,,,drop,người trên mái quá nhỏ,
+mixkit_23170_012.0s.jpg,0,,,,,pwh,,
+mixkit_23170_012.0s.jpg,1,,,,,pwh,,
+mixkit_23511_000.0s.jpg,0,,,,,pwh,,
+mixkit_23511_000.0s.jpg,1,,,,,pwh,,
+mixkit_23511_000.0s.jpg,2,,,,,pwh,,
+mixkit_23511_000.0s.jpg,3,,,,,pnh,"người ở xa, mờ do lấy nét",đầu trần
+mixkit_23511_003.0s.jpg,0,,,,,pwh,,
+mixkit_23511_003.0s.jpg,1,,,,,pwh,,
+mixkit_23511_003.0s.jpg,2,,,,,pwh,,
+mixkit_23511_003.0s.jpg,,985.0,520.0,1052.0,635.0,pnh,"thêm tay: người ở xa đang cúi, YOLO bỏ sót",đầu trần
+mixkit_23511_006.0s.jpg,0,,,,,pwh,,
+mixkit_23511_006.0s.jpg,1,,,,,pwh,,
+mixkit_23511_006.0s.jpg,2,,,,,pwh,,
+mixkit_23511_009.0s.jpg,0,,,,,pwh,,
+mixkit_23511_009.0s.jpg,1,,,,,pwh,,
+mixkit_23511_009.0s.jpg,2,,,,,pwh,,
+mixkit_23511_009.0s.jpg,3,,,,,pnh,"người ở xa, bị che một phần",đầu trần
+mixkit_23511_012.0s.jpg,0,,,,,pwh,,
+mixkit_23511_012.0s.jpg,1,,,,,pwh,,
+mixkit_23511_012.0s.jpg,2,,,,,pwh,,
+mixkit_23511_015.0s.jpg,0,,,,,pwh,,
+mixkit_23511_015.0s.jpg,1,,,,,pwh,,
+mixkit_23511_015.0s.jpg,2,,,,,pwh,,
+mixkit_31473_000.0s.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+mixkit_31473_000.0s.jpg,1,,,,,pwh,,
+mixkit_31473_000.0s.jpg,2,,,,,pnh,"đầu bị cắt một phần ở mép trên, không thấy mũ bảo hộ",đầu trần
+mixkit_31473_000.0s.jpg,3,,,,,drop,trùng khung 4 (chỉ phần đầu),
+mixkit_31473_000.0s.jpg,4,,,,,pnh,,đầu trần
+mixkit_31473_003.0s.jpg,0,,,,,pnh,,đầu trần
+mixkit_31473_003.0s.jpg,1,,,,,pnh,,đầu trần
+mixkit_31473_003.0s.jpg,2,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+mixkit_31473_003.0s.jpg,3,,,,,pwh,,
+mixkit_31473_006.0s.jpg,0,,,,,pnh,,đầu trần
+mixkit_31473_006.0s.jpg,1,,,,,pwh,,
+mixkit_31473_006.0s.jpg,2,,,,,pnh,,đầu trần
+mixkit_31473_009.0s.jpg,0,,,,,pnh,,đầu trần
+mixkit_31473_009.0s.jpg,1,,,,,pwh,nhìn từ sau,
+mixkit_31473_009.0s.jpg,2,,,,,pnh,,đầu trần
+mixkit_32296_000.0s.jpg,0,,,,,pnh,,đầu trần
+mixkit_32296_000.0s.jpg,1,245.0,347.0,305.0,447.0,pnh,"sửa: khung gộp 2 người, giữ người đội mũ vải xanh đậm (không chắc)",mũ vải
+mixkit_32296_000.0s.jpg,,289.0,325.0,335.0,395.0,pwh,thêm tay: người đội mũ cam ngồi sau (tách từ khung 1),
+mixkit_32296_000.0s.jpg,2,,,,,pnh,"cúi người, vật màu cam là găng tay (không chắc)",đầu trần
+mixkit_32296_000.0s.jpg,3,,,,,pwh,,
+mixkit_32296_000.0s.jpg,4,,,,,drop,trùng khung 5,
+mixkit_32296_000.0s.jpg,5,,,,,pwh,,
+mixkit_32296_000.0s.jpg,,1040.0,282.0,1076.0,306.0,pwh,"thêm tay: mũ vàng sau cốp pha, bị che gần hết; người ở x 865-905 không phán đoán được mũ, không gán",
+mixkit_4648_000.0s.jpg,0,,,,,pwh,,
+mixkit_4648_000.0s.jpg,1,,,,,pwh,,
+mixkit_4648_000.0s.jpg,2,,,,,pwh,,
+mixkit_4648_003.0s.jpg,0,,,,,pwh,,
+mixkit_4648_003.0s.jpg,1,,,,,pwh,,
+mixkit_4648_003.0s.jpg,2,,,,,pwh,,
+mixkit_4648_006.0s.jpg,0,,,,,pwh,,
+mixkit_4648_006.0s.jpg,1,,,,,pwh,,
+mixkit_4648_006.0s.jpg,2,,,,,pwh,,
+mixkit_4648_009.0s.jpg,0,,,,,pwh,,
+mixkit_4648_009.0s.jpg,1,,,,,pwh,,
+mixkit_4648_009.0s.jpg,2,437.0,132.0,670.0,711.0,pwh,sửa: kéo khung xuống hết thân (khung đề xuất cụt ở y 543),
+mixkit_4648_009.0s.jpg,3,,,,,drop,"trùng khung 2, lẫn tay người bên cạnh",
+mixkit_4648_012.0s.jpg,0,,,,,pwh,,
+mixkit_4648_012.0s.jpg,1,,,,,pwh,,
+mixkit_4648_012.0s.jpg,2,,,,,pwh,,
+mixkit_4648_012.0s.jpg,3,,,,,drop,trùng khung 2 (chỉ nửa trên),
+mixkit_4648_015.0s.jpg,0,,,,,pwh,,
+mixkit_4648_015.0s.jpg,1,,,,,pwh,,
+mixkit_4648_015.0s.jpg,2,,,,,pwh,,
+mixkit_49024_000.0s.jpg,0,,,,,pwh,,
+mixkit_49024_003.0s.jpg,0,,,,,pwh,,
+mixkit_49024_006.0s.jpg,0,,,,,pwh,,
+news_02cc558e206e.jpg,0,,,,,pnh,mũ vải (bucket),mũ vải
+news_044a69775050.jpg,,,,,,skip_image,"người đi xe máy ngoài phố, không phải công trường",
+news_0499d2392121.jpg,,,,,,skip_image,"kho bia, không phải công trường",
+news_04a78fc2119a.jpg,0,,,,,pnh,mũ lưỡi trai vàng,mũ lưỡi trai
+news_07ab2218301c.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
+news_08ef5fc8cad1.jpg,,,,,,skip_image,"người quá nhỏ (cao 37-64 px), không phán đoán được mũ",
+news_096f493345aa.jpg,,,,,,skip_image,"thợ mỏ ngồi ở nhà ăn, không phải công trường",
+news_0b370c95a428.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
+news_0c800a43a840.jpg,0,,,,,pwh,,
+news_125229e4798d.jpg,,,,,,skip_image,"bốc dỡ két bia, không phải công trường",
+news_140203401bd0.jpg,,,,,,skip_image,"quán cà phê, không phải công trường",
+news_1714fa91e859.jpg,0,,,,,pnh,mũ vải rộng vành,mũ vải
+news_174e6d88a393.jpg,,,,,,skip_image,"nhân viên đứng cạnh xe cứu thương, không phải công trường",
+news_1a4a8b103ada.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_1a4a8b103ada.jpg,1,,,,,pnh,mũ vải,mũ vải
+news_1a9e75f41c5e.jpg,0,,,,,pnh,mũ vải tối màu,mũ vải
+news_213551ed3709.jpg,0,,,,,pnh,,đầu trần
+news_213551ed3709.jpg,1,,,,,pnh,,đầu trần
+news_213551ed3709.jpg,2,,,,,pnh,,đầu trần
+news_1dbf0e13d6e9.jpg,0,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,1,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,2,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,3,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,4,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,5,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,6,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,7,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,8,962.0,497.0,1012.0,709.0,pwh,"sửa: khung gộp 2 người, giữ người áo tối",
+news_1dbf0e13d6e9.jpg,,1000.0,497.0,1043.0,706.0,pwh,thêm tay: người mũ vàng phía sau (tách từ khung 8),
+news_1dbf0e13d6e9.jpg,9,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,10,,,,,pwh,,
+news_1dbf0e13d6e9.jpg,11,,,,,pwh,mũ bảo hộ gắn thêm vành che nắng,
+news_1dbf0e13d6e9.jpg,12,,,,,drop,khung gộp 2 người 9 và 11,
+news_24fcd60e637f.jpg,,,,,,skip_image,"người duy nhất là tài xế sau kính cabin, không phán đoán được mũ",
+news_27df99f03375.jpg,,,,,,skip_image,"xưởng luyện thép, không phải công trường",
+news_297d3e272ac4.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_297d3e272ac4.jpg,1,,,,,drop,"sau lưới che, không thấy đầu",
+news_2a7f18cbd828.jpg,,,,,,skip_image,"nhà sách, không phải công trường",
+news_2a801183ca02.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_2afe61b3640c.jpg,0,,,,,pwh,,
+news_2c943d21dd52.jpg,,,,,,skip_image,hình minh họa,
+news_310a59226923.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_319e97292e15.jpg,0,,,,,pwh,mũ bảo hộ gắn vành che nắng,
+news_319e97292e15.jpg,1,,,,,pwh,,
+news_319e97292e15.jpg,2,,,,,pwh,,
+news_3216db202841.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_3216db202841.jpg,1,,,,,pnh,mũ vải,mũ vải
+news_3216db202841.jpg,2,,,,,pnh,cúi người,không rõ
+news_3216db202841.jpg,3,,,,,pnh,mũ vải rộng vành trắng,mũ vải
+news_3216db202841.jpg,4,,,,,pnh,mũ vải,mũ vải
+news_3216db202841.jpg,5,,,,,drop,"trùng khung 2, lẫn tay người bên cạnh; người đội nón lá ở mép phải chỉ thấy nón, không gán",
+news_3342d8277e40.jpg,,,,,,skip_image,"người đi xe máy dưới mưa, không phải công trường",
+news_3533339d33b6.jpg,0,,,,,pwh,thợ hàn đội mũ bảo hộ kèm kính hàn,
+news_360036813d17.jpg,0,,,,,pwh,,
+news_360036813d17.jpg,1,,,,,pwh,nhỏ nhưng thấy rõ mũ bảo hộ vàng (sửa khi rà lại hộp bị bỏ theo góp ý của anh),
+news_360036813d17.jpg,2,,,,,drop,người quá nhỏ (cao 48 px),
+news_360036813d17.jpg,3,,,,,drop,người quá nhỏ (cao 30 px),
+news_41910f6930c8.jpg,,,,,,skip_image,"xưởng chế biến thực phẩm, không phải công trường",
+news_448877c85875.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_448877c85875.jpg,1,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_448877c85875.jpg,2,,,,,pnh,"trong bóng tối, đội mũ lưỡi trai (không chắc)",mũ lưỡi trai
+news_448877c85875.jpg,3,,,,,drop,"bóng tối, không phán đoán được mũ",
+news_448877c85875.jpg,4,,,,,drop,người quá nhỏ (cao 46 px),
+news_493ef531344f.jpg,,,,,,skip_image,ảnh quảng bá chương trình radio,
+news_4a11a99da996.jpg,0,,,,,pwh,,
+news_4a11a99da996.jpg,1,,,,,pwh,,
+news_4be42c282675.jpg,,,,,,skip_image,đường phố nhìn từ trên cao,
+news_4d45f403c261.jpg,0,,,,,pnh,nón lá,nón lá
+news_4d45f403c261.jpg,1,,,,,pwh,"cúi người, mũ nhựa xanh bóng (không chắc)",
+news_4f51c3e7dc69.jpg,,,,,,skip_image,"ảnh tiền, không có người",
+news_4fc04f531679.jpg,,,,,,skip_image,"ảnh chân dung, không phải công trường",
+news_508e694c499b.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
+news_52b25df37aee.jpg,0,,,,,pnh,,đầu trần
+news_52b25df37aee.jpg,1,,,,,pnh,,đầu trần
+news_53761e251f37.jpg,0,,,,,pwh,,
+news_53761e251f37.jpg,1,,,,,pwh,,
+news_53761e251f37.jpg,2,,,,,pwh,,
+news_538847f74281.jpg,,,,,,skip_image,"ảnh chân dung, không phải công trường",
+news_5389b9178d05.jpg,0,,,,,pnh,nón lá,nón lá
+news_5389b9178d05.jpg,1,,,,,pnh,mũ vải,mũ vải
+news_5389b9178d05.jpg,2,,,,,pnh,nón lá,nón lá
+news_5389b9178d05.jpg,3,,,,,pnh,nón lá,nón lá
+news_5896e38ebbab.jpg,0,,,,,pnh,mũ cối (không phải mũ bảo hộ),mũ cối
+news_5a169919ba51.jpg,,,,,,skip_image,"cứu hộ trên sông, không phải công trường",
+news_5ad67d705d4e.jpg,0,,,,,pwh,,
+news_5ad67d705d4e.jpg,1,,,,,pwh,mũ bảo hộ gắn vành che nắng,
+news_5ad67d705d4e.jpg,2,,,,,drop,đầu bị người 1 che hết,
+news_5ad67d705d4e.jpg,3,,,,,pwh,,
+news_5ad67d705d4e.jpg,4,,,,,drop,trùng khung 3,
+news_5e272d1017ba.jpg,0,,,,,pnh,nón lá,nón lá
+news_5e372e049af2.jpg,,,,,,skip_image,"ngư dân trên bãi biển, không phải công trường",
+news_6594d9b7f11c.jpg,,,,,,skip_image,"biểu diễn sân khấu, không phải công trường",
+news_682e35aa581d.jpg,,,,,,skip_image,"biểu diễn sân khấu, không phải công trường",
+news_69c290b57029.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_69c290b57029.jpg,1,,,,,pnh,mũ trùm áo khoác,mũ khác
+news_6ea1c8da8469.jpg,0,,,,,pnh,"mũ vải rộng vành, ngược sáng",mũ vải
+news_6eacfa8258f9.jpg,,,,,,skip_image,"ảnh chân dung, không phải công trường",
+news_6f06af973704.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_6f06af973704.jpg,1,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_6f0e465321b6.jpg,0,,,,,pwh,nhìn từ trên cao,
+news_6f0e465321b6.jpg,1,,,,,pwh,nhìn từ trên cao,
+news_6f0e465321b6.jpg,2,,,,,pwh,nhìn từ trên cao,
+news_6f0e465321b6.jpg,3,,,,,pwh,nhìn từ trên cao,
+news_7039f96fe431.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ (cao 35-56 px)",
+news_728c80fc5f70.jpg,,,,,,skip_image,áp phích phim,
+news_736344760a50.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_75088a8124ae.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_75088a8124ae.jpg,1,,,,,pwh,,
+news_75088a8124ae.jpg,2,,,,,pwh,,
+news_7f2ad4fc3b9f.jpg,0,,,,,pwh,mũ bảo hộ gắn vành vải che nắng,
+news_802fc37a0156.jpg,,,,,,skip_image,ảnh bìa bài viết về nuôi tằm,
+news_8298dd34f3e7.jpg,,,,,,skip_image,ảnh bìa chương trình radio,
+news_84b4842ac535.jpg,,,,,,skip_image,người quá nhỏ (cao 23-40 px),
+news_85c737637699.jpg,,,,,,skip_image,"người lái máy sau kính cabin, người khác quá nhỏ (cao 21-22 px)",
+news_865264d6062d.jpg,0,,,,,pnh,"thợ điện cầm mũ bảo hộ trên tay, không đội",đầu trần
+news_89e75e4231a9.jpg,0,,,,,pwh,,
+news_89e75e4231a9.jpg,1,,,,,pwh,,
+news_89e75e4231a9.jpg,2,,,,,pwh,,
+news_89e75e4231a9.jpg,3,,,,,pwh,,
+news_89e75e4231a9.jpg,4,,,,,pwh,,
+news_89e75e4231a9.jpg,5,,,,,pwh,đứng sau người 1,
+news_89e75e4231a9.jpg,6,,,,,drop,trùng khung 5 (chỉ nửa trên),
+news_8cd484b2abf5.jpg,,,,,,skip_image,"sự kiện bóng đá, không phải công trường",
+news_928ae05c6803.jpg,,,,,,skip_image,"giải chạy, không phải công trường",
+news_93e3751b3523.jpg,0,,,,,pwh,ban đêm,
+news_93e3751b3523.jpg,1,,,,,pwh,ban đêm,
+news_93e3751b3523.jpg,2,,,,,pwh,"ban đêm, nhỏ (cao 55 px)",
+news_93e3751b3523.jpg,3,,,,,pwh,ban đêm,
+news_93e3751b3523.jpg,4,,,,,pwh,ban đêm,
+news_93e3751b3523.jpg,5,,,,,pwh,"ban đêm, mũ trắng (không chắc)",
+news_93e3751b3523.jpg,6,,,,,pwh,ban đêm,
+news_9613d1db785b.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_9613d1db785b.jpg,1,,,,,drop,không thấy đầu,
+news_97c62f89e30a.jpg,,,,,,skip_image,"ảnh minh họa thanh toán, không phải công trường",
+news_98a7aab4404b.jpg,,,,,,skip_image,"đi trong rừng, không phải công trường",
+news_98ddef493468.jpg,0,,,,,pnh,nón lá,nón lá
+news_9a2ab3fc6962.jpg,0,,,,,pnh,mũ vải rằn ri,mũ vải
+news_9a2ab3fc6962.jpg,,140.0,0.0,345.0,330.0,pwh,"thêm tay: chỉ thấy mũ cam và một phần đầu, thân bị người 0 che",
+news_9a2ab3fc6962.jpg,1,,,,,pnh,"cúi người, mũ vải tối màu (không chắc)",mũ vải
+news_9a2ab3fc6962.jpg,2,,,,,pwh,"mờ do lấy nét, mũ cam",
+news_9b1b779e5fc9.jpg,,,,,,skip_image,"người đi xe máy, không phải công trường",
+news_9c4254479209.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
+news_9dc61ed443bf.jpg,,,,,,skip_image,"xưởng luyện thép, không phải công trường",
+news_a1369e2b55de.jpg,,,,,,skip_image,"sự kiện đi bộ, không phải công trường",
+news_a308322c13cb.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
+news_a72616bb0118.jpg,0,,,,,pnh,mũ vải đỏ,mũ vải
+news_a72616bb0118.jpg,1,,,,,pwh,,
+news_a72616bb0118.jpg,2,,,,,pwh,,
+news_a72616bb0118.jpg,3,,,,,pwh,,
+news_a72616bb0118.jpg,4,,,,,drop,"đầu bị cột che, không phán đoán được mũ",
+news_a72616bb0118.jpg,,512.0,205.0,552.0,325.0,pwh,"thêm tay: người sau cốt thép mép phải, mũ cam",
+news_a8458deb1880.jpg,0,,,,,pnh,nón lá,nón lá
+news_a90773af11ad.jpg,0,,,,,pnh,nón lá,nón lá
+news_a9e1534823ca.jpg,,,,,,skip_image,"chợ/lều tạm, không phải công trường",
+news_ac28f28a5cd6.jpg,,,,,,skip_image,"quầy giao dịch ngân hàng, không phải công trường",
+news_af3ec1966a1a.jpg,0,,,,,pwh,,
+news_b129682db523.jpg,0,,,,,pwh,ban đêm,
+news_b129682db523.jpg,1,,,,,pwh,"ban đêm, mũ cam (mờ do chuyển động)",
+news_b20a0f3df996.jpg,0,,,,,pnh,"lái xe lu, mũ vải",mũ vải
+news_b376c026af08.jpg,0,,,,,pnh,,đầu trần
+news_b376c026af08.jpg,1,,,,,pnh,,đầu trần
+news_b376c026af08.jpg,2,,,,,pnh,,đầu trần
+news_b43e71a43e0d.jpg,,,,,,skip_image,"ảnh chân dung, không phải công trường",
+news_b4cf7e213b74.jpg,0,,,,,pnh,nón lá,nón lá
+news_b4cf7e213b74.jpg,1,,,,,pnh,nón lá,nón lá
+news_b4cf7e213b74.jpg,2,,,,,drop,"mép ảnh, không thấy đầu",
+news_b62d2e65b808.jpg,0,,,,,pnh,"cầm nón lá trên tay, không đội mũ",đầu trần
+news_ba1d610f3af9.jpg,0,,,,,pnh,"lái xe lu, mũ vải",mũ vải
+news_ba51ad7d177a.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_ba87011f8002.jpg,,,,,,skip_image,"người dội nước tắm, không thấy cảnh công trường",
+news_bb422d13dc35.jpg,0,,,,,pnh,mũ cối (không phải mũ bảo hộ),mũ cối
+news_beed80dbdfef.jpg,,,,,,skip_image,"ruộng rau, không phải công trường",
+news_befa7291e816.jpg,0,,,,,pnh,,đầu trần
+news_befa7291e816.jpg,1,,,,,pnh,nón lá,nón lá
+news_befa7291e816.jpg,2,,,,,pnh,mũ cối (không phải mũ bảo hộ),mũ cối
+news_c033cc7396d5.jpg,,,,,,skip_image,"bến cảng, không phải công trường",
+news_c20a546600ef.jpg,,,,,,skip_image,"quay chương trình truyền hình, không phải công trường",
+news_c59d3031de03.jpg,,,,,,skip_image,"ảnh chân dung, không phải công trường",
+news_c8a4a97737d5.jpg,0,,,,,pnh,nón lá,nón lá
+news_c9cb5afa442e.jpg,0,,,,,pnh,nón lá,nón lá
+news_c9f8ad709dc8.jpg,0,,,,,pwh,nhìn từ sau,
+news_c9f8ad709dc8.jpg,1,,,,,pwh,,
+news_cb0ca6e25f5a.jpg,,,,,,skip_image,"người đi xe máy qua đoạn đường đang thi công, người nhỏ và không phải công nhân",
+news_cd2150bb261c.jpg,0,,,,,pwh,,
+news_cd2150bb261c.jpg,1,,,,,drop,"mép ảnh, chỉ thấy một phần thân",
+news_cf6c9c32ba8b.jpg,,,,,,skip_image,"sân phơi hương, người quá nhỏ (cao 44 px)",
+news_cfd38e8b42e5.jpg,,,,,,skip_image,áp phích sân khấu,
+news_d5b06650ad16.jpg,0,,,,,pwh,thợ điện trên cột,
+news_d71610170204.jpg,,,,,,skip_image,"cửa hàng, không phải công trường",
+news_d8c80e046729.jpg,,,,,,skip_image,"lễ trao giải, không phải công trường",
+news_db182128b103.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_db182128b103.jpg,1,,,,,pnh,"mũ vải xanh, nhìn từ sau",mũ vải
+news_de7ec1e5a3a3.jpg,0,,,,,pwh,,
+news_de7ec1e5a3a3.jpg,1,,,,,pnh,"đầu trần, nhỏ (cao 100 px)",đầu trần
+news_dfbdaa212c03.jpg,,,,,,skip_image,"chương trình truyền hình, không phải công trường",
+news_e3d77fc6748a.jpg,,,,,,skip_image,"vườn thanh long, không phải công trường",
+news_e49cb9b1e621.jpg,,,,,,skip_image,"quầy vá xe ven đường, không phải công trường",
+news_e7162b0c72a8.jpg,0,,,,,pwh,,
+news_e7162b0c72a8.jpg,1,,,,,pwh,,
+news_e7162b0c72a8.jpg,2,,,,,pwh,,
+news_e7162b0c72a8.jpg,3,,,,,pwh,,
+news_e7162b0c72a8.jpg,4,,,,,pwh,,
+news_e7162b0c72a8.jpg,5,,,,,pwh,,
+news_e7162b0c72a8.jpg,6,,,,,pwh,,
+news_e7162b0c72a8.jpg,7,,,,,pwh,,
+news_e7162b0c72a8.jpg,8,,,,,pwh,"mũ trắng, bị cốt thép che",
+news_e7162b0c72a8.jpg,9,,,,,pwh,,
+news_eab7adca24d3.jpg,,,,,,skip_image,ảnh bìa minh họa,
+news_ed3705fe1384.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_f2e25aafceff.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_f440d1781fc1.jpg,,,,,,skip_image,"học sinh tham quan, không phải công trường",
+news_f4f97fc8a3b5.jpg,0,,,,,pwh,,
+news_f56f806b9e5c.jpg,0,,,,,pwh,,
+news_f56f806b9e5c.jpg,1,,,,,pwh,,
+news_f5cba2638496.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_f7ada4720fdd.jpg,0,,,,,pnh,mũ trùm áo khoác,mũ khác
+news_f7ada4720fdd.jpg,1,,,,,pnh,mũ vải rộng vành,mũ vải
+news_f7ada4720fdd.jpg,2,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_f7ada4720fdd.jpg,3,,,,,pnh,mũ vải rộng vành,mũ vải
+news_f7ada4720fdd.jpg,4,,,,,pnh,mũ vải rộng vành,mũ vải
+news_f7ada4720fdd.jpg,5,,,,,drop,"mép ảnh, không thấy đầu",
+news_f7ada4720fdd.jpg,6,,,,,pnh,"mũ vải, bị người 2 che một phần",mũ vải
+news_f7ada4720fdd.jpg,7,405.0,300.0,470.0,520.0,pnh,"sửa: khung gộp, giữ người đội nón lá đứng giữa",nón lá
+news_fbb8a8e54d80.jpg,,,,,,skip_image,"người bán hàng rong, không phải công trường",
+news_fc85346a7d16.jpg,,,,,,skip_image,"gian hàng hội chợ, không phải công trường",
+news_feb0da7e23ac.jpg,0,,,,,pnh,nón lá,nón lá

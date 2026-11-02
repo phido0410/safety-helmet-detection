@@ -1,0 +1,252 @@
+image,box,x1,y1,x2,y2,cls,note,headwear
+news_019649ef5304.jpg,0,,,,,pwh,mũ trắng,
+news_019649ef5304.jpg,1,,,,,pwh,mũ trắng,
+news_019649ef5304.jpg,2,,,,,pwh,mũ vàng,
+news_019649ef5304.jpg,3,,,,,pwh,"cúi người, mũ vàng thấy một phần",
+news_019649ef5304.jpg,4,,,,,drop,khung gộp 2 người (khung 3 và 5),
+news_019649ef5304.jpg,5,,,,,pwh,mũ vàng đội trên nón vành rộng,
+news_019649ef5304.jpg,6,,,,,pwh,"mũ vàng, đứng sau",
+news_0b1910bfe1e9.jpg,,,,,,skip_image,"người rất nhỏ, mờ, phần lớn là người đi đường/xe máy cạnh công trường",
+news_0fe6f18e726e.jpg,0,,,,,pwh,"mũ trắng, xây tường",
+news_0fe6f18e726e.jpg,1,,,,,pwh,mũ trắng,
+news_0fe6f18e726e.jpg,2,,,,,pwh,mũ trắng,
+news_0fe6f18e726e.jpg,3,,,,,pnh,nón lá,nón lá
+news_0fe6f18e726e.jpg,4,,,,,pwh,mũ cam,
+news_0fe6f18e726e.jpg,5,,,,,pwh,"mũ cam, đứng trên tường",
+news_0fe6f18e726e.jpg,6,,,,,pnh,"mũ vải (mũ tai bèo), trên tường",mũ vải
+news_0fe6f18e726e.jpg,7,,,,,pnh,mũ vải (mũ tai bèo),mũ vải
+news_0fe6f18e726e.jpg,,1255.0,940.0,1325.0,1010.0,pwh,"thêm: mũ xanh dương sau tường, chỉ thấy đầu",
+news_0fe6f18e726e.jpg,,2225.0,380.0,2300.0,420.0,pnh,"thêm: cúi sau tường, nhỏ, không chắc loại mũ (mũ xanh lá)",mũ cối
+news_16c30c1a7331.jpg,0,,,,,pnh,"đầu trần, xây tường",đầu trần
+news_190ef1b99305.jpg,,,,,,skip_image,"ảnh flycam, người rất nhỏ, đi đường",
+news_1faeb31eb19d.jpg,0,,,,,pnh,mũ vải rộng vành,mũ vải
+news_2284c9e49880.jpg,,,,,,skip_image,"đỉnh đầu bị dầm thép che, không phán đoán được loại mũ (chỉ thấy vành)",
+news_26f75e836f1b.jpg,,,,,,skip_image,"giao thông đường phố cạnh công trường, toàn người đi xe máy",
+news_2c6b951112d4.jpg,0,,,,,pwh,"mũ trắng, buộc cốt thép",
+news_2dcd1fa1d8fb.jpg,,,,,,skip_image,"ảnh bầu cử, không phải công trường",
+news_311a2814fa08.jpg,0,,,,,pnh,"mũ vải trắng rộng vành (nhìn từ trên, vành mềm rủ xuống), không chắc",mũ vải
+news_311a2814fa08.jpg,1,,,,,pwh,mũ đỏ,
+news_311a2814fa08.jpg,2,,,,,pnh,"mũ vải xanh (mũ tai bèo), nhìn từ trên",mũ vải
+news_311a2814fa08.jpg,3,,,,,pwh,mũ vàng,
+news_311a2814fa08.jpg,4,,,,,pnh,"nón lá, ngồi buộc thép",nón lá
+news_311a2814fa08.jpg,5,,,,,pnh,"nón lá, cúi người, nhỏ",nón lá
+news_311a2814fa08.jpg,6,,,,,pnh,mũ vải tối màu rộng vành,mũ vải
+news_311a2814fa08.jpg,7,,,,,drop,"quá nhỏ (đầu ~6 px), không phán đoán được mũ",
+news_397fe748c8d0.jpg,0,,,,,pwh,"mũ trắng, đứng giữa hố móng",
+news_397fe748c8d0.jpg,1,,,,,drop,"người ở hiên nhà ven công trường, không ở khu thi công",
+news_397fe748c8d0.jpg,2,,,,,drop,"người dân sau hàng rào, không ở khu thi công",
+news_397fe748c8d0.jpg,3,,,,,drop,"người trong cửa hàng, quay lưng, không thấy đầu rõ",
+news_397fe748c8d0.jpg,4,,,,,pwh,"mũ trắng, khẩu trang, đứng mép công trường",
+news_3bf9349a2e10.jpg,0,,,,,drop,"lái xe trong cabin kính tối, không phán đoán được mũ",
+news_3bf9349a2e10.jpg,1,,,,,pnh,"đầu trần, lái xe lu, nhỏ (đầu ~9 px)",đầu trần
+news_3bf9349a2e10.jpg,2,,,,,drop,"lái xe, tối, không phán đoán được mũ",
+news_3bf9349a2e10.jpg,3,,,,,drop,"quá nhỏ, mờ",
+news_3bf9349a2e10.jpg,4,,,,,drop,"quá nhỏ, mờ",
+news_3cf45a3da7cd.jpg,,,,,,skip_image,"giao thông đường phố, toàn người đi xe máy",
+news_40a4e5b84068.jpg,0,,,,,pwh,"mũ vàng, ngồi nghỉ",
+news_40a4e5b84068.jpg,1,,,,,pwh,"mũ vàng có vành che nắng, ngồi nghỉ",
+news_46880aa072c9.jpg,0,,,,,pnh,"mũ vải rộng vành, kính râm, khẩu trang",mũ vải
+news_46c28e23caf7.jpg,0,,,,,pnh,khăn trùm đầu,mũ khác
+news_46c28e23caf7.jpg,1,,,,,pnh,"nón lá, xây tường",nón lá
+news_47850da8c1f8.jpg,0,,,,,pnh,mũ lưỡi trai trắng,mũ lưỡi trai
+news_47850da8c1f8.jpg,1,,,,,pnh,"đầu trần, đứng sau, mờ do lấy nét",đầu trần
+news_47850da8c1f8.jpg,2,,,,,pnh,"mũ lưỡi trai đen, mờ do lấy nét",mũ lưỡi trai
+news_51701047482c.jpg,0,,,,,pnh,"mũ vải rộng vành, khẩu trang",mũ vải
+news_51701047482c.jpg,1,,,,,pnh,"đầu bị cắt một phần ở mép trên khung, mũ vải tối màu, không chắc",mũ vải
+news_51701047482c.jpg,2,,,,,pnh,đầu trần,đầu trần
+news_51701047482c.jpg,3,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_51701047482c.jpg,4,,,,,pnh,"đầu trần, khẩu trang",đầu trần
+news_51701047482c.jpg,5,,,,,pnh,mũ vải tối màu rộng vành,mũ vải
+news_51701047482c.jpg,6,,,,,pnh,mũ vải hoa rộng vành,mũ vải
+news_51701047482c.jpg,,690.0,340.0,745.0,440.0,pnh,"thêm: đứng sau khung 4, bị giàn giáo che, không chắc",mũ lưỡi trai
+news_51701047482c.jpg,,1095.0,405.0,1185.0,515.0,pnh,"thêm: cúi người sau giàn giáo, không chắc loại mũ",mũ cối
+news_5381512ed004.jpg,,,,,,skip_image,"ảnh chân dung trong văn phòng, không phải công trường",
+news_5859aff63ee4.jpg,0,,,,,drop,trùng khung 1 (phần thân dưới),
+news_5859aff63ee4.jpg,1,,,,,pwh,"mũ trắng, cắt thép",
+news_5a1c9eea263a.jpg,0,,,,,pwh,"mũ trắng, đoàn kiểm tra trong công trường",
+news_5a1c9eea263a.jpg,1,,,,,pnh,"mũ cối xanh, đoàn kiểm tra trong công trường",mũ cối
+news_5a1c9eea263a.jpg,2,,,,,pwh,mũ trắng,
+news_5a1c9eea263a.jpg,3,,,,,pwh,mũ trắng,
+news_5a1c9eea263a.jpg,4,,,,,pnh,"khăn trùm đầu, cúi người đào đất",mũ khác
+news_5a1c9eea263a.jpg,5,,,,,pwh,"mũ trắng, đứng sau",
+news_5a1c9eea263a.jpg,6,,,,,pnh,"trên mái, mũ lưỡi trai trắng, nhỏ, không chắc (sửa khi tự kiểm tra phiếu)",mũ lưỡi trai
+news_5a1c9eea263a.jpg,7,,,,,pwh,"mũ cam, trên mái",
+news_5a1c9eea263a.jpg,8,,,,,pnh,"mũ vải (mũ tai bèo), ngồi",mũ vải
+news_5a1c9eea263a.jpg,9,,,,,pnh,"mũ vải (mũ tai bèo), trên mái",mũ vải
+news_5a1c9eea263a.jpg,,1765.0,928.0,1860.0,1120.0,pwh,"thêm: mũ trắng, đứng sau khung 0, thân bị che",
+news_5b14826d2009.jpg,0,,,,,pnh,"mũ trùm áo khoác xanh, nhỏ, không chắc",mũ khác
+news_5b14826d2009.jpg,1,,,,,pnh,"mũ trùm áo khoác, nhỏ, không chắc",mũ khác
+news_5b14826d2009.jpg,2,,,,,pnh,"mũ trùm áo khoác, nhỏ, không chắc",mũ khác
+news_5b14826d2009.jpg,3,,,,,drop,quá nhỏ,
+news_5b14826d2009.jpg,4,,,,,drop,quá nhỏ,
+news_5b14826d2009.jpg,5,,,,,drop,quá nhỏ,
+news_5c8774ab1ca8.jpg,0,,,,,pnh,"đầu trần, trên giàn giáo",đầu trần
+news_5c8774ab1ca8.jpg,1,,,,,pnh,khăn trùm đầu,mũ khác
+news_5c8774ab1ca8.jpg,2,,,,,pnh,"đầu trần, trên giàn giáo",đầu trần
+news_5c8774ab1ca8.jpg,3,,,,,pnh,nón lá,nón lá
+news_5c8774ab1ca8.jpg,4,,,,,pnh,đầu trần,đầu trần
+news_5c8774ab1ca8.jpg,5,,,,,drop,không thấy rõ người (chỉ thấy vật tối sau giàn giáo),
+news_5c8774ab1ca8.jpg,6,,,,,pnh,"đầu trần, khẩu trang, sau tường",đầu trần
+news_5c8774ab1ca8.jpg,7,,,,,drop,"vật màu đỏ sau cột, không rõ là người",
+news_5f516de32976.jpg,,,,,,skip_image,"học sinh đeo kính thực tế ảo, không phải công trường",
+news_61edae7e1e2d.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ",
+news_648ba4f23759.jpg,0,,,,,drop,"trên mái, ngược sáng, đầu nhỏ, không phán đoán được mũ",
+news_648ba4f23759.jpg,1,,,,,pnh,"đầu trần, trên mái, nhỏ",đầu trần
+news_648ba4f23759.jpg,2,,,,,pnh,"đầu trần, cởi trần, nhỏ",đầu trần
+news_648ba4f23759.jpg,3,,,,,drop,không phải người (máy móc trên nóc),
+news_648ba4f23759.jpg,4,,,,,pnh,"đầu trần, nhỏ",đầu trần
+news_648ba4f23759.jpg,5,,,,,drop,"ngồi cúi, không thấy đầu",
+news_648ba4f23759.jpg,6,,,,,drop,"trong bóng tối, không phán đoán được",
+news_648ba4f23759.jpg,7,,,,,drop,"trong bóng tối, không phán đoán được",
+news_663f1ec6a723.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ, đi đường",
+news_6d332f5d244b.jpg,,,,,,skip_image,"giao thông đường phố, toàn người đi xe máy",
+news_70c26578ae85.jpg,0,,,,,pnh,"nón lá, trên mái",nón lá
+news_70c26578ae85.jpg,1,,,,,pnh,"mũ cối xanh, trên mái",mũ cối
+news_70c26578ae85.jpg,2,,,,,pnh,"nón lá, trên mái",nón lá
+news_70c26578ae85.jpg,3,,,,,pnh,"nón lá, trên mái",nón lá
+news_70c26578ae85.jpg,4,,,,,pnh,"cúi người, mũ tối màu, nhỏ, không chắc",mũ lưỡi trai
+news_70c26578ae85.jpg,5,,,,,drop,"vác bao trên vai, không thấy đầu",
+news_70c26578ae85.jpg,6,,,,,pnh,"đầu trần, trên giàn giáo",đầu trần
+news_70c26578ae85.jpg,7,,,,,pnh,"mũ vải (mũ tai bèo), trên mái",mũ vải
+news_70c26578ae85.jpg,8,,,,,pwh,"mũ trắng, trên mái",
+news_70c26578ae85.jpg,9,505.0,215.0,575.0,300.0,pnh,"sửa: khung gộp 2 người, giữ người áo xanh",đầu trần
+news_70c26578ae85.jpg,10,,,,,pnh,"mũ vải (mũ tai bèo), khăn che mặt",mũ vải
+news_70c26578ae85.jpg,11,,,,,pnh,"nón lá, trên mái",nón lá
+news_70c26578ae85.jpg,12,,,,,pnh,"mũ cối xanh, nằm cúi trên mái",mũ cối
+news_70c26578ae85.jpg,13,,,,,pnh,"nón lá, trên mái",nón lá
+news_70c26578ae85.jpg,,498.0,255.0,560.0,318.0,pnh,"thêm: người áo rằn ri ngồi cúi dưới khung 9, mũ tối màu, không chắc",không rõ
+news_70c26578ae85.jpg,,590.0,272.0,622.0,300.0,pnh,"thêm: sau tường, chỉ thấy đầu, nhỏ",đầu trần
+news_734730ef44a8.jpg,,,,,,skip_image,"giao thông đường phố, toàn người đi xe máy",
+news_7387695c07b7.jpg,0,,,,,pnh,đầu trần,đầu trần
+news_7387695c07b7.jpg,1,,,,,pnh,nón lá,nón lá
+news_7387695c07b7.jpg,2,,,,,pnh,mũ lưỡi trai xanh đen,mũ lưỡi trai
+news_7387695c07b7.jpg,3,,,,,pnh,đầu trần,đầu trần
+news_7387695c07b7.jpg,4,,,,,pnh,mũ vải tối màu rộng vành,mũ vải
+news_7387695c07b7.jpg,5,,,,,pnh,nón lá,nón lá
+news_7387695c07b7.jpg,6,,,,,pnh,"mũ lưỡi trai xanh lá, mũ cói đeo sau lưng",mũ lưỡi trai
+news_7387695c07b7.jpg,7,,,,,drop,"người tiền cảnh mờ ở mép phải, không thấy đầu",
+news_7387695c07b7.jpg,8,,,,,drop,"mép trái, bị cắt, mờ, không phán đoán được mũ",
+news_7387695c07b7.jpg,9,,,,,drop,trùng khung 6 (phần đầu),
+news_7387695c07b7.jpg,10,,,,,drop,trùng khung 8,
+news_73bff6c4bff2.jpg,0,,,,,pwh,"mũ trắng, đoàn kiểm tra trong công trường",
+news_73bff6c4bff2.jpg,1,,,,,pwh,"mũ trắng, đoàn kiểm tra",
+news_73bff6c4bff2.jpg,2,,,,,pnh,"mũ cối xanh, đoàn kiểm tra",mũ cối
+news_73bff6c4bff2.jpg,3,,,,,pwh,"mũ trắng, đứng sau",
+news_73bff6c4bff2.jpg,4,,,,,drop,"người đi xe máy phía xa, mờ",
+news_73bff6c4bff2.jpg,5,,,,,drop,khung gộp 2 người (khung 1 và 3),
+news_73bff6c4bff2.jpg,6,,,,,drop,"phía xa, mờ do lấy nét, không phán đoán được mũ",
+news_73bff6c4bff2.jpg,7,,,,,drop,"phía xa, mờ do lấy nét, không phán đoán được mũ",
+news_7627cc12e8cf.jpg,0,,,,,pnh,"cúi người, đầu tối màu (tóc hoặc mũ vải), không chắc",không rõ
+news_7627cc12e8cf.jpg,1,,,,,pnh,"nón lá, ngồi trên mái",nón lá
+news_7627cc12e8cf.jpg,2,,,,,drop,"trong giàn giáo, tối, không phán đoán được",
+news_77b52c4157e5.jpg,,,,,,skip_image,"phòng mổ bệnh viện, không phải công trường",
+news_7b7a216dc6f7.jpg,0,,,,,pwh,"mũ cam, buộc cốt thép",
+news_8225936b859d.jpg,,,,,,skip_image,"đường đang thi công nhìn xa, người rất nhỏ, phần lớn đi xe máy",
+news_82d994539b6e.jpg,0,,,,,pwh,mũ vàng,
+news_82d994539b6e.jpg,1,,,,,drop,"người đi đường che ô, ngoài khu thi công",
+news_82d994539b6e.jpg,2,,,,,drop,"người đi đường che ô, ngoài khu thi công",
+news_82d994539b6e.jpg,3,,,,,pnh,"đầu trần, lái cẩu trong cabin",đầu trần
+news_82d994539b6e.jpg,4,,,,,drop,"phía xa, mờ, không phán đoán được mũ",
+news_853aa187d990.jpg,,,,,,skip_image,"giao thông đường phố, người đi xe máy",
+news_88206dc8ecc7.jpg,0,,,,,pwh,"mũ cam, hàn",
+news_88206dc8ecc7.jpg,1,,,,,drop,trùng khung 2 (khung rộng hơn),
+news_88206dc8ecc7.jpg,2,,,,,pnh,"mũ vải rộng vành, cúi người",mũ vải
+news_8a6963f7b952.jpg,,,,,,skip_image,"ảnh tại tòa/cơ quan, không phải công trường",
+news_90f2d68b2a6c.jpg,,,,,,skip_image,"học sinh tập thể dục ở sân trường, không phải công trường",
+news_947b8da751d4.jpg,0,,,,,pnh,"mũ cói rộng vành, trên giàn cốp pha",mũ vải
+news_947b8da751d4.jpg,1,,,,,pnh,"đầu trần, kính râm",đầu trần
+news_951e751aba07.jpg,0,,,,,pnh,mũ lưỡi trai xanh,mũ lưỡi trai
+news_951e751aba07.jpg,1,,,,,pnh,mũ trùm áo khoác đen,mũ khác
+news_958f7ea334f4.jpg,0,,,,,pnh,"đầu trần, ban công tầng 2, nhỏ",đầu trần
+news_958f7ea334f4.jpg,1,,,,,pnh,"đầu trần, mép dưới, chỉ thấy đầu",đầu trần
+news_958f7ea334f4.jpg,2,,,,,pnh,"nón lá, ban công tầng 2, nhỏ",nón lá
+news_958f7ea334f4.jpg,3,,,,,pnh,"đầu trần, ban công tầng 2, nhỏ",đầu trần
+news_958f7ea334f4.jpg,4,,,,,drop,"đầu có vật trắng (mũ hoặc khăn), nhỏ, không phán đoán được",
+news_958f7ea334f4.jpg,5,,,,,drop,"mép dưới, quá nhỏ, tối",
+news_958f7ea334f4.jpg,6,,,,,pnh,"mép dưới, chỉ thấy đầu, mũ cối màu be, không chắc",mũ cối
+news_958f7ea334f4.jpg,,720.0,652.0,745.0,695.0,pnh,"thêm: cúi người, ban công tầng 2, nhỏ",đầu trần
+news_97066b6296a4.jpg,0,,,,,pnh,"mũ tối màu kèm khăn che mặt, không chắc loại mũ",không rõ
+news_97066b6296a4.jpg,1,,,,,pnh,"đầu trần, dưới gầm cầu",đầu trần
+news_9f1f732b5701.jpg,0,,,,,pnh,"đầu trần, nhỏ",đầu trần
+news_9f1f732b5701.jpg,1,,,,,pnh,"nón lá, nhỏ",nón lá
+news_9f1f732b5701.jpg,2,,,,,drop,người đi xe máy phía xa,
+news_a2e27112a16c.jpg,,,,,,skip_image,"ảnh flycam khu dân cư, người quá nhỏ",
+news_a62d82e0038c.jpg,0,,,,,pwh,"mũ vàng, cúi người",
+news_a62d82e0038c.jpg,1,,,,,pwh,"mũ vàng, vác thép",
+news_aaecfd51b36c.jpg,0,,,,,pnh,"mũ vải (mũ tai bèo), hàn cắt",mũ vải
+news_aaecfd51b36c.jpg,1,,,,,drop,"mép trên, chỉ thấy chân, không thấy đầu",
+news_ab8096ad4cea.jpg,0,,,,,pnh,"mũ cối xanh, lái máy",mũ cối
+news_ae6eb5b97db7.jpg,0,,,,,pnh,"mũ cối xanh, khẩu trang",mũ cối
+news_b2b233f610b3.jpg,,,,,,skip_image,"giao thông đường phố, toàn người đi xe máy",
+news_b2b50cd30dac.jpg,,,,,,skip_image,"công an và thanh niên xếp hàng, không phải công trường",
+news_b4611aa8b62c.jpg,,,,,,skip_image,"chỉ có người đi đường dắt xe máy cạnh máy xúc, không có người ở khu thi công",
+news_b998fc38e064.jpg,,,,,,skip_image,"ảnh flycam nhìn thẳng từ trên, người nhỏ, không phán đoán được loại mũ",
+news_bda56d570ce4.jpg,0,,,,,pnh,"mũ vải màu be, cầm máy cắt",mũ vải
+news_c07396ce8e2b.jpg,0,,,,,pnh,"mũ vải (mũ tai bèo), khẩu trang",mũ vải
+news_c07396ce8e2b.jpg,1,,,,,drop,"người ngồi trong cửa hàng ven công trường, không ở khu thi công",
+news_c5585730345b.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ",
+news_c80be529e08a.jpg,0,,,,,pwh,"mũ trắng, nhỏ, không chắc (có thể là mũ vải trắng)",
+news_c80be529e08a.jpg,1,,,,,drop,quá nhỏ,
+news_c80be529e08a.jpg,2,,,,,pnh,"đầu trần, nhỏ",đầu trần
+news_c80be529e08a.jpg,3,,,,,drop,"cúi người, không thấy đầu",
+news_c80be529e08a.jpg,4,,,,,drop,quá nhỏ,
+news_c80be529e08a.jpg,5,,,,,drop,"nhỏ, đầu tối, không phán đoán được mũ",
+news_c80be529e08a.jpg,6,,,,,pnh,"khăn trùm đầu màu đỏ, nhỏ",mũ khác
+news_c9474ce78eae.jpg,,,,,,skip_image,"nút giao thông, toàn người đi xe máy",
+news_cb260ac145d8.jpg,,,,,,skip_image,"lễ khánh thành, không phải công trường",
+news_cb44a532be89.jpg,0,,,,,pnh,"đầu trần, lát gạch trong nhà",đầu trần
+news_cb44a532be89.jpg,1,,,,,pnh,"đầu trần, lát gạch trong nhà",đầu trần
+news_cdb476cdce83.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ",
+news_d1677c06daf3.jpg,0,,,,,pnh,"mũ lưỡi trai, trát tường trên giàn giáo",mũ lưỡi trai
+news_d68a443a93b1.jpg,0,,,,,pnh,"đầu trần, trên thang",đầu trần
+news_d68a443a93b1.jpg,1,,,,,drop,"sau tấm kính, mờ, không phán đoán được mũ",
+news_d8d7c1f4367c.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_d8d7c1f4367c.jpg,1,,,,,pnh,mũ cối xanh,mũ cối
+news_d8d7c1f4367c.jpg,2,,,,,drop,"ngược sáng, tối, không phán đoán được mũ",
+news_d8d7c1f4367c.jpg,3,,,,,pnh,"nón lá, trên giàn giáo, nhỏ",nón lá
+news_d8d7c1f4367c.jpg,4,,,,,pnh,"nón lá, trên giàn giáo, nhỏ",nón lá
+news_dab1e4c2a4d9.jpg,0,,,,,pnh,"mũ lưỡi trai, trát tường",mũ lưỡi trai
+news_db96bfaae241.jpg,0,,,,,pwh,mũ cam,
+news_db96bfaae241.jpg,1,,,,,pwh,mũ cam,
+news_db96bfaae241.jpg,2,,,,,pwh,"mũ trắng, khăn che mặt",
+news_db96bfaae241.jpg,3,,,,,pnh,nón lá,nón lá
+news_db96bfaae241.jpg,4,,,,,pnh,mũ vải hồng có vành,mũ vải
+news_db96bfaae241.jpg,5,,,,,drop,"ban công xa, mờ, không phán đoán được mũ",
+news_db96bfaae241.jpg,6,,,,,pnh,nón lá,nón lá
+news_db96bfaae241.jpg,7,,,,,drop,trùng khung 12 (phần trên),
+news_db96bfaae241.jpg,8,,,,,pwh,"mũ cam, trên giàn giáo",
+news_db96bfaae241.jpg,9,,,,,pwh,"mũ bảo hiểm xe máy màu xám trên mái (tính là có mũ theo quy tắc), không chắc",
+news_db96bfaae241.jpg,10,,,,,pnh,"đầu trần, cởi trần, trên mái",đầu trần
+news_db96bfaae241.jpg,11,,,,,drop,"cúi người, không thấy đầu",
+news_db96bfaae241.jpg,12,,,,,pwh,mũ vàng,
+news_db96bfaae241.jpg,,585.0,635.0,640.0,690.0,pnh,"thêm: ngồi trên mái, mũ vải tối màu, không chắc",mũ vải
+news_dc04fb9e1677.jpg,,,,,,skip_image,"lễ công bố trong hội trường, không phải công trường",
+news_ddc675ad2c26.jpg,,,,,,skip_image,"giao thông đường phố, người đi xe máy",
+news_e50126d402de.jpg,0,,,,,pnh,"đầu trần, lắp cửa",đầu trần
+news_ed8a1a27e7f2.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ, đi đường",
+news_ef4e79eb273a.jpg,0,,,,,pwh,"mũ trắng, đoàn kiểm tra trong công trường",
+news_ef4e79eb273a.jpg,1,,,,,pwh,mũ trắng,
+news_ef4e79eb273a.jpg,2,,,,,pnh,mũ cối xanh,mũ cối
+news_ef4e79eb273a.jpg,3,,,,,pnh,mũ cối xanh,mũ cối
+news_ef4e79eb273a.jpg,4,,,,,pwh,mũ trắng,
+news_ef4e79eb273a.jpg,5,,,,,pwh,mũ trắng,
+news_ef4e79eb273a.jpg,6,,,,,drop,không phải người (lỗ tường gạch),
+news_f1710152db3b.jpg,,,,,,skip_image,"người duy nhất quá nhỏ, tối, không phán đoán được mũ",
+news_f2435e0603fb.jpg,0,,,,,pwh,"mũ cam, khăn che mặt",
+news_f2435e0603fb.jpg,1,,,,,pwh,mũ cam,
+news_f2435e0603fb.jpg,2,,,,,pwh,mũ cam,
+news_f671b553e8da.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ, đi đường",
+news_f8fcefc63a08.jpg,0,,,,,pnh,"đầu trần, đi dây điện trong nhà",đầu trần
+news_70c26578ae85.jpg,,662.0,755.0,738.0,822.0,pnh,"thêm: trong ô cửa sổ sau giàn giáo (sót khi duyệt, phát hiện khi tự kiểm tra phiếu)",nón lá
+news_648ba4f23759.jpg,,62.0,132.0,132.0,250.0,pnh,thêm: trên giàn giáo góc trái (sót khi duyệt),mũ cối
+news_648ba4f23759.jpg,,188.0,145.0,258.0,250.0,pnh,"thêm: mũ vải xanh, trên giàn giáo góc trái (sót khi duyệt)",mũ vải
+news_648ba4f23759.jpg,,1515.0,553.0,1562.0,597.0,pnh,"thêm: trong nhà, tối, nhỏ, không chắc (sót khi duyệt)",đầu trần
+news_c80be529e08a.jpg,,105.0,340.0,150.0,392.0,pnh,"thêm: ngồi ở ban công tầng 2, mũ vải tối màu rộng vành (sót khi duyệt)",mũ vải
+news_c80be529e08a.jpg,,645.0,685.0,675.0,745.0,pwh,"thêm: mũ cam, đứng sau cột, nhỏ (sót khi duyệt)",
+news_d8d7c1f4367c.jpg,,812.0,245.0,848.0,300.0,pnh,"thêm: trên mái, mũ vải màu nâu, bị cột che, không chắc (sót khi duyệt)",mũ vải
+news_d8d7c1f4367c.jpg,,848.0,252.0,895.0,300.0,pwh,"thêm: trên mái, mũ bảo hộ xanh nhạt, nhỏ, không chắc (sót khi duyệt)",
+news_d8d7c1f4367c.jpg,,1976.0,296.0,2000.0,352.0,pwh,"thêm: mũ trắng, mép phải (sót khi duyệt)",
+news_5a1c9eea263a.jpg,,1880.0,612.0,1940.0,678.0,pnh,"thêm: mũ lưỡi trai trắng, ngồi trên mái (sót khi duyệt)",mũ lưỡi trai
+news_5a1c9eea263a.jpg,,400.0,995.0,460.0,1140.0,pnh,"thêm: áo xanh, cạnh giàn giáo (sót khi duyệt)",mũ cối
+news_5a1c9eea263a.jpg,,575.0,950.0,640.0,1140.0,pnh,"thêm: áo rằn ri, trên giàn giáo (sót khi duyệt)",mũ cối
+news_51701047482c.jpg,,633.0,352.0,690.0,440.0,pnh,"thêm: áo xanh, đầu bị ống giáo che một phần, không chắc (sót khi duyệt)",đầu trần

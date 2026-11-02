@@ -1,0 +1,3 @@
+validation: 235 ảnh có mũ thường → chọn 64, bỏ {} → 64 ảnh (val); hộp: head 71, pnh 71, face 72; loại: đầu/mặt chưa xác minh 101, đầu/người không ghép một-một 29, hộp nhóm, hình vẽ hoặc ảnh xoay 21, không có mũ trên đầu người 12, có mũ bảo hộ 8
+test: 721 ảnh có mũ thường → chọn 210, bỏ {} → 210 ảnh (train); hộp: head 248, pnh 248, face 245; loại: đầu/mặt chưa xác minh 301, đầu/người không ghép một-một 95, hộp nhóm, hình vẽ hoặc ảnh xoay 70, không có mũ trên đầu người 31, có mũ bảo hộ 14
+train: 15502 ảnh có mũ thường → chọn 561, bỏ {} → 561 ảnh (train); hộp: head 895, pnh 895, face 849; loại: đầu/mặt chưa xác minh 14084, đầu/người không ghép một-một 436, hộp nhóm, hình vẽ hoặc ảnh xoay 204, không có mũ trên đầu người 112, có mũ bảo hộ 105

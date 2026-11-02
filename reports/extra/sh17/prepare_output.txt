@@ -1,0 +1,3 @@
+SH17: 8099 ảnh → chọn 5619 → giữ train 4491, val 1127; loại: {'không có người hoặc đầu': 1652, 'đầu/người không ghép một-một': 808, 'mũ bảo hộ không nằm trên đầu': 20, 'tỉ lệ khung khác ảnh gốc': 1}
+  train: helmet 390, head 6689, hwh 390, pwh 390, pnh 6689, face 5724
+  val: helmet 86, head 1711, hwh 86, pwh 86, pnh 1711, face 1485

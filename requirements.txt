@@ -3,7 +3,7 @@
 ultralytics==8.4.164
 torch==2.14.0
 torchvision==0.29.0
-numpy==2.4.6
+numpy==2.3.5  # Ultralytics yêu cầu ≤ 2.3.5 để xuất Core ML (coremltools issue 2633); tuần 1–8 chạy với 2.4.6
 pandas==3.0.6
 opencv-python==5.0.0.93
 matplotlib==3.11.2
@@ -11,3 +11,8 @@ pillow==12.3.0
 # CV-EDA (Tuần 3): chạy notebook
 ipykernel==7.4.0
 nbclient==0.11.0
+# Tuần 9: chuyển mô hình sang ONNX, Core ML và đo tốc độ trên MacBook
+onnx==1.23.2
+onnxslim==0.1.98
+onnxruntime==1.31.1
+coremltools==9.0

@@ -1,0 +1,10 @@
+runs/M2_yolo26n/weights/best.pt → ONNX, Core ML; tập test, imgsz 800, batch 1; máy arm64 (macOS 15.3.2); lớp person_no_helmet ở ngưỡng 0.258
+Tốc độ: trung bình trên 200 ảnh test sau 10 ảnh làm nóng (ms/ảnh)
+
+PyTorch, CPU                         best.pt                5.4 MB | mAP50 0.906 mAP50-95 0.594 (lệch +0.000) | R/P person_no_helmet 0.806/0.824 | 1.8 + 69.6 + 0.6 = 71.9 ms (p95 106.1), 13.9 FPS
+PyTorch, GPU M1 (MPS)                best.pt                5.4 MB | mAP50 0.906 mAP50-95 0.594 (lệch +0.000) | R/P person_no_helmet 0.806/0.824 | 1.8 + 28.3 + 3.6 = 33.6 ms (p95 41.8), 29.8 FPS
+PyTorch, MPS, nhánh NMS-free         best.pt                5.4 MB | mAP50 0.899 mAP50-95 0.588 (lệch -0.007) | R/P person_no_helmet 0.779/0.857 | 1.8 + 16.6 + 2.5 = 20.9 ms (p95 35.7), 47.9 FPS
+ONNX Runtime, CPU                    best.onnx              9.9 MB | mAP50 0.904 mAP50-95 0.593 (lệch -0.002) | R/P person_no_helmet 0.809/0.818 | 3.2 + 56.1 + 0.9 = 60.3 ms (p95 77.2), 16.6 FPS
+ONNX Runtime, CPU, nhánh NMS-free    best_e2e.onnx          9.9 MB | mAP50 0.894 mAP50-95 0.585 (lệch -0.012) | R/P person_no_helmet 0.769/0.838 | 3.1 + 56.1 + 0.2 = 59.4 ms (p95 64.9), 16.8 FPS
+Core ML FP32 (thực tế chạy CPU)      best_fp32.mlpackage    9.8 MB | mAP50 0.904 mAP50-95 0.593 (lệch -0.002) | R/P person_no_helmet 0.809/0.818 | 2.0 + 57.8 + 0.6 = 60.3 ms (p95 70.0), 16.6 FPS
+Core ML FP16 (Neural Engine)         best_fp16.mlpackage    5.0 MB | mAP50 0.903 mAP50-95 0.592 (lệch -0.002) | R/P person_no_helmet 0.813/0.821 | 1.8 + 14.9 + 0.6 = 17.3 ms (p95 18.4), 57.8 FPS
