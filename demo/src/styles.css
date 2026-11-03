@@ -98,6 +98,7 @@ main, .dropzone { height: 100%; }
 .done, .link { min-height: 44px; display: inline-flex; align-items: center; gap: 2px; color: var(--tint); }
 .done, .link.strong { font-weight: 600; }
 .foot { margin: 10px 16px 0; font-size: 13px; line-height: 1.4; color: var(--label-2); }
+.foot a { color: var(--tint); }
 
 /* Danh sách nhóm của iOS (bảng thông tin + lịch sử) */
 .group { list-style: none; margin: 0; padding: 0; overflow: hidden; border-radius: 20px; background: var(--cell); --inset: 16px; }
