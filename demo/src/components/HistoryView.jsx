@@ -1,0 +1,94 @@
+import { useEffect, useRef, useState } from "react";
+import Stage, { Capsule, verdictOf } from "./Stage.jsx";
+import Crop, { useObjectUrl } from "./Crop.jsx";
+import { IconBack, IconChevron, IconStack, IconTrash } from "./Icons.jsx";
+import { clearChecks, deleteCheck, listChecks, markSeen } from "../lib/history.js";
+
+const timeFmt = new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" });
+const dateFmt = new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
+const dayKey = (t) => new Date(t).toDateString();
+function dayLabel(t) {
+  const today = new Date(), yesterday = new Date(today - 864e5);
+  return dayKey(t) === today.toDateString() ? "Hôm nay" : dayKey(t) === yesterday.toDateString() ? "Hôm qua" : dateFmt.format(t);
+}
+const badCount = (rec) => rec.people.filter((p) => p.violation).length;
+
+// Lịch sử vi phạm kiểu danh sách iOS: nhóm theo ngày, mỗi dòng là ảnh cắt người vi phạm + số người không mũ + giờ, nguồn; chấm xanh
+// là dòng chưa xem. Chạm một dòng để mở ảnh đầy đủ có khung.
+export default function HistoryView({ version, initial, onChange, onClose }) {
+  const [rows, setRows] = useState(null);
+  const [open, setOpen] = useState(initial ?? null);  // mở thẳng một ảnh (từ lịch sử gần đây ở bảng bên phải)
+  useEffect(() => { listChecks().then(setRows); }, [version]);
+  const fromPanel = useRef(!!initial);  // mở từ bảng bên phải: nút quay lại về thẳng màn Kiểm tra
+  useEffect(() => { if (initial) markSeen(initial.id).then(onChange); }, []);
+
+  const openRow = async (r) => { await markSeen(r.id); setOpen(r); onChange(); };
+  const toCheck = fromPanel.current && open === initial;  // mở từ bảng bên phải: quay lại thẳng màn Kiểm tra
+  if (open) return <Detail rec={open} backLabel={toCheck ? "Kiểm tra" : "Lịch sử"} onBack={() => (toCheck ? onClose() : setOpen(null))}
+    onDelete={async () => { await deleteCheck(open.id); setOpen(null); onChange(); }} />;
+
+  const days = [];
+  for (const r of rows ?? []) {
+    const last = days.at(-1);
+    if (last?.key === dayKey(r.at)) last.rows.push(r);
+    else days.push({ key: dayKey(r.at), label: dayLabel(r.at), rows: [r] });
+  }
+  return (
+    <section className="ios" aria-labelledby="history-title">
+      <nav className="navbar"><span /><button type="button" className="link strong" onClick={onClose}>Xong</button></nav>
+      <h1 id="history-title" className="large">Lịch sử</h1>
+      <p className="sub">Lưu trên máy này</p>
+      {rows?.length === 0 && (
+        <div className="empty">
+          <span className="emptyicon"><IconStack size={34} /></span>
+          <h2>Chưa có vi phạm</h2>
+          <p>Khi phát hiện người không đội mũ, ảnh được lưu ở đây, chỉ trên máy này.</p>
+        </div>
+      )}
+      {days.map((d) => (
+        <section key={d.key} aria-label={d.label}>
+          <h3 className="grouptitle">{d.label}</h3>
+          <ul className="group list">
+            {d.rows.map((r) => (
+              <li key={r.id}>
+                <button type="button" className="rowbtn" onClick={() => openRow(r)}>
+                  <Crop rec={r} className="crop" />
+                  <span className="txt"><b>{badCount(r)} không đội mũ</b><span>{timeFmt.format(r.at)} · {r.source}</span></span>
+                  {!r.seen && <span className="unread" aria-label="Mới" />}
+                  <IconChevron size={18} />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      {rows?.length > 0 && (
+        <ul className="group">
+          <li><button type="button" className="rowbtn destructive" onClick={async () => {
+            if (window.confirm(`Xóa toàn bộ ${rows.length} ảnh trong lịch sử? Không khôi phục được.`)) { await clearChecks(); onChange(); }
+          }}>Xóa tất cả</button></li>
+        </ul>
+      )}
+    </section>
+  );
+}
+
+function Detail({ rec, backLabel, onBack, onDelete }) {
+  const url = useObjectUrl(rec.image);
+  return (
+    <section className="detail" aria-label="Ảnh vi phạm">
+      <nav className="navbar dark">
+        <button type="button" className="link" onClick={onBack}><IconBack size={22} />{backLabel}</button>
+        <button type="button" className="link danger" aria-label="Xóa ảnh này"
+          onClick={() => window.confirm("Xóa ảnh này khỏi lịch sử?") && onDelete()}><IconTrash /></button>
+      </nav>
+      <div className="viewfinder">
+        <Stage width={rec.width} height={rec.height} people={rec.people}><img src={url} alt="Ảnh vi phạm đã lưu" /></Stage>
+      </div>
+      <footer className="meta">
+        <Capsule {...verdictOf(rec.people)} />
+        <p>{rec.people.length} người · {rec.source} · {timeFmt.format(rec.at)}, {dateFmt.format(rec.at)} · {Math.round(rec.ms)} ms</p>
+      </footer>
+    </section>
+  );
+}

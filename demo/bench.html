@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đo tốc độ mô hình</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.5 -apple-system, system-ui, sans-serif; margin: 0 auto; padding: 16px; max-width: 760px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  #env, #log { font: 13px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; word-break: break-word; }
+  button, input { font: inherit; }
+  button { padding: 10px 18px; border-radius: 10px; border: 1px solid #888; background: #1baf7a; color: #fff; }
+  button:disabled { opacity: .45; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+  canvas { max-width: 100%; height: auto; display: block; margin-top: 12px; }
+</style>
+</head>
+<body>
+<h1>Đo tốc độ mô hình trên thiết bị</h1>
+<div id="env">Đang đọc cấu hình…</div>
+<div class="row">
+  <input type="file" id="file" accept="image/*">
+  <button id="run" disabled>Đo</button>
+  <button id="copy" hidden>Sao chép kết quả</button>
+</div>
+<div id="log"></div>
+<canvas id="view"></canvas>
+<script type="module">
+// Đo trên thiết bị thật: mỗi cách chạy (WASM, WebGPU nếu có) × mỗi cỡ ảnh trong config.models; làm nóng WARMUP lần rồi lấy
+// trung vị RUNS lần cho tiền xử lý / suy luận / hậu xử lý. Khung vẽ lên ảnh là kết quả của cách chạy đầu tiên.
+import { preprocess, postprocess, scaleBoxes } from "./detector.js";
+
+const WARMUP = 2, RUNS = 10;
+const BACKENDS = [
+  { name: "WASM", module: "ort.wasm.min.mjs", ep: "wasm", ok: true },
+  { name: "WebGPU", module: "ort.webgpu.min.mjs", ep: "webgpu", ok: !!navigator.gpu },
+];
+const COLORS = { 3: "#1baf7a", 4: "#eb6834" };  // person_with_helmet, person_no_helmet
+const $ = (id) => document.getElementById(id);
+const median = (xs) => [...xs].sort((a, b) => a - b)[Math.floor(xs.length / 2)];
+const ms = (x) => x.toFixed(1).padStart(6);
+
+const cfg = await (await fetch("model/config.json")).json();
+const env = [
+  navigator.userAgent,
+  `Số nhân CPU: ${navigator.hardwareConcurrency}; đa luồng WASM (crossOriginIsolated): ${self.crossOriginIsolated ? "có" : "không"}; WebGPU: ${navigator.gpu ? "có" : "không"}`,
+  `Mô hình: ${cfg.weights}, cỡ ảnh ${Object.keys(cfg.models).join(", ")}`,
+];
+$("env").textContent = env.join("\n");
+const log = (s) => { $("log").textContent += s + "\n"; };
+
+let bitmap;
+$("file").onchange = async (e) => {
+  bitmap = await createImageBitmap(e.target.files[0]);
+  $("run").disabled = false;
+};
+
+$("run").onclick = async () => {
+  $("run").disabled = true;
+  $("log").textContent = `Ảnh ${bitmap.width}×${bitmap.height}; trung vị ${RUNS} lần sau ${WARMUP} lần làm nóng (ms)\n`;
+  const canvas = document.createElement("canvas");
+  let shown = false;
+  for (const b of BACKENDS) {
+    if (!b.ok) { log(`${b.name}: trình duyệt không hỗ trợ`); continue; }
+    // cỡ chính (cfg.imgsz) trước: khung vẽ lên ảnh là của cỡ này; Object.entries xếp khóa số tăng dần
+    for (const [size, file] of Object.entries(cfg.models).sort(([a]) => (Number(a) === cfg.imgsz ? -1 : 1))) {
+      const c = { ...cfg, imgsz: Number(size) };
+      try {
+        // file trong public/ không qua Vite: nạp bằng URL lúc chạy
+        const ort = await import(/* @vite-ignore */ new URL(`vendor/${b.module}`, location.href).href);
+        ort.env.wasm.wasmPaths = new URL("vendor/", location.href).href;
+        let t = performance.now();
+        const session = await ort.InferenceSession.create(`model/${file}`, { executionProviders: [b.ep] });
+        const load = performance.now() - t;
+        const times = { pre: [], infer: [], post: [] };
+        let dets;
+        for (let i = 0; i < WARMUP + RUNS; i++) {
+          t = performance.now();
+          const { data, lb } = preprocess(bitmap, bitmap.width, bitmap.height, c.imgsz, canvas);
+          const t1 = performance.now();
+          const out = await session.run({ [session.inputNames[0]]: new ort.Tensor("float32", data, [1, 3, c.imgsz, c.imgsz]) });
+          const t2 = performance.now();
+          dets = scaleBoxes(postprocess(out[session.outputNames[0]].data, c.names.length, c), lb, bitmap.width, bitmap.height);
+          const t3 = performance.now();
+          if (i >= WARMUP) { times.pre.push(t1 - t); times.infer.push(t2 - t1); times.post.push(t3 - t2); }
+        }
+        await session.release();
+        const [pre, infer, post] = [times.pre, times.infer, times.post].map(median);
+        const counts = c.names.map((n, k) => `${n} ${dets.filter((d) => d.cls === k).length}`).join(", ");
+        log(`${b.name.padEnd(6)} ${size}: ${ms(pre)} + ${ms(infer)} + ${ms(post)} = ${ms(pre + infer + post)} ms `
+          + `(${(1000 / (pre + infer + post)).toFixed(1)} FPS), tải + khởi tạo ${(load / 1000).toFixed(1)} s`
+          + `${b.ep === "wasm" ? `, ${ort.env.wasm.numThreads} luồng` : ""}\n         ${counts}`);
+        if (!shown) { draw(dets); shown = true; }
+      } catch (err) {
+        log(`${b.name} ${size}: LỖI ${err.message ?? err}`);
+      }
+    }
+  }
+  $("copy").hidden = false;
+  $("run").disabled = false;
+};
+
+function draw(dets) {
+  const v = $("view"), ctx = v.getContext("2d");
+  v.width = bitmap.width; v.height = bitmap.height;
+  ctx.drawImage(bitmap, 0, 0);
+  ctx.lineWidth = Math.max(2, bitmap.width / 300);
+  ctx.font = `${Math.max(14, bitmap.width / 50)}px system-ui`;
+  for (const d of dets.filter((d) => COLORS[d.cls])) {
+    const [x1, y1, x2, y2] = d.box;
+    ctx.strokeStyle = ctx.fillStyle = COLORS[d.cls];
+    ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+    ctx.fillText(`${d.cls === cfg.violation ? "không mũ" : "có mũ"} ${d.score.toFixed(2)}`, x1 + 4, y1 + parseInt(ctx.font) + 2);
+  }
+}
+
+$("copy").onclick = () => navigator.clipboard.writeText(`${$("env").textContent}\n${$("log").textContent}`)
+  .then(() => { $("copy").textContent = "Đã sao chép"; });
+</script>
+</body>
+</html>

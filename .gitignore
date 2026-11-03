@@ -21,6 +21,11 @@ docs/report_builder/snippets/
 ~$*
 
 # demo/: file sinh bởi scripts/export_demo.py (mô hình, onnxruntime-web, dữ liệu kiểm tra)
-demo/model/
-demo/vendor/
+demo/public/model/
+demo/public/vendor/
+demo/dist/
 demo/test/fixtures/
+demo/.cert/
+
+# công cụ thiết kế (skill impeccable): brief, trang chọn hướng, ảnh kiểm tra — chỉ dùng trên máy
+.impeccable/

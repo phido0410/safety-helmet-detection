@@ -1,0 +1,16 @@
+{
+  "name": "HelmetCheck",
+  "short_name": "HelmetCheck",
+  "description": "Phát hiện người không đội mũ bảo hộ ở công trường, mô hình chạy ngay trên máy",
+  "lang": "vi",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
