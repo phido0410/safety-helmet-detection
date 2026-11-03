@@ -1,6 +1,7 @@
 // Kiểm tra tracker (src/lib/tracker.js) trên chuỗi khung giả lập 4 khung/s (như iPhone 11): giữ số khi người đi nhanh, nhấp nháy
-// lớp, mất dấu ngắn; mỗi người vi phạm chỉ được chụp một lần; người chỉ thoáng qua không bị chụp.
-import { createTracker, LOST_MS } from "../src/lib/tracker.js";
+// lớp, mất dấu ngắn; mỗi người vi phạm chỉ được chụp một lần, kể cả người ở xa mô hình lúc thấy lúc không; người chỉ thoáng qua
+// không bị chụp.
+import { createTracker, LOST_MS, REMEMBER_MS } from "../src/lib/tracker.js";
 
 const DT = 250;  // ms giữa hai khung
 let failed = 0;
@@ -41,13 +42,16 @@ check(run([[person(100, true)], [person(100, true)], [], [], []]).shots.length =
 // 4. Chỉ 2/5 khung báo vi phạm: không chụp
 check(run(Array.from({ length: 20 }, (_, i) => [person(100, i % 5 < 2)])).shots.length === 0, "2/5 khung vi phạm: bị chụp");
 
-// 5. Mất dấu 1 giây (4 khung) rồi xuất hiện lại cùng chỗ: vẫn là người cũ, không chụp lại;
-//    mất dấu lâu hơn LOST_MS: coi là người mới, chụp lại
+// 5. Người đã chụp mất dấu rồi xuất hiện lại cùng chỗ: trong REMEMBER_MS (kể cả lâu hơn LOST_MS) vẫn là người cũ, không chụp lại;
+//    lâu hơn REMEMBER_MS: coi là người mới, chụp lại
 {
   const gap = (k) => [...Array(6).fill([person(100, true)]), ...Array(k).fill([]), ...Array(6).fill([person(100, true)])];
-  check(run(gap(4)).shots.length === 1, `mất dấu 1 s: chụp ${run(gap(4)).shots.length} lần (phải 1)`);
-  const k = Math.ceil(LOST_MS / DT) + 1;
-  check(run(gap(k)).shots.length === 2, `mất dấu ${(k * DT) / 1000} s: chụp ${run(gap(k)).shots.length} lần (phải 2)`);
+  for (const ms of [1000, LOST_MS + DT, REMEMBER_MS]) {
+    const k = ms / DT - 1, n = run(gap(k)).shots.length;  // k khung trống = thời gian không thấy (k + 1) × DT
+    check(n === 1, `mất dấu ${ms / 1000} s: chụp ${n} lần (phải 1)`);
+  }
+  const k = REMEMBER_MS / DT, n = run(gap(k)).shots.length;
+  check(n === 2, `mất dấu ${((k + 1) * DT) / 1000} s: chụp ${n} lần (phải 2)`);
 }
 
 // 6. Hai người đứng cạnh nhau, cùng vi phạm: hai số khác nhau, mỗi người một lần; người đội mũ không bị chụp
@@ -64,5 +68,15 @@ check(run(Array.from({ length: 20 }, (_, i) => [person(100, i % 5 < 2)])).shots.
   check(tr.update([person(100, false)], 3 * DT).due.length === 0, "khung hiện tại có mũ nhưng vẫn báo cần chụp");
 }
 
-console.log(`tracker: 7 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+// 8. Người ở xa (hộp 20×40, rung ±3 px), mô hình chỉ thấy 30% số khung, đứng yên 20 giây: chỉ một ảnh. Thử 50 chuỗi ngẫu nhiên
+//    (seed cố định): mất dấu liền 2–3 giây là thường, vận tốc ước lượng từ độ rung không được đẩy hộp dự đoán ra khỏi người đó.
+{
+  let seed = 42;
+  const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32), j = () => (rnd() * 2 - 1) * 3;
+  const counts = Array.from({ length: 50 }, () => run(Array.from({ length: 20000 / DT }, () =>
+    rnd() < 0.3 ? [{ box: [300 + j(), 200 + j(), 320 + j(), 240 + j()], score: 0.5, violation: rnd() < 0.9 }] : [])).shots.length);
+  check(counts.every((n) => n === 1), `người ở xa: số ảnh mỗi chuỗi ${counts.filter((n) => n !== 1)} (phải 1)`);
+}
+
+console.log(`tracker: 8 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);

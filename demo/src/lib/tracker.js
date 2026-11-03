@@ -3,9 +3,13 @@
 // đi ngang có thể lệch gần hết bề ngang giữa hai khung. Ghép không phân biệt lớp: mô hình hay đổi qua lại có mũ / không mũ ở cùng
 // một người, nên một người chỉ tính là vi phạm khi ít nhất CONFIRM trong VOTES khung gần nhất báo không đội mũ.
 // Số hiển thị là số nhỏ nhất chưa dùng trong lúc người đó còn được theo dõi (bong bóng không phình ra 3 chữ số khi chạy lâu).
+// Người đã bị chụp được nhớ thêm REMEMBER_MS sau khi mất dấu: người ở xa / bị che chỉ được mô hình thấy ở một phần khung, mất dấu
+// quá LOST_MS là chuyện thường; nếu quên ngay thì lúc thấy lại sẽ bị coi là người mới và chụp lại. Đổi lại, người vi phạm khác đứng
+// đúng chỗ đó trong REMEMBER_MS sẽ bị coi là người cũ và không được chụp. Hộp mới được so với cả hộp dự đoán lẫn hộp thấy lần cuối:
+// với người đứng yên, vận tốc ước lượng chỉ là độ rung của hộp, dời theo nó vài giây là lệch khỏi người ở xa (hộp nhỏ).
 // shortcut: chỉ dựa vào vị trí hộp (không so ngoại hình), hai người đi cắt nhau có thể đổi số → người vi phạm có thể bị chụp thêm
 // một lần; nâng cấp lên ByteTrack/BoT-SORT nếu thấy chụp trùng còn nhiều.
-export const MATCH_IOU = 0.2, LOST_MS = 2000, VOTES = 5, CONFIRM = 3;
+export const MATCH_IOU = 0.2, LOST_MS = 2000, REMEMBER_MS = 10000, VOTES = 5, CONFIRM = 3;
 
 const center = (b) => [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2];
 function iou(a, b) {
@@ -23,11 +27,11 @@ export function createTracker() {
   const free = () => { let n = 1; while (tracks.some((tr) => tr.n === n)) n++; return n; };
 
   function update(people, t) {
-    tracks = tracks.filter((tr) => t - tr.t <= LOST_MS);
+    tracks = tracks.filter((tr) => t - tr.t <= (tr.captured ? REMEMBER_MS : LOST_MS));
     const pairs = [];
     tracks.forEach((tr, i) => {
       const dx = tr.v[0] * (t - tr.t), dy = tr.v[1] * (t - tr.t), pred = [tr.box[0] + dx, tr.box[1] + dy, tr.box[2] + dx, tr.box[3] + dy];
-      people.forEach((p, j) => { const o = iou(pred, p.box); if (o >= MATCH_IOU) pairs.push([o, i, j]); });
+      people.forEach((p, j) => { const o = Math.max(iou(pred, p.box), iou(tr.box, p.box)); if (o >= MATCH_IOU) pairs.push([o, i, j]); });
     });
     pairs.sort((a, b) => b[0] - a[0]);
     const taken = new Set(), owner = new Map();

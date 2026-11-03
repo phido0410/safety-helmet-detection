@@ -1,0 +1,13 @@
+demo/bench.html trên iPhone 11 Pro Max (anh đo 2026-11-03, dán từ nút "Sao chép kết quả")
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.3 Mobile/15E148 Safari/604.1
+Số nhân CPU: 4; đa luồng WASM (crossOriginIsolated): có; WebGPU: có
+Mô hình: runs/M3b_yolo26n_bg/weights/best.pt, cỡ ảnh 640, 800
+Ảnh 1200×800; trung vị 10 lần sau 2 lần làm nóng (ms)
+WASM   800:    7.0 +  221.0 +    1.1 =  229.1 ms (4.4 FPS), tải + khởi tạo 0.5 s, 2 luồng
+         helmet 23, head 0, head_with_helmet 25, person_with_helmet 27, person_no_helmet 0, face 23
+WASM   640:    5.2 +  140.3 +    0.7 =  146.2 ms (6.8 FPS), tải + khởi tạo 1.8 s, 2 luồng
+         helmet 23, head 1, head_with_helmet 24, person_with_helmet 24, person_no_helmet 1, face 13
+WebGPU 800:    6.6 +  245.6 +    1.1 =  253.3 ms (3.9 FPS), tải + khởi tạo 4.7 s
+         helmet 23, head 0, head_with_helmet 25, person_with_helmet 27, person_no_helmet 0, face 23
+WebGPU 640:    5.6 +  186.7 +    0.7 =  193.0 ms (5.2 FPS), tải + khởi tạo 0.2 s
+         helmet 23, head 1, head_with_helmet 24, person_with_helmet 24, person_no_helmet 1, face 13
