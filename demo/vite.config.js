@@ -8,7 +8,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 const PORT = 8443;
-const ISOLATION = { "Cross-Origin-Opener-Policy": "same-origin", "Cross-Origin-Embedder-Policy": "require-corp" };
+// header COOP/COEP lấy từ vercel.json để bản chạy thử và bản trên Vercel không lệch nhau
+const ISOLATION = Object.fromEntries(JSON.parse(readFileSync("vercel.json", "utf8")).headers[0].headers.map((h) => [h.key, h.value]));
 
 const lanIp = () => Object.values(networkInterfaces()).flat().find((a) => a.family === "IPv4" && !a.internal)?.address ?? "127.0.0.1";
 

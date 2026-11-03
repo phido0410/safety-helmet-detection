@@ -29,3 +29,10 @@ demo/.cert/
 
 # công cụ thiết kế (skill impeccable): brief, trang chọn hướng, ảnh kiểm tra — chỉ dùng trên máy
 .impeccable/
+
+# Không đưa lên GitHub công khai (anh chốt 2026-11-03): đề cương, báo cáo, mã sinh báo cáo, ghi chú làm việc.
+# Bản đầy đủ có cả các file này nằm ở repo riêng tư phido0410/DATN (dừng ở commit trước khi công khai).
+CLAUDE.md
+docs/*.pdf
+docs/*.docx
+docs/report_builder/

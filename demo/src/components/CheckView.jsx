@@ -210,6 +210,8 @@ function InfoSheet({ stats, rule, onClose }) {
         <ul className="group">{stats.map(([k, v]) => <li key={k}><span>{k}</span><b>{v}</b></li>)}</ul>
         <p className="foot">{rule && `${ruleNote} `}Kết quả do mô hình gợi ý: người ở xa hoặc bị che có thể bị bỏ sót, một số người đội
           mũ có thể bị báo nhầm. Ảnh chỉ lưu trên máy này.</p>
+        <p className="foot">Đồ án tốt nghiệp của Đỗ Ngọc Phi, Trường Đại học Mỏ - Địa chất (2026), phi thương mại. Mô hình huấn luyện bằng Ultralytics YOLO (AGPL-3.0) trên SHEL5K (CC BY 4.0),
+          SH17 (nhãn CC BY-NC-SA 4.0, ảnh Pexels) và Open Images V7 (nhãn CC BY 4.0); chạy bằng ONNX Runtime Web (MIT).</p>
       </section>
     </div>
   );
