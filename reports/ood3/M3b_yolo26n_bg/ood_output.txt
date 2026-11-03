@@ -1,0 +1,25 @@
+runs/M3b_yolo26n_bg/weights/best.pt trên tập ngoài miền ood3 + ood3b (104 ảnh, imgsz 800) so với tập test SHEL5K, cùng 2 lớp:
+  person_with_helmet   hộp  143 | AP50 ngoài miền 0.767  test 0.938  (chênh +0.171)
+  person_no_helmet     hộp  176 | AP50 ngoài miền 0.592  test 0.872  (chênh +0.280)
+  mAP@0.5 2 lớp: ngoài miền 0.679, test 0.905, chênh +0.226 (KHÔNG đạt mục tiêu ≤ 0.15)
+  person_no_helmet ở ngưỡng chính thức 0.213: Recall 0.607 (KTC 95% 0.534–0.677), Precision 0.569 (test: Recall 0.833, Precision 0.790)
+
+Dự đoán cho từng hộp nhãn theo loại mũ (ngưỡng vận hành, IoU ≥ 0.5):
+  person_no_helmet     không rõ         3 hộp | person_with_helmet   1 (33%)  person_no_helmet   2 (67%)  bỏ sót   0 (0%)
+  person_no_helmet     mũ cối          17 hộp | person_with_helmet   2 (12%)  person_no_helmet   8 (47%)  bỏ sót   7 (41%)
+  person_no_helmet     mũ khác         10 hộp | person_with_helmet   0 (0%)  person_no_helmet   9 (90%)  bỏ sót   1 (10%)
+  person_no_helmet     mũ lưỡi trai    20 hộp | person_with_helmet   0 (0%)  person_no_helmet  16 (80%)  bỏ sót   4 (20%)
+  person_no_helmet     mũ vải          39 hộp | person_with_helmet   5 (13%)  person_no_helmet  21 (54%)  bỏ sót  13 (33%)
+  person_no_helmet     nón lá          32 hộp | person_with_helmet   4 (12%)  person_no_helmet  16 (50%)  bỏ sót  12 (38%)
+  person_no_helmet     đầu trần        55 hộp | person_with_helmet   2 (4%)  person_no_helmet  33 (60%)  bỏ sót  20 (36%)
+  person_with_helmet   (mũ bảo hộ)    143 hộp | person_with_helmet  88 (62%)  person_no_helmet  32 (22%)  bỏ sót  23 (16%)
+
+Dự đoán theo chiều cao người (pixel khi ảnh thu về cạnh dài 800; % hộp = tỉ lệ trong lớp đó):
+  person_no_helmet     < 40       49 hộp ( 28%) | person_with_helmet   5 (10%)  person_no_helmet  10 (20%)  bỏ sót  34 (69%)
+  person_no_helmet     40–80      40 hộp ( 23%) | person_with_helmet   6 (15%)  person_no_helmet  16 (40%)  bỏ sót  18 (45%)
+  person_no_helmet     80–160     33 hộp ( 19%) | person_with_helmet   1 (3%)  person_no_helmet  30 (91%)  bỏ sót   2 (6%)
+  person_no_helmet     ≥ 160      54 hộp ( 31%) | person_with_helmet   2 (4%)  person_no_helmet  49 (91%)  bỏ sót   3 (6%)
+  person_with_helmet   < 40       13 hộp (  9%) | person_with_helmet   3 (23%)  person_no_helmet   1 (8%)  bỏ sót   9 (69%)
+  person_with_helmet   40–80      28 hộp ( 20%) | person_with_helmet  13 (46%)  person_no_helmet   8 (29%)  bỏ sót   7 (25%)
+  person_with_helmet   80–160     36 hộp ( 25%) | person_with_helmet  23 (64%)  person_no_helmet   9 (25%)  bỏ sót   4 (11%)
+  person_with_helmet   ≥ 160      66 hộp ( 46%) | person_with_helmet  49 (74%)  person_no_helmet  14 (21%)  bỏ sót   3 (5%)

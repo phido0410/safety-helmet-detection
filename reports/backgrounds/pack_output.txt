@@ -1,0 +1,2 @@
+data/M3b_bg.zip: 132 MB, 2148 file, MD5 f734fa4d37c688b9d2cd5ce5e35a46a8
+EXTRA_EXPECTED = {'backgrounds': {'train': (880, 0), 'val': (194, 0)}}

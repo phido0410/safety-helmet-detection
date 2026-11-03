@@ -1,0 +1,20 @@
+runs/M3_yolo26n_extra/weights/best.pt, imgsz 800, quy tắc bộ phận – toàn thể (bộ phận: helmet, head, head_with_helmet, face)
+Chọn trên val SHEL5K: ngưỡng person_no_helmet = ngưỡng lớn nhất có cận dưới KTC 95% của Recall ≥ 0.80
+  không lọc      ngưỡng 0.304: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.837 | AP50 pwh 0.931, pnh 0.879
+  τ = 0.050      ngưỡng 0.274: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.844 | AP50 pwh 0.924, pnh 0.859
+  τ = 0.100      ngưỡng 0.180: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.805 | AP50 pwh 0.919, pnh 0.851
+  τ = 0.250      ngưỡng 0.082: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.715 | AP50 pwh 0.912, pnh 0.826
+  τ = 0.399      ngưỡng 0.011: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.469 | AP50 pwh 0.900, pnh 0.805
+  → chọn: τ = 0.050
+
+Áp một lần (ngưỡng vi phạm chọn trên val: không lọc 0.304, τ = 0.050 0.274):
+  test SHEL5K  không lọc      Recall 0.817 (KTC 95% 0.788–0.843), Precision 0.837 | AP50 pwh 0.943, pnh 0.868
+  test SHEL5K  τ = 0.050      Recall 0.814 (KTC 95% 0.785–0.841), Precision 0.837 | AP50 pwh 0.933, pnh 0.846
+  OOD-1        không lọc      Recall 0.822 (KTC 95% 0.736–0.884), Precision 0.691 | AP50 pwh 0.839, pnh 0.800
+  OOD-1        τ = 0.050      Recall 0.802 (KTC 95% 0.714–0.868), Precision 0.697 | AP50 pwh 0.838, pnh 0.785
+  OOD-2        không lọc      Recall 0.772 (KTC 95% 0.681–0.843), Precision 0.540 | AP50 pwh 0.804, pnh 0.663
+  OOD-2        τ = 0.050      Recall 0.766 (KTC 95% 0.671–0.835), Precision 0.521 | AP50 pwh 0.810, pnh 0.655
+  OOD-3        không lọc      Recall 0.602 (KTC 95% 0.529–0.672), Precision 0.639 | AP50 pwh 0.777, pnh 0.628
+  OOD-3        τ = 0.050      Recall 0.602 (KTC 95% 0.529–0.672), Precision 0.632 | AP50 pwh 0.784, pnh 0.599
+  ảnh không người (199) không lọc      ảnh có ≥ 1 "người": 98 (49.2%, KTC 95% 42.4%–56.1%); có ≥ 1 "người không đội mũ": 94 (47.2%, KTC 95% 40.4%–54.2%)
+  ảnh không người (199) τ = 0.050      ảnh có ≥ 1 "người": 74 (37.2%, KTC 95% 30.8%–44.1%); có ≥ 1 "người không đội mũ": 71 (35.7%, KTC 95% 29.4%–42.5%)

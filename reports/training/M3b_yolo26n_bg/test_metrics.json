@@ -1,0 +1,83 @@
+{
+  "weights": "runs/M3b_yolo26n_bg/weights/best.pt",
+  "split": "test",
+  "imgsz": 800,
+  "results": {
+    "metrics/precision(B)": 0.9172289829191428,
+    "metrics/recall(B)": 0.8419663273446778,
+    "metrics/mAP50(B)": 0.9080547266895586,
+    "metrics/mAP50-95(B)": 0.5974132460348578,
+    "fitness": 0.5974132460348578
+  },
+  "per_class": [
+    {
+      "Class": "helmet",
+      "Images": 676,
+      "Instances": 2300,
+      "Box-P": 0.95965,
+      "Box-R": 0.88522,
+      "Box-F1": 0.92093,
+      "mAP50": 0.94254,
+      "mAP75": 0.67114,
+      "mAP50-95": 0.59757
+    },
+    {
+      "Class": "head",
+      "Images": 165,
+      "Instances": 812,
+      "Box-P": 0.93212,
+      "Box-R": 0.8202,
+      "Box-F1": 0.87258,
+      "mAP50": 0.89924,
+      "mAP75": 0.68136,
+      "mAP50-95": 0.58983
+    },
+    {
+      "Class": "head_with_helmet",
+      "Images": 662,
+      "Instances": 2079,
+      "Box-P": 0.93313,
+      "Box-R": 0.91438,
+      "Box-F1": 0.92366,
+      "mAP50": 0.95595,
+      "mAP75": 0.77761,
+      "mAP50-95": 0.65791
+    },
+    {
+      "Class": "person_with_helmet",
+      "Images": 671,
+      "Instances": 2080,
+      "Box-P": 0.91396,
+      "Box-R": 0.88269,
+      "Box-F1": 0.89806,
+      "mAP50": 0.93848,
+      "mAP75": 0.80145,
+      "mAP50-95": 0.70989
+    },
+    {
+      "Class": "person_no_helmet",
+      "Images": 173,
+      "Instances": 743,
+      "Box-P": 0.87182,
+      "Box-R": 0.79004,
+      "Box-F1": 0.82892,
+      "mAP50": 0.87187,
+      "mAP75": 0.74218,
+      "mAP50-95": 0.65815
+    },
+    {
+      "Class": "face",
+      "Images": 604,
+      "Instances": 1915,
+      "Box-P": 0.8927,
+      "Box-R": 0.75927,
+      "Box-F1": 0.82059,
+      "mAP50": 0.84025,
+      "mAP75": 0.24262,
+      "mAP50-95": 0.37114
+    }
+  ],
+  "val_conf_R80": 0.321,
+  "R_at_val_conf": 0.7967698519515478,
+  "P_at_val_conf": 0.8493306187922407
+}

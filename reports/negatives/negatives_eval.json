@@ -1,0 +1,50 @@
+{
+  "M1_yolo26n_img800": {
+    "threshold": 0.399,
+    "images": 199,
+    "any_person": 27,
+    "violation": 1,
+    "violation_ci95": [
+      0.0008875866694877336,
+      0.02791123960677907
+    ],
+    "boxes": 40,
+    "big_boxes": 5
+  },
+  "M2_yolo26n": {
+    "threshold": 0.25825825825825827,
+    "images": 199,
+    "any_person": 31,
+    "violation": 2,
+    "violation_ci95": [
+      0.0027604243911927527,
+      0.0358983122782084
+    ],
+    "boxes": 41,
+    "big_boxes": 3
+  },
+  "M3_yolo26n_extra": {
+    "threshold": 0.30430430430430433,
+    "images": 199,
+    "any_person": 98,
+    "violation": 94,
+    "violation_ci95": [
+      0.404179088795409,
+      0.5415914040423522
+    ],
+    "boxes": 104,
+    "big_boxes": 84
+  },
+  "M3b_yolo26n_bg": {
+    "threshold": 0.2132132132132132,
+    "images": 199,
+    "any_person": 15,
+    "violation": 13,
+    "violation_ci95": [
+      0.03857084477323734,
+      0.10854690622064163
+    ],
+    "boxes": 15,
+    "big_boxes": 12
+  }
+}

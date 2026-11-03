@@ -1,0 +1,2 @@
+Open Images V7 train: 87878 ảnh có nhãn Person xác minh là không có; còn 19036 ảnh sau khi bỏ ảnh có nhãn/hộp người, bộ phận người hay hình người, ảnh xoay, ảnh ngoài danh sách có hộp
+Duyệt 1361 ảnh theo thứ tự xáo trộn (seed 42): bỏ 477 ảnh weights/yolo26l.pt thấy người (conf ≥ 0.25), 0 ảnh tải lỗi / EXIF xoay → 880 ảnh ở data/backgrounds/yolo/images/train + nhãn rỗng

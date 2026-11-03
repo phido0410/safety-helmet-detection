@@ -1,0 +1,5 @@
+199 ảnh không có người (data/negatives/yolo/images/val, trừ ảnh có người theo reports/negatives/review.csv), imgsz 800, ngưỡng như demo:
+  M1_yolo26n_img800    ngưỡng vi phạm 0.399 | ảnh có "người"  27 (13.6%, KTC 95% 9.5%–19.0%) | có "người không đội mũ"   1 ( 0.5%, KTC 95% 0.1%–2.8%) | khung báo nhầm 40, ≥ 50% diện tích ảnh 5
+  M2_yolo26n           ngưỡng vi phạm 0.258 | ảnh có "người"  31 (15.6%, KTC 95% 11.2%–21.3%) | có "người không đội mũ"   2 ( 1.0%, KTC 95% 0.3%–3.6%) | khung báo nhầm 41, ≥ 50% diện tích ảnh 3
+  M3_yolo26n_extra     ngưỡng vi phạm 0.304 | ảnh có "người"  98 (49.2%, KTC 95% 42.4%–56.1%) | có "người không đội mũ"  94 (47.2%, KTC 95% 40.4%–54.2%) | khung báo nhầm 104, ≥ 50% diện tích ảnh 84
+  M3b_yolo26n_bg       ngưỡng vi phạm 0.213 | ảnh có "người"  15 ( 7.5%, KTC 95% 4.6%–12.1%) | có "người không đội mũ"  13 ( 6.5%, KTC 95% 3.9%–10.9%) | khung báo nhầm 15, ≥ 50% diện tích ảnh 12
