@@ -22,7 +22,7 @@ for (const p of JSON.parse(readFileSync(new URL("letterbox.json", dir)))) {
 // Ngưỡng riêng từng lớp (dữ liệu mẫu không có hộp nào giữa hai ngưỡng): 2 hộp tách rời, cùng điểm nằm giữa ngưỡng lớp vi phạm
 // và ngưỡng chung → chỉ giữ hộp lớp vi phạm
 {
-  const nc = cfg.names.length, other = cfg.conf.findIndex((c, i) => i !== cfg.violation);
+  const nc = cfg.names.length, other = cfg.conf.indexOf(Math.max(...cfg.conf));  // lớp ngưỡng cao nhất (bộ phận có thể thấp hơn)
   const mid = (cfg.conf[cfg.violation] + cfg.conf[other]) / 2, raw = new Float32Array((4 + nc) * 2);
   [[100, 100, 40, 80, cfg.violation], [400, 400, 40, 80, other]].forEach(([cx, cy, w, h, c], a) => {
     [cx, cy, w, h].forEach((v, k) => { raw[k * 2 + a] = v; });

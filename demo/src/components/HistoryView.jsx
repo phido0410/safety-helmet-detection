@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Stage, { Capsule, verdictOf } from "./Stage.jsx";
+import Stage, { Capsule, peopleCount, verdictOf } from "./Stage.jsx";
 import Crop, { useObjectUrl } from "./Crop.jsx";
 import { IconBack, IconChevron, IconStack, IconTrash } from "./Icons.jsx";
 import { clearChecks, deleteCheck, listChecks, markSeen } from "../lib/history.js";
@@ -20,11 +20,13 @@ export default function HistoryView({ version, initial, onChange, onClose }) {
   const [open, setOpen] = useState(initial ?? null);  // mở thẳng một ảnh (từ lịch sử gần đây ở bảng bên phải)
   useEffect(() => { listChecks().then(setRows); }, [version]);
   const fromPanel = useRef(!!initial);  // mở từ bảng bên phải: nút quay lại về thẳng màn Kiểm tra
-  useEffect(() => { if (initial) markSeen(initial.id).then(onChange); }, []);
+  useEffect(() => {
+    if (initial) markSeen(initial.id).then((rec) => { if (rec) setOpen((o) => (o?.id === rec.id ? rec : o)); onChange(); });
+  }, []);
 
-  const openRow = async (r) => { await markSeen(r.id); setOpen(r); onChange(); };
-  const toCheck = fromPanel.current && open === initial;  // mở từ bảng bên phải: quay lại thẳng màn Kiểm tra
-  if (open) return <Detail rec={open} backLabel={toCheck ? "Kiểm tra" : "Lịch sử"} onBack={() => (toCheck ? onClose() : setOpen(null))}
+  const openRow = async (r) => { setOpen((await markSeen(r.id)) ?? r); onChange(); };
+  const toCheck = fromPanel.current && open?.id === initial?.id;  // mở từ bảng bên phải: quay lại thẳng màn Kiểm tra
+  if (open) return <Detail rec={open} backLabel={toCheck ? "Màn hình chính" : "Lịch sử"} onBack={() => (toCheck ? onClose() : setOpen(null))}
     onDelete={async () => { await deleteCheck(open.id); setOpen(null); onChange(); }} />;
 
   const days = [];
@@ -35,7 +37,7 @@ export default function HistoryView({ version, initial, onChange, onClose }) {
   }
   return (
     <section className="ios" aria-labelledby="history-title">
-      <nav className="navbar"><span /><button type="button" className="link strong" onClick={onClose}>Xong</button></nav>
+      <nav className="navbar"><button type="button" className="link" onClick={onClose}><IconBack size={22} />Màn hình chính</button><span /></nav>
       <h1 id="history-title" className="large">Lịch sử</h1>
       <p className="sub">Lưu trên máy này</p>
       {rows?.length === 0 && (
@@ -53,7 +55,7 @@ export default function HistoryView({ version, initial, onChange, onClose }) {
               <li key={r.id}>
                 <button type="button" className="rowbtn" onClick={() => openRow(r)}>
                   <Crop rec={r} className="crop" />
-                  <span className="txt"><b>{badCount(r)} không đội mũ</b><span>{timeFmt.format(r.at)} · {r.source}</span></span>
+                  <span className="txt"><b>{badCount(r)} vi phạm không đội mũ</b><span>{timeFmt.format(r.at)} · {r.source}</span></span>
                   {!r.seen && <span className="unread" aria-label="Mới" />}
                   <IconChevron size={18} />
                 </button>
@@ -87,7 +89,7 @@ function Detail({ rec, backLabel, onBack, onDelete }) {
       </div>
       <footer className="meta">
         <Capsule {...verdictOf(rec.people)} />
-        <p>{rec.people.length} người · {rec.source} · {timeFmt.format(rec.at)}, {dateFmt.format(rec.at)} · {Math.round(rec.ms)} ms</p>
+        <p>{peopleCount(rec.people)} · {rec.source} · {timeFmt.format(rec.at)}, {dateFmt.format(rec.at)} · {Math.round(rec.ms)} ms</p>
       </footer>
     </section>
   );

@@ -27,8 +27,8 @@ export default function Stage({ width, height, people = [], children, live = fal
       <div className={`boxes${live ? " live" : ""}`} onClick={(e) => e.target === e.currentTarget && setFocus(null)}>
         {people.map((p) => {
           const [x1, y1, x2, y2] = p.box, on = focus === p.n, spot = spots.get(p.n);
-          const label = `${p.violation ? "Không đội mũ" : "Đội mũ"} · ${score(p.score)}`;
-          const cls = ["box", p.violation ? "bad" : "ok", focused && !on && "dim", y1 < height * 0.06 && "edge-t",
+          const label = p.far ? "Ở xa · chưa đánh giá" : `${p.violation ? "Không đội mũ" : "Đội mũ"} · ${score(p.score)}`;
+          const cls = ["box", p.far ? "far" : p.violation ? "bad" : "ok", focused && !on && "dim", y1 < height * 0.06 && "edge-t",
             x2 > width * 0.7 && "edge-r"].filter(Boolean).join(" ");
           return (
             <button type="button" key={p.n} className={cls} aria-label={label} aria-pressed={on}
@@ -46,13 +46,20 @@ export default function Stage({ width, height, people = [], children, live = fal
   );
 }
 
-// Kết luận ngắn cho viên nổi trên khung ngắm (có chấm màu và chữ, không chỉ màu)
+// Kết luận ngắn cho viên nổi trên khung ngắm (có chấm màu và chữ, không chỉ màu). Người ở xa (far) không được đánh giá.
 export function verdictOf(people) {
   const bad = people.filter((p) => p.violation).length;
-  if (bad) return { tone: "bad", text: `${bad} không mũ`, long: `${bad} người không đội mũ` };
-  if (people.length) return { tone: "ok", text: "Tất cả đội mũ", long: "Tất cả đội mũ" };
+  if (bad) return { tone: "bad", text: `${bad} vi phạm không đội mũ`, long: `${bad} vi phạm không đội mũ` };
+  if (people.some((p) => !p.far)) return { tone: "ok", text: "Tất cả đội mũ", long: "Tất cả đội mũ" };
+  if (people.length) return { tone: "none", text: "Chỉ có người ở xa", long: "Chỉ có người ở xa, chưa đánh giá" };
   return { tone: "none", text: "Không thấy người", long: "Không thấy người" };
 }
+
+// Số người cho dòng tóm tắt: người ở xa tách riêng vì không được đánh giá
+export const peopleCount = (people) => {
+  const far = people.filter((p) => p.far).length;
+  return `${people.length - far} người${far ? ` (+${far} ở xa)` : ""}`;
+};
 
 export const Capsule = ({ tone, text }) => (
   <p className="capsule" aria-live="polite"><span className={`dot ${tone}`} />{text}</p>

@@ -37,7 +37,9 @@ ap.add_argument("--weights", required=True)
 ap.add_argument("--out", required=True)
 ap.add_argument("--data", default="data/SHEL5K_processed/data.yaml")
 ap.add_argument("--imgsz", type=int, default=640)
+ap.add_argument("--tau", type=float, help="dùng τ này dù không đạt tiêu chí (quyết định của sinh viên, ghi rõ là lệch tiêu chí)")
 args = ap.parse_args()
+assert args.tau is None or args.tau in TAUS, f"--tau phải là một giá trị trong {TAUS}"
 out = Path(args.out)
 out.mkdir(parents=True, exist_ok=True)
 model = YOLO(args.weights)
@@ -117,6 +119,9 @@ ok = [t for t in TAUS if t is not None
       and val[t]["precision"] > base["precision"]]
 best = max(ok, key=lambda t: val[t]["precision"], default=None)
 lines.append(f"  → chọn: {tau_txt(best)}" + ("" if best is not None else " (không τ nào hơn không lọc: không dùng quy tắc)"))
+if args.tau is not None and args.tau != best:
+    best = args.tau
+    lines.append(f"  → dùng {tau_txt(best)} theo quyết định của sinh viên (lệch tiêu chí chốt trước)")
 
 report = {}
 if best is not None:

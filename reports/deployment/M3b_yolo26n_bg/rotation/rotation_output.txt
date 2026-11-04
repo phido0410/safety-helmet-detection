@@ -1,0 +1,5 @@
+runs/M3b_yolo26n_bg/weights/best.pt, 105 ảnh data/ood4/images, imgsz 800, ngưỡng có mũ 0.399, không mũ 0.169 (chưa áp quy tắc của app)
+  nhãn: có mũ 172, không mũ 138
+  ảnh gốc    dự đoán có mũ 165, không mũ 196; khung người phủ > 30% ảnh: 31
+  xoay 90°   dự đoán có mũ  13, không mũ  56; khung người phủ > 30% ảnh: 30
+  xoay 270°  dự đoán có mũ   6, không mũ  65; khung người phủ > 30% ảnh: 24

@@ -32,9 +32,13 @@
 import { preprocess, postprocess, scaleBoxes } from "./detector.js";
 
 const WARMUP = 2, RUNS = 10;
+// Tìm nguyên nhân treo trên Safari 26.2: ?ort=1.20.1 dùng onnxruntime-web cũ ở vendor/1.20.1/ (chỉ WASM), ?threads=1 tắt đa luồng
+const params = new URLSearchParams(location.search);
+const ORT = /^\d+\.\d+\.\d+$/.test(params.get("ort") ?? "") ? params.get("ort") : null, THREADS = Number(params.get("threads")) || 0;
+const VENDOR = ORT ? `vendor/${ORT}/` : "vendor/";
 const BACKENDS = [
   { name: "WASM", module: "ort.wasm.min.mjs", ep: "wasm", ok: true },
-  { name: "WebGPU", module: "ort.webgpu.min.mjs", ep: "webgpu", ok: !!navigator.gpu },
+  { name: "WebGPU", module: "ort.webgpu.min.mjs", ep: "webgpu", ok: !!navigator.gpu && !ORT },
 ];
 const COLORS = { 3: "#1baf7a", 4: "#eb6834" };  // person_with_helmet, person_no_helmet
 const $ = (id) => document.getElementById(id);
@@ -68,8 +72,9 @@ $("run").onclick = async () => {
       const c = { ...cfg, imgsz: Number(size) };
       try {
         // file trong public/ không qua Vite: nạp bằng URL lúc chạy
-        const ort = await import(/* @vite-ignore */ new URL(`vendor/${b.module}`, location.href).href);
-        ort.env.wasm.wasmPaths = new URL("vendor/", location.href).href;
+        const ort = await import(/* @vite-ignore */ new URL(`${VENDOR}${b.module}`, location.href).href);
+        ort.env.wasm.wasmPaths = new URL(VENDOR, location.href).href;
+        if (THREADS) ort.env.wasm.numThreads = THREADS;
         let t = performance.now();
         const session = await ort.InferenceSession.create(`model/${file}`, { executionProviders: [b.ep] });
         const load = performance.now() - t;
@@ -90,7 +95,7 @@ $("run").onclick = async () => {
         const counts = c.names.map((n, k) => `${n} ${dets.filter((d) => d.cls === k).length}`).join(", ");
         log(`${b.name.padEnd(6)} ${size}: ${ms(pre)} + ${ms(infer)} + ${ms(post)} = ${ms(pre + infer + post)} ms `
           + `(${(1000 / (pre + infer + post)).toFixed(1)} FPS), tải + khởi tạo ${(load / 1000).toFixed(1)} s`
-          + `${b.ep === "wasm" ? `, ${ort.env.wasm.numThreads} luồng` : ""}\n         ${counts}`);
+          + `${b.ep === "wasm" ? `, ${ort.env.wasm.numThreads} luồng` : ""}, onnxruntime-web ${ort.env.versions?.web ?? ORT}\n         ${counts}`);
         if (!shown) { draw(dets); shown = true; }
       } catch (err) {
         log(`${b.name} ${size}: LỖI ${err.message ?? err}`);

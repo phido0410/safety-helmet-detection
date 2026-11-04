@@ -1,0 +1,21 @@
+{
+ "gt": {
+  "person_with_helmet": 172,
+  "person_no_helmet": 138
+ },
+ "ảnh gốc": {
+  "pwh": 165,
+  "pnh": 196,
+  "big": 31
+ },
+ "xoay 90°": {
+  "pwh": 13,
+  "pnh": 56,
+  "big": 30
+ },
+ "xoay 270°": {
+  "pwh": 6,
+  "pnh": 65,
+  "big": 24
+ }
+}

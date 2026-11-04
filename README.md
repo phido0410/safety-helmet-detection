@@ -29,6 +29,20 @@ motorbike helmets count as helmets.
 - On 199 person-free images (Open Images V7), 6.5% are flagged as containing a person without a helmet (95% CI 3.9–10.9%). The
   target was ≤ 5%, so this criterion is not met.
 - Speed on iPhone 11 Pro Max (Safari, WASM, 800 px input): 229 ms per frame.
+- The web demo keeps a person box only when a head, face or helmet box (confidence ≥ 0.05) has its center inside it, because the
+  model detects people from the upper body up; close-ups of legs were reported as people without helmets. With this rule the
+  violation threshold is re-selected on validation (0.169). This choice misses the pre-set criterion (person-with-helmet AP50 on
+  validation drops by 0.011, the limit was 0.01). On SHEL5K test, recall/precision become 0.838/0.775, and person-free images
+  flagged drop from 6.5% to 5.5% (`reports/deployment/M3b_yolo26n_bg/part_rule/`).
+- When a with-helmet box and a no-helmet box overlap (IoU > 0.7) the demo keeps the higher-confidence one, so a clearly
+  helmeted worker is not flagged because of a weak no-helmet duplicate. This misses its pre-set criterion (validation recall
+  lower bound 0.775 < 0.80); on SHEL5K test it costs 5 detected violators and removes 22 false alarms
+  (`reports/deployment/M3b_yolo26n_bg/dup_rule_*`).
+- People shorter than 80 px of effective height are drawn with a dashed box but not judged or saved. Effective height is the
+  box height × min(1, 800 / long side): upscaling a small image adds no detail, so 416 px SHEL5K images are measured at their
+  native size. Below 80 px the violation recall and precision on the pooled SHEL5K + SH17 + Open Images validation sets fall
+  under 0.70 (`scripts/eval_min_size.py`, `reports/deployment/M3b_yolo26n_bg/min_size_v2/`). An earlier 160 px threshold,
+  picked on upscaled SHEL5K images only, left out most people in HD video.
 
 Model history, all on the same SHEL5K test split:
 

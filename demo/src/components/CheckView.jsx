@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import Stage, { Capsule, verdictOf } from "./Stage.jsx";
+import Stage, { Capsule, verdictOf, peopleCount } from "./Stage.jsx";
 import Crop, { CropView } from "./Crop.jsx";
 import { IconAlert, IconCamera, IconCheck, IconClose, IconFlip, IconInfo, IconPause, IconPhoto, IconPlay, IconStack, IconStop, IconUpload,
   IconVideo } from "./Icons.jsx";
 import { people as peopleOf } from "../lib/model.js";
 import { addCheck, snapshot } from "../lib/history.js";
 import { CONFIRM, VOTES, createTracker } from "../lib/tracker.js";
+import { rotationMatrix, unrotateBox, watchOrientation } from "../lib/orientation.js";
 
 const CAPTURE_EVERY_MS = 3000;  // video/camera: hai ảnh cách nhau ít nhất 3 giây, chặn chụp liên tục khi tracker mất dấu (camera rung)
 const FRAME_MAX_SIDE = 1280;    // khung hình được chép ra canvas cỡ này: vừa để phân tích, vừa là ảnh lưu
@@ -23,6 +24,7 @@ const ruleNote = `Mỗi người không đội mũ chỉ được lưu một l�
 const PASTE_KEY = /Mac|iPhone|iPad/.test(navigator.userAgent) ? "⌘V" : "Ctrl+V";
 const FORMATS = "Ảnh JPG, PNG, WebP · video MP4, WebM";  // định dạng mọi trình duyệt đều mở được (HEIC, MOV chỉ Safari)
 const BAD_FILE = "Không mở được tệp này. Hãy dùng ảnh JPG, PNG hoặc video MP4.";
+const SAVE_FAILED = "Không lưu được ảnh vào lịch sử trên trình duyệt này (chế độ duyệt riêng tư?).";
 const fileKind = (f) => (f?.type.startsWith("image/") ? "photo" : f?.type.startsWith("video/") ? "video" : null);
 
 function useWide() {
@@ -146,7 +148,8 @@ function FrameCrop({ canvas, box, t }) {
 function WidePanel({ chrome, people, verdict, title, summary, hint, shutter, secondary, cropSrc, focus, setFocus, openInfo, hasMedia }) {
   const { mode, setMode, recent, onHistory } = chrome;
   // thứ tự theo số theo dõi (không đổi giữa các khung), người đang chọn luôn có trong danh sách
-  const bad = people.filter((p) => p.violation).sort((a, b) => a.n - b.n), ok = people.filter((p) => !p.violation);
+  const bad = people.filter((p) => p.violation).sort((a, b) => a.n - b.n), ok = people.filter((p) => !p.violation && !p.far),
+    far = people.filter((p) => p.far);
   let listed = bad.slice(0, LIST_MAX);
   const picked = bad.find((p) => p.n === focus);
   if (picked && !listed.includes(picked)) listed = [...listed.slice(0, LIST_MAX - 1), picked];
@@ -185,6 +188,10 @@ function WidePanel({ chrome, people, verdict, title, summary, hint, shutter, sec
             <span className="mini ok"><IconCheck size={17} stroke={3} /></span>
             <span className="txt"><b>{ok.length} người đội mũ</b><span>{range[0] === range[1] ? range[0] : `${range[0]}–${range[1]}`}</span></span>
           </span></li>}
+          {far.length > 0 && <li><span className="rowbtn">
+            <span className="mini far" />
+            <span className="txt"><b>{far.length} người ở xa</b><span>chưa đánh giá, không lưu ảnh</span></span>
+          </span></li>}
         </ul>
       </>}
       <div className="recenthead"><h3>Lịch sử gần đây</h3>{recent.rows.length > 0 && <button type="button" className="link" onClick={() => onHistory()}>Xem tất cả</button>}</div>
@@ -197,6 +204,16 @@ function WidePanel({ chrome, people, verdict, title, summary, hint, shutter, sec
 }
 const timeFmt = new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" });
 
+// Xóa mô hình, thư viện đã lưu và cài đặt rồi tải lại từ mạng, thay cho việc vào Cài đặt Safari xóa dữ liệu trang. Lịch sử giữ nguyên
+// (có nút Xóa tất cả riêng).
+async function resetApp() {
+  if (!window.confirm("Xóa mô hình đã tải và tải lại ứng dụng? Lịch sử vi phạm vẫn được giữ.")) return;
+  for (const key of await caches.keys()) await caches.delete(key);
+  try { localStorage.clear(); } catch { /* bộ nhớ trình duyệt bị chặn: không có gì để xóa */ }
+  await (await navigator.serviceWorker?.getRegistration())?.unregister();
+  location.reload();
+}
+
 function InfoSheet({ stats, rule, onClose }) {
   useEffect(() => {
     const esc = (e) => e.key === "Escape" && onClose();
@@ -208,8 +225,9 @@ function InfoSheet({ stats, rule, onClose }) {
       <section className="sheet" role="dialog" aria-modal="true" aria-labelledby="info-title" onClick={(e) => e.stopPropagation()}>
         <header><h2 id="info-title">Thông tin</h2><button type="button" className="done" onClick={onClose}>Xong</button></header>
         <ul className="group">{stats.map(([k, v]) => <li key={k}><span>{k}</span><b>{v}</b></li>)}</ul>
+        <ul className="group"><li><button type="button" className="rowbtn destructive" onClick={resetApp}>Xóa dữ liệu đã tải, tải lại</button></li></ul>
         <p className="foot">{rule && `${ruleNote} `}Kết quả do mô hình gợi ý: người ở xa hoặc bị che có thể bị bỏ sót, một số người đội
-          mũ có thể bị báo nhầm. Ảnh chỉ lưu trên máy này.</p>
+          mũ có thể bị báo nhầm. Người ở xa (khung nét đứt) chưa được đánh giá và không được lưu ảnh. Ảnh chỉ lưu trên máy này.</p>
         <p className="foot">Đồ án tốt nghiệp của Đỗ Ngọc Phi, Trường Đại học Mỏ - Địa chất (2026), phi thương mại. Mô hình huấn luyện bằng Ultralytics YOLO (AGPL-3.0) trên SHEL5K (CC BY 4.0),
           SH17 (nhãn CC BY-NC-SA 4.0, ảnh Pexels) và Open Images V7 (nhãn CC BY 4.0); chạy bằng ONNX Runtime Web (MIT).{" "}
           <a href="https://github.com/phido0410/safety-helmet-detection" target="_blank" rel="noopener">Mã nguồn trên GitHub</a></p>
@@ -238,11 +256,17 @@ function PhotoMode({ model, onSaved, chrome, dropped, consume }) {
     const m = await model.ready;
     const { dets, ms: took } = await m.run(bitmap, bitmap.width, bitmap.height);
     if (g !== gen.current) return;  // đã chọn ảnh khác trong lúc chờ
-    const people = peopleOf(dets, m.cfg), saved = people.some((p) => p.violation);
+    const people = peopleOf(dets, m.cfg, bitmap.width, bitmap.height);
+    let saved = people.some((p) => p.violation);
     if (saved) {
-      await addCheck({ at: Date.now(), source: "Ảnh", width: bitmap.width, height: bitmap.height, people, ms: took,
-        image: await snapshot(bitmap, bitmap.width, bitmap.height) });
-      onSaved();
+      try {
+        await addCheck({ at: Date.now(), source: "Ảnh", width: bitmap.width, height: bitmap.height, people, ms: took,
+          image: await snapshot(bitmap, bitmap.width, bitmap.height) });
+        onSaved();
+      } catch {  // duyệt riêng tư trên Safari không cho lưu ảnh vào IndexedDB: vẫn hiện kết quả
+        chrome.notify(SAVE_FAILED);
+        saved = false;
+      }
     }
     setJob({ ...base, people, took, saved });
   }
@@ -254,7 +278,7 @@ function PhotoMode({ model, onSaved, chrome, dropped, consume }) {
         media={job && { width: job.width, height: job.height, node: <img src={job.url} alt="Ảnh đang kiểm tra" /> }}
         cropSrc={job && { url: job.url, width: job.width, height: job.height }}
         people={job?.people} verdict={job && (job.people ? verdictOf(job.people) : { tone: "none", text: "Đang phân tích…" })}
-        summary={job?.people && `${job.people.length} người · ${ms(job.took)}${job.saved ? " · đã lưu" : ""}`}
+        summary={job?.people && `${peopleCount(job.people)} · ${ms(job.took)}${job.saved ? " · đã lưu" : ""}`}
         shutter={{ kind: "pick", icon: "photo", label: job ? "Chọn ảnh khác" : "Chọn ảnh", onPress: () => input.current.click() }}
         secondary={job && { icon: "close", label: "Bỏ ảnh này", onPress: () => { gen.current++; setJob(null); } }}
         stats={[...baseStats(model), ["Xử lý ảnh", ms(job?.took)]]} />
@@ -302,7 +326,7 @@ function VideoRun({ url, model, onSaved, chrome, onPick, onClear }) {
       : verdictOf(a.live.people);
   return (
     <Screen chrome={chrome} live people={state === "done" ? [] : a.live.people} verdict={verdict} rule title="Video đã sẵn sàng"
-      hint={state === "ready" ? "Bấm phát để phân tích" : null} summary={state === "ready" ? null : `${a.live.people.length} người · ${fps(a.live.fps)} · đã lưu ${a.live.saved}`}
+      hint={state === "ready" ? "Bấm phát để phân tích" : null} summary={state === "ready" ? null : `${peopleCount(a.live.people)} · ${fps(a.live.fps)} · đã lưu ${a.live.saved}`}
       media={{ width: a.dims?.width ?? 16, height: a.dims?.height ?? 9,
         node: <video ref={a.video} src={url} playsInline muted onLoadedMetadata={a.fit} onEnded={() => { a.stop(); setState("done"); }}
           onError={() => { chrome.notify(BAD_FILE); onClear(); }} /> }}
@@ -321,9 +345,11 @@ function cameraError(err) {
 
 // Camera trực tiếp: nút đỏ mở camera, nút vuông tắt. Chỉ phân tích khi đang ở màn Kiểm tra và trang đang hiện (đỡ nóng máy, tốn pin).
 function LiveMode({ model, onSaved, chrome, active }) {
-  const a = useAnalysis(model, onSaved, "Camera");
-  const [cam, setCam] = useState("off");  // off | opening | on | error
   const [facing, setFacing] = useState("environment");
+  const orient = useRef(null), facingNow = useRef(facing);
+  facingNow.current = facing;
+  const a = useAnalysis(model, onSaved, "Camera", () => orient.current?.get(facingNow.current) ?? 0);
+  const [cam, setCam] = useState("off");  // off | opening | on | error
   const [error, setError] = useState(null);
   const stream = useRef(null), opening = useRef(0);
   const stopStream = () => { stream.current?.getTracks().forEach((t) => t.stop()); stream.current = null; };
@@ -350,7 +376,7 @@ function LiveMode({ model, onSaved, chrome, active }) {
     if (a.video.current) a.video.current.srcObject = null;
     setCam("off");
   }
-  useEffect(() => () => { opening.current++; a.stop(); stopStream(); }, []);
+  useEffect(() => () => { opening.current++; a.stop(); stopStream(); orient.current?.stop(); }, []);
   useEffect(() => {
     const sync = () => (cam === "on" && active && !document.hidden ? a.start() : a.stop());
     sync();
@@ -361,10 +387,13 @@ function LiveMode({ model, onSaved, chrome, active }) {
   const flip = () => {
     const f = facing === "environment" ? "user" : "environment";
     setFacing(f);
+    a.reset();
     if (cam === "on") open(f);
   };
   const shutter = cam === "on" ? { kind: "stop", icon: "stop", label: "Tắt camera", onPress: close }
-    : { kind: "rec", icon: "camera", label: cam === "opening" ? "Đang mở camera" : "Mở camera", onPress: () => open(facing), disabled: cam === "opening" };
+    // cảm biến hướng phải xin quyền ngay trong lần bấm này (iOS); có rồi thì dùng tiếp
+    : { kind: "rec", icon: "camera", label: cam === "opening" ? "Đang mở camera" : "Mở camera", disabled: cam === "opening",
+      onPress: () => { orient.current ??= watchOrientation(); open(facing); } };
   return (
     <Screen chrome={chrome} live rule shutter={shutter} title="Camera đang tắt"
       people={cam === "on" ? a.live.people : []}
@@ -375,7 +404,8 @@ function LiveMode({ model, onSaved, chrome, active }) {
         node: <video ref={a.video} playsInline muted autoPlay onLoadedMetadata={a.fit} onResize={a.fit} /> }}
       secondary={{ icon: "flip", label: "Đổi camera trước / sau", onPress: flip }}
       cropSrc={cam === "on" && a.frame.current ? { canvas: a.frame.current, t: a.live.t } : null}
-      stats={[...baseStats(model), ["Xử lý một khung", ms(a.live.took)], ["Tốc độ", fps(a.live.fps)], ["Đã lưu", `${a.live.saved} ảnh`]]} />
+      stats={[...baseStats(model), ["Xử lý một khung", ms(a.live.took)], ["Tốc độ", fps(a.live.fps)], ["Xoay khung theo hướng cầm máy", `${a.live.rot ?? 0}°`],
+        ["Đã lưu", `${a.live.saved} ảnh`]]} />
   );
 }
 
@@ -383,8 +413,10 @@ function LiveMode({ model, onSaved, chrome, active }) {
 // xong thì bỏ qua), theo dõi từng người qua các khung, tự lưu ảnh khi có người không đội mũ chưa được chụp. Ảnh lưu chính là canvas
 // vừa phân tích nên khung khoanh khớp ảnh. Mỗi lần start() là một thế hệ mới: vòng cũ còn đang chờ mô hình sẽ tự dừng, không chạy
 // song song hai vòng. Tracker sống cùng màn video/camera nên tạm dừng rồi chạy tiếp vẫn nhớ ai đã bị chụp.
-function useAnalysis(model, onSaved, source) {
-  const video = useRef(), frame = useRef(null);
+// getRotation (camera): góc xoay khung theo hướng cầm máy (lib/orientation.js); mô hình chạy trên khung đã xoay thẳng, khung khoanh
+// được xoay ngược về khung gốc nên phần vẽ, theo dõi và ảnh lưu không đổi.
+function useAnalysis(model, onSaved, source, getRotation) {
+  const video = useRef(), frame = useRef(null), upright = useRef(null);
   const [tracker] = useState(createTracker);
   const [dims, setDims] = useState(null);
   const [live, setLive] = useState({ people: [], took: 0, fps: 0, saved: 0, t: 0 });
@@ -405,20 +437,33 @@ function useAnalysis(model, onSaved, source) {
       s.busy = true;
       const c = frame.current, t = source === "Camera" ? (s.ran + performance.now() - s.since) / 1000 : v.currentTime;
       c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
+      const rot = getRotation?.() ?? 0;
+      let src = c;
+      if (rot) {
+        const r = (upright.current ??= document.createElement("canvas")), [w, h] = rot % 180 ? [c.height, c.width] : [c.width, c.height];
+        if (r.width !== w || r.height !== h) Object.assign(r, { width: w, height: h });
+        const g = r.getContext("2d");
+        g.setTransform(...rotationMatrix(rot, c.width, c.height));
+        g.drawImage(c, 0, 0);
+        g.setTransform(1, 0, 0, 1, 0, 0);
+        src = r;
+      }
       const m = await model.ready;
-      const { dets, ms: took } = await m.run(c, c.width, c.height);
+      const { dets, ms: took } = await m.run(src, src.width, src.height);
       s.busy = false;
       if (!s.running || gen !== s.gen) return;
+      // quy tắc của app tính trên khung thẳng đứng (chiều cao người đúng chiều), rồi khung khoanh mới xoay ngược về khung gốc
+      const found = peopleOf(dets, m.cfg, src.width, src.height).map((p) => (rot ? { ...p, box: unrotateBox(p.box, rot, c.width, c.height) } : p));
       // đồng hồ của tracker: thời gian của video hoặc thời gian camera đã phân tích, đều không tính lúc tạm dừng
-      const { people, due } = tracker.update(peopleOf(dets, m.cfg), t * 1000), now = performance.now();
+      const { people, due } = tracker.update(found, t * 1000), now = performance.now();
       if (due.length && now - s.lastCapture >= CAPTURE_EVERY_MS) {
-        tracker.captured(due);
+        tracker.captured();
         s.lastCapture = now;
         s.saved++;
         snapshot(c, c.width, c.height).then((image) => addCheck({ at: Date.now(), source,
           ...(source === "Video" && { videoTime: t }), width: c.width, height: c.height, people, ms: took, image })).then(onSaved);
       }
-      setLive({ people, took, fps: s.last ? 1000 / (now - s.last) : 0, saved: s.saved, t });
+      setLive({ people, took, fps: s.last ? 1000 / (now - s.last) : 0, saved: s.saved, t, rot });
       s.last = now;
     }
     if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(() => step(gen));
@@ -437,5 +482,5 @@ function useAnalysis(model, onSaved, source) {
     const s = st.current;
     if (s.running) Object.assign(s, { running: false, ran: s.ran + performance.now() - s.since });
   };
-  return { video, frame, dims, live, fit, start, stop };
+  return { video, frame, dims, live, fit, start, stop, reset: tracker.reset };
 }

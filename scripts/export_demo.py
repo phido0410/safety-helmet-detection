@@ -18,7 +18,8 @@ import requests
 from ultralytics import YOLO
 
 ORT_VERSION = "1.30.0"  # onnxruntime-web, phát hành 2026-09-14
-ORT_FILES = ("ort.wasm.min.mjs", "ort-wasm-simd-threaded.mjs", "ort-wasm-simd-threaded.wasm",
+WASM_FILE = "ort-wasm-simd-threaded.wasm"  # bản WASM app dùng; app tự tải để tính tiến độ rồi đưa cho onnxruntime-web
+ORT_FILES = ("ort.wasm.min.mjs", "ort-wasm-simd-threaded.mjs", WASM_FILE,
              "ort.webgpu.min.mjs", "ort-wasm-simd-threaded.asyncify.mjs", "ort-wasm-simd-threaded.asyncify.wasm")
 OTHER_CONF, IOU, MAX_DET = 0.399, 0.7, 300  # ngưỡng chung của M2 (tuần 8), IoU và số hộp tối đa mặc định của Ultralytics
 FIXTURE_IMAGES = 10
@@ -31,6 +32,8 @@ ap.add_argument("--threshold", required=True)
 ap.add_argument("--imgsz", type=int, nargs="+", default=[640])
 ap.add_argument("--data", default="data/SHEL5K_processed")
 ap.add_argument("--fixtures", action="store_true")
+ap.add_argument("--part-rule", help="part_rule.json của eval_part_rule.py: bật quy tắc bộ phận – toàn thể trong app")
+ap.add_argument("--min-size", help="min_size.json của eval_min_size.py: người thấp hơn H px (ảnh mô hình) không được đánh giá")
 args = ap.parse_args()
 
 thr = json.loads(Path(args.threshold).read_text())
@@ -42,11 +45,18 @@ for k, size in enumerate(args.imgsz):  # mỗi lần xuất đều ghi đè best
     models[size] = "model.onnx" if k == 0 else f"model_{size}.onnx"
     shutil.copy(model.export(format="onnx", imgsz=size, simplify=True), PUBLIC / "model" / models[size])
 conf = [thr["conf"] if n == thr["cls"] else OTHER_CONF for n in names]
-(PUBLIC / "model" / "config.json").write_text(json.dumps(
-    {"weights": args.weights, "name": Path(args.weights).parents[1].name.split("_")[0],  # runs/M3b_yolo26n_bg/… → M3b
-     "imgsz": args.imgsz[0], "models": models, "names": names, "conf": conf, "iou": IOU,
-     "maxDet": MAX_DET, "violation": names.index(thr["cls"])}, ensure_ascii=False, indent=2))
-args.imgsz = args.imgsz[0]  # dữ liệu mẫu theo cỡ chính
+rule = json.loads(Path(args.part_rule).read_text()) if args.part_rule else None
+if rule and rule["tau"] is not None:
+    # khung bộ phận chỉ dùng cho quy tắc (app không vẽ) nên giữ từ τ; ngưỡng vi phạm là ngưỡng chọn lại trên val khi có quy tắc
+    conf = [rule["tau"] if n in rule["parts"] else rule["conf"] if n == thr["cls"] else c for n, c in zip(names, conf)]
+    rule = {"parts": [names.index(n) for n in rule["parts"]], "partConf": rule["tau"]}
+else:
+    rule = {}
+if args.min_size and json.loads(Path(args.min_size).read_text())["H"] is not None:
+    ms = json.loads(Path(args.min_size).read_text())
+    # app (people() trong demo/src/lib/model.js) tính chiều cao hiệu dụng và giữ khung điểm cao hơn khi trùng khác lớp
+    assert (ms.get("height"), ms.get("dup_rule")) == ("effective", "score"), f"{args.min_size}: H phải chọn với --height effective --dup-rule score như app"
+    rule["minHeight"] = ms["H"]
 
 (PUBLIC / "vendor").mkdir(exist_ok=True)
 for f in ORT_FILES:
@@ -55,6 +65,15 @@ for f in ORT_FILES:
         r = requests.get(f"https://cdn.jsdelivr.net/npm/onnxruntime-web@{ORT_VERSION}/dist/{f}", timeout=600)
         r.raise_for_status()
         dst.write_bytes(r.content)
+
+# bytes: dung lượng chưa nén để app hiện % lúc tải (Vercel nén brotli nên không gửi content-length)
+downloads = [f"model/{m}" for m in models.values()] + [f"vendor/{WASM_FILE}"]
+(PUBLIC / "model" / "config.json").write_text(json.dumps(
+    {"weights": args.weights, "name": Path(args.weights).parents[1].name.split("_")[0],  # runs/M3b_yolo26n_bg/… → M3b
+     "imgsz": args.imgsz[0], "models": models, "names": names, "conf": conf, "iou": IOU,
+     "maxDet": MAX_DET, "violation": names.index(thr["cls"]), **rule, "wasm": f"vendor/{WASM_FILE}",
+     "bytes": {p: (PUBLIC / p).stat().st_size for p in downloads}}, ensure_ascii=False, indent=2))
+args.imgsz = args.imgsz[0]  # dữ liệu mẫu theo cỡ chính
 sizes = ", ".join(f"{m} ({(PUBLIC / 'model' / m).stat().st_size / 1e6:.1f} MB)" for m in models.values())
 print(f"{PUBLIC / 'model'}: {sizes}, config.json; vendor: onnxruntime-web {ORT_VERSION}")
 

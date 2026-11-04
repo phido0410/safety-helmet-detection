@@ -1,0 +1,18 @@
+runs/M3b_yolo26n_bg/weights/best.pt trên mixkit_23243.mp4, người ngoài cùng bên trái (đội mũ bảo hộ trắng), imgsz 800:
+  t =  0.3 s: có mũ 0.37 | không mũ 0.64 | vùng đầu: helmet 0.69, head_with_helmet 0.88, head 0.74, face 0.00
+  t =  0.6 s: có mũ 0.00 | không mũ 0.84 | vùng đầu: helmet 0.00, head_with_helmet 0.00, head 0.83, face 0.00
+  t =    1 s: có mũ 0.00 | không mũ 0.83 | vùng đầu: helmet 0.00, head_with_helmet 0.00, head 0.81, face 0.00
+  t =  1.5 s: có mũ 0.00 | không mũ 0.79 | vùng đầu: helmet 0.75, head_with_helmet 0.90, head 0.70, face 0.00
+  t =    2 s: có mũ 0.00 | không mũ 0.93 | vùng đầu: helmet 0.00, head_with_helmet 0.00, head 0.87, face 0.00
+  t =    3 s: có mũ 0.47 | không mũ 0.84 | vùng đầu: helmet 0.09, head_with_helmet 0.00, head 0.79, face 0.16
+  t =    4 s: có mũ 0.65 | không mũ 0.85 | vùng đầu: helmet 0.21, head_with_helmet 0.00, head 0.74, face 0.82
+  t =    5 s: có mũ 0.91 | không mũ 0.00 | vùng đầu: helmet 0.81, head_with_helmet 0.90, head 0.00, face 0.78
+  t =    6 s: có mũ 0.77 | không mũ 0.00 | vùng đầu: helmet 0.25, head_with_helmet 0.72, head 0.48, face 0.82
+  t =    8 s: có mũ 0.88 | không mũ 0.00 | vùng đầu: helmet 0.73, head_with_helmet 0.87, head 0.00, face 0.75
+  t =   10 s: có mũ 0.88 | không mũ 0.00 | vùng đầu: helmet 0.76, head_with_helmet 0.89, head 0.00, face 0.76
+  t =   12 s: có mũ 0.82 | không mũ 0.00 | vùng đầu: helmet 0.77, head_with_helmet 0.91, head 0.00, face 0.79
+  t =   14 s: có mũ 0.82 | không mũ 0.00 | vùng đầu: helmet 0.76, head_with_helmet 0.90, head 0.00, face 0.80
+Thí nghiệm đổi màu: chỉ tô chiếc mũ trắng thành vàng, phần còn lại giữ nguyên:
+  t = 0.3 s: mũ trắng: có mũ 0.37 / không mũ 0.64 → mũ vàng (5455 px): có mũ 0.84 / không mũ 0.00
+  t = 1.0 s: mũ trắng: có mũ 0.00 / không mũ 0.83 → mũ vàng (5639 px): có mũ 0.87 / không mũ 0.00
+  t = 2.0 s: mũ trắng: có mũ 0.00 / không mũ 0.93 → mũ vàng (2973 px): có mũ 0.65 / không mũ 0.69

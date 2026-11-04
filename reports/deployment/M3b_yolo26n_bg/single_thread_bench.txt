@@ -1,0 +1,42 @@
+demo/bench.html?threads=1 (onnxruntime-web 1.30.0, WASM một luồng), 2026-11-03, dán từ nút "Sao chép kết quả".
+Lý do: iPhone 17 (Safari 26.2) treo khi chạy WASM đa luồng (cả 1.30.0 lẫn bench.html?ort=1.20.1); một luồng thì chạy.
+
+iPhone 17 của Nam:
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1
+Số nhân CPU: 4; đa luồng WASM (crossOriginIsolated): có; WebGPU: có
+Mô hình: runs/M3b_yolo26n_bg/weights/best.pt, cỡ ảnh 640, 800
+Ảnh 1080×1920; trung vị 10 lần sau 2 lần làm nóng (ms)
+WASM   800:    5.7 +  199.9 +    0.3 =  205.9 ms (4.9 FPS), tải + khởi tạo 0.2 s, 1 luồng, onnxruntime-web 1.30.0
+         helmet 0, head 1, head_with_helmet 0, person_with_helmet 0, person_no_helmet 1, face 1
+WASM   640:    5.4 +  128.8 +    0.2 =  134.4 ms (7.4 FPS), tải + khởi tạo 0.0 s, 1 luồng, onnxruntime-web 1.30.0
+         helmet 0, head 1, head_with_helmet 0, person_with_helmet 0, person_no_helmet 1, face 1
+WebGPU 800:    6.1 +   47.2 +    0.3 =   53.6 ms (18.6 FPS), tải + khởi tạo 3.5 s, onnxruntime-web 1.30.0
+         helmet 0, head 1, head_with_helmet 0, person_with_helmet 0, person_no_helmet 1, face 1
+WebGPU 640:    6.5 +   31.4 +    0.2 =   38.0 ms (26.3 FPS), tải + khởi tạo 0.1 s, onnxruntime-web 1.30.0
+         helmet 0, head 1, head_with_helmet 0, person_with_helmet 0, person_no_helmet 1, face 1
+
+iPhone 11 Pro Max của anh (cùng ảnh với iphone11_bench.txt):
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.3 Mobile/15E148 Safari/604.1
+Số nhân CPU: 4; đa luồng WASM (crossOriginIsolated): có; WebGPU: có
+Mô hình: runs/M3b_yolo26n_bg/weights/best.pt, cỡ ảnh 640, 800
+Ảnh 1200×800; trung vị 10 lần sau 2 lần làm nóng (ms)
+WASM   800:    7.8 +  496.6 +    1.4 =  505.8 ms (2.0 FPS), tải + khởi tạo 0.7 s, 1 luồng, onnxruntime-web 1.30.0
+         helmet 23, head 0, head_with_helmet 25, person_with_helmet 27, person_no_helmet 0, face 23
+WASM   640:    6.2 +  308.6 +    0.8 =  315.6 ms (3.2 FPS), tải + khởi tạo 5.1 s, 1 luồng, onnxruntime-web 1.30.0
+         helmet 23, head 1, head_with_helmet 24, person_with_helmet 24, person_no_helmet 1, face 13
+WebGPU 800:   14.0 +  268.5 +    1.5 =  283.9 ms (3.5 FPS), tải + khởi tạo 3.4 s, onnxruntime-web 1.30.0
+         helmet 23, head 0, head_with_helmet 25, person_with_helmet 27, person_no_helmet 0, face 23
+WebGPU 640:   16.5 +  235.4 +    0.7 =  252.6 ms (4.0 FPS), tải + khởi tạo 0.6 s, onnxruntime-web 1.30.0
+         helmet 23, head 1, head_with_helmet 24, person_with_helmet 24, person_no_helmet 1, face 13
+
+iPhone 11 Pro Max, thử thêm số luồng (bench.html?threads=3, rồi ?threads=4; đo liền sau lần một luồng ở trên), WASM 800:
+  1 luồng 505,8 ms; 2 luồng (mặc định, iphone11_bench.txt) 229,1 ms; 3 luồng 434,5 ms; 4 luồng 354,2 ms → giữ mặc định.
+WASM   800:    7.0 +  426.4 +    1.1 =  434.5 ms (2.3 FPS), tải + khởi tạo 0.5 s, 3 luồng, onnxruntime-web 1.30.0
+WASM   640:    5.5 +  272.2 +    0.6 =  278.2 ms (3.6 FPS), tải + khởi tạo 0.1 s, 3 luồng, onnxruntime-web 1.30.0
+WebGPU 800:    6.9 +  245.1 +    0.9 =  252.9 ms (4.0 FPS), tải + khởi tạo 1.1 s, onnxruntime-web 1.30.0
+WebGPU 640:    6.0 +  153.4 +    0.7 =  160.1 ms (6.2 FPS), tải + khởi tạo 0.2 s, onnxruntime-web 1.30.0
+WASM   800:    6.8 +  346.1 +    1.2 =  354.2 ms (2.8 FPS), tải + khởi tạo 0.6 s, 4 luồng, onnxruntime-web 1.30.0
+WASM   640:    5.0 +  218.6 +    0.6 =  224.2 ms (4.5 FPS), tải + khởi tạo 0.1 s, 4 luồng, onnxruntime-web 1.30.0
+WebGPU 800:    6.9 +  251.8 +    1.5 =  260.2 ms (3.8 FPS), tải + khởi tạo 1.3 s, onnxruntime-web 1.30.0
+WebGPU 640:    5.8 +  156.5 +    1.0 =  163.4 ms (6.1 FPS), tải + khởi tạo 0.2 s, onnxruntime-web 1.30.0
+(số hộp ở mọi cấu hình giống lần một luồng)

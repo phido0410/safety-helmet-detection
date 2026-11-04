@@ -1,0 +1,15 @@
+runs/M3b_yolo26n_bg/weights/best.pt, imgsz 800, hậu xử lý như app (reports/deployment/M3b_yolo26n_bg/part_rule/part_rule.json: τ = 0.05, ngưỡng vi phạm 0.169)
+Tiêu chí: H = mép dưới nhóm nhỏ nhất mà nó và mọi nhóm lớn hơn có Recall và Precision vi phạm ≥ 0.7 (val SHEL5K)
+Dùng lại H = 160 px của reports/deployment/M3b_yolo26n_bg/min_size/min_size.json (không chọn lại trên val)
+
+Áp một lần H = 160 px (Recall theo nhãn ≥ H, Precision theo dự đoán ≥ H):
+  test SHEL5K  mọi người: Recall 0.837 (622/743, KTC 95% 0.809–0.862), Precision 0.776 (622/802, KTC 95% 0.745–0.803)
+               người ≥ 160 px: Recall 0.945 (512/542, KTC 95% 0.922–0.961), Precision 0.835 (512/613, KTC 95% 0.804–0.862); người vi phạm < 160 px bị bỏ qua: 201/743 (27%)
+  OOD-1        mọi người: Recall 0.776 (76/98, KTC 95% 0.683–0.847), Precision 0.639 (76/119, KTC 95% 0.549–0.719)
+               người ≥ 160 px: Recall 0.882 (45/51, KTC 95% 0.766–0.945), Precision 0.776 (45/58, KTC 95% 0.653–0.864); người vi phạm < 160 px bị bỏ qua: 47/98 (48%)
+  OOD-2        mọi người: Recall 0.787 (74/94, KTC 95% 0.694–0.858), Precision 0.490 (74/151, KTC 95% 0.412–0.569)
+               người ≥ 160 px: Recall 0.902 (55/61, KTC 95% 0.802–0.954), Precision 0.588 (57/97, KTC 95% 0.488–0.680); người vi phạm < 160 px bị bỏ qua: 33/94 (35%)
+  OOD-3        mọi người: Recall 0.631 (106/168, KTC 95% 0.556–0.700), Precision 0.576 (106/184, KTC 95% 0.504–0.645)
+               người ≥ 160 px: Recall 0.907 (49/54, KTC 95% 0.801–0.960), Precision 0.681 (47/69, KTC 95% 0.564–0.779); người vi phạm < 160 px bị bỏ qua: 114/168 (68%)
+  OOD-4        mọi người: Recall 0.841 (116/138, KTC 95% 0.770–0.892), Precision 0.678 (116/171, KTC 95% 0.605–0.744)
+               người ≥ 160 px: Recall 0.922 (59/64, KTC 95% 0.830–0.966), Precision 0.772 (61/79, KTC 95% 0.668–0.851); người vi phạm < 160 px bị bỏ qua: 74/138 (54%)

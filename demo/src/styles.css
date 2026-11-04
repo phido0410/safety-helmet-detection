@@ -66,12 +66,24 @@ main, .dropzone { height: 100%; }
 .shutter.stop i { width: 30px; height: 30px; border-radius: 7px; background: var(--red); }
 .shutter:active i { transform: scale(0.9); }
 .shutter:disabled { opacity: 0.5; cursor: default; }
+/* Điện thoại xoay ngang (tắt khóa xoay): như app Camera, khung ngắm chiếm hết chiều cao, bên phải là cột nút chụp (đổi camera trên,
+   lịch sử dưới) và các chế độ xếp dọc; nếu để bố cục dọc, hàng chế độ + nút chụp chiếm gần hết chiều cao màn hình */
+@media (orientation: landscape) and (max-height: 560px) {
+  .cam:not(.wide) { flex-direction: row; }
+  .cam:not(.wide) .viewfinder { padding-left: env(safe-area-inset-left); }
+  .cam:not(.wide) .controls { display: flex; align-items: center; gap: 8px; padding: 12px calc(env(safe-area-inset-right) + 16px) 12px 8px; }
+  .cam:not(.wide) .modes { flex-direction: column; align-items: flex-end; gap: 0; margin: 0; }
+  .cam:not(.wide) .row { height: 100%; grid-template-columns: auto; grid-template-rows: 1fr auto 1fr; justify-items: center; }
+  .cam:not(.wide) .row > :first-child { grid-row: 3; align-self: end; justify-self: center; }
+  .cam:not(.wide) .row > :last-child { grid-row: 1; align-self: start; justify-self: center; }
+}
 
 /* Khung phát hiện (kiểu 2): người không đội mũ tô cam mờ + "!", người đội mũ viền xanh + ✓ */
 .boxes { position: absolute; inset: 0; }
 .box { position: absolute; border-radius: 6px; transition: opacity 200ms var(--ease); }
 .box.bad { border: 3px solid var(--orange); background: rgba(226, 84, 27, 0.28); }
 .box.ok { border: 2px solid var(--green); }
+.box.far { border: 2px dashed rgba(255, 255, 255, 0.6); }
 .box::after { content: ""; position: absolute; left: 50%; top: 50%; width: max(100% + 20px, 44px); height: max(100% + 20px, 44px);
   transform: translate(-50%, -50%); }  /* vùng chạm ≥ 44 pt cho người nhỏ */
 .box.dim { opacity: 0.3; }
@@ -172,6 +184,7 @@ main, .dropzone { height: 100%; }
 .mini { display: grid; place-items: center; color: #fff; }
 .mini.bad { background: var(--orange-ink); }
 .mini.ok { background: var(--green-ink); }
+.mini.far { border: 2px dashed rgba(255, 255, 255, 0.6); }
 .people .txt span { font-size: 13px; color: var(--sub); }
 .badtext { color: #ff8a5c; }
 .recenthead { display: flex; align-items: baseline; justify-content: space-between; }

@@ -1,0 +1,9 @@
+runs/M3b_yolo26n_bg/weights/best.pt, imgsz 800, hậu xử lý như app (reports/deployment/M3b_yolo26n_bg/part_rule/part_rule.json: τ = 0.05, ngưỡng vi phạm 0.169; khung trùng khác lớp: luôn giữ không mũ; chiều cao: px trên ảnh 800)
+Tiêu chí: H = mép dưới nhóm nhỏ nhất mà nó và mọi nhóm lớn hơn có Recall và Precision vi phạm ≥ 0.7 (val SHEL5K)
+Dùng lại H = 160 px của reports/deployment/M3b_yolo26n_bg/min_size/min_size.json (không chọn lại trên val)
+
+Áp một lần H = 160 px (Recall theo nhãn ≥ H, Precision theo dự đoán ≥ H):
+  val SHEL5K   mọi người: Recall 0.820 (615/750, KTC 95% 0.791–0.846), Precision 0.802 (615/767, KTC 95% 0.772–0.829)
+               người ≥ 160 px: Recall 0.897 (529/590, KTC 95% 0.869–0.919), Precision 0.855 (523/612, KTC 95% 0.824–0.880); người vi phạm < 160 px bị bỏ qua: 160/750 (21%)
+  test SHEL5K  mọi người: Recall 0.837 (622/743, KTC 95% 0.809–0.862), Precision 0.776 (622/802, KTC 95% 0.745–0.803)
+               người ≥ 160 px: Recall 0.945 (512/542, KTC 95% 0.922–0.961), Precision 0.835 (512/613, KTC 95% 0.804–0.862); người vi phạm < 160 px bị bỏ qua: 201/743 (27%)

@@ -10,6 +10,7 @@ export function placeBadges(people, k, W, H) {
   const placed = [], out = new Map();
   const hit = (x, y) => placed.some(([px, py]) => Math.abs(px - x) < BADGE + GAP && Math.abs(py - y) < BADGE + GAP);
   for (const p of [...people].sort((a, b) => b.violation - a.violation)) {
+    if (p.far) { out.set(p.n, null); continue; }  // người ở xa: không đánh giá nên không có dấu
     const [x1, y1, x2, y2] = p.box.map((v) => v * k);
     const short = y2 - y1 < BADGE * 3;
     const x = Math.min(Math.max(short ? (x1 + x2) / 2 - BADGE / 2 : x1 - BADGE / 2, 2), W - BADGE - 2);

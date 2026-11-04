@@ -1,0 +1,10 @@
+node demo/test/videos.mjs https://localhost:8443/ <outdir> 1.5 … (2026-11-04, bản cuối: quy tắc 1 giữ khung điểm cao hơn, minHeight 80 hiệu dụng, chống chụp trùng)
+mixkit_1459.mp4: 3 người · 7,3 khung/s · đã lưu 1 | 1 ảnh lưu tại 0.4s (2 vi phạm) | 11 s
+mixkit_23511.mp4: 3 người · 8,3 khung/s · đã lưu 0 | 0 ảnh lưu tại  | 17 s
+mixkit_31473.mp4: 0 người (+3 ở xa) · 8,0 khung/s · đã lưu 2 | 2 ảnh lưu tại 0.3s (1 vi phạm), 6.6s (2 vi phạm) | 12 s
+mixkit_32296.mp4: 4 người (+3 ở xa) · 7,3 khung/s · đã lưu 3 | 3 ảnh lưu tại 1.5s (2 vi phạm), 4.8s (3 vi phạm), 7.8s (2 vi phạm) | 15 s
+mixkit_4809.mp4: 3 người · 6,7 khung/s · đã lưu 1 | 1 ảnh lưu tại 0.3s (3 vi phạm) | 39 s
+mixkit_4872.mp4: 2 người · 6,4 khung/s · đã lưu 1 | 1 ảnh lưu tại 0.3s (2 vi phạm) | 19 s
+mixkit_47755.mp4: 2 người · 6,3 khung/s · đã lưu 1 | 1 ảnh lưu tại 0.3s (2 vi phạm) | 16 s
+mixkit_23243.mp4: 3 người · 5,7 khung/s · đã lưu 1 | 1 ảnh lưu tại 0.3s (2 vi phạm) | 17 s
+console: (không có lỗi)
