@@ -1,24 +1,24 @@
-runs/M3b_yolo26n_bg/weights/best.pt, imgsz 800, hậu xử lý như app (reports/deployment/M3b_yolo26n_bg/part_rule/part_rule.json: τ = 0.05, ngưỡng vi phạm 0.169; khung trùng khác lớp: giữ khung điểm cao hơn; chiều cao: px hiệu dụng = chiều cao × min(1, 800 / cạnh dài))
+runs/M3b_yolo26n_bg/weights/best.pt, imgsz 800, hậu xử lý như app (reports/deployment/M3b_yolo26n_bg/part_rule/part_rule.json: τ = 0.1, ngưỡng vi phạm 0.161; khung trùng khác lớp: giữ khung điểm cao hơn; chiều cao: px hiệu dụng = chiều cao × min(1, 800 / cạnh dài))
 Tiêu chí: H = mép dưới nhóm nhỏ nhất mà nó và mọi nhóm lớn hơn có Recall và Precision vi phạm ≥ 0.7 (val SHEL5K + val SH17 + val Open Images)
-val SHEL5K + val SH17 + val Open Images: 2532 người vi phạm (nhãn), 2604 dự đoán vi phạm; theo chiều cao (px hiệu dụng = chiều cao × min(1, 800 / cạnh dài)):
-     0–32    Recall 0.298 (17/57, KTC 95% 0.195–0.427) | Precision 0.533 (16/30, KTC 95% 0.361–0.698)  ← dưới mục tiêu
-    32–48    Recall 0.418 (23/55, KTC 95% 0.297–0.550) | Precision 0.651 (28/43, KTC 95% 0.502–0.776)  ← dưới mục tiêu
+val SHEL5K + val SH17 + val Open Images: 2532 người vi phạm (nhãn), 2601 dự đoán vi phạm; theo chiều cao (px hiệu dụng = chiều cao × min(1, 800 / cạnh dài)):
+     0–32    Recall 0.281 (16/57, KTC 95% 0.181–0.408) | Precision 0.560 (14/25, KTC 95% 0.371–0.733)  ← dưới mục tiêu
+    32–48    Recall 0.400 (22/55, KTC 95% 0.281–0.532) | Precision 0.622 (28/45, KTC 95% 0.476–0.749)  ← dưới mục tiêu
     48–64    Recall 0.625 (30/48, KTC 95% 0.484–0.748) | Precision 0.549 (28/51, KTC 95% 0.414–0.677)  ← dưới mục tiêu
-    64–80    Recall 0.605 (26/43, KTC 95% 0.456–0.736) | Precision 0.589 (33/56, KTC 95% 0.459–0.708)  ← dưới mục tiêu
-    80–96    Recall 0.861 (62/72, KTC 95% 0.763–0.923) | Precision 0.786 (55/70, KTC 95% 0.676–0.866)
-    96–128   Recall 0.822 (162/197, KTC 95% 0.763–0.869) | Precision 0.811 (163/201, KTC 95% 0.751–0.859)
+    64–80    Recall 0.605 (26/43, KTC 95% 0.456–0.736) | Precision 0.604 (32/53, KTC 95% 0.469–0.724)  ← dưới mục tiêu
+    80–96    Recall 0.847 (61/72, KTC 95% 0.747–0.912) | Precision 0.797 (55/69, KTC 95% 0.688–0.875)
+    96–128   Recall 0.827 (163/197, KTC 95% 0.769–0.874) | Precision 0.796 (164/206, KTC 95% 0.736–0.845)
    128–160   Recall 0.868 (158/182, KTC 95% 0.811–0.910) | Precision 0.843 (140/166, KTC 95% 0.780–0.891)
-   160–inf   Recall 0.964 (1810/1878, KTC 95% 0.954–0.971) | Precision 0.918 (1825/1987, KTC 95% 0.906–0.930)
+   160–inf   Recall 0.962 (1807/1878, KTC 95% 0.953–0.970) | Precision 0.917 (1822/1986, KTC 95% 0.904–0.929)
   → H = 80 px
 
 Áp một lần H = 80 px (Recall theo nhãn ≥ H, Precision theo dự đoán ≥ H):
-  test SHEL5K  mọi người: Recall 0.830 (617/743, KTC 95% 0.802–0.856), Precision 0.796 (617/775, KTC 95% 0.766–0.823)
-               người ≥ 80 px: Recall 0.937 (518/553, KTC 95% 0.913–0.954), Precision 0.856 (516/603, KTC 95% 0.825–0.882); người vi phạm < 80 px bị bỏ qua: 190/743 (26%)
-  OOD-1        mọi người: Recall 0.765 (75/98, KTC 95% 0.672–0.838), Precision 0.688 (75/109, KTC 95% 0.596–0.767)
-               người ≥ 80 px: Recall 0.805 (62/77, KTC 95% 0.703–0.878), Precision 0.726 (61/84, KTC 95% 0.623–0.810); người vi phạm < 80 px bị bỏ qua: 21/98 (21%)
-  OOD-2        mọi người: Recall 0.766 (72/94, KTC 95% 0.671–0.840), Precision 0.529 (72/136, KTC 95% 0.446–0.611)
+  test SHEL5K  mọi người: Recall 0.822 (611/743, KTC 95% 0.793–0.848), Precision 0.801 (611/763, KTC 95% 0.771–0.828)
+               người ≥ 80 px: Recall 0.935 (517/553, KTC 95% 0.911–0.953), Precision 0.857 (514/600, KTC 95% 0.826–0.882); người vi phạm < 80 px bị bỏ qua: 190/743 (26%)
+  OOD-1        mọi người: Recall 0.735 (72/98, KTC 95% 0.640–0.812), Precision 0.686 (72/105, KTC 95% 0.592–0.767)
+               người ≥ 80 px: Recall 0.779 (60/77, KTC 95% 0.675–0.857), Precision 0.723 (60/83, KTC 95% 0.618–0.808); người vi phạm < 80 px bị bỏ qua: 21/98 (21%)
+  OOD-2        mọi người: Recall 0.766 (72/94, KTC 95% 0.671–0.840), Precision 0.537 (72/134, KTC 95% 0.453–0.620)
                người ≥ 80 px: Recall 0.840 (68/81, KTC 95% 0.745–0.904), Precision 0.596 (68/114, KTC 95% 0.505–0.682); người vi phạm < 80 px bị bỏ qua: 13/94 (14%)
-  OOD-3        mọi người: Recall 0.619 (104/168, KTC 95% 0.544–0.689), Precision 0.634 (104/164, KTC 95% 0.558–0.704)
-               người ≥ 80 px: Recall 0.930 (80/86, KTC 95% 0.856–0.968), Precision 0.692 (83/120, KTC 95% 0.604–0.767); người vi phạm < 80 px bị bỏ qua: 82/168 (49%)
-  OOD-4        mọi người: Recall 0.819 (113/138, KTC 95% 0.746–0.874), Precision 0.729 (113/155, KTC 95% 0.654–0.793)
+  OOD-3        mọi người: Recall 0.595 (100/168, KTC 95% 0.520–0.667), Precision 0.637 (100/157, KTC 95% 0.559–0.708)
+               người ≥ 80 px: Recall 0.919 (79/86, KTC 95% 0.841–0.960), Precision 0.701 (82/117, KTC 95% 0.613–0.776); người vi phạm < 80 px bị bỏ qua: 82/168 (49%)
+  OOD-4        mọi người: Recall 0.819 (113/138, KTC 95% 0.746–0.874), Precision 0.753 (113/150, KTC 95% 0.679–0.815)
                người ≥ 80 px: Recall 0.871 (88/101, KTC 95% 0.792–0.923), Precision 0.822 (88/107, KTC 95% 0.739–0.883); người vi phạm < 80 px bị bỏ qua: 37/138 (27%)

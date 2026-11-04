@@ -6,16 +6,16 @@ Chọn trên val SHEL5K: ngưỡng person_no_helmet = ngưỡng lớn nhất có
   τ = 0.250      ngưỡng 0.061: Recall 0.831 (KTC 95% 0.804–0.857), Precision 0.705 | AP50 pwh 0.910, pnh 0.822
   τ = 0.399      ngưỡng 0.003: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.331 | AP50 pwh 0.895, pnh 0.793
   → chọn: không lọc (không τ nào hơn không lọc: không dùng quy tắc)
-  → dùng τ = 0.050 theo quyết định của sinh viên (lệch tiêu chí chốt trước)
+  → dùng τ = 0.100 theo quyết định của sinh viên (lệch tiêu chí chốt trước)
 
-Áp một lần (ngưỡng vi phạm chọn trên val: không lọc 0.213, τ = 0.050 0.169):
+Áp một lần (ngưỡng vi phạm chọn trên val: không lọc 0.213, τ = 0.100 0.161):
   test SHEL5K  không lọc      Recall 0.833 (KTC 95% 0.805–0.858), Precision 0.790 | AP50 pwh 0.938, pnh 0.872
-  test SHEL5K  τ = 0.050      Recall 0.838 (KTC 95% 0.810–0.863), Precision 0.775 | AP50 pwh 0.930, pnh 0.852
-  OOD-1        không lọc      Recall 0.812 (KTC 95% 0.725–0.876), Precision 0.669 | AP50 pwh 0.834, pnh 0.777
-  OOD-1        τ = 0.050      Recall 0.812 (KTC 95% 0.725–0.876), Precision 0.640 | AP50 pwh 0.837, pnh 0.771
-  OOD-2        không lọc      Recall 0.752 (KTC 95% 0.660–0.826), Precision 0.486 | AP50 pwh 0.821, pnh 0.610
-  OOD-2        τ = 0.050      Recall 0.724 (KTC 95% 0.629–0.801), Precision 0.448 | AP50 pwh 0.827, pnh 0.577
-  OOD-3        không lọc      Recall 0.607 (KTC 95% 0.534–0.677), Precision 0.569 | AP50 pwh 0.767, pnh 0.592
-  OOD-3        τ = 0.050      Recall 0.614 (KTC 95% 0.540–0.682), Precision 0.561 | AP50 pwh 0.769, pnh 0.551
+  test SHEL5K  τ = 0.100      Recall 0.832 (KTC 95% 0.803–0.857), Precision 0.782 | AP50 pwh 0.925, pnh 0.840
+  OOD-1        không lọc      Recall 0.827 (KTC 95% 0.740–0.889), Precision 0.661 | AP50 pwh 0.845, pnh 0.787
+  OOD-1        τ = 0.100      Recall 0.808 (KTC 95% 0.717–0.872), Precision 0.632 | AP50 pwh 0.844, pnh 0.771
+  OOD-2        không lọc      Recall 0.809 (KTC 95% 0.717–0.875), Precision 0.486 | AP50 pwh 0.859, pnh 0.643
+  OOD-2        τ = 0.100      Recall 0.787 (KTC 95% 0.694–0.858), Precision 0.461 | AP50 pwh 0.860, pnh 0.615
+  OOD-3        không lọc      Recall 0.636 (KTC 95% 0.562–0.706), Precision 0.569 | AP50 pwh 0.773, pnh 0.610
+  OOD-3        τ = 0.100      Recall 0.637 (KTC 95% 0.562–0.706), Precision 0.557 | AP50 pwh 0.769, pnh 0.556
   ảnh không người (199) không lọc      ảnh có ≥ 1 "người": 15 (7.5%, KTC 95% 4.6%–12.1%); có ≥ 1 "người không đội mũ": 13 (6.5%, KTC 95% 3.9%–10.9%)
-  ảnh không người (199) τ = 0.050      ảnh có ≥ 1 "người": 13 (6.5%, KTC 95% 3.9%–10.9%); có ≥ 1 "người không đội mũ": 11 (5.5%, KTC 95% 3.1%–9.6%)
+  ảnh không người (199) τ = 0.100      ảnh có ≥ 1 "người": 9 (4.5%, KTC 95% 2.4%–8.4%); có ≥ 1 "người không đội mũ": 7 (3.5%, KTC 95% 1.7%–7.1%)
