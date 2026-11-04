@@ -19,4 +19,7 @@ export const IconPlay = (p) => <Svg {...p}><path d="M8 5.5v13l10.5-6.5z" /></Svg
 export const IconPause = (p) => <Svg {...p}><path d="M8.5 5.5v13M15.5 5.5v13" /></Svg>;
 export const IconCamera = (p) => <Svg {...p}><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></Svg>;
 export const IconStop = (p) => <Svg {...p}><rect x="6.5" y="6.5" width="11" height="11" rx="2" /></Svg>;
+export const IconPerson = (p) => <Svg {...p}><circle cx="12" cy="8" r="3.6" /><path d="M5 20a7 7 0 0 1 14 0" /></Svg>;
+export const IconCompass = (p) => <Svg {...p}><circle cx="12" cy="12" r="8.5" /><path d="m15 9-1.9 4.1L9 15l1.9-4.1z" /></Svg>;
+export const IconTimer = (p) => <Svg {...p}><circle cx="12" cy="13" r="7.5" /><path d="M12 13V9.5M9.5 3h5" /></Svg>;
 export const IconUpload = (p) => <Svg {...p}><path d="M12 15V4.5M7.5 9 12 4.5 16.5 9M4.5 15v4.5h15V15" /></Svg>;

@@ -35,12 +35,23 @@ main, .dropzone { height: 100%; }
 .topbar { position: absolute; inset: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 8px;
   padding: calc(env(safe-area-inset-top) + 8px) 12px 0; pointer-events: none; }
 .topbar > * { pointer-events: auto; }
-.glass, .capsule { background: rgba(0, 0, 0, 0.5); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6); }
+.glass, .capsule, .metrics { background: rgba(0, 0, 0, 0.6); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6); }
 .glass { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
 .spacer { width: 44px; height: 44px; }
 .row .spacer { width: 52px; height: 52px; }
 .capsule { margin: 0; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px 0 13px; border-radius: 20px;
   font-weight: 600; white-space: nowrap; color: #fff; }
+/* Thanh thông số dưới khung ngắm (điện thoại, iPad dọc): sát nút chụp như hàng thu phóng của app Camera, không che đầu người */
+/* z-index trên dấu và nhãn của khung (3–5): khung chạm đáy khung ngắm không đè lên số; số rộng cố định để thanh không xê dịch mỗi khung */
+.metrics { position: absolute; left: 50%; bottom: 12px; z-index: 6; transform: translateX(-50%); max-width: calc(100% - 24px); margin: 0; display: flex;
+  gap: 14px; padding: 7px 14px; border-radius: 16px; font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap;
+  color: #fff; pointer-events: none; }
+.metrics > span { display: inline-flex; align-items: center; gap: 5px; flex: none; }
+.metrics > span:first-child { flex: 0 1 auto; min-width: 0; }  /* chỉ số người co lại (có "…"), không mất số ms */
+.metrics > span:first-child > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.metrics > span:last-child { min-width: 4.6em; }
+@container (max-width: 380px) { .metrics { gap: 10px; padding: 7px 12px; font-size: 14px; } }
+.viewfinder:has(.metrics) .notice { bottom: 64px; }
 .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; background: rgba(255, 255, 255, 0.55); }
 .dot.bad { background: var(--orange); }
 .dot.ok { background: var(--green); box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.5); }
@@ -163,10 +174,14 @@ main, .dropzone { height: 100%; }
 .segmented button { flex: 1; min-height: 38px; border-radius: 15px; font-size: 15px; font-weight: 500; color: #fff; transition: background-color 200ms var(--ease); }
 .segmented button[aria-pressed="true"] { background: #636366; font-weight: 600; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); }
 .verdict { margin: 12px 0 4px; }
-.verdict h2 { margin: 0; display: flex; align-items: baseline; gap: 10px; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.verdict h2 { margin: 0; display: flex; align-items: baseline; gap: 10px; text-wrap: balance; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
 .verdict h2 .dot { width: 14px; height: 14px; transform: translateY(-2px); }
 .verdict p { margin: 6px 0 0; color: var(--sub); font-size: 15px; }
 .verdict:has(.dot) p { margin-left: 24px; }
+.tiles { margin: 12px 0 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; }
+.tiles div { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 14px; background: var(--cell); min-width: 0; }
+.tiles dd { order: -1; margin: 0; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }  /* số trên cùng hàng dù nhãn xuống dòng */
+.tiles dt { font-size: 13px; color: var(--sub); }
 .btn { min-height: 50px; border-radius: 25px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 17px; font-weight: 600; color: #fff; }
 .btn.primary { background: var(--tint); }
 .btn.danger { background: var(--red); }

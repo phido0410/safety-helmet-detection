@@ -12,7 +12,15 @@
 // Người mới có khung nằm gần trọn trong (hoặc bao trọn) khung một người đã chụp (tỉ lệ giao / khung nhỏ ≥ CONTAIN) được tính là đã
 // chụp: mô hình hay thêm khung nửa người hoặc khung bao hai người đứng sát nhau (video quay từ trên xuống: 3 người thành 3 ảnh).
 // Đổi lại, người khác đứng sát ngay trước / sau người đã chụp có thể không được chụp riêng.
-export const MATCH_IOU = 0.2, LOST_MS = 2000, REMEMBER_MS = 10000, VOTES = 5, CONFIRM = 3, CONTAIN = 0.8;
+// Lia máy sang cảnh khác: khung lớn chạy qua nối số của người đã chụp sang người mới đứng đúng chỗ đó (giường → sofa: người ở sofa
+// không được chụp). Camera (cảm biến hướng) lệch quá VIEW_DEG so với lúc chụp thì quên người đã chụp. So với lúc chụp chứ không
+// so từng khung: lia 90° trong 2 s ở 2–4 khung/s chỉ lệch 15–20° mỗi khung. Đổi lại, lia đi rồi quay lại trong REMEMBER_MS có thể
+// chụp lại người cũ một lần.
+// Số vi phạm hiển thị (bad) chỉ đếm người đã xác nhận, kể cả người mất dấu chưa quá HOLD_MS: khung báo nhầm lúc có lúc không không
+// làm số nhảy theo từng khung.
+export const MATCH_IOU = 0.2, LOST_MS = 2000, REMEMBER_MS = 10000, VOTES = 5, CONFIRM = 3, CONTAIN = 0.8, VIEW_DEG = 30, HOLD_MS = 1000;
+
+import { viewAngle } from "./orientation.js";
 
 const center = (b) => [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2];
 function iou(a, b) {
@@ -26,16 +34,20 @@ function ios(a, b) {
   return w <= 0 || h <= 0 ? 0 : (w * h) / Math.min((a[2] - a[0]) * (a[3] - a[1]), (b[2] - b[0]) * (b[3] - b[1]));
 }
 
-// update(people, t): people là kết quả một khung (box, score, violation), t là thời điểm khung (ms, đồng hồ của nguồn).
-// Trả về người kèm số theo dõi `n`, và `due`: số của những người vi phạm (đã xác nhận, khung này cũng báo vi phạm) chưa được chụp.
+// update(people, t, view): people là kết quả một khung (box, score, violation), t là thời điểm khung (ms, đồng hồ của nguồn), view
+// là hướng camera (viewDir, không có cảm biến thì bỏ trống). Trả về người kèm số theo dõi `n`, `due`: số của những người vi phạm
+// (đã xác nhận, khung này cũng báo vi phạm) chưa được chụp, và `bad`: số người vi phạm đã xác nhận để hiển thị.
 // Sau khi lưu ảnh khung đó thì gọi captured(): mọi người khung đó báo vi phạm đều có mặt trong ảnh nên đều tính là đã chụp, kể cả
 // người chưa đủ CONFIRM khung (iPad: người thứ hai / khung báo nhầm bên cạnh từng bị chụp thêm ảnh riêng vài giây sau).
 export function createTracker() {
-  let tracks = [], lastBad = [];
+  let tracks = [], lastBad = [], lastView;
   const free = () => { let n = 1; while (tracks.some((tr) => tr.n === n)) n++; return n; };
 
-  function update(people, t) {
-    tracks = tracks.filter((tr) => t - tr.t <= (tr.captured ? REMEMBER_MS : LOST_MS));
+  const confirmed = (tr) => tr.votes.filter(Boolean).length >= CONFIRM;
+  function update(people, t, view) {
+    lastView = view;
+    const turned = (tr) => tr.captured && tr.view && view && viewAngle(tr.view, view) > VIEW_DEG;
+    tracks = tracks.filter((tr) => t - tr.t <= (tr.captured ? REMEMBER_MS : LOST_MS) && !turned(tr));
     const pairs = [];
     tracks.forEach((tr, i) => {
       const dx = tr.v[0] * (t - tr.t), dy = tr.v[1] * (t - tr.t), pred = [tr.box[0] + dx, tr.box[1] + dy, tr.box[2] + dx, tr.box[3] + dy];
@@ -59,14 +71,15 @@ export function createTracker() {
       return { p: { ...p, n: tr.n }, tr };
     });
     // xét lúc sắp chụp chứ không lúc tạo: khung nửa người có thể có từ đầu, cùng lúc với người, rồi mới thành vi phạm
-    const ready = out.filter(({ p, tr }) => p.violation && !tr.captured && tr.votes.filter(Boolean).length >= CONFIRM);
-    ready.forEach(({ tr }) => { if (tracks.some((o) => o.captured && ios(o.box, tr.box) >= CONTAIN)) tr.captured = true; });
+    const ready = out.filter(({ p, tr }) => p.violation && !tr.captured && confirmed(tr));
+    ready.forEach(({ tr }) => { if (tracks.some((o) => o.captured && ios(o.box, tr.box) >= CONTAIN)) Object.assign(tr, { captured: true, view }); });
     const due = ready.filter(({ tr }) => !tr.captured).map(({ p }) => p.n);
     lastBad = out.filter(({ p }) => p.violation).map(({ tr }) => tr);
-    return { people: out.map(({ p }) => p).sort((a, b) => a.n - b.n), due };
+    const bad = tracks.filter((tr) => t - tr.t <= HOLD_MS && confirmed(tr)).length;
+    return { people: out.map(({ p }) => p).sort((a, b) => a.n - b.n), due, bad };
   }
 
-  const captured = () => lastBad.forEach((tr) => { tr.captured = true; });
+  const captured = () => lastBad.forEach((tr) => { tr.captured = true; tr.view = lastView; });
   // Đổi nguồn (camera trước ↔ sau) là cảnh mới: người đã chụp ở cảnh cũ không được che người mới đứng đúng chỗ đó
   const reset = () => { tracks = []; lastBad = []; };
   return { update, captured, reset };

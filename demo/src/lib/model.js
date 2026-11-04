@@ -9,9 +9,15 @@ let loading;
 
 // Safari 26.2 treo cả trang khi chạy WASM đa luồng (iPhone 17: chỉ chạy được khi tắt đa luồng), Safari 26.6.3 chạy tốt và một luồng
 // chậm 2,2 lần (iPhone 11: 506 so với 229 ms, reports/deployment/M3b_yolo26n_bg/{single_thread,iphone11}_bench.txt) → Safari 26.0–26.4 chạy một luồng. Bản chưa biết:
-// đánh dấu trước khi khởi tạo đa luồng, chạy thử xong thì xóa; dấu còn lại cùng user agent nghĩa là lần trước bị treo → một luồng.
-const HANG_KEY = "helmetcheck-thread-hang";
-export const singleThread = (ua, hungUa) => /Version\/26\.[0-4]\b/.test(ua) || hungUa === ua;
+// đánh dấu "<thời điểm>|<user agent>" trước khi khởi tạo đa luồng, chạy thử xong thì xóa; dấu còn lại cùng user agent nghĩa là lần
+// trước bị treo → một luồng. Rời trang lúc đang chạy thử (tải lại, chuyển ứng dụng) cũng để lại dấu (iPhone 11 kẹt một luồng, chậm
+// gấp đôi) → rời trang thì xóa dấu (trang treo thật thì không chạy được sự kiện này), và dấu chỉ có hiệu lực HANG_TTL_MS.
+const HANG_KEY = "helmetcheck-thread-hang", HANG_TTL_MS = 24 * 3600e3;
+export function singleThread(ua, mark, now = Date.now()) {
+  if (/Version\/26\.[0-4]\b/.test(ua)) return true;
+  const i = mark?.indexOf("|") ?? -1;  // dấu kiểu cũ (chỉ có user agent) coi như hết hạn
+  return i > 0 && mark.slice(i + 1) === ua && now - Number(mark.slice(0, i)) < HANG_TTL_MS;
+}
 function hangMark(value) {
   try {
     if (value === undefined) return localStorage.getItem(HANG_KEY);
@@ -51,12 +57,13 @@ async function init(onProgress) {
   ort.env.wasm.wasmPaths = url("vendor/");
   ort.env.wasm.wasmBinary = wasm;
   const ua = navigator.userAgent, one = singleThread(ua, hangMark());
+  const leave = () => hangMark(null);
   if (one) ort.env.wasm.numThreads = 1;
-  else hangMark(ua);
+  else { hangMark(`${Date.now()}|${ua}`); addEventListener("pagehide", leave); document.addEventListener("visibilitychange", leave); }
   const session = await ort.InferenceSession.create(bytes, { executionProviders: ["wasm"] });
   const s = cfg.imgsz;  // chạy thử một lần: nếu đa luồng bị treo thì treo ở đây, khi dấu còn đó
   await session.run({ [session.inputNames[0]]: new ort.Tensor("float32", new Float32Array(3 * s * s), [1, 3, s, s]) });
-  if (!one) hangMark(null);
+  if (!one) { leave(); removeEventListener("pagehide", leave); document.removeEventListener("visibilitychange", leave); }
   const canvas = document.createElement("canvas");
   let busy = Promise.resolve();
   // session.run không chạy song song: xếp hàng các lần gọi
@@ -65,7 +72,7 @@ async function init(onProgress) {
     const dets = await detect(ort, session, cfg, source, width, height, canvas);
     return { dets, ms: performance.now() - t };
   }));
-  return { cfg, backend: one ? "WASM, 1 luồng" : "WASM", run };
+  return { cfg, backend: `WASM, ${one || !self.crossOriginIsolated ? 1 : ort.env.wasm.numThreads} luồng`, run };
 }
 
 // Chỉ giữ hai lớp người; đánh số trái sang phải như chú thích trên bản vẽ. NMS chỉ lọc trong từng lớp nên một người có thể còn cả

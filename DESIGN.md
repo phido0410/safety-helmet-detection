@@ -12,7 +12,7 @@ colors:
   tint-dark: "#0a84ff"
   camera-black: "#000000"
   control-white: "#ffffff"
-  glass: "rgba(0, 0, 0, 0.5)"
+  glass: "rgba(0, 0, 0, 0.6)"
   round-fill: "rgba(255, 255, 255, 0.14)"
   label: "#000000"
   label-secondary: "#6c6c70"
@@ -270,7 +270,7 @@ components:
 
 HelmetCheck is the iPhone Camera app with one extra job: it answers "who has no hard hat" on top of the viewfinder. Everything that is not the image is iOS system material: the system font, black camera chrome, white controls, the Camera-app mode row with its yellow active label, the round shutter, and the last-capture thumbnail. The history is a stock iOS grouped list that follows light and dark appearance. Nothing is branded beyond the two signal colours, so the image and the boxes carry the screen.
 
-Density is minimal by design: one floating verdict capsule, coloured boxes with round glyph badges, and a single line of hint text in the empty viewfinder. Numbers (model, speed, saved count) live in an info sheet one tap away, never on the camera screen. On a phone or a portrait iPad the camera screen fills the full width; on a landscape viewport of 900px or more the same black viewfinder sits beside a dark iOS side panel that spells out what the capsule abbreviates, the way an iPad app shows a detail column.
+Density is minimal by design: one floating verdict capsule, coloured boxes with round glyph badges, and a single line of hint text in the empty viewfinder. Three numbers sit on the camera screen in a small glass metrics bar just above the mode row, where the Camera app keeps its zoom pills, so it covers feet and ground rather than heads: people in frame, heading change since the last saved image (live camera only) and processing time per frame (chosen by the student 2026-11-04). Everything else (model, threads, frame rate, frame rotation, saved count) lives in the info sheet one tap away. On a phone or a portrait iPad the camera screen fills the full width; on a landscape viewport of 900px or more the same black viewfinder sits beside a dark iOS side panel that spells out what the capsule abbreviates, the way an iPad app shows a detail column.
 
 The world replaced an earlier drafting-sheet direction ("Bản vẽ thi công") after it proved hard to read on the phone; title blocks, condensed display type, grid paper and stat stacks are not part of this system.
 
@@ -352,7 +352,7 @@ Non-camera screens use 16px page gutters with iOS grouped insets: section header
 
 ## Elevation & Depth
 
-Flat iOS surfaces; depth comes from blur and from rings, not from cast shadows. Anything floating over the image uses glass (black at 50%, `blur(20px) saturate(1.6)`). The only soft shadows are small and sit on elements over an unpredictable photo: badges and the confidence tag.
+Flat iOS surfaces; depth comes from blur and from rings, not from cast shadows. Anything floating over the image uses glass (black at 60%, `blur(20px) saturate(1.6)`; 60% keeps white text ≈ 5.7:1 over sky or white walls). The only soft shadows are small and sit on elements over an unpredictable photo: badges and the confidence tag.
 
 ### Shadow Vocabulary
 - **Badge ring** (`box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(0,0,0,0.35)`): white ring plus a short lift so "!" and ✓ read on any background.
@@ -394,7 +394,7 @@ Phone layout only (the wide panel uses the segmented control). Three text button
 - **Round:** 52px circle, white at 14%, white 26px glyph (switch camera in live mode, clear file in photo/video).
 
 ### Verdict Capsule
-Glass capsule, min 40px tall, 20px radius, 12px dot + 17px/600 text, `aria-live="polite"`. Three states: orange dot + "N không mũ"; green dot with a faint white ring + "Tất cả đội mũ"; white-55% dot + "Không thấy người". Reused centred under the image on the history detail screen. On the wide layout it stays on the viewfinder (a 44px spacer replaces the info button, which moves to the panel header), and the panel repeats the verdict in a full sentence.
+Glass capsule, min 40px tall, 20px radius, 12px dot + 17px/600 text, `aria-live="polite"`. States: orange dot + "N vi phạm không đội mũ" (only tracker-confirmed violators in video and camera); white-55% dot + "Đang xác nhận…" while a newly flagged person is not yet confirmed; green dot with a faint white ring + "Tất cả đội mũ"; white-55% dot + "Không thấy người". Reused centred under the image on the history detail screen. On the wide layout it stays on the viewfinder (a 44px spacer replaces the info button, which moves to the panel header), and the panel repeats the verdict in a full sentence.
 
 ### Detection Box (signature)
 Boxes are buttons placed in percent of the image, 6px radius.
@@ -405,11 +405,14 @@ Boxes are buttons placed in percent of the image, 6px radius.
 - **Tap:** the box toggles a confidence tag ("Không đội mũ · 87%" / "Đội mũ · 92%", 15px/600 white on the ink variant of the signal colour, 13px radius) 6px above its badge; the other boxes dim to 30% opacity (200ms). Near the top edge the tag goes below the box; near the right edge it aligns right. Tapping empty image clears the focus. On the wide layout the focused person is shared with the panel's people list: selecting a violator row focuses that box, and tapping a violator box highlights its row (helmet wearers share one static row).
 - **Motion:** on a still result (photo, history detail) boxes ink in (opacity 0 and scale 1.06 → 1, 360ms). Live camera and video update per frame without animation.
 
+### Metrics Bar (phone, portrait iPad)
+Glass capsule (same material as the verdict capsule, 16px radius, 7px 14px padding) centred 12px above the viewfinder bottom, one line of 15px/500 tabular white items 14px apart (14px and 10px apart in a viewfinder ≤ 380px), z-index 6 above box badges and tags, each a 17px glyph plus text: "2 người" (person; far people as "3 người +1 xa", the item that truncates first), "Lệch 42°" (compass; "Lệch –" before the first saved image or without a motion sensor), "287 ms" (timer). Photo and video show people and time only. Not interactive; never wider than the viewfinder minus 24px. The error notice moves up to 64px while the bar is shown.
+
 ### Wide Panel (≥ 900px landscape)
 Dark iOS side column beside the viewfinder (panel-bg, white text, secondary label-secondary-dark, tint tint-dark). Top to bottom:
 - **Header:** "HelmetCheck" in 17px bold (browser `<b>` weight, 700) left, a plain 44px info button right (white glyph, no fill).
 - **Segmented control:** iOS segmented control with the device's modes (ẢNH/VIDEO on desktop, three on iPad); 3px track inset, 38px segments, the selected one segment-selected with the segment lift and 600 weight; background change 200ms.
-- **Verdict:** 14px signal dot plus the full sentence in Verdict Title, summary line below indented to the text ("4 người · 183 ms · đã lưu", "Camera sau · 4,1 khung/s · đã lưu 2"). Without a result the dot is omitted and the mode title and hint stand in. `aria-live="polite"`.
+- **Verdict:** 14px signal dot plus the full sentence in Verdict Title. Below it, the same three numbers as the phone metrics bar as a row of equal tiles (panel-cell, 14px radius, 10px 12px padding, 8px gap): the value in 22px/700 on top, the label in 13px secondary under it ("người", "lệch hướng", "ms mỗi khung", or "ms xử lý ảnh" for a photo; the time tile shows the bare number so a slow device's "1024" still fits one line); the heading tile only in live camera. Without a result the dot and tiles are omitted and the mode title and hint stand in. `aria-live="polite"`.
 - **Buttons:** full-width 50px pills, 17px/600 white text after a 24px icon: primary (tint-dark) for the shutter's action ("Chọn ảnh", "Phát và phân tích", "Mở camera"), danger (record red) while running ("Tạm dừng", "Tắt camera"), gray (gray-fill) for the secondary action ("Bỏ ảnh này", "Bỏ video này", "Đổi camera trước / sau"). Disabled at 50% opacity. On desktop with media loaded and nothing running, a centred 13px note follows: "hoặc kéo thả, dán (⌘V) ảnh / video khác vào trang".
 - **People list** ("NGƯỜI PHÁT HIỆN" section header, only when people are found): a dark grouped list (panel-cell, 14px radius, separators inset 64px). Up to 5 violator rows in stable tracker order; each row is a 60px button with a 40px crop of that person (from the photo, or redrawn from the current video/camera frame) ringed in violation orange, falling back to a violation-ink mini badge with "!" when no crop source exists; title "Không đội mũ" in violation-text-dark, confidence below in 13px. A selected person outside the first five replaces the fifth row. Beyond five, one static row "và N người không đội mũ khác" / "xem khung trên ảnh". Helmet wearers collapse into one static row: helmet-ink mini badge with ✓, "N người đội mũ" in white, confidence range ("86%–94%") below. The selected row takes the focus wash.
 - **Recent history** ("LỊCH SỬ GẦN ĐÂY" header with a tint "Xem tất cả" link): a four-column grid of square crops (12px radius, gray-fill placeholder, orange inset crop ring) with the 12px time underneath; each opens that record's detail.
@@ -440,7 +443,7 @@ Camera: the black viewfinder with one centred hint line ("Chọn một video cô
 ### Do:
 - **Do** use the system font stack at the iOS sizes (34 / 20 / 17 / 15 / 13, plus 26 and 12 in the wide panel); weight, not typeface, carries hierarchy.
 - **Do** keep orange for no hard hat and green for hard hat, each paired with "!" / ✓ or words.
-- **Do** float chrome over the image as glass (black 50%, blur 20px, saturate 1.6) in circles or capsules.
+- **Do** float chrome over the image as glass (black 60%, blur 20px, saturate 1.6) in circles or capsules.
 - **Do** keep every target at least 44px, including small detection boxes (invisible 44px hit area).
 - **Do** letterbox media in black and position boxes in percent of the image.
 - **Do** give every grouped-list colour a dark-appearance pair; the camera and detail screens stay black in both.

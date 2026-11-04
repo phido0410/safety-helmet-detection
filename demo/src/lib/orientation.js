@@ -42,16 +42,30 @@ export function unrotateBox([x1, y1, x2, y2], rot, W, H) {
   return [Math.min(p[0], q[0]), Math.min(p[1], q[1]), Math.max(p[0], q[0]), Math.max(p[1], q[1])];
 }
 
+// Hướng nhìn của camera (vector đơn vị theo trục z của máy, công thức ma trận Z-X'-Y'' của đặc tả DeviceOrientation) và góc giữa hai
+// hướng (độ). Camera trước nhìn ngược trục z nên góc giữa hai lần đo vẫn như camera sau.
+export function viewDir(alpha, beta, gamma) {
+  const [a, b, g] = [alpha, beta, gamma].map((d) => (d * Math.PI) / 180);
+  return [Math.cos(a) * Math.sin(g) + Math.sin(a) * Math.sin(b) * Math.cos(g), Math.sin(a) * Math.sin(g) - Math.cos(a) * Math.sin(b) * Math.cos(g),
+    Math.cos(b) * Math.cos(g)];
+}
+export const viewAngle = (u, v) => (Math.acos(Math.max(-1, Math.min(1, u[0] * v[0] + u[1] * v[1] + u[2] * v[2]))) * 180) / Math.PI;
+
 const screenAngle = () => (typeof window.orientation === "number" ? window.orientation : screen.orientation?.angle ?? 0);
 
 // Theo dõi hướng cầm máy; phải gọi ngay trong thao tác bấm của người dùng vì iOS hỏi quyền "Chuyển động và hướng" lúc đó.
-// get(facing) trả góc xoay khung hiện tại; không có cảm biến hoặc bị từ chối quyền thì luôn 0 (như trước).
+// get(facing) trả góc xoay khung hiện tại; không có cảm biến hoặc bị từ chối quyền thì luôn 0 (như trước). view() trả hướng camera
+// (viewDir) cho tracker, chưa có số đo thì null.
 export function watchOrientation() {
-  let q = 0, on = null;
-  const handle = (e) => { const a = e.beta == null ? null : upAngle(e.beta, e.gamma); if (a != null) q = quadrant(a, q); };
+  let q = 0, on = null, dir = null;
+  const handle = (e) => {
+    const a = e.beta == null ? null : upAngle(e.beta, e.gamma);
+    if (a != null) q = quadrant(a, q);
+    if (e.alpha != null && e.beta != null) dir = viewDir(e.alpha, e.beta, e.gamma);
+  };
   const ask = globalThis.DeviceOrientationEvent?.requestPermission;
   (ask ? ask.call(DeviceOrientationEvent) : Promise.resolve("granted")).then((s) => {
     if (s === "granted") { on = handle; window.addEventListener("deviceorientation", on); }
   }, () => {});
-  return { get: (facing) => frameRotation(q, screenAngle(), facing), stop: () => on && window.removeEventListener("deviceorientation", on) };
+  return { get: (facing) => frameRotation(q, screenAngle(), facing), view: () => dir, stop: () => on && window.removeEventListener("deviceorientation", on) };
 }

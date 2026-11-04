@@ -47,8 +47,11 @@ export default function Stage({ width, height, people = [], children, live = fal
 }
 
 // Kết luận ngắn cho viên nổi trên khung ngắm (có chấm màu và chữ, không chỉ màu). Người ở xa (far) không được đánh giá.
-export function verdictOf(people) {
-  const bad = people.filter((p) => p.violation).length;
+// confirmed (video, camera): số người vi phạm đã xác nhận của tracker, để số không nhảy theo từng khung; người mới báo vi phạm
+// chưa đủ số khung thì là "Đang xác nhận".
+export function verdictOf(people, confirmed) {
+  const bad = confirmed ?? people.filter((p) => p.violation).length;
+  if (!bad && people.some((p) => p.violation)) return { tone: "none", text: "Đang xác nhận…", long: "Đang xác nhận người không đội mũ…" };
   if (bad) return { tone: "bad", text: `${bad} vi phạm không đội mũ`, long: `${bad} vi phạm không đội mũ` };
   if (people.some((p) => !p.far)) return { tone: "ok", text: "Tất cả đội mũ", long: "Tất cả đội mũ" };
   if (people.length) return { tone: "none", text: "Chỉ có người ở xa", long: "Chỉ có người ở xa, chưa đánh giá" };

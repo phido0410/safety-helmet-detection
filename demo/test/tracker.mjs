@@ -1,7 +1,8 @@
 // Kiểm tra tracker (src/lib/tracker.js) trên chuỗi khung giả lập 4 khung/s (như iPhone 11): giữ số khi người đi nhanh, nhấp nháy
 // lớp, mất dấu ngắn; mỗi người vi phạm chỉ được chụp một lần, kể cả người ở xa mô hình lúc thấy lúc không; người chỉ thoáng qua
 // không bị chụp.
-import { createTracker, LOST_MS, REMEMBER_MS } from "../src/lib/tracker.js";
+import { createTracker, CONFIRM, LOST_MS, REMEMBER_MS } from "../src/lib/tracker.js";
+import { viewDir } from "../src/lib/orientation.js";
 import { people as peopleOf } from "../src/lib/model.js";
 
 const DT = 250;  // ms giữa hai khung
@@ -140,5 +141,39 @@ check(run(Array.from({ length: 20 }, (_, i) => [person(100, i % 5 < 2)])).shots.
   check(shots.length === 1, `khung nửa người có từ đầu, sau mới thành vi phạm: chụp ${shots.length} lần (phải 1)`);
 }
 
-console.log(`tracker: 13 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+// 14. Lia máy sang cảnh khác (lỗi gặp trên iPhone: chụp người ở giường, quay sang sofa thì người ở sofa không được chụp). Người A
+//     ở giường bị chụp; lia máy, các khung lớn chạy qua nối số theo dõi của A sang khung của người B ngồi đúng chỗ đó → B bị coi là
+//     A, không được chụp. Hướng camera (cảm biến) đổi quá VIEW_DEG so với lúc chụp thì quên người đã chụp; chỉ rung tay thì vẫn nhớ.
+{
+  const toward = (alpha) => viewDir(alpha, 90, 0);  // cầm dọc, camera sau nhìn ngang, quay quanh trục đứng
+  const pan = (turn) => {
+    const tk = createTracker(); let t = 0, shots = 0;
+    const step = (ppl, alpha) => { const r = tk.update(ppl, t, toward(alpha)); if (r.due.length) { shots++; tk.captured(); } t += 450; };
+    for (let k = 0; k < 8; k++) step([person(100, true, 300, 500, 600)], 0);                          // A ở giường
+    for (let k = 0; k < 4; k++) step([person(60 + k * 30, true, 250, 600, 700)], (turn * (k + 1)) / 5);  // lia máy
+    for (let k = 0; k < 2; k++) step([], turn);                                                      // không thấy người
+    for (let k = 0; k < 20; k++) step([person(90, true, 280, 520, 640)], turn);                       // B ở sofa
+    return shots;
+  };
+  check(pan(90) === 2, `lia máy 90° sang cảnh khác: chụp ${pan(90)} lần (phải 2: A và B)`);
+  check(pan(10) === 1, `rung tay 10°: chụp ${pan(10)} lần (phải 1: vẫn là A)`);
+  // không có cảm biến (máy tính, video có sẵn): như cũ
+  const tk = createTracker(); let shots = 0;
+  for (let k = 0; k < 10; k++) { const r = tk.update([person(100, true)], k * DT); if (r.due.length) { shots++; tk.captured(); } }
+  check(shots === 1, `không có cảm biến: chụp ${shots} lần (phải 1)`);
+}
+
+// 15. Số người vi phạm hiển thị không nhảy theo từng khung (cảnh giường: 2–3–4–5): chỉ đếm người đã xác nhận (CONFIRM/VOTES), người
+//     mất dấu một hai khung vẫn được đếm thêm HOLD_MS; khung thoáng qua một lần không được đếm.
+{
+  const tk = createTracker(), counts = [];
+  for (let k = 0; k < 24; k++) {
+    const ppl = [person(100, true), ...(k % 2 ? [] : [person(400, true)]), ...(k === 15 ? [person(700, true)] : [])];
+    counts.push(tk.update(ppl, k * DT).bad);
+  }
+  check(counts.slice(8).every((n) => n === 2), `người mất dấu một khung / khung thoáng qua: số vi phạm ${counts.slice(8)} (phải luôn 2)`);
+  check(counts[0] === 0, `chưa đủ ${CONFIRM} khung: số vi phạm ${counts[0]} (phải 0)`);
+}
+
+console.log(`tracker: 15 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);

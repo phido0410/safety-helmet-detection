@@ -1,7 +1,7 @@
 // Kiểm tra xoay khung theo hướng cầm máy (src/lib/orientation.js): hướng "lên" từ beta/gamma, làm tròn có trễ, góc xoay khung cho
 // camera sau / trước khi giao diện bị khóa dọc hoặc xoay theo, và khung khoanh xoay ngược đúng về khung hình gốc.
 //   node demo/test/orientation.mjs
-import { quadrant, frameRotation, rotationMatrix, unrotateBox, upAngle } from "../src/lib/orientation.js";
+import { quadrant, frameRotation, rotationMatrix, unrotateBox, upAngle, viewDir, viewAngle } from "../src/lib/orientation.js";
 
 let failed = 0;
 const check = (ok, msg) => { if (!ok) { failed++; console.log("SAI:", msg); } };
@@ -33,5 +33,13 @@ for (const rot of [0, 90, 180, 270]) {
   check(a * 0 + c * 0 + e === H && b * 0 + d * 0 + f === 0, "xoay 90°: góc trên trái phải sang góc trên phải");
 }
 
-console.log(`orientation: 8 trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+// Hướng camera từ cảm biến: cầm dọc rồi quay người 90° quanh trục đứng → hướng camera lệch 90°; ngửa máy 30° → lệch 30°;
+// không đổi → 0°
+{
+  const up = viewDir(0, 90, 0);
+  check(Math.abs(viewAngle(up, viewDir(90, 90, 0)) - 90) < 1e-6, `quay 90°: ${viewAngle(up, viewDir(90, 90, 0))}`);
+  check(Math.abs(viewAngle(up, viewDir(0, 60, 0)) - 30) < 1e-6 && viewAngle(up, viewDir(0, 90, 0)) < 1e-6, "ngửa máy 30°, không đổi");
+}
+
+console.log(`orientation: 10 trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);
