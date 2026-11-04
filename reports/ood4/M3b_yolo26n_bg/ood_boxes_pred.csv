@@ -1,0 +1,311 @@
+image,cls,x1,y1,x2,y2,headwear,pred,true,group,h_px,size
+news_0297c849f24f.jpg,pnh,563.2,277.0,644.3,391.2,mũ cối,person_no_helmet,person_no_helmet,mũ cối,117.12820512820511,80–160
+news_06774acc11fb.jpg,pwh,22.0,56.9,376.3,492.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),446.66666666666663,≥ 160
+news_06774acc11fb.jpg,pwh,484.6,261.7,768.3,492.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),236.82051282051285,≥ 160
+news_06774acc11fb.jpg,pwh,683.2,363.2,741.3,417.5,,bỏ sót,person_with_helmet,(mũ bảo hộ),55.6923076923077,40–80
+news_0aa72c1c8401.jpg,pnh,51.1,368.3,184.9,502.4,mũ vải,person_with_helmet,person_no_helmet,mũ vải,141.34387351778653,80–160
+news_0aa72c1c8401.jpg,pnh,650.1,318.0,708.2,383.4,mũ vải,person_with_helmet,person_no_helmet,mũ vải,68.93280632411066,40–80
+news_0aa72c1c8401.jpg,pnh,98.2,292.4,168.1,464.1,mũ vải,bỏ sót,person_no_helmet,mũ vải,180.97496706192365,≥ 160
+news_0aab8ec1e43c.jpg,pwh,1466.2,9.4,1686.2,297.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),90.0,80–160
+news_0b67af4a18e6.jpg,pwh,128.3,113.2,333.2,470.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),366.3589743589743,≥ 160
+news_0b67af4a18e6.jpg,pwh,310.0,63.8,518.8,468.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),414.87179487179486,≥ 160
+news_0cae632cdefd.jpg,pnh,101.5,691.4,286.9,1047.6,nón lá,person_no_helmet,person_no_helmet,nón lá,142.48,80–160
+news_0cae632cdefd.jpg,pnh,476.6,664.6,623.9,1063.4,nón lá,person_no_helmet,person_no_helmet,nón lá,159.52000000000004,80–160
+news_0cae632cdefd.jpg,pnh,1582.9,650.6,1668.6,892.1,mũ khác,person_no_helmet,person_no_helmet,mũ khác,96.60000000000001,80–160
+news_0cae632cdefd.jpg,pnh,1211.5,290.6,1407.0,697.9,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,162.92,≥ 160
+news_116e39fa1c37.jpg,pwh,196.2,0.0,747.2,501.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),514.3589743589744,≥ 160
+news_17d1204af995.jpg,pwh,0.1,5.2,167.0,459.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),465.7435897435897,≥ 160
+news_17d1204af995.jpg,pwh,567.3,92.1,769.1,465.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),383.07692307692304,≥ 160
+news_17d1204af995.jpg,pwh,150.4,48.2,312.0,392.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),353.5384615384615,≥ 160
+news_17d1204af995.jpg,pwh,421.9,119.1,582.5,464.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),354.3589743589743,≥ 160
+news_17d1204af995.jpg,pwh,276.6,113.8,344.7,310.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),201.33333333333331,≥ 160
+news_17d1204af995.jpg,pwh,321.6,79.9,441.4,462.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),392.7179487179487,≥ 160
+news_1c18b65777d6.jpg,pnh,298.7,168.2,1183.7,1255.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,457.59999999999997,≥ 160
+news_1d006a98d172.jpg,pwh,1438.1,564.5,1714.6,1303.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),288.63281250000006,≥ 160
+news_1d3a84289792.jpg,pwh,307.1,165.2,1257.5,1254.4,,person_no_helmet,person_with_helmet,(mũ bảo hộ),458.61052631578946,≥ 160
+news_20d9aeab0378.jpg,pnh,120.0,81.0,375.0,480.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,498.75,≥ 160
+news_21f4171969a5.jpg,pwh,551.6,281.6,593.8,361.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),81.74358974358972,80–160
+news_21f4171969a5.jpg,pwh,399.4,283.2,435.4,362.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),81.64102564102566,80–160
+news_21f4171969a5.jpg,pwh,712.1,278.1,751.8,373.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),97.64102564102562,80–160
+news_21f4171969a5.jpg,pwh,471.5,252.7,493.9,308.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),56.92307692307692,40–80
+news_26fedb76feb2.jpg,pnh,354.7,143.5,589.8,515.4,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,381.4358974358974,≥ 160
+news_2764a731a417.jpg,pnh,718.6,187.9,929.7,675.8,nón lá,person_no_helmet,person_no_helmet,nón lá,381.54447702834796,≥ 160
+news_2764a731a417.jpg,pnh,579.3,259.0,761.3,677.1,mũ cối,person_no_helmet,person_no_helmet,mũ cối,326.95992179863146,≥ 160
+news_2764a731a417.jpg,pnh,61.7,194.3,345.9,675.9,mũ cối,person_no_helmet,person_no_helmet,mũ cối,376.61779081133915,≥ 160
+news_2764a731a417.jpg,pnh,384.6,206.6,527.1,676.2,mũ cối,person_no_helmet,person_no_helmet,mũ cối,367.2336265884653,≥ 160
+news_2764a731a417.jpg,pwh,281.1,198.8,473.5,676.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),373.33333333333337,≥ 160
+news_29a4208b1f1a.jpg,pnh,409.2,263.3,495.6,403.5,mũ vải,person_no_helmet,person_no_helmet,mũ vải,140.2,80–160
+news_2a407b495322.jpg,pnh,533.0,362.2,1432.9,1685.9,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,413.65625,≥ 160
+news_2a407b495322.jpg,pnh,224.4,929.0,432.1,1319.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,121.875,80–160
+news_2b63977bbc4d.jpg,pwh,234.8,435.5,928.2,1688.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),391.53125,≥ 160
+news_2b63977bbc4d.jpg,pwh,895.9,204.7,1943.2,1693.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),465.12499999999994,≥ 160
+news_2b63977bbc4d.jpg,pwh,0.7,928.0,358.9,1694.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),239.4375,≥ 160
+news_2b63977bbc4d.jpg,pwh,2323.8,770.3,2558.9,1695.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),289.15625,≥ 160
+news_2b63977bbc4d.jpg,pwh,0.4,718.7,157.8,1269.1,,bỏ sót,person_with_helmet,(mũ bảo hộ),171.99999999999994,≥ 160
+news_306d1ad963b3.jpg,pwh,1336.8,784.7,1577.5,1415.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),197.125,≥ 160
+news_306d1ad963b3.jpg,pwh,1613.3,810.1,1836.0,1421.4,,person_no_helmet,person_with_helmet,(mũ bảo hộ),191.03125000000003,≥ 160
+news_306d1ad963b3.jpg,pnh,78.4,858.5,214.6,1043.2,mũ vải,person_no_helmet,person_no_helmet,mũ vải,57.718750000000014,40–80
+news_306d1ad963b3.jpg,pwh,783.9,842.7,979.0,1365.0,,person_no_helmet,person_with_helmet,(mũ bảo hộ),163.21875,≥ 160
+news_3425d69185a3.jpg,pnh,682.0,265.8,713.7,387.4,mũ cối,person_with_helmet,person_no_helmet,mũ cối,124.71794871794867,80–160
+news_3425d69185a3.jpg,pnh,233.6,74.1,313.4,162.6,mũ cối,bỏ sót,person_no_helmet,mũ cối,90.76923076923076,80–160
+news_3425d69185a3.jpg,pnh,626.8,219.4,651.2,248.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,29.948717948717935,< 40
+news_3425d69185a3.jpg,pnh,755.7,275.3,770.3,319.6,mũ cối,person_with_helmet,person_no_helmet,mũ cối,45.435897435897445,40–80
+news_3531fa6fd1c0.jpg,pwh,389.2,332.9,1459.6,1738.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),439.28124999999994,≥ 160
+news_3531fa6fd1c0.jpg,pwh,1671.3,3.8,2557.9,1734.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),540.8125,≥ 160
+news_3531fa6fd1c0.jpg,pwh,100.6,500.0,498.8,1730.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),384.625,≥ 160
+news_3531fa6fd1c0.jpg,pwh,2369.3,315.6,2558.8,1342.5,,bỏ sót,person_with_helmet,(mũ bảo hộ),320.90625,≥ 160
+news_3531fa6fd1c0.jpg,pwh,0.7,635.6,264.8,1716.6,,bỏ sót,person_with_helmet,(mũ bảo hộ),337.8125,≥ 160
+news_388e8bea0624.jpg,pwh,382.7,149.4,697.4,432.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),289.94871794871796,≥ 160
+news_388e8bea0624.jpg,pwh,163.5,76.2,264.3,354.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),285.53846153846155,≥ 160
+news_388e8bea0624.jpg,pwh,40.0,51.3,121.7,363.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),320.6153846153845,≥ 160
+news_3e36076e5acb.jpg,pwh,465.2,0.4,779.0,492.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),504.3076923076923,≥ 160
+news_3e36076e5acb.jpg,pwh,11.9,59.3,231.9,494.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),446.3589743589743,≥ 160
+news_3e36076e5acb.jpg,pwh,191.9,0.9,521.8,492.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),504.10256410256403,≥ 160
+news_3e8cd2864eb0.jpg,pwh,1661.7,393.7,1884.8,822.8,,person_no_helmet,person_with_helmet,(mũ bảo hộ),134.09375,80–160
+news_3e8cd2864eb0.jpg,pwh,1901.4,229.0,2138.2,828.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),187.25,≥ 160
+news_3e8cd2864eb0.jpg,pnh,467.3,798.5,720.9,1479.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,212.84374999999997,≥ 160
+news_3e8cd2864eb0.jpg,pnh,567.0,639.8,742.1,801.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,50.56250000000002,40–80
+news_3e8cd2864eb0.jpg,pwh,627.6,760.1,844.1,1287.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),164.71875,≥ 160
+news_43d7d7e6f383.jpg,pnh,1467.4,550.6,1861.6,1430.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,274.99999999999994,≥ 160
+news_43d7d7e6f383.jpg,pnh,239.4,518.8,660.7,1442.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,288.59375,≥ 160
+news_4478cd082b2c.jpg,pnh,141.8,852.9,247.5,1226.2,đầu trần,person_no_helmet,person_no_helmet,đầu trần,116.65625000000003,80–160
+news_457668e99658.jpg,pwh,626.3,53.3,1577.0,1425.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),428.75,≥ 160
+news_457668e99658.jpg,pwh,1367.0,136.8,2556.9,1424.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),402.34375,≥ 160
+news_457668e99658.jpg,pwh,2102.1,128.2,2525.1,841.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),222.93750000000003,≥ 160
+news_457668e99658.jpg,pwh,1408.7,531.8,1633.2,1264.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),228.93750000000006,≥ 160
+news_45b2c397c91b.jpg,pnh,200.6,228.6,250.9,298.2,đầu trần,bỏ sót,person_no_helmet,đầu trần,69.6,40–80
+news_45b2c397c91b.jpg,pnh,197.2,340.7,276.2,440.7,mũ vải,bỏ sót,person_no_helmet,mũ vải,100.0,80–160
+news_484393175cfe.jpg,pnh,1691.1,411.7,2410.5,1436.7,mũ vải,person_no_helmet,person_no_helmet,mũ vải,320.3125,≥ 160
+news_484393175cfe.jpg,pnh,1590.8,173.3,1817.7,828.5,mũ cối,person_no_helmet,person_no_helmet,mũ cối,204.75,≥ 160
+news_484393175cfe.jpg,pnh,180.9,624.9,337.7,872.7,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,77.43750000000003,40–80
+news_484393175cfe.jpg,pnh,893.8,735.9,1168.9,925.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,59.18749999999999,40–80
+news_484393175cfe.jpg,pnh,881.3,816.4,1150.0,1020.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,63.90625,40–80
+news_484393175cfe.jpg,pnh,659.2,593.0,706.1,718.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,39.0625,< 40
+news_4ee933129e5c.jpg,pwh,759.6,70.5,1849.6,1269.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),499.75000000000006,≥ 160
+news_4eeea08e026d.jpg,pwh,569.2,254.0,649.1,446.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),197.3333333333333,≥ 160
+news_4eeea08e026d.jpg,pwh,107.8,220.3,170.3,350.5,,person_no_helmet,person_with_helmet,(mũ bảo hộ),133.53846153846152,80–160
+news_4eeea08e026d.jpg,pwh,364.0,305.5,453.5,422.3,,person_no_helmet,person_with_helmet,(mũ bảo hộ),119.7948717948718,80–160
+news_4eeea08e026d.jpg,pwh,545.5,81.1,576.2,163.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),84.20512820512819,80–160
+news_4eeea08e026d.jpg,pwh,565.3,90.6,603.4,152.4,,bỏ sót,person_with_helmet,(mũ bảo hộ),63.384615384615394,40–80
+news_4eeea08e026d.jpg,pwh,577.8,54.9,604.9,94.6,,bỏ sót,person_with_helmet,(mũ bảo hộ),40.71794871794871,40–80
+news_4fcd7e490cd0.jpg,pnh,452.8,195.5,473.1,251.7,mũ vải,person_no_helmet,person_no_helmet,mũ vải,57.64102564102562,40–80
+news_4fcd7e490cd0.jpg,pnh,226.3,64.4,240.5,93.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,30.256410256410255,< 40
+news_506cf0ac8ca0.jpg,pnh,216.4,787.4,450.6,1425.9,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,199.53125000000003,≥ 160
+news_506cf0ac8ca0.jpg,pnh,1644.7,497.0,1868.2,928.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,134.78125,80–160
+news_5086f14226ce.jpg,pwh,890.8,363.8,1332.2,1231.6,,person_no_helmet,person_with_helmet,(mũ bảo hộ),365.3894736842105,≥ 160
+news_51eef9de0b32.jpg,pnh,85.9,81.7,339.7,402.5,mũ cối,person_no_helmet,person_no_helmet,mũ cối,401.0,≥ 160
+news_53a0be6d2fa5.jpg,pwh,584.5,595.1,679.1,760.6,,person_no_helmet,person_with_helmet,(mũ bảo hộ),77.83656672545561,40–80
+news_53a0be6d2fa5.jpg,pnh,1001.9,632.2,1123.6,790.4,mũ vải,person_no_helmet,person_no_helmet,mũ vải,74.40329218106993,40–80
+news_53a0be6d2fa5.jpg,pnh,779.8,528.4,881.1,765.4,nón lá,person_no_helmet,person_no_helmet,nón lá,111.46384479717813,80–160
+news_53a0be6d2fa5.jpg,pnh,1175.0,539.0,1194.9,591.4,mũ cối,bỏ sót,person_no_helmet,mũ cối,24.64432686654908,< 40
+news_53be3359d2d4.jpg,pnh,720.5,217.4,772.6,337.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,75.31249999999999,40–80
+news_53be3359d2d4.jpg,pwh,587.0,195.5,653.8,361.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),103.9375,80–160
+news_53be3359d2d4.jpg,pnh,1050.4,235.4,1066.6,282.4,mũ vải,person_no_helmet,person_no_helmet,mũ vải,29.374999999999982,< 40
+news_53be3359d2d4.jpg,pwh,1104.1,279.5,1142.9,316.0,,person_no_helmet,person_with_helmet,(mũ bảo hộ),22.8125,< 40
+news_5863abd6d189.jpg,pnh,763.5,149.8,899.3,618.1,đầu trần,person_no_helmet,person_no_helmet,đầu trần,365.859375,≥ 160
+news_5863abd6d189.jpg,pwh,652.0,143.1,761.7,596.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),353.828125,≥ 160
+news_5863abd6d189.jpg,pnh,179.5,172.2,300.2,515.5,đầu trần,person_no_helmet,person_no_helmet,đầu trần,268.203125,≥ 160
+news_5863abd6d189.jpg,pwh,507.1,195.9,608.2,479.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),221.25000000000003,≥ 160
+news_5863abd6d189.jpg,pwh,443.0,170.2,541.5,486.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),246.71875,≥ 160
+news_5863abd6d189.jpg,pwh,596.6,160.8,679.1,517.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),278.75,≥ 160
+news_5863abd6d189.jpg,pwh,297.9,222.1,431.1,401.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),139.765625,80–160
+news_59919aa95f12.jpg,pwh,1060.0,247.7,1439.2,750.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),211.9831223628692,≥ 160
+news_59919aa95f12.jpg,pwh,0.2,441.5,101.6,657.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),91.26582278481011,80–160
+news_59919aa95f12.jpg,pwh,684.6,393.8,955.2,617.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),94.34599156118142,80–160
+news_59c56224dd48.jpg,pnh,227.8,352.7,261.5,422.5,mũ cối,bỏ sót,person_no_helmet,mũ cối,73.57048748353098,40–80
+news_59c56224dd48.jpg,pnh,70.9,338.8,98.0,418.1,mũ vải,person_no_helmet,person_no_helmet,mũ vải,83.58366271409751,80–160
+news_59c56224dd48.jpg,pnh,252.7,376.4,302.9,419.9,mũ cối,bỏ sót,person_no_helmet,mũ cối,45.84980237154151,40–80
+news_59c56224dd48.jpg,pwh,340.1,360.0,369.1,418.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),61.13306982872201,40–80
+news_5a12a6600727.jpg,pnh,1395.7,617.3,1556.7,1203.4,mũ vải,person_no_helmet,person_no_helmet,mũ vải,183.15625000000006,≥ 160
+news_5a12a6600727.jpg,pnh,1855.7,566.4,2321.8,1500.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,291.84375,≥ 160
+news_5ca0c0abd84d.jpg,pnh,425.8,305.9,720.4,712.3,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,254.0,≥ 160
+news_5ca0c0abd84d.jpg,pnh,924.0,266.7,1266.4,629.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,226.62499999999997,≥ 160
+news_5ca0c0abd84d.jpg,pnh,794.1,34.3,902.5,269.2,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,146.8125,80–160
+news_5ca0c0abd84d.jpg,pnh,510.5,246.5,716.4,407.8,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,100.8125,80–160
+news_5ca0c0abd84d.jpg,pnh,284.5,180.4,486.9,441.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,163.0625,≥ 160
+news_5ca0c0abd84d.jpg,pnh,875.7,154.8,949.2,261.4,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,66.62499999999997,40–80
+news_5ca0c0abd84d.jpg,pnh,732.7,139.8,802.9,263.5,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,77.3125,40–80
+news_5ca0c0abd84d.jpg,pnh,494.9,146.5,581.8,247.8,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,63.31250000000001,40–80
+news_5eaa758aaaf9.jpg,pnh,2.4,150.0,261.4,406.7,mũ vải,person_no_helmet,person_no_helmet,mũ vải,320.875,≥ 160
+news_5eaa758aaaf9.jpg,pnh,374.0,105.4,599.0,387.0,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,352.0,≥ 160
+news_600ee691f30c.jpg,pwh,0.3,606.9,239.4,1694.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),339.78125000000006,≥ 160
+news_600ee691f30c.jpg,pnh,722.3,797.6,920.1,1378.1,đầu trần,person_no_helmet,person_no_helmet,đầu trần,181.40624999999997,≥ 160
+news_600ee691f30c.jpg,pnh,874.6,727.2,1115.0,1466.2,đầu trần,person_no_helmet,person_no_helmet,đầu trần,230.9375,≥ 160
+news_600ee691f30c.jpg,pwh,2091.9,676.1,2518.2,1695.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),318.5625,≥ 160
+news_600ee691f30c.jpg,pwh,1856.1,683.7,2185.8,1693.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),315.46875,≥ 160
+news_600ee691f30c.jpg,pwh,1056.4,773.2,1263.9,1365.3,,person_no_helmet,person_with_helmet,(mũ bảo hộ),185.03124999999997,≥ 160
+news_600ee691f30c.jpg,pwh,1645.2,752.7,1865.5,1630.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),274.3125,≥ 160
+news_600ee691f30c.jpg,pnh,376.9,712.2,572.1,1465.0,đầu trần,person_no_helmet,person_no_helmet,đầu trần,235.25,≥ 160
+news_600ee691f30c.jpg,pnh,152.9,670.3,462.4,1669.0,đầu trần,person_no_helmet,person_no_helmet,đầu trần,312.09375,≥ 160
+news_600ee691f30c.jpg,pwh,2376.2,679.0,2528.8,958.9,,bỏ sót,person_with_helmet,(mũ bảo hộ),87.46875,80–160
+news_6279e09d3240.jpg,pnh,32.2,218.7,113.3,337.0,đầu trần,person_no_helmet,person_no_helmet,đầu trần,121.33333333333333,80–160
+news_6279e09d3240.jpg,pwh,303.1,172.1,326.6,239.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),68.8205128205128,40–80
+news_65075335f4e9.jpg,pnh,498.6,280.7,1315.4,1684.6,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,438.71874999999994,≥ 160
+news_65075335f4e9.jpg,pnh,1759.1,759.6,1837.0,948.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,58.87499999999999,40–80
+news_65fd17aed220.jpg,pnh,533.4,244.1,591.9,386.8,nón lá,person_no_helmet,person_no_helmet,nón lá,142.70000000000002,80–160
+news_65fd17aed220.jpg,pnh,600.9,191.6,687.0,420.1,mũ cối,person_with_helmet,person_no_helmet,mũ cối,228.50000000000003,≥ 160
+news_65fd17aed220.jpg,pnh,470.6,247.9,536.7,384.7,mũ vải,person_no_helmet,person_no_helmet,mũ vải,136.79999999999998,80–160
+news_6a6330d8ec72.jpg,pwh,771.7,375.2,1298.6,1165.8,,person_no_helmet,person_with_helmet,(mũ bảo hộ),316.24,≥ 160
+news_6a8b8e023609.jpg,pwh,323.1,50.1,638.5,515.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),477.23076923076917,≥ 160
+news_6a8b8e023609.jpg,pwh,192.6,272.5,255.8,340.5,,bỏ sót,person_with_helmet,(mũ bảo hộ),69.74358974358974,40–80
+news_6be5d427e9e1.jpg,pwh,1233.4,746.3,1583.7,1345.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),187.37500000000006,≥ 160
+news_6be5d427e9e1.jpg,pwh,1637.7,772.7,1802.2,1355.6,,person_no_helmet,person_with_helmet,(mũ bảo hộ),182.15624999999994,≥ 160
+news_6be5d427e9e1.jpg,pnh,17.9,819.3,154.1,1007.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,58.93750000000001,40–80
+news_6be5d427e9e1.jpg,pwh,741.7,812.0,899.6,1328.5,,person_no_helmet,person_with_helmet,(mũ bảo hộ),161.40625,≥ 160
+news_70713abd651f.jpg,pnh,507.3,326.7,967.2,714.1,mũ cối,person_no_helmet,person_no_helmet,mũ cối,163.1157894736842,≥ 160
+news_70713abd651f.jpg,pnh,936.0,75.0,1676.0,1087.0,nón lá,person_no_helmet,person_no_helmet,nón lá,426.10526315789474,≥ 160
+news_7a9b614219ac.jpg,pnh,372.5,294.4,395.8,366.8,mũ cối,person_no_helmet,person_no_helmet,mũ cối,76.41160949868078,40–80
+news_7a9b614219ac.jpg,pnh,397.0,305.0,423.3,374.7,nón lá,person_no_helmet,person_no_helmet,nón lá,73.56200527704485,40–80
+news_7a9b614219ac.jpg,pnh,237.3,331.0,262.0,368.4,mũ cối,person_no_helmet,person_no_helmet,mũ cối,39.47229551451185,< 40
+news_7a9b614219ac.jpg,pnh,175.9,336.5,201.8,367.1,mũ vải,person_no_helmet,person_no_helmet,mũ vải,32.29551451187338,< 40
+news_7af3c151ab14.jpg,pnh,1095.0,113.2,1824.7,1307.3,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,373.15625,≥ 160
+news_7b769c6b3ada.jpg,pwh,746.9,125.0,1038.7,582.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),303.4825870646766,≥ 160
+news_7b769c6b3ada.jpg,pwh,124.6,216.6,222.1,350.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),88.955223880597,80–160
+news_7c01d1de758c.jpg,pwh,639.7,49.7,1255.2,880.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),445.52278820375335,≥ 160
+news_7fd23083784d.jpg,pnh,270.3,188.1,694.7,698.7,mũ cối,person_with_helmet,person_no_helmet,mũ cối,340.4,≥ 160
+news_804447435c9d.jpg,pnh,857.1,372.0,953.3,513.9,đầu trần,person_no_helmet,person_no_helmet,đầu trần,88.68749999999999,80–160
+news_804447435c9d.jpg,pnh,546.1,324.2,602.5,476.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,95.4375,80–160
+news_804447435c9d.jpg,pnh,1070.2,271.9,1193.1,555.4,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,177.1875,≥ 160
+news_804447435c9d.jpg,pnh,749.5,297.4,838.6,550.9,đầu trần,person_no_helmet,person_no_helmet,đầu trần,158.4375,80–160
+news_804447435c9d.jpg,pnh,66.2,361.2,129.6,516.4,mũ vải,person_no_helmet,person_no_helmet,mũ vải,97.0,80–160
+news_804447435c9d.jpg,pnh,1165.8,293.5,1229.9,519.7,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,141.37500000000003,80–160
+news_808356a66fd6.jpg,pnh,635.5,678.2,665.4,751.4,mũ vải,bỏ sót,person_no_helmet,mũ vải,29.279999999999973,< 40
+news_82d8ef6ee511.jpg,pwh,1006.4,954.4,1190.6,1481.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),164.65625,≥ 160
+news_82d8ef6ee511.jpg,pwh,1238.1,960.9,1442.1,1567.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),189.53125000000003,≥ 160
+news_82d8ef6ee511.jpg,pwh,1155.8,963.1,1276.5,1514.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),172.28125000000003,≥ 160
+news_82e45e8f5ef4.jpg,pnh,64.2,3.0,1565.8,1424.5,đầu trần,person_no_helmet,person_no_helmet,đầu trần,444.21875,≥ 160
+news_86dbfc6602d5.jpg,pwh,1656.5,475.9,2015.6,1341.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),338.2421875,≥ 160
+news_87676087abb8.jpg,pnh,215.7,162.0,393.1,476.2,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,392.75,≥ 160
+news_88ea3750caef.jpg,pwh,382.6,71.8,724.2,443.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),380.8205128205128,≥ 160
+news_8aa8050b0b75.jpg,pnh,428.1,131.6,632.1,480.7,mũ cối,person_no_helmet,person_no_helmet,mũ cối,367.9578392621871,≥ 160
+news_8ffcc791e138.jpg,pwh,71.5,214.3,208.0,547.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),341.53846153846143,≥ 160
+news_8ffcc791e138.jpg,pwh,603.8,190.3,745.4,588.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),408.61538461538464,≥ 160
+news_8ffcc791e138.jpg,pnh,224.9,238.1,339.9,538.7,đầu trần,person_no_helmet,person_no_helmet,đầu trần,308.3076923076923,≥ 160
+news_8ffcc791e138.jpg,pwh,384.6,206.5,480.9,537.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),339.38461538461536,≥ 160
+news_8ffcc791e138.jpg,pwh,493.7,191.4,583.9,588.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),407.6923076923077,≥ 160
+news_8ffcc791e138.jpg,pwh,323.0,219.4,409.4,502.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),290.66666666666663,≥ 160
+news_91b73d292cfd.jpg,pnh,164.3,342.5,532.8,1582.7,đầu trần,person_no_helmet,person_no_helmet,đầu trần,387.5625,≥ 160
+news_91b73d292cfd.jpg,pwh,1631.9,348.7,1998.3,1381.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),322.75,≥ 160
+news_91b73d292cfd.jpg,pnh,465.2,341.7,769.4,1469.4,đầu trần,person_no_helmet,person_no_helmet,đầu trần,352.40625,≥ 160
+news_91b73d292cfd.jpg,pwh,1393.9,351.4,1677.8,1368.1,,person_no_helmet,person_with_helmet,(mũ bảo hộ),317.71875,≥ 160
+news_91b73d292cfd.jpg,pwh,2235.2,390.2,2541.7,1367.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),305.375,≥ 160
+news_91b73d292cfd.jpg,pnh,957.9,356.0,1244.6,1385.3,đầu trần,person_no_helmet,person_no_helmet,đầu trần,321.65625,≥ 160
+news_91b73d292cfd.jpg,pnh,729.2,432.1,990.9,1368.6,đầu trần,person_no_helmet,person_no_helmet,đầu trần,292.65624999999994,≥ 160
+news_91b73d292cfd.jpg,pwh,1945.1,394.3,2219.8,1354.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),299.9375,≥ 160
+news_91b73d292cfd.jpg,pwh,2440.3,369.5,2559.0,626.5,,bỏ sót,person_with_helmet,(mũ bảo hộ),80.3125,80–160
+news_92a6d571346d.jpg,pnh,469.7,160.4,676.1,413.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,266.91292875989444,≥ 160
+news_92a6d571346d.jpg,pnh,13.4,169.4,223.9,421.2,mũ vải,person_no_helmet,person_no_helmet,mũ vải,265.75197889182056,≥ 160
+news_939e3895fce8.jpg,pwh,935.9,401.1,1063.6,650.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),155.74999999999994,80–160
+news_939e3895fce8.jpg,pwh,365.7,381.9,485.3,729.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),217.06250000000006,≥ 160
+news_939e3895fce8.jpg,pwh,100.0,536.3,230.3,709.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),108.125,80–160
+news_939e3895fce8.jpg,pwh,680.0,407.6,751.3,584.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),110.49999999999997,80–160
+news_939e3895fce8.jpg,pwh,1069.3,401.4,1133.6,611.5,,person_no_helmet,person_with_helmet,(mũ bảo hộ),131.3125,80–160
+news_96b72d15a495.jpg,pwh,208.7,110.7,617.5,933.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),394.29940119760477,≥ 160
+news_96b72d15a495.jpg,pwh,1226.6,182.0,1554.6,932.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),359.56886227544913,≥ 160
+news_96b72d15a495.jpg,pwh,623.9,59.2,981.1,933.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),418.73053892215563,≥ 160
+news_96b72d15a495.jpg,pwh,0.2,311.5,148.1,735.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),203.11377245508982,≥ 160
+news_9ee57e589d13.jpg,pnh,464.3,170.9,673.0,416.5,mũ vải,person_no_helmet,person_no_helmet,mũ vải,258.866930171278,≥ 160
+news_9ee57e589d13.jpg,pwh,81.4,310.3,96.9,358.0,,person_no_helmet,person_with_helmet,(mũ bảo hộ),50.27667984189723,40–80
+news_a1abe6e8a3e4.jpg,pnh,230.0,40.0,1060.0,1134.0,nón lá,person_no_helmet,person_no_helmet,nón lá,514.5208700764256,≥ 160
+news_a1b4116e6049.jpg,pnh,246.2,316.5,309.2,469.3,mũ cối,person_no_helmet,person_no_helmet,mũ cối,161.0540184453228,≥ 160
+news_a1b4116e6049.jpg,pnh,687.8,373.5,700.9,421.6,mũ cối,person_no_helmet,person_no_helmet,mũ cối,50.69828722002638,40–80
+news_a1b4116e6049.jpg,pwh,509.0,313.8,532.5,371.8,,bỏ sót,person_with_helmet,(mũ bảo hộ),61.13306982872201,40–80
+news_a1b4116e6049.jpg,pnh,448.4,370.4,468.9,420.2,mũ cối,bỏ sót,person_no_helmet,mũ cối,52.490118577075116,40–80
+news_a2084ce9cb56.jpg,pwh,349.8,103.6,552.6,509.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),416.7179487179486,≥ 160
+news_a9fb3270b27d.jpg,pnh,172.0,40.0,1692.0,1128.0,nón lá,person_no_helmet,person_no_helmet,nón lá,511.6990005878895,≥ 160
+news_aa3ec20781bb.jpg,pwh,1098.0,999.0,1198.4,1244.5,,person_no_helmet,person_with_helmet,(mũ bảo hộ),76.71875,40–80
+news_aa3ec20781bb.jpg,pnh,741.2,991.3,791.6,1075.8,mũ vải,person_no_helmet,person_no_helmet,mũ vải,26.40625,< 40
+news_aa3ec20781bb.jpg,pwh,977.6,984.6,1055.6,1185.9,,person_no_helmet,person_with_helmet,(mũ bảo hộ),62.90625000000002,40–80
+news_aa3ec20781bb.jpg,pwh,1054.2,1006.5,1130.0,1230.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),69.84375,40–80
+news_aadc172300dc.jpg,pnh,440.9,253.9,569.8,446.5,mũ cối,person_no_helmet,person_no_helmet,mũ cối,197.53846153846152,≥ 160
+news_ab457841adcc.jpg,pwh,1204.9,1106.3,1304.3,1488.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),119.375,80–160
+news_ab457841adcc.jpg,pwh,982.3,1080.0,1140.1,1598.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),162.09375,≥ 160
+news_ab457841adcc.jpg,pwh,1216.2,439.3,1315.4,694.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),79.87499999999999,40–80
+news_ab457841adcc.jpg,pwh,557.9,602.1,631.1,770.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),52.71874999999998,40–80
+news_ab457841adcc.jpg,pwh,1512.5,655.9,1565.8,761.7,,person_no_helmet,person_with_helmet,(mũ bảo hộ),33.06250000000002,< 40
+news_ab457841adcc.jpg,pwh,1714.7,599.1,1783.0,769.4,,bỏ sót,person_with_helmet,(mũ bảo hộ),53.218749999999986,40–80
+news_ab457841adcc.jpg,pwh,998.3,393.6,1112.7,682.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),90.125,80–160
+news_ab457841adcc.jpg,pwh,1072.1,418.3,1233.8,663.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),76.59374999999999,40–80
+news_ab457841adcc.jpg,pwh,241.8,710.9,301.5,849.9,,bỏ sót,person_with_helmet,(mũ bảo hộ),43.4375,40–80
+news_ab7b1b23687d.jpg,pnh,466.3,187.7,493.9,235.0,nón lá,person_no_helmet,person_no_helmet,nón lá,48.51282051282052,40–80
+news_ab7b1b23687d.jpg,pnh,406.4,183.8,426.9,220.5,nón lá,person_no_helmet,person_no_helmet,nón lá,37.64102564102563,< 40
+news_ab7b1b23687d.jpg,pnh,452.0,188.0,470.0,232.0,nón lá,bỏ sót,person_no_helmet,nón lá,45.128205128205124,40–80
+news_af40e211023d.jpg,pnh,1385.6,703.6,1578.6,1058.8,mũ vải,person_no_helmet,person_no_helmet,mũ vải,110.99999999999997,80–160
+news_af40e211023d.jpg,pnh,626.1,677.1,773.0,1036.1,mũ vải,person_no_helmet,person_no_helmet,mũ vải,112.18749999999997,80–160
+news_af40e211023d.jpg,pnh,2157.1,763.2,2260.1,1133.9,mũ vải,person_no_helmet,person_no_helmet,mũ vải,115.84375000000001,80–160
+news_af40e211023d.jpg,pnh,808.2,767.1,972.7,1027.1,mũ vải,person_no_helmet,person_no_helmet,mũ vải,81.24999999999997,80–160
+news_af40e211023d.jpg,pnh,988.6,688.0,1105.6,1014.0,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,101.875,80–160
+news_af40e211023d.jpg,pnh,2335.6,751.4,2473.3,1133.2,mũ vải,person_no_helmet,person_no_helmet,mũ vải,119.31250000000003,80–160
+news_af40e211023d.jpg,pnh,2274.9,779.1,2387.2,1115.2,mũ lưỡi trai,person_no_helmet,person_no_helmet,mũ lưỡi trai,105.03125,80–160
+news_af40e211023d.jpg,pwh,190.3,798.5,237.7,906.9,,person_no_helmet,person_with_helmet,(mũ bảo hộ),33.87499999999999,< 40
+news_b0e6808fc379.jpg,pwh,181.1,68.8,627.4,516.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),459.38461538461536,≥ 160
+news_b90459f92bca.jpg,pwh,926.5,94.6,1360.5,631.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),214.60000000000002,≥ 160
+news_b9bb5dc37a66.jpg,pnh,375.7,648.5,951.4,1164.6,mũ cối,person_no_helmet,person_no_helmet,mũ cối,217.3052631578947,≥ 160
+news_b9bb5dc37a66.jpg,pnh,1173.6,59.0,1751.0,1256.4,nón lá,person_no_helmet,person_no_helmet,nón lá,504.1684210526316,≥ 160
+news_b9bb5dc37a66.jpg,pnh,718.0,271.8,937.0,983.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,299.7052631578947,≥ 160
+news_ba45dfbda7b7.jpg,pnh,2060.1,816.9,2413.4,1180.5,mũ vải,bỏ sót,person_no_helmet,mũ vải,113.625,80–160
+news_ba45dfbda7b7.jpg,pnh,1523.7,733.7,1791.7,1108.3,mũ vải,person_no_helmet,person_no_helmet,mũ vải,117.06249999999997,80–160
+news_ba45dfbda7b7.jpg,pnh,1177.9,725.7,1448.1,1014.6,nón lá,person_no_helmet,person_no_helmet,nón lá,90.28125,80–160
+news_ba45dfbda7b7.jpg,pnh,229.3,469.7,357.4,812.2,nón lá,person_no_helmet,person_no_helmet,nón lá,107.03125000000001,80–160
+news_ba5c0e42e05e.jpg,pwh,241.1,406.4,1324.5,1806.2,,person_no_helmet,person_with_helmet,(mũ bảo hộ),409.2982456140351,≥ 160
+news_ba5c0e42e05e.jpg,pwh,1739.0,136.0,2400.0,1500.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),398.8304093567251,≥ 160
+news_bbc8181b37ca.jpg,pwh,1713.5,807.9,1827.5,957.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),58.35937499999999,40–80
+news_bc08264bf264.jpg,pnh,490.1,55.5,913.1,808.3,mũ cối,person_no_helmet,person_no_helmet,mũ cối,501.8666666666666,≥ 160
+news_d0f3acc2c2fc.jpg,pwh,260.9,80.2,617.7,487.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),417.84615384615387,≥ 160
+news_d2033e4b8598.jpg,pnh,279.2,363.3,400.4,697.6,mũ vải,person_no_helmet,person_no_helmet,mũ vải,334.3,≥ 160
+news_d367bc64d00e.jpg,pnh,1185.0,380.0,1629.0,1258.0,nón lá,person_no_helmet,person_no_helmet,nón lá,369.6842105263158,≥ 160
+news_d367bc64d00e.jpg,pnh,662.4,622.1,907.4,1158.2,nón lá,person_no_helmet,person_no_helmet,nón lá,225.7263157894737,≥ 160
+news_d45c8a1add77.jpg,pwh,548.9,190.9,611.9,341.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),154.15384615384613,80–160
+news_d45c8a1add77.jpg,pwh,487.9,198.8,529.0,287.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),90.97435897435895,80–160
+news_d45c8a1add77.jpg,pwh,372.5,233.0,411.1,292.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),60.92307692307689,40–80
+news_d45c8a1add77.jpg,pwh,308.0,242.4,346.6,285.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),44.0,40–80
+news_d612f8dd27a8.jpg,pwh,257.0,91.2,722.1,517.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),437.02564102564094,≥ 160
+news_d6450a14b13a.jpg,pwh,884.8,128.6,1224.6,618.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),153.18749999999997,80–160
+news_d6450a14b13a.jpg,pwh,1313.5,159.2,1638.8,562.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),126.0,80–160
+news_d6450a14b13a.jpg,pwh,1055.0,1184.2,1387.7,1490.3,,bỏ sót,person_with_helmet,(mũ bảo hộ),95.65624999999997,80–160
+news_d6450a14b13a.jpg,pwh,1450.2,1080.0,1741.4,1452.3,,bỏ sót,person_with_helmet,(mũ bảo hộ),116.34374999999999,80–160
+news_d9031729d535.jpg,pnh,1392.2,479.0,2135.5,1693.6,đầu trần,person_no_helmet,person_no_helmet,đầu trần,379.5625,≥ 160
+news_d9031729d535.jpg,pwh,279.5,532.7,866.6,1695.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),363.40624999999994,≥ 160
+news_d9031729d535.jpg,pwh,0.3,570.1,415.6,1694.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),351.4375,≥ 160
+news_d9031729d535.jpg,pwh,1012.1,537.4,1429.5,1696.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),362.34375,≥ 160
+news_d9031729d535.jpg,pwh,757.3,545.5,1016.3,1590.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),326.40625,≥ 160
+news_d9031729d535.jpg,pwh,1360.8,606.7,1593.0,1425.6,,person_no_helmet,person_with_helmet,(mũ bảo hộ),255.90624999999994,≥ 160
+news_d9a4b73c61f5.jpg,pnh,908.0,835.6,1116.2,1389.0,mũ vải,person_no_helmet,person_no_helmet,mũ vải,172.9375,≥ 160
+news_d9a4b73c61f5.jpg,pnh,1536.0,864.1,1689.2,1149.2,mũ vải,person_no_helmet,person_no_helmet,mũ vải,89.09375,80–160
+news_da062de41916.jpg,pwh,73.6,317.8,613.5,1056.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),295.44000000000005,≥ 160
+news_da062de41916.jpg,pwh,795.1,487.9,1223.8,953.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),186.36,≥ 160
+news_dbd849719953.jpg,pwh,72.4,559.4,253.0,856.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),185.625,≥ 160
+news_dbd849719953.jpg,pwh,233.4,575.6,325.5,850.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),171.68749999999994,≥ 160
+news_dd89e13da31b.jpg,pwh,1188.4,251.0,2871.6,1978.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),459.4148936170213,≥ 160
+news_dd89e13da31b.jpg,pwh,607.1,409.4,1475.6,1413.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),266.9148936170213,≥ 160
+news_dffa80499309.jpg,pnh,1741.2,699.8,1984.8,1168.8,mũ vải,person_no_helmet,person_no_helmet,mũ vải,146.5625,80–160
+news_dffa80499309.jpg,pnh,663.1,1182.5,807.7,1696.2,mũ vải,person_no_helmet,person_no_helmet,mũ vải,160.53125,≥ 160
+news_dffa80499309.jpg,pnh,957.4,274.7,1078.8,498.2,nón lá,bỏ sót,person_no_helmet,nón lá,69.84375,40–80
+news_e3f30b58f7ce.jpg,pwh,851.1,144.4,1802.3,1319.1,,person_no_helmet,person_with_helmet,(mũ bảo hộ),469.87999999999994,≥ 160
+news_e3f30b58f7ce.jpg,pwh,1523.1,153.6,1956.2,1315.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),464.88000000000005,≥ 160
+news_e3f30b58f7ce.jpg,pwh,147.5,236.2,642.4,1316.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),432.15999999999997,≥ 160
+news_e416ad8b0ec3.jpg,pwh,812.5,699.3,863.1,789.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),56.50000000000006,40–80
+news_e416ad8b0ec3.jpg,pwh,959.0,705.8,997.7,788.9,,bỏ sót,person_with_helmet,(mũ bảo hộ),51.937500000000014,40–80
+news_e416ad8b0ec3.jpg,pwh,860.2,707.3,901.8,789.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),51.18750000000006,40–80
+news_e416ad8b0ec3.jpg,pwh,993.7,703.0,1032.4,789.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),53.75,40–80
+news_e416ad8b0ec3.jpg,pwh,217.6,695.2,244.9,783.6,,person_with_helmet,person_with_helmet,(mũ bảo hộ),55.249999999999986,40–80
+news_e416ad8b0ec3.jpg,pwh,756.1,699.6,799.6,787.6,,bỏ sót,person_with_helmet,(mũ bảo hộ),55.0,40–80
+news_e416ad8b0ec3.jpg,pwh,245.0,306.0,284.0,345.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),24.375,< 40
+news_e416ad8b0ec3.jpg,pwh,425.0,445.0,447.0,485.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),25.0,< 40
+news_e8d62b16f936.jpg,pwh,172.8,241.1,646.6,1191.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),395.7916666666667,≥ 160
+news_e8d62b16f936.jpg,pnh,1221.2,180.6,1704.1,1191.3,đầu trần,person_no_helmet,person_no_helmet,đầu trần,421.125,≥ 160
+news_e8d62b16f936.jpg,pwh,613.1,296.7,986.0,1193.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),373.83333333333337,≥ 160
+news_e8d62b16f936.jpg,pwh,0.0,264.5,216.4,1190.7,,person_with_helmet,person_with_helmet,(mũ bảo hộ),385.9166666666667,≥ 160
+news_e8d62b16f936.jpg,pwh,1643.6,297.9,1860.4,1192.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),372.6666666666667,≥ 160
+news_e8d62b16f936.jpg,pwh,869.6,259.6,1054.3,555.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),123.24999999999999,80–160
+news_e8d62b16f936.jpg,pwh,1020.3,297.1,1375.3,1194.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),373.87500000000006,≥ 160
+news_e8d62b16f936.jpg,pwh,1805.2,313.3,1919.3,549.3,,bỏ sót,person_with_helmet,(mũ bảo hộ),98.33333333333331,80–160
+news_eb2f04def071.jpg,pwh,548.4,337.7,1375.8,1039.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),219.3125,≥ 160
+news_f577c2493de6.jpg,pwh,212.7,217.1,1137.1,1809.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),465.7017543859649,≥ 160
+news_f577c2493de6.jpg,pwh,902.5,373.5,2011.4,1808.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),419.7076023391813,≥ 160
+news_f8501ac223f5.jpg,pnh,313.9,415.5,351.2,551.3,mũ khác,person_no_helmet,person_no_helmet,mũ khác,135.79999999999995,80–160
+news_f8937537f9fc.jpg,pwh,504.4,142.7,731.1,516.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),383.0769230769231,≥ 160
+news_f8937537f9fc.jpg,pwh,327.8,172.1,573.3,516.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),353.23076923076917,≥ 160
+news_f8937537f9fc.jpg,pwh,132.2,150.1,319.5,516.1,,person_with_helmet,person_with_helmet,(mũ bảo hộ),375.38461538461536,≥ 160
+news_f8937537f9fc.jpg,pnh,54.7,212.4,117.0,388.7,mũ cối,person_with_helmet,person_no_helmet,mũ cối,180.8205128205128,≥ 160
+news_f8937537f9fc.jpg,pnh,141.5,233.8,175.7,296.2,mũ cối,bỏ sót,person_no_helmet,mũ cối,63.99999999999997,40–80

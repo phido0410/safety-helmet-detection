@@ -1,0 +1,113 @@
+{
+  "weights": "runs/M0_yolo11n/weights/best.pt",
+  "imgsz": 640,
+  "data": [
+    "data/ood4/ood.yaml"
+  ],
+  "images": 105,
+  "ignore": 54,
+  "ap50": {
+    "person_with_helmet": 0.6397599968795967,
+    "person_no_helmet": 0.4652302850129475
+  },
+  "boxes": {
+    "person_with_helmet": 172,
+    "person_no_helmet": 138
+  },
+  "map50_ood": 0.5524951409462722,
+  "map50_test": 0.89859,
+  "gap": 0.34609485905372783,
+  "recall_pri": 0.3472503282376274,
+  "recall_pri_ci95": [
+    0.27345711642211845,
+    0.43043793270310293
+  ],
+  "precision_pri": 0.7997306620230258,
+  "by_group": {
+    "person_with_helmet": {
+      "(mũ bảo hộ)": {
+        "person_with_helmet": 144,
+        "person_no_helmet": 3,
+        "bỏ sót": 25
+      }
+    },
+    "person_no_helmet": {
+      "mũ cối": {
+        "person_with_helmet": 17,
+        "person_no_helmet": 1,
+        "bỏ sót": 8
+      },
+      "mũ khác": {
+        "person_with_helmet": 1,
+        "person_no_helmet": 1,
+        "bỏ sót": 0
+      },
+      "mũ lưỡi trai": {
+        "person_with_helmet": 14,
+        "person_no_helmet": 5,
+        "bỏ sót": 0
+      },
+      "mũ vải": {
+        "person_with_helmet": 39,
+        "person_no_helmet": 7,
+        "bỏ sót": 8
+      },
+      "nón lá": {
+        "person_with_helmet": 14,
+        "person_no_helmet": 0,
+        "bỏ sót": 4
+      },
+      "đầu trần": {
+        "person_with_helmet": 2,
+        "person_no_helmet": 16,
+        "bỏ sót": 1
+      }
+    }
+  },
+  "by_size": {
+    "person_with_helmet": {
+      "< 40": {
+        "person_with_helmet": 4,
+        "person_no_helmet": 1,
+        "bỏ sót": 3
+      },
+      "40–80": {
+        "person_with_helmet": 22,
+        "person_no_helmet": 0,
+        "bỏ sót": 16
+      },
+      "80–160": {
+        "person_with_helmet": 32,
+        "person_no_helmet": 0,
+        "bỏ sót": 1
+      },
+      "≥ 160": {
+        "person_with_helmet": 86,
+        "person_no_helmet": 2,
+        "bỏ sót": 5
+      }
+    },
+    "person_no_helmet": {
+      "< 40": {
+        "person_with_helmet": 5,
+        "person_no_helmet": 3,
+        "bỏ sót": 6
+      },
+      "40–80": {
+        "person_with_helmet": 17,
+        "person_no_helmet": 5,
+        "bỏ sót": 9
+      },
+      "80–160": {
+        "person_with_helmet": 29,
+        "person_no_helmet": 9,
+        "bỏ sót": 4
+      },
+      "≥ 160": {
+        "person_with_helmet": 36,
+        "person_no_helmet": 13,
+        "bỏ sót": 2
+      }
+    }
+  }
+}

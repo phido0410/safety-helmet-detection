@@ -1,0 +1,12 @@
+mAP@0.5 hai lớp người ngoài miền (chênh so với test SHEL5K cùng 2 lớp; mục tiêu ≤ 0,15) | Recall / Precision lớp vi phạm ở ngưỡng chọn trên val (Wilson)
+
+Mô hình             OOD-1                                   OOD-2                                   OOD-3                                   OOD-4                                 
+M0_yolo11n          0.453  (chênh 0.446 —) R/P 0.18/0.62    0.587  (chênh 0.311 —) R/P 0.31/0.63    0.474  (chênh 0.425 —) R/P 0.25/0.59    0.552  (chênh 0.346 —) R/P 0.35/0.80  
+M1_yolo26n          0.485  (chênh 0.412 —) R/P 0.19/0.76    0.513  (chênh 0.383 —) R/P 0.22/0.63    0.438  (chênh 0.459 —) R/P 0.22/0.51    0.539  (chênh 0.358 —) R/P 0.33/0.75  
+M1_yolo26n_img800   0.478  (chênh 0.432 —) R/P 0.16/0.62    0.512  (chênh 0.397 —) R/P 0.20/0.56    0.466  (chênh 0.443 —) R/P 0.22/0.61    0.521  (chênh 0.388 —) R/P 0.25/0.69  
+M2_yolo26n          0.481  (chênh 0.422 —) R/P 0.15/0.79    0.518  (chênh 0.386 —) R/P 0.23/0.87    0.485  (chênh 0.419 —) R/P 0.27/0.74    0.494  (chênh 0.410 —) R/P 0.21/0.81  
+M3_yolo26n_extra    0.829* (chênh 0.077 đạt) R/P 0.85/0.69  0.773  (chênh 0.133 đạt) R/P 0.83/0.55  0.721  (chênh 0.184 —) R/P 0.63/0.64    0.821  (chênh 0.085 đạt) R/P 0.83/0.70
+M3b_yolo26n_bg      0.816* (chênh 0.089 đạt) R/P 0.83/0.66  0.755  (chênh 0.150 đạt) R/P 0.81/0.50  0.693  (chênh 0.212 —) R/P 0.64/0.57    0.824  (chênh 0.082 đạt) R/P 0.84/0.69
+
+Số ảnh / hộp người (pwh + pnh) / vùng bỏ qua: OOD-1 104 ảnh, 242 hộp, 7 vùng; OOD-2 109 ảnh, 256 hộp, 28 vùng; OOD-3 104 ảnh, 309 hộp, 14 vùng; OOD-4 105 ảnh, 310 hộp, 54 vùng
+* tập đã dùng để tìm lỗi / thiết kế mô hình đó (không khách quan).

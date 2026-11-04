@@ -1,0 +1,9 @@
+Phiếu kiểm tra nhãn ngoài miền: 179 ảnh (120 ngẫu nhiên + 59 có hộp 'không chắc') ở 6 đợt; sinh viên sửa 6 ảnh (4 lỗi gán, 2 làm rõ quy tắc).
+  phần ngẫu nhiên  ảnh có lỗi gán: 0/120 = 0.0% (KTC 95% 0.0%–3.1%); kể cả làm rõ quy tắc: 1/120 = 0.8% (KTC 95% 0.1%–4.6%)
+  phần không chắc  ảnh có lỗi gán: 4/59 = 6.8% (KTC 95% 2.7%–16.2%); kể cả làm rõ quy tắc: 5/59 = 8.5% (KTC 95% 3.7%–18.4%)
+  ood2b ảnh 13 (ngẫu nhiên, làm rõ quy tắc): 2 người đội mũ bảo hiểm xe máy → có đội (quy tắc mới: mũ bảo hiểm xe máy = có đội)
+  ood3 ảnh 3 (không chắc, lỗi gán): sót 3 người đầu trần ban đêm (dẫn tới rà lại mọi hộp bị bỏ ở các tập)
+  ood4 ảnh 1 (không chắc, lỗi gán): 2 hộp cho cùng một người
+  ood4 ảnh 3 (không chắc, lỗi gán): hộp đặt lên phần áo của người khác
+  ood4 ảnh 6 (không chắc, làm rõ quy tắc): người bị che > 40% → không gán (quy tắc mới: vùng bỏ qua)
+  ood4 ảnh 8 (không chắc, lỗi gán): bỏ nhầm người cởi trần đứng trong cảnh công trường

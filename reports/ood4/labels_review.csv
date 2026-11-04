@@ -1,0 +1,439 @@
+image,box,x1,y1,x2,y2,cls,note,headwear
+news_0297c849f24f.jpg,0,,,,,pnh,đứng chỉ tay; lái máy xúc trong cabin không thấy rõ đầu: không gán,mũ cối
+news_06774acc11fb.jpg,0,,,,,pwh,mũ vàng,
+news_06774acc11fb.jpg,1,,,,,pwh,mũ vàng,
+news_06774acc11fb.jpg,2,,,,,pwh,"người phía sau, mũ xanh lá nhỏ (không chắc)",
+news_06774acc11fb.jpg,3,,,,,drop,trùng người của khung 2 (anh kiểm tra: một người một hộp),
+news_0aa72c1c8401.jpg,0,,,,,pnh,mũ vải tối màu,mũ vải
+news_0aa72c1c8401.jpg,1,,,,,pnh,"mũ vành xanh nhạt, nhỏ (không chắc)",mũ vải
+news_0aa72c1c8401.jpg,2,,,,,drop,"người rất xa, đầu ~8 px không phán đoán được",
+news_0aa72c1c8401.jpg,3,,,,,drop,trùng khung 6 (nửa trên),
+news_0aa72c1c8401.jpg,4,,,,,drop,quá nhỏ,
+news_0aa72c1c8401.jpg,5,,,,,drop,quá nhỏ,
+news_0aa72c1c8401.jpg,6,,,,,pnh,mũ vành hồng,mũ vải
+news_0aab8ec1e43c.jpg,0,,,,,drop,"chỉ thấy chân, đầu ngoài khung ảnh",
+news_0aab8ec1e43c.jpg,1,,,,,pwh,"mũ cam, ngồi xổm",
+news_0b67af4a18e6.jpg,0,,,,,pwh,mũ vàng,
+news_0b67af4a18e6.jpg,1,,,,,drop,trùng khung 2 (nửa trên),
+news_0b67af4a18e6.jpg,2,,,,,pwh,mũ vàng,
+news_0cae632cdefd.jpg,0,,,,,pnh,nón lá,nón lá
+news_0cae632cdefd.jpg,1,,,,,pnh,nón lá,nón lá
+news_0cae632cdefd.jpg,2,,,,,pnh,mũ trùm áo khoác,mũ khác
+news_0cae632cdefd.jpg,3,,,,,pnh,lái xe lu,mũ lưỡi trai
+news_0cae632cdefd.jpg,4,,,,,drop,trùng khung 3,
+news_116e39fa1c37.jpg,0,,,,,pwh,mũ vàng cận cảnh,
+news_116e39fa1c37.jpg,1,,,,,ignore,"người bên trái, mặt bị làm mờ, không thấy rõ đầu [rà soát 2026-11-04: drop → ignore: drop cũ: người bên trái, mặt bị làm mờ, không thấy rõ đầu]",
+news_116e39fa1c37.jpg,2,,,,,drop,"không phải người riêng, phần áo của người khác (anh kiểm tra: lỗi)",
+news_116e39fa1c37.jpg,3,,,,,drop,mép ảnh,
+news_116e39fa1c37.jpg,4,,,,,drop,mép ảnh,
+news_116e39fa1c37.jpg,5,,,,,ignore,"người áo cam phía sau, đầu bị che [rà soát 2026-11-04: drop → ignore: người áo cam phía sau, đầu bị che > 40%]",
+news_17d1204af995.jpg,0,,,,,pwh,mũ trắng,
+news_17d1204af995.jpg,1,,,,,pwh,mũ vàng,
+news_17d1204af995.jpg,2,,,,,pwh,mũ trắng,
+news_17d1204af995.jpg,3,,,,,pwh,mũ vàng trên khăn,
+news_17d1204af995.jpg,4,,,,,pwh,mũ cam,
+news_17d1204af995.jpg,5,,,,,ignore,"mũ trắng, đứng sau [rà soát 2026-11-04: pwh → ignore: đứng sau, thân bị người phía trước che > 40%]",
+news_17d1204af995.jpg,6,,,,,ignore,"người áo xanh sau lưng, đầu bị che [rà soát 2026-11-04: drop → ignore: drop cũ: người áo xanh sau lưng, đầu bị che]",
+news_17d1204af995.jpg,7,,,,,drop,mép ảnh,
+news_17d1204af995.jpg,8,,,,,pwh,mũ trắng,
+news_17d1204af995.jpg,9,,,,,ignore,"người phía sau đội mũ lưỡi trai nâu, nhỏ (không chắc) [rà soát 2026-11-04: pnh → ignore: người phía sau nhỏ, bị che > 40%]",
+news_17d1204af995.jpg,10,,,,,drop,trùng khung 8,
+news_17d1204af995.jpg,11,,,,,drop,mép ảnh,
+news_17d1204af995.jpg,12,,,,,drop,mép ảnh,
+news_1c18b65777d6.jpg,0,,,,,pnh,mũ vải xanh lá,mũ vải
+news_1d006a98d172.jpg,0,,,,,pwh,mũ trắng; tài xế trong cabin xe tải quá nhỏ: không gán,
+news_1d3a84289792.jpg,0,,,,,pwh,mũ bảo hiểm xe máy (tính là có đội),
+news_20d9aeab0378.jpg,0,120.0,81.0,375.0,480.0,pnh,"mũ vải, nới khung xuống phần thân bị bụi che",mũ vải
+news_21f4171969a5.jpg,0,,,,,pwh,mũ vàng,
+news_21f4171969a5.jpg,1,,,,,pwh,mũ vàng,
+news_21f4171969a5.jpg,2,,,,,pwh,mũ trắng,
+news_21f4171969a5.jpg,3,,,,,pwh,"mũ vàng, nhỏ; người dưới lán phía xa cao ~15 px, đầu không phán đoán được: không gán",
+news_26fedb76feb2.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_2764a731a417.jpg,0,,,,,pnh,nón lá,nón lá
+news_2764a731a417.jpg,1,,,,,pnh,mũ cối xanh,mũ cối
+news_2764a731a417.jpg,2,,,,,pnh,mũ cối xanh,mũ cối
+news_2764a731a417.jpg,3,,,,,pnh,"mũ cối, che mặt",mũ cối
+news_2764a731a417.jpg,4,,,,,pwh,mũ vàng,
+news_29a4208b1f1a.jpg,0,,,,,pnh,"mũ cói vành rộng, ngồi bên lán",mũ vải
+news_2a407b495322.jpg,0,,,,,pnh,"mũ lưỡi trai, khẩu trang",mũ lưỡi trai
+news_2a407b495322.jpg,1,,,,,pnh,"người xa xách xô, mũ cói vành rộng",mũ vải
+news_2b63977bbc4d.jpg,0,,,,,pwh,mũ xanh lá,
+news_2b63977bbc4d.jpg,1,,,,,pwh,mũ xanh lá cận cảnh,
+news_2b63977bbc4d.jpg,2,,,,,pwh,"mũ vàng, mép trái",
+news_2b63977bbc4d.jpg,3,,,,,ignore,"mũ trắng phía sau, mờ [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_2b63977bbc4d.jpg,4,,,,,pwh,"mũ vàng, mép phải",
+news_2b63977bbc4d.jpg,5,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_2b63977bbc4d.jpg,6,,,,,ignore,"mũ vàng phía sau, mờ [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_2b63977bbc4d.jpg,7,,,,,pwh,"mũ vàng, mép trái",
+news_2b63977bbc4d.jpg,8,,,,,ignore,"mũ vàng phía sau, mờ [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_2fefd1942ef6.jpg,,,,,,skip_image,"đám đông dày đặc (> 30 người ngồi chồng nhau), không khoanh từng người chính xác được",
+news_306d1ad963b3.jpg,0,,,,,pwh,mũ cam,
+news_306d1ad963b3.jpg,1,,,,,pwh,mũ cam,
+news_306d1ad963b3.jpg,2,,,,,pnh,phụ nữ đội mũ vải ngồi ở lán,mũ vải
+news_306d1ad963b3.jpg,3,,,,,pwh,"công nhân đi xe máy, mũ bảo hiểm xe máy",
+news_306d1ad963b3.jpg,4,,,,,drop,"mũ đặt trên máy, không phải người",
+news_3425d69185a3.jpg,0,,,,,pnh,đứng ven đường,mũ cối
+news_3425d69185a3.jpg,1,,,,,pnh,lái xe lu,mũ cối
+news_3425d69185a3.jpg,2,,,,,pnh,"lái xe lu phía xa, mũ vành mềm (không chắc)",mũ vải
+news_3425d69185a3.jpg,3,,,,,ignore,"tài xế sau kính, không thấy rõ đầu [rà soát 2026-11-04: drop → ignore: drop cũ: tài xế sau kính, không thấy rõ đầu]",
+news_3425d69185a3.jpg,4,,,,,pnh,người xa đội mũ cối xanh (không chắc),mũ cối
+news_3425d69185a3.jpg,5,,,,,drop,"người xa bên cạnh, không phán đoán được",
+news_3425d69185a3.jpg,6,,,,,drop,"người xa, không phán đoán được",
+news_3531fa6fd1c0.jpg,0,,,,,pwh,mũ vàng cận cảnh,
+news_3531fa6fd1c0.jpg,1,,,,,pwh,mũ vàng,
+news_3531fa6fd1c0.jpg,2,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,3,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,4,,,,,pwh,"mũ vàng, khẩu trang",
+news_3531fa6fd1c0.jpg,5,,,,,pwh,"mép phải, mũ vàng",
+news_3531fa6fd1c0.jpg,6,,,,,ignore,"mũ vàng mờ phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,7,,,,,ignore,"mũ trắng mờ phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,8,,,,,ignore,"mũ trắng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,9,,,,,ignore,"mũ vàng mờ phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_3531fa6fd1c0.jpg,10,,,,,pwh,"mép trái, mũ vàng",
+news_3531fa6fd1c0.jpg,11,,,,,ignore,"vai người phía sau, đầu bị che [rà soát 2026-11-04: drop → ignore: vai người phía sau, đầu bị che > 40%]",
+news_3531fa6fd1c0.jpg,12,,,,,drop,mép ảnh,
+news_388e8bea0624.jpg,0,,,,,pwh,thợ hàn mũ vàng,
+news_388e8bea0624.jpg,1,,,,,pwh,mũ vàng,
+news_388e8bea0624.jpg,2,,,,,pwh,mũ vàng,
+news_388e8bea0624.jpg,3,,,,,ignore,bị che > 40% cơ thể (anh kiểm tra: không gán) [rà soát 2026-11-04: drop → ignore: drop cũ: bị che > 40% cơ thể (anh kiểm tra: không gán)],
+news_3e36076e5acb.jpg,0,,,,,pwh,"người cầm micro, mũ bị cắt mép trên (không chắc)",
+news_3e36076e5acb.jpg,1,,,,,pwh,mũ vàng,
+news_3e36076e5acb.jpg,2,,,,,pwh,mũ vàng,
+news_3e8cd2864eb0.jpg,0,,,,,pwh,mũ cam,
+news_3e8cd2864eb0.jpg,1,,,,,pwh,mũ vàng,
+news_3e8cd2864eb0.jpg,2,,,,,pnh,"mũ vải vành rộng, quay lưng",mũ vải
+news_3e8cd2864eb0.jpg,3,,,,,pnh,mũ vải trên giàn,mũ vải
+news_3e8cd2864eb0.jpg,4,,,,,pwh,mũ cam,
+news_4283e97f99ca.jpg,,,,,,skip_image,"người trên cột điện nhìn từ dưới lên, chỉ thấy lưng, đầu không phán đoán được",
+news_43d7d7e6f383.jpg,0,,,,,pnh,mũ vải,mũ vải
+news_43d7d7e6f383.jpg,1,,,,,pnh,mũ vải,mũ vải
+news_4478cd082b2c.jpg,0,,,,,pnh,người cởi trần đứng trong cảnh công trường (anh kiểm tra: phải gán),đầu trần
+news_4478cd082b2c.jpg,1,,,,,ignore,"lái máy xúc sau kính, đầu trần (không chắc) [rà soát 2026-11-04: pnh → ignore: lái máy xúc sau kính cabin (vật che) > 40%]",
+news_4478cd082b2c.jpg,2,,,,,drop,trùng khung 1,
+news_457668e99658.jpg,0,,,,,pwh,mũ cam,
+news_457668e99658.jpg,1,,,,,pwh,mũ cam cận cảnh,
+news_457668e99658.jpg,2,,,,,pwh,mũ cam,
+news_457668e99658.jpg,3,,,,,drop,trùng khung 4 (nửa trên),
+news_457668e99658.jpg,4,,,,,pwh,mũ cam ở giữa,
+news_45b2c397c91b.jpg,0,,,,,pnh,"thợ sơn trên giàn, cúi, không thấy mũ (không chắc)",đầu trần
+news_45b2c397c91b.jpg,1,,,,,pnh,mũ vải hồng,mũ vải
+news_484393175cfe.jpg,0,,,,,pnh,"mũ vải caro, xoa bê tông",mũ vải
+news_484393175cfe.jpg,1,,,,,pnh,"mũ cối xanh, khẩu trang",mũ cối
+news_484393175cfe.jpg,2,,,,,pnh,mũ lưỡi trai tối,mũ lưỡi trai
+news_484393175cfe.jpg,3,,,,,pnh,"mũ vải vành rộng, cúi",mũ vải
+news_484393175cfe.jpg,4,,,,,pnh,"mũ vải vành rộng, ngồi",mũ vải
+news_484393175cfe.jpg,5,,,,,pnh,"người xa, mũ vải vành rộng",mũ vải
+news_484393175cfe.jpg,6,,,,,drop,"người xa cúi, đầu không phán đoán được",
+news_484393175cfe.jpg,7,,,,,drop,"tấm bạt, không phải người",
+news_4ee933129e5c.jpg,0,,,,,pwh,mũ trắng,
+news_4eeea08e026d.jpg,0,,,,,pwh,mũ vàng,
+news_4eeea08e026d.jpg,1,,,,,pwh,mũ vàng,
+news_4eeea08e026d.jpg,2,,,,,pwh,mũ cam,
+news_4eeea08e026d.jpg,3,,,,,pwh,mũ vàng phía xa,
+news_4eeea08e026d.jpg,4,,,,,pwh,mũ cam phía xa,
+news_4eeea08e026d.jpg,5,,,,,pwh,mũ vàng phía xa,
+news_4fcd7e490cd0.jpg,0,,,,,pnh,"mũ vải vành rộng sáng màu, nhỏ (không chắc)",mũ vải
+news_4fcd7e490cd0.jpg,1,,,,,drop,"người rất xa, không phán đoán được",
+news_4fcd7e490cd0.jpg,2,,,,,pnh,"mũ vải trắng, nhỏ (không chắc)",mũ vải
+news_506cf0ac8ca0.jpg,0,,,,,pnh,"người đứng cạnh máy xúc, mũ lưỡi trai",mũ lưỡi trai
+news_506cf0ac8ca0.jpg,1,,,,,pnh,"lái máy xúc, mũ vải",mũ vải
+news_5086f14226ce.jpg,0,,,,,pwh,mũ xanh dương,
+news_51eef9de0b32.jpg,0,,,,,pnh,"mũ cối, lau mồ hôi",mũ cối
+news_53a0be6d2fa5.jpg,0,,,,,pwh,mũ trắng,
+news_53a0be6d2fa5.jpg,1,,,,,pnh,"mũ vải tối, khăn che mặt",mũ vải
+news_53a0be6d2fa5.jpg,2,,,,,pnh,nón lá,nón lá
+news_53a0be6d2fa5.jpg,3,,,,,pnh,"người xa, mũ cối xanh (không chắc)",mũ cối
+news_53be3359d2d4.jpg,0,,,,,pnh,mũ vải tối,mũ vải
+news_53be3359d2d4.jpg,1,,,,,pwh,mũ vàng,
+news_53be3359d2d4.jpg,2,,,,,pnh,"người xa, khăn / mũ trắng (không chắc)",mũ vải
+news_53be3359d2d4.jpg,3,,,,,pwh,"mũ cam, cúi",
+news_5863abd6d189.jpg,0,,,,,pnh,cán bộ đầu trần trong khu mỏ,đầu trần
+news_5863abd6d189.jpg,1,,,,,pwh,mũ vàng,
+news_5863abd6d189.jpg,2,,,,,pnh,cán bộ nữ đầu trần,đầu trần
+news_5863abd6d189.jpg,3,,,,,pwh,mũ vàng,
+news_5863abd6d189.jpg,4,,,,,pwh,"mũ vàng, áo cam",
+news_5863abd6d189.jpg,5,,,,,pwh,mũ vàng,
+news_5863abd6d189.jpg,6,,,,,drop,trùng khung 7,
+news_5863abd6d189.jpg,7,,,,,pwh,"mũ vàng, cúi",
+news_5863abd6d189.jpg,8,,,,,drop,mép ảnh,
+news_5863abd6d189.jpg,9,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy phần trên > 40%]",
+news_59919aa95f12.jpg,0,,,,,pwh,mũ trắng,
+news_59919aa95f12.jpg,1,,,,,pwh,"mũ vàng, mép trái",
+news_59919aa95f12.jpg,2,,,,,pwh,mũ vàng,
+news_59919aa95f12.jpg,3,,,,,drop,"người mép phải, không thấy đầu",
+news_59c56224dd48.jpg,0,,,,,pnh,"mũ cối, nhỏ",mũ cối
+news_59c56224dd48.jpg,1,,,,,pnh,"mũ vải sáng màu, nhỏ",mũ vải
+news_59c56224dd48.jpg,2,,,,,pnh,"mũ cối, cúi (không chắc)",mũ cối
+news_59c56224dd48.jpg,3,,,,,pwh,"mũ cam, nhỏ",
+news_59c828a421d8.jpg,0,,,,,drop,"người dân cởi trần đứng xem trước nhà, không phải người thi công",
+news_59c828a421d8.jpg,1,,,,,drop,người dân cởi trần đứng xem,
+news_59c828a421d8.jpg,2,,,,,drop,người xa trên đường (người đi đường),
+news_59c828a421d8.jpg,3,,,,,drop,người đi xe máy xa,
+news_59c828a421d8.jpg,4,,,,,drop,người đi xe máy xa,
+news_59c828a421d8.jpg,,,,,,skip_image,không còn người thi công gán được (lái máy xúc không thấy),
+news_5a12a6600727.jpg,0,,,,,pnh,"công nhân đứng bên rào, mũ vải",mũ vải
+news_5a12a6600727.jpg,1,,,,,pnh,"công nhân áo phản quang đi xe máy trong công trường, mũ vải",mũ vải
+news_5a12a6600727.jpg,2,,,,,ignore,người đi xe máy phía sau (người đi đường) [rà soát 2026-11-04: drop → ignore: drop cũ: người đi xe máy phía sau (người đi đường)],
+news_5a12a6600727.jpg,3,,,,,drop,người đi xe máy xa,
+news_5ca0c0abd84d.jpg,0,,,,,pnh,"mũ lưỡi trai, khăn che mặt",mũ lưỡi trai
+news_5ca0c0abd84d.jpg,1,,,,,pnh,mũ vải vành rộng,mũ vải
+news_5ca0c0abd84d.jpg,2,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_5ca0c0abd84d.jpg,3,,,,,pnh,"mũ lưỡi trai, cúi",mũ lưỡi trai
+news_5ca0c0abd84d.jpg,4,,,,,pnh,mũ vải xanh,mũ vải
+news_5ca0c0abd84d.jpg,5,,,,,pnh,mũ lưỡi trai trắng,mũ lưỡi trai
+news_5ca0c0abd84d.jpg,6,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_5ca0c0abd84d.jpg,7,,,,,pnh,"mũ lưỡi trai, cúi",mũ lưỡi trai
+news_5eaa758aaaf9.jpg,0,,,,,pnh,mũ vải xanh lá,mũ vải
+news_5eaa758aaaf9.jpg,1,,,,,pnh,mũ lưỡi trai đen,mũ lưỡi trai
+news_600ee691f30c.jpg,0,,,,,pwh,"mũ trắng, mép trái",
+news_600ee691f30c.jpg,1,,,,,pnh,cán bộ nữ đầu trần ở công trường,đầu trần
+news_600ee691f30c.jpg,2,,,,,pnh,cán bộ đầu trần,đầu trần
+news_600ee691f30c.jpg,3,,,,,pwh,mũ cam,
+news_600ee691f30c.jpg,4,,,,,pwh,mũ cam,
+news_600ee691f30c.jpg,5,,,,,pwh,mũ trắng,
+news_600ee691f30c.jpg,6,,,,,pwh,mũ cam,
+news_600ee691f30c.jpg,7,,,,,pnh,cán bộ đầu trần,đầu trần
+news_600ee691f30c.jpg,8,,,,,pnh,người áo caro đầu trần,đầu trần
+news_600ee691f30c.jpg,9,,,,,pwh,"mũ cam, mép phải",
+news_600ee691f30c.jpg,10,,,,,drop,"mép ảnh, trùng khung 9",
+news_600ee691f30c.jpg,11,,,,,ignore,"mũ trắng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_600ee691f30c.jpg,12,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_600ee691f30c.jpg,13,,,,,ignore,"mũ cam phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_600ee691f30c.jpg,14,,,,,drop,trùng khung 11,
+news_6279e09d3240.jpg,0,,,,,pnh,"cúi, đầu trần (không chắc)",đầu trần
+news_6279e09d3240.jpg,1,,,,,pwh,"mũ vàng, xa",
+news_65075335f4e9.jpg,0,,,,,pnh,mũ lưỡi trai họa tiết,mũ lưỡi trai
+news_65075335f4e9.jpg,1,,,,,pnh,"người xa, mũ vải sáng màu",mũ vải
+news_65075335f4e9.jpg,2,,,,,drop,"người xa cúi, đầu không phán đoán được",
+news_65fd17aed220.jpg,0,,,,,pnh,nón lá,nón lá
+news_65fd17aed220.jpg,1,,,,,pnh,mũ cối,mũ cối
+news_65fd17aed220.jpg,2,,,,,pnh,mũ cói vành rộng,mũ vải
+news_65fd17aed220.jpg,3,,,,,drop,"người trên tường xa, đầu không phán đoán được",
+news_6a6330d8ec72.jpg,0,,,,,pwh,mũ vàng có vành che nắng,
+news_6a8b8e023609.jpg,0,,,,,pwh,mũ trắng cận cảnh,
+news_6a8b8e023609.jpg,1,,,,,pwh,"người xa mờ, mũ vàng (không chắc)",
+news_6be5d427e9e1.jpg,0,,,,,pwh,"mũ cam (cùng cảnh với 306d1ad963b3, ảnh khác)",
+news_6be5d427e9e1.jpg,1,,,,,pwh,mũ cam,
+news_6be5d427e9e1.jpg,2,,,,,pnh,phụ nữ đội mũ vải ở lán,mũ vải
+news_6be5d427e9e1.jpg,3,,,,,pwh,"công nhân đi xe máy, mũ bảo hiểm xe máy",
+news_6be5d427e9e1.jpg,4,,,,,drop,"mũ đặt trên máy, không phải người",
+news_70713abd651f.jpg,0,,,,,pnh,"mũ cối, khăn che mặt",mũ cối
+news_70713abd651f.jpg,1,936.0,75.0,1676.0,1087.0,pnh,"nón lá, nới khung lên chóp nón",nón lá
+news_7a9b614219ac.jpg,0,,,,,pnh,"công nhân đường băng xa, mũ cối (không chắc)",mũ cối
+news_7a9b614219ac.jpg,1,,,,,pnh,"công nhân đường băng xa, nón lá",nón lá
+news_7a9b614219ac.jpg,2,,,,,pnh,"người xa ngồi, mũ cối (không chắc)",mũ cối
+news_7a9b614219ac.jpg,3,,,,,drop,"người rất xa, không phán đoán được",
+news_7a9b614219ac.jpg,4,,,,,pnh,"người xa cúi, mũ vải tối (không chắc)",mũ vải
+news_7af3c151ab14.jpg,0,,,,,pnh,"thợ ốp tường trong nhà, mũ lưỡi trai",mũ lưỡi trai
+news_7b769c6b3ada.jpg,0,,,,,pwh,mũ vàng,
+news_7b769c6b3ada.jpg,1,,,,,pwh,mũ vàng,
+news_7c01d1de758c.jpg,0,,,,,pwh,mũ vàng đội trên khăn,
+news_7fd23083784d.jpg,0,,,,,pnh,mũ cối xanh,mũ cối
+news_804447435c9d.jpg,0,,,,,pnh,"đổ bê tông ban đêm, cúi, đầu trần (không chắc)",đầu trần
+news_804447435c9d.jpg,1,,,,,pnh,"ban đêm, mũ vải (không chắc)",mũ vải
+news_804447435c9d.jpg,2,,,,,pnh,"ban đêm, mũ lưỡi trai",mũ lưỡi trai
+news_804447435c9d.jpg,3,,,,,pnh,"ban đêm, đầu trần (không chắc)",đầu trần
+news_804447435c9d.jpg,4,,,,,pnh,"ban đêm, mũ vải vành (không chắc)",mũ vải
+news_804447435c9d.jpg,5,,,,,pnh,"ban đêm, mũ lưỡi trai (không chắc)",mũ lưỡi trai
+news_808356a66fd6.jpg,0,,,,,pnh,"người xa, mũ vải sáng màu (không chắc)",mũ vải
+news_808356a66fd6.jpg,1,,,,,drop,"người xa cúi, đầu không phán đoán được",
+news_82d8ef6ee511.jpg,0,,,,,pwh,mũ trắng,
+news_82d8ef6ee511.jpg,1,,,,,pwh,mũ trắng,
+news_82d8ef6ee511.jpg,2,,,,,pwh,mũ trắng,
+news_82e45e8f5ef4.jpg,0,,,,,pnh,"thợ trát tường trong nhà, đầu trần",đầu trần
+news_86dbfc6602d5.jpg,0,,,,,pwh,mũ trắng,
+news_86dbfc6602d5.jpg,1,,,,,ignore,"lái xe lu sau kính, đầu trần (không chắc) [rà soát 2026-11-04: pnh → ignore: lái xe lu sau kính cabin (vật che) > 40%]",
+news_87676087abb8.jpg,0,,,,,pnh,mũ lưỡi trai đẩy xe rùa,mũ lưỡi trai
+news_87676087abb8.jpg,1,,,,,ignore,"mũ vải tối phía sau [rà soát 2026-11-04: pnh → ignore: phía sau, chỉ thấy phần trên > 40%]",
+news_88ea3750caef.jpg,0,,,,,pwh,"thợ hàn mũ vàng (mũ cối đặt trên dầm, không phải người)",
+news_8aa8050b0b75.jpg,0,,,,,pnh,"mũ cối xanh, khăn che mặt",mũ cối
+news_8eac73e1b87f.jpg,,,,,,skip_image,"đoàn đông người chen nhau (16 khung chồng lấn, nhiều đầu bị che), như ảnh đám đông 2fefd1942ef6",
+news_8ffcc791e138.jpg,0,,,,,pwh,mũ trắng,
+news_8ffcc791e138.jpg,1,,,,,pwh,mũ trắng,
+news_8ffcc791e138.jpg,2,,,,,pnh,cán bộ đầu trần chỉ tay,đầu trần
+news_8ffcc791e138.jpg,3,,,,,pwh,mũ trắng,
+news_8ffcc791e138.jpg,4,,,,,pwh,mũ trắng,
+news_8ffcc791e138.jpg,5,,,,,pwh,mũ trắng,
+news_8ffcc791e138.jpg,6,,,,,ignore,"người áo xám phía sau, đầu trần [rà soát 2026-11-04: pnh → ignore: phía sau ở mép, chỉ thấy phần trên > 40%]",
+news_8ffcc791e138.jpg,7,,,,,ignore,"người phía sau khung 1, đầu trần (không chắc) [rà soát 2026-11-04: pnh → ignore: phía sau, bị người khác che > 40%]",
+news_8ffcc791e138.jpg,8,,,,,ignore,người bị che gần hết sau khung 4 [rà soát 2026-11-04: drop → ignore: drop cũ: người bị che gần hết sau khung 4],
+news_91b73d292cfd.jpg,0,,,,,pnh,cán bộ đầu trần (trao quà ngoài công trường),đầu trần
+news_91b73d292cfd.jpg,1,,,,,pwh,công nhân mũ vàng,
+news_91b73d292cfd.jpg,2,,,,,pnh,cán bộ đầu trần,đầu trần
+news_91b73d292cfd.jpg,3,,,,,pwh,công nhân mũ trắng,
+news_91b73d292cfd.jpg,4,,,,,pwh,"công nhân áo gile xanh, mũ trắng",
+news_91b73d292cfd.jpg,5,,,,,pnh,"cán bộ cầm hộp quà, đầu trần",đầu trần
+news_91b73d292cfd.jpg,6,,,,,pnh,cán bộ nữ đầu trần,đầu trần
+news_91b73d292cfd.jpg,7,,,,,pwh,"người áo xanh nhạt, mũ trắng (không chắc)",
+news_91b73d292cfd.jpg,8,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_91b73d292cfd.jpg,9,,,,,ignore,"người đội mũ kê-pi phía sau (không chắc) [rà soát 2026-11-04: pnh → ignore: hàng sau, thân bị che > 40%]",
+news_91b73d292cfd.jpg,10,,,,,drop,mép ảnh,
+news_91b73d292cfd.jpg,11,,,,,pwh,"mép phải, mũ trắng",
+news_91b73d292cfd.jpg,12,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_91b73d292cfd.jpg,13,,,,,ignore,"mũ cam phía sau, bị che (không chắc) [rà soát 2026-11-04: pwh → ignore: hàng sau, bị che > 40%]",
+news_91b73d292cfd.jpg,14,,,,,drop,mép ảnh,
+news_92a6d571346d.jpg,0,,,,,pnh,mũ vải vành rộng,mũ vải
+news_92a6d571346d.jpg,1,,,,,pnh,mũ vải vành rộng,mũ vải
+news_939e3895fce8.jpg,0,,,,,pwh,mũ vàng,
+news_939e3895fce8.jpg,1,,,,,pwh,mũ vàng,
+news_939e3895fce8.jpg,2,,,,,pwh,mũ vàng,
+news_939e3895fce8.jpg,3,,,,,pwh,mũ vàng,
+news_939e3895fce8.jpg,4,,,,,pwh,"mũ vàng, khăn che mặt",
+news_939e3895fce8.jpg,5,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: phía sau, thân bị che > 40%]",
+news_96b72d15a495.jpg,0,,,,,pwh,mũ trắng,
+news_96b72d15a495.jpg,1,,,,,pwh,"mũ vàng, quay lưng",
+news_96b72d15a495.jpg,2,,,,,pwh,mũ xanh lá,
+news_96b72d15a495.jpg,3,,,,,pwh,"mũ vàng, mép trái",
+news_96b72d15a495.jpg,4,,,,,ignore,"mũ vàng, bị che một phần [rà soát 2026-11-04: pwh → ignore: bị che một phần lớn > 40%]",
+news_96b72d15a495.jpg,5,,,,,ignore,"người phía sau mờ, đầu ngoài vùng thấy rõ [rà soát 2026-11-04: drop → ignore: drop cũ: người phía sau mờ, đầu ngoài vùng thấy rõ]",
+news_9ee57e589d13.jpg,0,,,,,pnh,"mũ vải xanh, khăn che mặt",mũ vải
+news_9ee57e589d13.jpg,1,,,,,ignore,"cúi, đầu bị che (không chắc) [rà soát 2026-11-04: pnh → ignore: cúi, đầu bị che > 40%]",
+news_9ee57e589d13.jpg,2,,,,,pwh,"người xa, mũ trắng (không chắc)",
+news_9ee57e589d13.jpg,3,,,,,drop,"người trên máy xa, không phán đoán được",
+news_a1abe6e8a3e4.jpg,0,,,,,drop,trùng khung 1 (nửa dưới),
+news_a1abe6e8a3e4.jpg,1,230.0,40.0,1060.0,1134.0,pnh,"nữ thợ đội nón lá cận cảnh, khung bao cả nón và thân",nón lá
+news_a1b4116e6049.jpg,0,,,,,pnh,"mũ cối xanh, tưới nước",mũ cối
+news_a1b4116e6049.jpg,1,,,,,pnh,"người xa, mũ cối (không chắc)",mũ cối
+news_a1b4116e6049.jpg,2,,,,,pwh,"người trên máy xúc, mũ trắng (không chắc)",
+news_a1b4116e6049.jpg,3,,,,,pnh,"người xa, mũ cối (không chắc)",mũ cối
+news_a1b4116e6049.jpg,4,,,,,drop,"nhóm người rất xa, đầu không phán đoán được",
+news_a1b4116e6049.jpg,5,,,,,drop,nhóm người rất xa,
+news_a1b4116e6049.jpg,6,,,,,drop,nhóm người rất xa,
+news_a1b4116e6049.jpg,7,,,,,drop,nhóm người rất xa,
+news_a1b4116e6049.jpg,8,,,,,drop,"người cúi xa, đầu không phán đoán được",
+news_a1b4116e6049.jpg,9,,,,,drop,tài xế trong cabin,
+news_a2084ce9cb56.jpg,0,,,,,pwh,mũ cam trên trụ,
+news_a9fb3270b27d.jpg,0,172.0,40.0,1692.0,1128.0,pnh,"nón nhựa đan (kiểu nón lá), khung bao cả vành nón",nón lá
+news_aa3ec20781bb.jpg,0,,,,,pwh,"mũ cam, cúi (cùng công trường với 306d1ad963b3, cảnh rộng)",
+news_aa3ec20781bb.jpg,1,,,,,pnh,phụ nữ đội mũ vải ở lán,mũ vải
+news_aa3ec20781bb.jpg,2,,,,,pwh,mũ cam,
+news_aa3ec20781bb.jpg,3,,,,,pwh,"mũ bảo hiểm xe máy, ngồi trên xe máy",
+news_aadc172300dc.jpg,0,,,,,pnh,"người cầm cờ điều tiết giao thông, mũ cối",mũ cối
+news_aadc172300dc.jpg,1,,,,,drop,"người ngồi dưới ô, đầu không phán đoán được",
+news_ab457841adcc.jpg,0,,,,,pwh,"mũ vàng, dưới đất",
+news_ab457841adcc.jpg,1,,,,,pwh,"mũ trắng, dưới đất",
+news_ab457841adcc.jpg,2,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,3,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,4,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,5,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,6,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,7,,,,,pwh,mũ trắng trên giàn,
+news_ab457841adcc.jpg,8,,,,,pwh,"mũ vàng, trên giàn bên trái",
+news_ab7b1b23687d.jpg,0,,,,,pnh,"nón lá, nhỏ (người bên cạnh trong cùng khung cũng nón lá)",nón lá
+news_ab7b1b23687d.jpg,1,,,,,pnh,"nón lá, nhỏ",nón lá
+news_ab7b1b23687d.jpg,2,,,,,drop,"người rất xa, không phán đoán được",
+news_ab7b1b23687d.jpg,,452.0,188.0,470.0,232.0,pnh,"người sát bên trái khung 0, nón lá (không chắc; sót khi duyệt)",nón lá
+news_af40e211023d.jpg,0,,,,,pnh,"mũ vải, thợ thảm nhựa",mũ vải
+news_af40e211023d.jpg,1,,,,,pnh,mũ vải vành rộng,mũ vải
+news_af40e211023d.jpg,2,,,,,pnh,"mũ vải, khẩu trang",mũ vải
+news_af40e211023d.jpg,3,,,,,pnh,"mũ vải, áo cam",mũ vải
+news_af40e211023d.jpg,4,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_af40e211023d.jpg,5,,,,,pnh,"mũ vải, áo phản quang",mũ vải
+news_af40e211023d.jpg,6,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_af40e211023d.jpg,7,,,,,pwh,"người xa, mũ trắng",
+news_b0e6808fc379.jpg,0,,,,,pwh,mũ trắng cận cảnh,
+news_b0e6808fc379.jpg,1,,,,,drop,"vật mờ ở mép, không phải người rõ",
+news_b50ce59581b1.jpg,,,,,,skip_image,"nhóm đông chen nhau (16 khung chồng lấn, nhiều đầu bị che), như các ảnh đám đông đã bỏ",
+news_b90459f92bca.jpg,0,,,,,pwh,"mũ trắng, cúi hàn",
+news_b9bb5dc37a66.jpg,0,,,,,pnh,mũ cối,mũ cối
+news_b9bb5dc37a66.jpg,1,,,,,pnh,nón lá,nón lá
+news_b9bb5dc37a66.jpg,2,,,,,pnh,mũ vải xanh lá,mũ vải
+news_b9bb5dc37a66.jpg,3,,,,,drop,"người xa, đầu không phán đoán được",
+news_ba45dfbda7b7.jpg,0,,,,,pnh,mũ vải vành rộng tối,mũ vải
+news_ba45dfbda7b7.jpg,1,,,,,pnh,mũ vải vành rộng sáng,mũ vải
+news_ba45dfbda7b7.jpg,2,,,,,pnh,nón lá,nón lá
+news_ba45dfbda7b7.jpg,3,,,,,pnh,"nón lá hồng, đi trên đường thi công",nón lá
+news_ba5c0e42e05e.jpg,0,,,,,pwh,"mũ trắng cận cảnh, buộc thép",
+news_ba5c0e42e05e.jpg,1,1739.0,136.0,2400.0,1500.0,pwh,"mũ cam, người trong lồng thép, nới khung xuống thân",
+news_bbc8181b37ca.jpg,0,,,,,pwh,"mũ vàng, hướng dẫn xe; tài xế trong cabin không thấy: không gán",
+news_bc08264bf264.jpg,0,,,,,pnh,"mũ cối xanh, xúc đá",mũ cối
+news_d0f3acc2c2fc.jpg,0,,,,,pwh,"mũ vàng, khăn che mặt",
+news_d2033e4b8598.jpg,0,,,,,pnh,"thợ trát tường nhà dân, mũ vải sáng màu",mũ vải
+news_d367bc64d00e.jpg,0,1185.0,380.0,1629.0,1258.0,pnh,"nữ thợ vác thép, nón lá; nới khung lên chóp nón",nón lá
+news_d367bc64d00e.jpg,1,,,,,pnh,"nữ thợ vác thép, nón lá",nón lá
+news_d45c8a1add77.jpg,0,,,,,pwh,mũ vàng,
+news_d45c8a1add77.jpg,1,,,,,pwh,mũ vàng,
+news_d45c8a1add77.jpg,2,,,,,pwh,"mũ vàng, khăn che mặt",
+news_d45c8a1add77.jpg,3,,,,,pwh,"mũ vàng, cúi",
+news_d45c8a1add77.jpg,4,,,,,ignore,"người sau khung 0, chỉ thấy đầu, mũ vàng (không chắc) [rà soát 2026-11-04: pwh → ignore: chỉ thấy đầu > 40%]",
+news_d45c8a1add77.jpg,5,,,,,drop,trùng đầu khung 2,
+news_d612f8dd27a8.jpg,0,,,,,pwh,mũ vàng cận cảnh,
+news_d612f8dd27a8.jpg,1,,,,,ignore,"người phía sau, mũ cối [rà soát 2026-11-04: pnh → ignore: phía sau, chỉ thấy đầu > 40%]",
+news_d6450a14b13a.jpg,0,,,,,pwh,"mũ cam, nhìn từ trên xuống",
+news_d6450a14b13a.jpg,1,,,,,pwh,mũ cam,
+news_d6450a14b13a.jpg,2,,,,,pwh,"mũ vàng, nhìn từ trên xuống",
+news_d6450a14b13a.jpg,3,,,,,pwh,mũ trắng,
+news_d6450a14b13a.jpg,4,,,,,drop,"vật màu hồng ở mép, không phải người",
+news_d9031729d535.jpg,0,,,,,pnh,cán bộ mặc vest đầu trần ở công trường,đầu trần
+news_d9031729d535.jpg,1,,,,,pwh,mũ cam,
+news_d9031729d535.jpg,2,,,,,pwh,"mũ vàng, mép trái",
+news_d9031729d535.jpg,3,,,,,pwh,mũ cam đội trên mũ lưỡi trai,
+news_d9031729d535.jpg,4,,,,,pwh,mũ vàng,
+news_d9031729d535.jpg,5,,,,,pwh,mũ trắng,
+news_d9031729d535.jpg,6,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_d9031729d535.jpg,7,,,,,ignore,"mũ cam phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_d9031729d535.jpg,8,,,,,drop,"phần thân ở mép, không thấy đầu",
+news_d9031729d535.jpg,9,,,,,ignore,"người phía sau chỉ thấy đầu, mũ vàng (không chắc) [rà soát 2026-11-04: pwh → ignore: chỉ thấy đầu > 40%]",
+news_d9031729d535.jpg,10,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che > 40%]",
+news_d9031729d535.jpg,11,,,,,drop,trùng khung 10,
+news_d9a4b73c61f5.jpg,0,,,,,pnh,"công nhân trên đường thi công, mũ vải",mũ vải
+news_d9a4b73c61f5.jpg,1,,,,,pnh,"người mặc áo phản quang đi xe máy trong đoạn thi công, mũ vải (không chắc)",mũ vải
+news_d9a4b73c61f5.jpg,2,,,,,drop,tài xế trong cabin,
+news_d9a4b73c61f5.jpg,3,,,,,drop,tài xế trong cabin,
+news_d9a4b73c61f5.jpg,4,,,,,drop,người đi xe máy xa (người đi đường),
+news_da062de41916.jpg,0,,,,,pwh,mũ vàng,
+news_da062de41916.jpg,1,,,,,pwh,"mũ vàng, ngồi xổm",
+news_da062de41916.jpg,2,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: phía sau, thân bị khung thép che > 40%]",
+news_dbd849719953.jpg,0,,,,,pwh,"mũ trắng, quay lưng",
+news_dbd849719953.jpg,1,,,,,pwh,"mũ trắng, quay lưng",
+news_dbd849719953.jpg,2,,,,,drop,"ống hơi màu cam, không phải người",
+news_dd89e13da31b.jpg,0,,,,,pwh,"mũ vàng, kính hàn",
+news_dd89e13da31b.jpg,1,,,,,pwh,mũ vàng,
+news_dd89e13da31b.jpg,2,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: phía sau, thân bị người phía trước che > 40%]",
+news_dd89e13da31b.jpg,3,,,,,drop,trùng khung 2,
+news_dffa80499309.jpg,0,,,,,pnh,"mũ vải vành rộng, lắp cốp pha",mũ vải
+news_dffa80499309.jpg,1,,,,,pnh,"mũ vải vành rộng, khăn vàng",mũ vải
+news_dffa80499309.jpg,2,,,,,pnh,"nón lá, trên lồng thép",nón lá
+news_e3f30b58f7ce.jpg,0,,,,,pwh,"mũ cam có vành che nắng, quay lưng",
+news_e3f30b58f7ce.jpg,1,,,,,pwh,"mũ cam, khăn che mặt",
+news_e3f30b58f7ce.jpg,2,,,,,pwh,mũ cam,
+news_e416ad8b0ec3.jpg,0,,,,,pwh,"mũ trắng, đi trên cầu tạm",
+news_e416ad8b0ec3.jpg,1,,,,,pwh,mũ trắng,
+news_e416ad8b0ec3.jpg,2,,,,,pwh,mũ vàng,
+news_e416ad8b0ec3.jpg,3,,,,,pwh,mũ vàng,
+news_e416ad8b0ec3.jpg,4,,,,,pwh,mũ vàng,
+news_e416ad8b0ec3.jpg,5,,,,,pwh,mũ vàng,
+news_e416ad8b0ec3.jpg,,245.0,306.0,284.0,345.0,pwh,"người trên đỉnh trụ, mũ vàng (không chắc; sót khi duyệt)",
+news_e416ad8b0ec3.jpg,,425.0,445.0,447.0,485.0,pwh,"người trên thang bên trụ, mũ vàng (không chắc; sót khi duyệt)",
+news_e8d62b16f936.jpg,0,,,,,pwh,"cán bộ áo gile xám, mũ trắng",
+news_e8d62b16f936.jpg,1,,,,,pnh,"cán bộ mặc vest, đầu trần",đầu trần
+news_e8d62b16f936.jpg,2,,,,,pwh,"mũ vàng, cầm hộp quà",
+news_e8d62b16f936.jpg,3,,,,,pwh,"mũ vàng, mép trái",
+news_e8d62b16f936.jpg,4,,,,,pwh,mũ cam,
+news_e8d62b16f936.jpg,5,,,,,pwh,mũ vàng,
+news_e8d62b16f936.jpg,6,,,,,pwh,mũ vàng,
+news_e8d62b16f936.jpg,7,,,,,drop,"người mép trái, không thấy đầu",
+news_e8d62b16f936.jpg,8,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_e8d62b16f936.jpg,9,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_e8d62b16f936.jpg,10,,,,,drop,"người mép phải, không thấy đầu",
+news_e8d62b16f936.jpg,11,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_e8d62b16f936.jpg,12,,,,,pwh,"mũ vàng, mép phải",
+news_e8d62b16f936.jpg,13,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_e8d62b16f936.jpg,14,,,,,ignore,"mũ cam phía sau [rà soát 2026-11-04: pwh → ignore: hàng sau, chỉ thấy đầu > 40%]",
+news_e8d62b16f936.jpg,15,,,,,ignore,"mũ vàng phía sau, bị che (không chắc) [rà soát 2026-11-04: pwh → ignore: hàng sau, bị che > 40%]",
+news_eb2f04def071.jpg,0,,,,,pwh,thợ hàn mũ đỏ,
+news_f577c2493de6.jpg,0,,,,,pwh,mũ trắng,
+news_f577c2493de6.jpg,1,,,,,pwh,mũ vàng,
+news_f577c2493de6.jpg,2,,,,,ignore,"mũ vàng phía sau [rà soát 2026-11-04: pwh → ignore: phía sau, thân dưới bị người phía trước che > 40%]",
+news_f577c2493de6.jpg,3,,,,,ignore,người phía sau chỉ thấy mũ vàng (không chắc) [rà soát 2026-11-04: pwh → ignore: chỉ thấy mũ > 40%],
+news_f577c2493de6.jpg,4,,,,,drop,trùng khung 2,
+news_f8501ac223f5.jpg,0,,,,,pnh,"thợ sơn trên giàn nhà dân, khăn đỏ trùm đầu (không chắc)",mũ khác
+news_f8501ac223f5.jpg,1,,,,,drop,"túi đồ màu đen, không phải người",
+news_f8937537f9fc.jpg,0,,,,,pwh,mũ trắng,
+news_f8937537f9fc.jpg,1,,,,,pwh,mũ trắng,
+news_f8937537f9fc.jpg,2,,,,,pwh,mũ trắng,
+news_f8937537f9fc.jpg,3,,,,,pnh,"người xa mờ, mũ cối (không chắc)",mũ cối
+news_f8937537f9fc.jpg,4,,,,,drop,"người mép phải, không thấy đầu",
+news_f8937537f9fc.jpg,5,,,,,pnh,"người xa mờ, mũ màu be giống mũ cối (không chắc)",mũ cối
+news_f8937537f9fc.jpg,6,,,,,ignore,"phần thân sau khung 2, không thấy rõ đầu riêng [rà soát 2026-11-04: drop → ignore: drop cũ: phần thân sau khung 2, không thấy rõ đầu riêng]",
+news_f8937537f9fc.jpg,7,,,,,drop,"người rất mờ, đầu không phán đoán được",

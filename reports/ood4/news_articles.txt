@@ -1,0 +1,47 @@
+# Tập ngoài miền thứ tư (OOD-4, tuần 10): đánh giá độc lập bản triển khai cuối (kế hoạch: reports/ood4/plan.md, chốt trước khi thu
+# thập). Bài báo KHÁC mọi danh sách trước (ood, ood2, ood2b, ood3, ood3b); tìm ngày 2026-11-03 (công trường dự án, đường sá, thợ hồ /
+# thợ xây nhà dân để có cả người không đội mũ bảo hộ). Bỏ laodong.vn (chặn truy cập tự động). Ảnh thuộc bản quyền tòa soạn: chỉ dùng
+# nội bộ để đánh giá.
+https://dantri.com.vn/lao-dong-viec-lam/hang-tram-cong-nhan-xuyen-le-bam-cong-truong-du-an-san-bay-phu-cat-20260502115338235.htm
+https://dantri.com.vn/thoi-su/dan-may-moc-khong-lo-dong-loat-thi-cong-metro-ben-thanh-can-gio-20261030120515179.htm
+https://dantri.com.vn/giao-duc/gan-200-cong-nhan-chay-dua-hoan-thien-truong-noi-tru-140-ty-dong-20260811063035671.htm
+https://dantri.com.vn/thoi-su/doi-nang-thi-cong-xuyen-le-tai-nhung-du-an-nghin-ty-o-mien-tay-20260427153822760.htm
+https://dantri.com.vn/lao-dong-viec-lam/nghe-tho-xay-so-thieu-cai-an-hon-cai-nang-20200625180412704.htm
+https://dantri.com.vn/lao-dong-viec-lam/giot-mo-hoi-cua-nguoi-tho-ne-giua-nang-he-mien-trung-20200513162229874.htm
+https://dantri.com.vn/lao-dong-viec-lam/chuyen-nghe-tho-xay-thu-nhap-it-nguy-hiem-nhieu-20200920204953722.htm
+https://dantri.com.vn/lao-dong-viec-lam/nguoi-lao-dong-nong-phat-ret-khi-lam-viec-giua-troi-nang-dinh-diem-20260527060656873.htm
+https://thanhnien.vn/15500-nguoi-don-quoc-khanh-tren-cong-truong-apec-phu-quoc-185260901101311637.htm
+https://thanhnien.vn/cong-nhan-phoi-minh-lam-viec-tren-cong-truong-2500-ti-giua-nang-nong-39-do-c-185230519190729311.htm
+https://thanhnien.vn/ql1-qua-phu-yen-sua-chua-xuyen-dem-de-kip-don-tet-1851542726.htm
+https://thanhnien.vn/ve-vung-xa-xay-nha-nhan-ai-185240723161529784.htm
+https://tuoitre.vn/nld/can-canh-cong-truong-mo-rong-duong-dt784c-o-tay-ninh-196260419102252358.htm
+https://tuoitre.vn/nld/cac-du-an-giao-thong-o-dbscl-but-toc-196250810201950593.htm
+https://tuoitre.vn/doi-tho-ho-du-muc-xay-nghin-nha-minh-o-bui-20210407093304755.htm
+https://baoxaydung.vn/nhung-nu-cuoi-hanh-phuc-tren-cong-truong-apec-phu-quoc-192260825131109141.htm
+https://baoxaydung.vn/ram-nang-chay-da-van-miet-mai-thi-cong-cau-vuot-song-ma-192250507153618882.htm
+https://baoxaydung.vn/cong-nhan-lam-viec-xuyen-le-tai-cong-truong-duong-ho-chi-minh-qua-tinh-an-giang-192260902130924532.htm
+https://baoxaydung.vn/dung-truong-giua-nui-rung-nha-thau-san-sang-chiu-lo-vi-hoc-sinh-vung-cao-192260604165110005.htm
+https://baoxaydung.vn/giu-ky-luat-an-toan-lao-dong-tren-cac-cong-truong-xay-dung-o-ha-tinh-192260616213816116.htm
+https://baoxaydung.vn/cong-truong-khat-tho-nha-thau-phai-doi-cach-giu-nguoi-192261006182852751.htm
+https://baoxaydung.vn/nhung-dai-cong-truong-lam-xuyen-le-192260429235746784.htm
+https://baoxaydung.vn/phu-tho-cong-nhan-gac-ky-nghi-le-tang-toc-tren-cac-cong-truong-192260901221127688.htm
+https://baoxaydung.vn/siet-chat-an-toan-lao-dong-tai-cong-truong-cau-dai-ngai-192260516110141703.htm
+https://baoxaydung.vn/nha-thau-giu-nhip-thi-cong-giua-chao-lua-mien-trung-192260529165743967.htm
+https://baoxaydung.vn/vat-va-sua-chua-duong-bo-giua-mua-nang-nong-192260603143917863.htm
+https://baoxaydung.vn/dem-tren-cong-truong-cao-toc-bac-nam-192552036.htm
+https://cand.com.vn/doanh-nghiep/soi-noi-khi-the-thi-cong-tren-cac-cong-truong-trong-diem-i804019/
+https://cand.com.vn/Giao-thong/-doi-nang-thi-cong-tren-cac-cong-truong-trong-diem-song-nuoc-mien-tay-i804077/
+https://nld.com.vn/cong-truong-soi-dong-truoc-them-nam-moi-196251229213047103.htm
+https://nld.com.vn/cong-nhan-bam-cong-truong-trong-diem-lam-viec-xuyen-tet-binh-ngo-2026-196260212155437941.htm
+https://nld.com.vn/can-tet-cong-nhan-van-bam-tru-thi-cong-tren-rach-xuyen-tam-19626021317375437.htm
+https://nld.com.vn/xuan-ve-tren-cong-truong-duong-vanh-dai-3-tphcm-19626021513084473.htm
+https://nld.com.vn/can-canh-cong-truong-thi-cong-tuyen-duong-vanh-dai-3-tphcm-qua-tay-ninh-196260318120428493.htm
+https://nld.com.vn/nhieu-du-an-giao-thong-tang-toc-ve-dich-196260525210022333.htm
+https://nld.com.vn/vanh-dai-3-qua-dong-nai-tang-toc-truoc-gio-g-196251218164006027.htm
+https://vietnamnet.vn/nang-nong-dinh-diem-giot-mo-hoi-soi-tren-cong-truong-2519926.html
+https://vietnamnet.vn/tuyen-500kv-mach-3-keo-dien-ra-bac-danh-du-giua-troi-an-tren-dinh-cot-giua-he-do-lua-2295595.html
+https://vietnamnet.vn/500-cong-nhan-xuyen-le-nang-cap-duong-bang-tan-son-nhat-can-dich-truoc-le-30-4-2007646.html
+https://dantocphattrien.vietnamnet.vn/tuyen-quang-tang-toc-xay-truong-noi-tru-vung-bien-75964.html
+https://baoquangninh.vn/chay-dua-thoi-gian-thi-gan-cung-nang-nong-2392219.html
+https://baoquangninh.vn/dam-bao-suc-khoe-cho-cong-nhan-mua-nang-nong-3408928.html
+https://vnexpress.net/gia-dinh-3-nguoi-lam-tho-xay-moi-thang-tiet-kiem-20-trieu-4331935.html

@@ -8,7 +8,7 @@ news_03c8ed2d3e03.jpg,0,,,,,pnh,mũ vải rộng vành,mũ vải
 news_03c8ed2d3e03.jpg,1,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
 news_03c8ed2d3e03.jpg,2,,,,,pwh,,
 news_03c8ed2d3e03.jpg,3,,,,,pnh,đầu trần,đầu trần
-news_03c8ed2d3e03.jpg,4,,,,,pnh,"mũ vải tối màu, bị che một phần",mũ vải
+news_03c8ed2d3e03.jpg,4,,,,,ignore,"mũ vải tối màu, bị che một phần [rà soát 2026-11-04: pnh → ignore: người hàng sau, thân bị người phía trước che > 40%]",
 news_03c8ed2d3e03.jpg,5,,,,,drop,trùng khung 4 (chỉ nửa trên),
 news_05cfc183214b.jpg,0,,,,,pnh,"mũ vải tối màu, mờ do lấy nét (sửa khi rà lại hộp bị bỏ theo góp ý của anh)",mũ vải
 news_05cfc183214b.jpg,1,,,,,pnh,mũ khác (mũ trùm áo khoác),mũ khác
@@ -70,12 +70,12 @@ news_355171c4f547.jpg,,,,,,skip_image,"nhà kính trồng rau, không phải cô
 news_36afd44b08ca.jpg,,,,,,skip_image,"lễ trao thưởng, không phải công trường",
 news_377dafe66072.jpg,0,,,,,pwh,,
 news_377dafe66072.jpg,1,,,,,pnh,"đầu trần, lái máy xúc trong cabin",đầu trần
-news_32a4dc54f5be.jpg,,668.0,358.0,695.0,420.0,pnh,"đầu trần - thêm tay: hàng sau, thân bị che",đầu trần
-news_32a4dc54f5be.jpg,,740.0,345.0,768.0,420.0,pwh,"thêm tay: hàng sau, thân bị che",
-news_32a4dc54f5be.jpg,,770.0,355.0,795.0,420.0,pwh,"thêm tay: hàng sau, thân bị che",
-news_32a4dc54f5be.jpg,,822.0,353.0,850.0,425.0,pwh,"thêm tay: hàng sau, thân bị che",
-news_32a4dc54f5be.jpg,,893.0,360.0,918.0,410.0,pwh,"thêm tay: hàng sau, thân bị che",
-news_32a4dc54f5be.jpg,,940.0,358.0,966.0,410.0,pwh,"thêm tay: hàng sau, thân bị che",
+news_32a4dc54f5be.jpg,,668.0,358.0,695.0,420.0,ignore,"đầu trần - thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pnh → ignore: hàng sau, thân bị che (chỉ thấy đầu và vai)]",
+news_32a4dc54f5be.jpg,,740.0,345.0,768.0,420.0,ignore,"thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che]",
+news_32a4dc54f5be.jpg,,770.0,355.0,795.0,420.0,ignore,"thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che]",
+news_32a4dc54f5be.jpg,,822.0,353.0,850.0,425.0,ignore,"thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che]",
+news_32a4dc54f5be.jpg,,893.0,360.0,918.0,410.0,ignore,"thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che]",
+news_32a4dc54f5be.jpg,,940.0,358.0,966.0,410.0,ignore,"thêm tay: hàng sau, thân bị che [rà soát 2026-11-04: pwh → ignore: hàng sau, thân bị che]",
 news_3819ed299b90.jpg,,,,,,skip_image,"người mua hàng ngoài phố, không phải công trường",
 news_3e0ba8af6e84.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
 news_3f1195b93191.jpg,0,,,,,pwh,,
@@ -128,7 +128,7 @@ news_6f2d27aa0f41.jpg,,,,,,skip_image,"họp báo, không phải công trường
 news_6f33fadc7244.jpg,,,,,,skip_image,"quầy giày dép, không phải công trường",
 news_6f9fa4bc0723.jpg,0,,,,,pnh,nón lá,nón lá
 news_6fb31293766b.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
-news_6fb31293766b.jpg,1,,,,,drop,"người mang bao, đầu bị che, nhỏ (cao 60 px)",
+news_6fb31293766b.jpg,1,,,,,ignore,"người mang bao, đầu bị che, nhỏ (cao 60 px) [rà soát 2026-11-04: drop → ignore: lái máy xúc sau kính cabin, bị máy che > 40%]",
 news_78ff39b87f8a.jpg,,,,,,skip_image,"phòng mổ, không phải công trường",
 news_79c7b2c0b5ff.jpg,,,,,,skip_image,"cận cảnh tay cầm xe rùa, không thấy đầu",
 news_7cc144a421c0.jpg,,,,,,skip_image,"người đi đường cạnh rào công trường, không phải công nhân",
@@ -152,7 +152,7 @@ news_8e40907ebb52.jpg,3,,,,,pwh,,
 news_8e40907ebb52.jpg,4,,,,,pwh,,
 news_8e40907ebb52.jpg,5,,,,,pwh,nhìn từ sau,
 news_8e40907ebb52.jpg,6,,,,,pwh,,
-news_8e40907ebb52.jpg,7,,,,,pwh,bị che một phần,
+news_8e40907ebb52.jpg,7,,,,,ignore,bị che một phần [rà soát 2026-11-04: pwh → ignore: người phía sau bị người phía trước che > 40%],
 news_8e40907ebb52.jpg,8,,,,,pwh,,
 news_8e40907ebb52.jpg,9,,,,,pnh,"nón lá, bị che một phần",nón lá
 news_8e40907ebb52.jpg,10,,,,,pwh,"cúi người, bị che một phần",
@@ -174,13 +174,13 @@ news_9a88c91ac1a0.jpg,3,,,,,pwh,,
 news_9a88c91ac1a0.jpg,4,,,,,pwh,,
 news_9a88c91ac1a0.jpg,5,,,,,pwh,,
 news_9a88c91ac1a0.jpg,6,,,,,pnh,đầu trần,đầu trần
-news_9a88c91ac1a0.jpg,7,,,,,pwh,"đứng sau, bị che gần hết",
+news_9a88c91ac1a0.jpg,7,,,,,ignore,"đứng sau, bị che gần hết [rà soát 2026-11-04: pwh → ignore: đứng sau, bị che gần hết]",
 news_9a88c91ac1a0.jpg,8,,,,,pwh,,
 news_9a88c91ac1a0.jpg,9,,,,,pwh,,
 news_9a88c91ac1a0.jpg,10,,,,,drop,trùng khung 9 (chỉ nửa trên),
 news_9d365a8e44c5.jpg,0,,,,,pnh,"nón lá, cúi người (không chắc tách 2 người)",nón lá
 news_9d365a8e44c5.jpg,1,,,,,drop,"mép ảnh, tối, không thấy đầu",
-news_9d365a8e44c5.jpg,2,,,,,pnh,"mũ khác (mũ trùm áo), đứng sau (không chắc tách 2 người)",mũ khác
+news_9d365a8e44c5.jpg,2,,,,,ignore,"mũ khác (mũ trùm áo), đứng sau (không chắc tách 2 người) [rà soát 2026-11-04: pnh → ignore: người phía sau chỉ thấy đầu, thân bị người cúi phía trước che]",
 news_9d9e0b5c792a.jpg,0,,,,,pwh,ban đêm,
 news_9d9e0b5c792a.jpg,1,,,,,pwh,ban đêm,
 news_9d9e0b5c792a.jpg,2,,,,,pwh,ban đêm,
@@ -188,7 +188,7 @@ news_9d9e0b5c792a.jpg,3,,,,,pwh,ban đêm,
 news_9d9e0b5c792a.jpg,4,,,,,pwh,"ban đêm, mũ bảo hộ kèm khăn che",
 news_9d9e0b5c792a.jpg,5,,,,,pwh,ban đêm,
 news_9d9e0b5c792a.jpg,6,,,,,pwh,ban đêm,
-news_9d9e0b5c792a.jpg,7,,,,,pwh,"ban đêm, thân dưới bị che",
+news_9d9e0b5c792a.jpg,7,,,,,ignore,"ban đêm, thân dưới bị che [rà soát 2026-11-04: pwh → ignore: ban đêm, thân dưới bị người phía trước che > 40%]",
 news_a1c5c2edb9bb.jpg,,,,,,skip_image,công trường làm đường nhưng người quá nhỏ (cao 21-50 px),
 news_a4469e35b4ce.jpg,,,,,,skip_image,"người bán hàng rong, không phải công trường",
 news_a9159c55dfba.jpg,,,,,,skip_image,"cứu hộ cứu nạn (lính cứu hỏa), không phải cảnh thi công",
@@ -202,7 +202,7 @@ news_b2db2cbf8ab2.jpg,0,,,,,pnh,"nón lá, công trường phá dỡ",nón lá
 news_b35ef865053a.jpg,0,,,,,pnh,"đầu trần, công trường phá dỡ",đầu trần
 news_b3ec74853ab5.jpg,,,,,,skip_image,"văn phòng công an, không phải công trường",
 news_b6d8c4f5b226.jpg,,,,,,skip_image,"người giao hàng đi xe máy, không phải công trường",
-news_b8bac62def99.jpg,0,,,,,pwh,"hầm, thân dưới bị máy che",
+news_b8bac62def99.jpg,0,,,,,ignore,"hầm, thân dưới bị máy che [rà soát 2026-11-04: pwh → ignore: trong hầm, thân dưới bị máy che > 40%]",
 news_b8bac62def99.jpg,1,,,,,pwh,hầm,
 news_b9400df99382.jpg,,,,,,skip_image,công trường cầu nhưng người quá nhỏ (cao 53 px),
 news_ba670a787e8b.jpg,0,,,,,pnh,"nón lá, đẩy xe rùa cát",nón lá
@@ -237,9 +237,9 @@ news_d5f4fbdb94c3.jpg,0,,,,,pwh,,
 news_d5f4fbdb94c3.jpg,1,,,,,pwh,,
 news_d5f4fbdb94c3.jpg,2,,,,,pwh,,
 news_d5f4fbdb94c3.jpg,3,,,,,pwh,,
-news_d5f4fbdb94c3.jpg,,555.0,575.0,612.0,860.0,pwh,"thêm tay: người ngồi sau người 3, bị che gần hết",
+news_d5f4fbdb94c3.jpg,,555.0,575.0,612.0,860.0,ignore,"thêm tay: người ngồi sau người 3, bị che gần hết [rà soát 2026-11-04: pwh → ignore: người ngồi sau người khác, bị che gần hết]",
 news_d5f4fbdb94c3.jpg,4,,,,,pwh,,
-news_d5f4fbdb94c3.jpg,5,,,,,pwh,bị che thân dưới,
+news_d5f4fbdb94c3.jpg,5,,,,,ignore,"bị che thân dưới [rà soát 2026-11-04: pwh → ignore: người phía sau, thân bị người phía trước che > 40%]",
 news_d5f4fbdb94c3.jpg,6,,,,,pwh,,
 news_d5f4fbdb94c3.jpg,7,,,,,drop,không phải người (bình nước),
 news_da393956bf76.jpg,,,,,,skip_image,"cây xăng, người quá nhỏ",
@@ -259,14 +259,14 @@ news_e5c1f35cfdb3.jpg,0,,,,,pwh,,
 news_e5c1f35cfdb3.jpg,1,,,,,pwh,,
 news_e5c1f35cfdb3.jpg,2,,,,,pwh,,
 news_e5c1f35cfdb3.jpg,3,,,,,pwh,,
-news_e5c1f35cfdb3.jpg,4,,,,,pnh,"mũ lưỡi trai, trên xe lu phía sau (sửa khi rà lại hộp bị bỏ theo góp ý của anh)",mũ lưỡi trai
+news_e5c1f35cfdb3.jpg,4,,,,,ignore,"mũ lưỡi trai, trên xe lu phía sau (sửa khi rà lại hộp bị bỏ theo góp ý của anh) [rà soát 2026-11-04: pnh → ignore: người trên xe lu phía sau, bị xe / người che > 40%]",
 news_e7740f9b697e.jpg,,,,,,skip_image,"gian hàng hội chợ, không phải công trường",
 news_e92aef11792a.jpg,0,,,,,pwh,mũ bảo hộ kèm kính che mặt,
 news_e92aef11792a.jpg,1,,,,,pwh,,
 news_e92aef11792a.jpg,2,,,,,pwh,,
 news_eca0adb962ba.jpg,,,,,,skip_image,"phun thuốc trong nhà, không phải công trường",
 news_f3ec84093bac.jpg,0,,,,,pnh,mũ vải rằn ri,mũ vải
-news_f3ec84093bac.jpg,1,,,,,pwh,"mũ bảo hộ tối màu gắn vải che gáy, nhìn từ sau (không chắc)",
+news_f3ec84093bac.jpg,1,,,,,ignore,"mũ bảo hộ tối màu gắn vải che gáy, nhìn từ sau (không chắc) [rà soát 2026-11-04: pwh → ignore: người phía sau, thân bị người phía trước che > 40%]",
 news_f43e729b4780.jpg,0,,,,,pwh,,
 news_f43e729b4780.jpg,1,,,,,pwh,,
 news_f43e729b4780.jpg,2,,,,,pwh,,
@@ -275,7 +275,7 @@ news_f43e729b4780.jpg,4,,,,,pwh,,
 news_f43e729b4780.jpg,5,,,,,pwh,,
 news_f43e729b4780.jpg,6,,,,,pwh,,
 news_f43e729b4780.jpg,7,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
-news_f43e729b4780.jpg,8,,,,,pwh,"đứng sau, bị che",
+news_f43e729b4780.jpg,8,,,,,ignore,"đứng sau, bị che [rà soát 2026-11-04: pwh → ignore: đứng sau, bị người phía trước che > 40%]",
 news_f43e729b4780.jpg,9,,,,,drop,"mép ảnh, không thấy đầu",
 news_f43e729b4780.jpg,10,,,,,pwh,"mép ảnh, bị cắt một nửa",
 news_f7d8989c7d25.jpg,0,,,,,pnh,mũ vải rộng vành,mũ vải

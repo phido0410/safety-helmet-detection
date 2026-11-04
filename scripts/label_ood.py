@@ -1,10 +1,10 @@
 """Tuần 9: gán nhãn tập ngoài miền (data/ood/images) cho 2 lớp person_with_helmet / person_no_helmet.
 
 YOLO26l COCO (không phải M2, không biết gì về mũ) chỉ đề xuất khung người; người gán nhãn xem từng ảnh để bỏ khung sai, thêm
-người bị sót, quyết định đội mũ bảo hộ hay không. Quy tắc (chốt trước khi xem ảnh): gán mọi người có vùng đầu nhìn thấy và đủ
-lớn để phán đoán (đầu cao khoảng ≥ 12 px); mũ không phải mũ bảo hộ (mũ vải, mũ lưỡi trai, nón lá) = không đội; khung bao phần
-thân nhìn thấy; người không thấy đầu hoặc quá nhỏ thì không gán (ghi lại trong cột note); ảnh không phải công trường hoặc
-không còn người nào gán được thì bỏ.
+người bị sót, quyết định đội mũ bảo hộ hay không. Quy tắc đầy đủ (gộp các lần sinh viên kiểm tra phiếu, bản 2026-11-04):
+docs/huong_dan_gan_nhan_ngoai_mien.md. Tóm tắt: gán mọi người trong cảnh công trường có đầu phán đoán được; mũ không phải mũ
+bảo hộ = không đội; mỗi người một hộp; người bị người / vật khác che > 40% cơ thể thì không gán mà ghi vùng bỏ qua (ignore);
+ảnh không phải công trường hoặc không còn người nào gán được thì bỏ.
 
     .venv/bin/python scripts/label_ood.py propose     # khung đề xuất + ảnh duyệt (lưới tọa độ) + ảnh cắt từng người
     .venv/bin/python scripts/label_ood.py sheets      # chỉ vẽ lại ảnh cắt từ proposals.json (không chạy lại YOLO)
@@ -73,17 +73,18 @@ if args.step in ("propose", "sheets"):
     print(f"{len(images)} ảnh, {sum(map(len, props.values()))} khung đề xuất, {(len(crops) + 23) // 24} ảnh ghép")
 if args.step == "build":
     # labels_review.csv: image, box (số khung đề xuất hoặc trống nếu thêm tay), x1, y1, x2, y2 (khi thêm/sửa), cls (pwh, pnh,
-    # drop = bỏ khung đề xuất sai, skip_image = bỏ cả ảnh), note, headwear (người không đội mũ bảo hộ: đầu trần, nón lá, mũ vải,
-    # mũ lưỡi trai, mũ cối, mũ khác, không rõ) → thêm boxes.csv (tọa độ pixel từng hộp + headwear) cho eval_ood.py
+    # drop = bỏ khung đề xuất sai, ignore = vùng bỏ qua: người bị người / vật che > 40% cơ thể, không gán nhưng mô hình phát hiện
+    # ra thì không tính là báo nhầm, skip_image = bỏ cả ảnh), note, headwear (người không đội mũ bảo hộ: đầu trần, nón lá, mũ vải,
+    # mũ lưỡi trai, mũ cối, mũ khác, không rõ) → thêm boxes.csv (tọa độ pixel từng hộp + headwear) và ignore.csv cho eval_ood.py
     props = json.loads((REPORT / "proposals.json").read_text())
     rv = pd.read_csv(REPORT / "labels_review.csv", dtype={"box": "Int64"})
-    assert rv["cls"].isin(["pwh", "pnh", "drop", "skip_image"]).all(), "cls không hợp lệ"
+    assert rv["cls"].isin(["pwh", "pnh", "drop", "ignore", "skip_image"]).all(), "cls không hợp lệ"
     skipped = set(rv.loc[rv["cls"] == "skip_image", "image"])
     decided = {(r.image, int(r.box)) for r in rv.itertuples() if pd.notna(r.box)}
     missing = [(im, i) for im, bs in props.items() if im not in skipped for i in range(len(bs)) if (im, i) not in decided]
     assert not missing, f"còn khung đề xuất chưa duyệt: {missing[:5]}"
     (OUT / "labels").mkdir(exist_ok=True)
-    counts, n_img, boxes = {"pwh": 0, "pnh": 0}, 0, []
+    counts, n_img, boxes, ignore = {"pwh": 0, "pnh": 0}, 0, [], []
     for p in images:
         if p.name in skipped:  # chuyển khỏi images/ để không bị tính là ảnh nền khi đánh giá
             (OUT / "skipped").mkdir(exist_ok=True)
@@ -100,14 +101,18 @@ if args.step == "build":
             counts[r.cls] += 1
             boxes.append({"image": p.name, "cls": r.cls, "x1": x1, "y1": y1, "x2": x2, "y2": y2,
                           "headwear": r.headwear if r.cls == "pnh" else ""})
+        for r in rv[(rv["image"] == p.name) & (rv["cls"] == "ignore")].itertuples():
+            x1, y1, x2, y2 = (props[p.name][int(r.box)][:4] if pd.isna(r.x1) else [r.x1, r.y1, r.x2, r.y2])
+            ignore.append({"image": p.name, "x1": max(0, x1), "y1": max(0, y1), "x2": min(W, x2), "y2": min(H, y2)})
         (OUT / "labels" / f"{p.stem}.txt").write_text("\n".join(lines) + ("\n" if lines else ""))
         n_img += 1
     (OUT / "ood.yaml").write_text("# Tập ngoài miền tuần 9 (chỉ đánh giá). Ultralytics tìm nhãn ở labels/ cạnh images/\n"
                                   "train: images\nval: images\ntest: images\nnc: 6\n"
                                   'names: ["helmet", "head", "head_with_helmet", "person_with_helmet", "person_no_helmet", "face"]\n')
     pd.DataFrame(boxes).to_csv(REPORT / "boxes.csv", index=False)
+    pd.DataFrame(ignore, columns=["image", "x1", "y1", "x2", "y2"]).to_csv(REPORT / "ignore.csv", index=False)
     summary = (f"{n_img} ảnh được gán nhãn ({len(skipped)} ảnh bị bỏ: không phải công trường hoặc không có người gán được); "
-               f"person_with_helmet {counts['pwh']} hộp, person_no_helmet {counts['pnh']} hộp")
+               f"person_with_helmet {counts['pwh']} hộp, person_no_helmet {counts['pnh']} hộp, vùng bỏ qua {len(ignore)}")
     print(summary)
     (REPORT / "labels_output.txt").write_text(summary + "\n")
 if args.step == "check":  # ảnh lấy từ mạng nên phiếu để ở data/ood/review (không commit)
@@ -119,6 +124,9 @@ if args.step == "check":  # ảnh lấy từ mạng nên phiếu để ở data/
     for k, name in enumerate(pick, 1):
         img = Image.open(OUT / "images" / name).convert("RGB")
         d = ImageDraw.Draw(img)
+        ign = pd.read_csv(REPORT / "ignore.csv") if (REPORT / "ignore.csv").exists() else pd.DataFrame(columns=["image"])
+        for b in ign[ign["image"] == name].itertuples():  # vùng bỏ qua: xám, nét mảnh
+            d.rectangle([b.x1, b.y1, b.x2, b.y2], outline="#9a9a9a", width=max(1, img.width // 800))
         for i, b in enumerate(boxes[boxes["image"] == name].itertuples()):
             d.rectangle([b.x1, b.y1, b.x2, b.y2], outline=COLORS[b.cls], width=max(2, img.width // 400))
             d.text((b.x1 + 3, b.y1 + 3), f"{i} {b.cls}", fill="white", font=FONT, stroke_width=3, stroke_fill=COLORS[b.cls])

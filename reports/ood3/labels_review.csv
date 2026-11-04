@@ -82,13 +82,13 @@ news_4ec00184254e.jpg,1,,,,,pwh,,
 news_4ec00184254e.jpg,2,,,,,pwh,,
 news_4ec00184254e.jpg,3,,,,,pwh,,
 news_5495bbe346c8.jpg,0,,,,,pnh,mũ vải rộng vành (mũ tai bèo),mũ vải
-news_5495bbe346c8.jpg,1,,,,,drop,"lái máy ủi phía sau, mờ do lấy nét",
+news_5495bbe346c8.jpg,1,,,,,ignore,"lái máy ủi phía sau, mờ do lấy nét [rà soát 2026-11-04: drop → ignore: lái máy ủi phía sau, bị máy che > 40%]",
 news_5495bbe346c8.jpg,2,,,,,drop,trùng khung 1,
 news_557226b5ee03.jpg,0,,,,,pwh,"ban đêm, thảm nhựa",
 news_557226b5ee03.jpg,1,,,,,pwh,ban đêm,
-news_557226b5ee03.jpg,2,,,,,drop,"lái máy, đầu bị khói và vật che, không phán đoán được mũ",
+news_557226b5ee03.jpg,2,,,,,ignore,"lái máy, đầu bị khói và vật che, không phán đoán được mũ [rà soát 2026-11-04: drop → ignore: lái máy rải thảm, bị máy và khói che > 40%]",
 news_557226b5ee03.jpg,3,,,,,pwh,"ban đêm, cúi người",
-news_557226b5ee03.jpg,4,,,,,drop,"mép trái, đầu bị che",
+news_557226b5ee03.jpg,4,,,,,ignore,"mép trái, đầu bị che [rà soát 2026-11-04: drop → ignore: người phía sau, đầu và thân bị người cúi phía trước che > 40%]",
 news_55c6a1742b52.jpg,,,,,,skip_image,"lễ khen thưởng trên sân khấu, không phải công trường",
 news_57a629aef76f.jpg,0,,,,,pnh,"nón lá, ngồi nghỉ cạnh công trường phá dỡ",nón lá
 news_5efa6b931870.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
@@ -110,7 +110,7 @@ news_6883cfa3489d.jpg,3,,,,,pwh,ban đêm,
 news_6883cfa3489d.jpg,4,,,,,pwh,"ban đêm, tiền cảnh mờ",
 news_6883cfa3489d.jpg,5,,,,,pnh,"đầu trần, ban đêm",đầu trần
 news_6883cfa3489d.jpg,6,,,,,drop,khung gộp người 4 và người phía sau,
-news_6883cfa3489d.jpg,7,,,,,pnh,"đầu trần, đứng sau người 4, bị che phần lớn thân",đầu trần
+news_6883cfa3489d.jpg,7,,,,,ignore,"đầu trần, đứng sau người 4, bị che phần lớn thân [rà soát 2026-11-04: pnh → ignore: đứng sau người 4, bị che phần lớn thân]",
 news_6b37d7fc5554.jpg,,,,,,skip_image,"nhân viên y tế cấp cứu tai nạn xe, không phải công trường",
 news_6bc3bcc56bc9.jpg,0,,,,,pwh,"ban đêm, đặt cọc tiêu",
 news_6bc3bcc56bc9.jpg,1,,,,,drop,"mờ, ngược sáng, không phán đoán được mũ",
@@ -182,7 +182,7 @@ news_ba9d956204c1.jpg,0,,,,,pnh,"nón lá, ngồi buộc thép",nón lá
 news_ba9d956204c1.jpg,1,,,,,pnh,mũ khác (khăn trùm đầu + nón),mũ khác
 news_ba9d956204c1.jpg,2,,,,,pnh,"nón lá, nhìn từ sau",nón lá
 news_ba9d956204c1.jpg,3,,,,,pnh,nón lá,nón lá
-news_ba9d956204c1.jpg,4,,,,,pnh,"nón lá, thân bị tường che",nón lá
+news_ba9d956204c1.jpg,4,,,,,ignore,"nón lá, thân bị tường che [rà soát 2026-11-04: pnh → ignore: thân bị tường che, chỉ thấy đầu (vật che > 40%)]",
 news_be18d410b1c9.jpg,,,,,,skip_image,"đường phố đang sửa, người đi đường nhỏ, không rõ công nhân",
 news_be2ffc79d725.jpg,,,,,,skip_image,"đường phố trước rào công trường, người đi xe máy",
 news_c038f377785f.jpg,0,,,,,pwh,thợ hàn,
@@ -199,11 +199,11 @@ news_cd011ef47e50.jpg,,,,,,skip_image,"đường ban đêm, người duy nhất 
 news_cd35aa94e1ff.jpg,0,,,,,pwh,"ban đêm, đào mặt đường",
 news_cd35aa94e1ff.jpg,1,,,,,pwh,"ban đêm, mũ bảo hộ xanh",
 news_cd35aa94e1ff.jpg,2,,,,,pwh,"ban đêm, tiền cảnh",
-news_cd35aa94e1ff.jpg,3,,,,,pnh,"đầu trần, phía sau (sửa khi rà lại hộp bị bỏ)",đầu trần
+news_cd35aa94e1ff.jpg,3,,,,,ignore,"đầu trần, phía sau (sửa khi rà lại hộp bị bỏ) [rà soát 2026-11-04: pnh → ignore: người phía sau, thân bị người phía trước che > 40%]",
 news_cf40f678c24c.jpg,0,,,,,pwh,"ban đêm, cắt sắt",
 news_cf40f678c24c.jpg,1,,,,,pnh,"đầu trần, ban đêm, đứng xem",đầu trần
 news_cf40f678c24c.jpg,2,,,,,pwh,"ban đêm, nhỏ",
-news_cf40f678c24c.jpg,3,,,,,pwh,"chỉ thấy đầu đội mũ bảo hộ, thân bị che (sửa khi rà lại hộp bị bỏ)",
+news_cf40f678c24c.jpg,3,,,,,ignore,"chỉ thấy đầu đội mũ bảo hộ, thân bị che (sửa khi rà lại hộp bị bỏ) [rà soát 2026-11-04: pwh → ignore: chỉ thấy đầu, thân bị che]",
 news_d0a0d78b0bd4.jpg,,,,,,skip_image,"người dân xếp hàng nộp hồ sơ, không phải công trường",
 news_d1223eabbded.jpg,,,,,,skip_image,"chân dung người trùm áo khoác, không phải công trường",
 news_d1a3732350ed.jpg,0,,,,,pwh,"ban đêm, thảm nhựa",
@@ -249,7 +249,7 @@ news_fb768c995df7.jpg,1,,,,,pwh,ban đêm,
 news_fb768c995df7.jpg,2,,,,,pwh,ban đêm,
 news_fb768c995df7.jpg,3,,,,,pwh,ban đêm,
 news_fb768c995df7.jpg,4,,,,,pwh,ban đêm,
-news_fb768c995df7.jpg,5,,,,,drop,"mờ, bị che, không phán đoán được mũ",
+news_fb768c995df7.jpg,5,,,,,ignore,"mờ, bị che, không phán đoán được mũ [rà soát 2026-11-04: drop → ignore: người phía sau, bị che > 40%]",
 news_fb768c995df7.jpg,6,,,,,drop,"phía xa, nhỏ",
 news_fb768c995df7.jpg,7,,,,,drop,"mép, bị cắt",
 news_fd3b269d5382.jpg,,,,,,skip_image,"cận cảnh tay đếm tiền, không thấy đầu",

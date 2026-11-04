@@ -1,7 +1,7 @@
 image,box,x1,y1,x2,y2,cls,note,headwear
 news_03af7bbfe47d.jpg,0,,,,,pwh,thợ điện trên xe nâng,
 news_03af7bbfe47d.jpg,1,,,,,pwh,thợ điện trên xe nâng,
-news_03af7bbfe47d.jpg,2,,,,,pwh,bị che thân dưới,
+news_03af7bbfe47d.jpg,2,,,,,ignore,"bị che thân dưới [rà soát 2026-11-04: pwh → ignore: thợ điện trong gầu xe nâng, thân bị gầu che > 40%]",
 news_03af7bbfe47d.jpg,3,,,,,drop,chỉ là tay của người 1,
 news_08a3657a82c2.jpg,0,,,,,pnh,"mũ lưỡi trai, đo đạc cắm cọc dự án",mũ lưỡi trai
 news_08a3657a82c2.jpg,1,,,,,pnh,"mũ lưỡi trai, đo đạc cắm cọc dự án",mũ lưỡi trai
@@ -17,7 +17,7 @@ news_0bf45ba8a640.jpg,1,,,,,pnh,"nón lá, mép ảnh",nón lá
 news_1a04dea49f39.jpg,,,,,,skip_image,"ảnh đồ họa trích dẫn, không phải cảnh công trường",
 news_1e9a16faf26b.jpg,,,,,,skip_image,"ảnh flycam, người quá nhỏ",
 news_204e50961678.jpg,0,,,,,pwh,thợ điện trên xe nâng,
-news_204e50961678.jpg,1,,,,,pwh,"thợ điện, bị che thân",
+news_204e50961678.jpg,1,,,,,ignore,"thợ điện, bị che thân [rà soát 2026-11-04: pwh → ignore: thợ điện trong gầu xe nâng, thân bị gầu che > 40%]",
 news_211120270351.jpg,,,,,,skip_image,"người đi xe máy cạnh công trường, quá nhỏ",
 news_21a1a4ae7da3.jpg,,,,,,skip_image,"người đi xe đạp, không phải công trường",
 news_2628b22b0ce1.jpg,0,,,,,pnh,"mũ vải tối màu, ở xa (cao 92 px)",mũ vải
@@ -26,7 +26,7 @@ news_2628b22b0ce1.jpg,2,,,,,drop,quá nhỏ (cao 32 px),
 news_284387337699.jpg,0,,,,,pnh,"mũ lưỡi trai đội ngược, đo đạc cắm cọc",mũ lưỡi trai
 news_284387337699.jpg,1,,,,,drop,"phóng viên ở mép ảnh, đầu bị máy quay che",
 news_284387337699.jpg,2,,,,,pnh,"đầu trần, vác cọc mốc trên vai",đầu trần
-news_284387337699.jpg,3,,,,,pnh,"mũ lưỡi trai, thân bị che",mũ lưỡi trai
+news_284387337699.jpg,3,,,,,ignore,"mũ lưỡi trai, thân bị che [rà soát 2026-11-04: pnh → ignore: người phía sau, thân bị người phía trước che > 40%]",
 news_284387337699.jpg,4,,,,,pnh,"mũ lưỡi trai, phóng viên cầm máy quay",mũ lưỡi trai
 news_284387337699.jpg,5,,,,,drop,khung gộp người 0 và 2,
 news_2b4cfee202d4.jpg,0,,,,,pnh,"mũ lưỡi trai, mặt bị cọc mốc che",mũ lưỡi trai
@@ -37,7 +37,7 @@ news_31210caaac5e.jpg,1,,,,,pnh,mũ cối,mũ cối
 news_31210caaac5e.jpg,2,,,,,pnh,"mũ cói rộng vành, cúi người",mũ vải
 news_31210caaac5e.jpg,3,,,,,pnh,"đầu trần, đứng sau",đầu trần
 news_31210caaac5e.jpg,4,,,,,drop,trùng khung 3,
-news_31210caaac5e.jpg,5,,,,,pnh,"mũ khác (mũ xanh có vành), thân bị che (sửa khi rà lại hộp bị bỏ theo góp ý của anh)",mũ khác
+news_31210caaac5e.jpg,5,,,,,ignore,"mũ khác (mũ xanh có vành), thân bị che (sửa khi rà lại hộp bị bỏ theo góp ý của anh) [rà soát 2026-11-04: pnh → ignore: người ở mép phía sau, thân bị người phía trước che > 40%]",
 news_31210caaac5e.jpg,6,,,,,drop,quá nhỏ (cao 44 px),
 news_350e44f15777.jpg,0,,,,,pwh,,
 news_381ed1e61099.jpg,,,,,,skip_image,"người đi xe máy ngoài rào công trường, không phải công nhân",
@@ -58,7 +58,7 @@ news_4e777bd39af2.jpg,1,,,,,pwh,ở xa (cao 88 px),
 news_4e935c5d39da.jpg,0,,,,,pwh,mũ bảo hộ gắn vành che nắng,
 news_4e935c5d39da.jpg,1,,,,,pwh,mũ bảo hộ gắn vành che nắng,
 news_4e935c5d39da.jpg,2,,,,,pwh,mép ảnh,
-news_4e935c5d39da.jpg,3,,,,,pwh,mũ bảo hộ gắn vành che nắng,
+news_4e935c5d39da.jpg,3,,,,,ignore,"mũ bảo hộ gắn vành che nắng [rà soát 2026-11-04: pwh → ignore: người phía sau, thân dưới bị người cúi phía trước che > 40%]",
 news_586a54da8fd0.jpg,,,,,,skip_image,"phiên tòa, không phải công trường",
 news_5e1fc8e947e5.jpg,,,,,,skip_image,"người bán rau ngoài đường, không phải công trường",
 news_6028977faf2a.jpg,0,,,,,pwh,,
@@ -99,10 +99,10 @@ news_964b357bb808.jpg,0,,,,,pwh,,
 news_964b357bb808.jpg,1,,,,,pwh,,
 news_964b357bb808.jpg,2,,,,,pwh,,
 news_964b357bb808.jpg,3,,,,,pwh,,
-news_964b357bb808.jpg,4,,,,,pwh,,
+news_964b357bb808.jpg,4,,,,,ignore,"[rà soát 2026-11-04: pwh → ignore: người đứng hàng sau, thân dưới bị người ngồi trước che > 40%]",
 news_964b357bb808.jpg,5,,,,,drop,trùng khung 4 (chỉ nửa trên),
 news_964b357bb808.jpg,6,,,,,drop,trùng khung 3,
-news_964b357bb808.jpg,,620.0,455.0,900.0,1000.0,pwh,"thêm tay: người ngồi sau, YOLO bỏ sót",
+news_964b357bb808.jpg,,620.0,455.0,900.0,1000.0,ignore,"thêm tay: người ngồi sau, YOLO bỏ sót [rà soát 2026-11-04: pwh → ignore: người ngồi giữa, thân dưới bị người phía trước che > 40%]",
 news_964b530e8e05.jpg,0,,,,,pwh,mũ bảo hộ gắn vành che nắng đen,
 news_964b530e8e05.jpg,1,,,,,drop,"khung bao cả ảnh, trùng khung 0",
 news_96dc4b51209f.jpg,,,,,,skip_image,"cận cảnh chân, không thấy đầu",
@@ -159,17 +159,17 @@ news_e605e6bd38fe.jpg,0,,,,,pnh,"nón lá, xây tường",nón lá
 news_e6b344cab97f.jpg,0,,,,,pnh,"đầu trần, nhìn từ sau",đầu trần
 news_e6b344cab97f.jpg,1,,,,,pwh,nhìn từ sau,
 news_ec56fcba04df.jpg,0,,,,,pnh,mũ cối,mũ cối
-news_ec56fcba04df.jpg,1,,,,,pnh,"đầu trần, cúi người",đầu trần
+news_ec56fcba04df.jpg,1,,,,,ignore,"đầu trần, cúi người [rà soát 2026-11-04: pnh → ignore: người cúi phía sau, thân bị người đội nón lá và cột che > 40%]",
 news_ec56fcba04df.jpg,2,,,,,pnh,"nón lá, cúi người",nón lá
 news_ec56fcba04df.jpg,3,,,,,drop,"mờ do lấy nét, không phán đoán được mũ",
-news_ec56fcba04df.jpg,4,,,,,drop,"tối, bị che, không phán đoán được mũ",
+news_ec56fcba04df.jpg,4,,,,,ignore,"tối, bị che, không phán đoán được mũ [rà soát 2026-11-04: drop → ignore: người phía sau trong tối, bị che > 40%]",
 news_edb2048b1549.jpg,0,,,,,pwh,thợ điện,
 news_edb2048b1549.jpg,1,,,,,pwh,thợ điện,
 news_edb2048b1549.jpg,2,,,,,pwh,thợ điện,
 news_edb2048b1549.jpg,3,,,,,pwh,thợ điện,
 news_edb2048b1549.jpg,4,,,,,drop,"người đi xe máy phía sau, nhỏ",
 news_edb2048b1549.jpg,5,,,,,drop,"người đi xe máy, không phải công nhân",
-news_edb2048b1549.jpg,6,,,,,pwh,"thợ điện, bị che một phần",
+news_edb2048b1549.jpg,6,,,,,ignore,"thợ điện, bị che một phần [rà soát 2026-11-04: pwh → ignore: thợ điện đứng giữa, thân bị người phía trước che > 40%]",
 news_f03e8b983d8b.jpg,0,,,,,pnh,mũ vải (bucket),mũ vải
 news_f03e8b983d8b.jpg,1,,,,,pnh,mũ vải (bucket),mũ vải
 news_f03e8b983d8b.jpg,2,,,,,drop,"phía sau, mờ do lấy nét",

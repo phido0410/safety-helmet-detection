@@ -47,7 +47,6 @@ mixkit_23511_006.0s.jpg,pwh,518.2,139.3,782.7,711.7,,person_with_helmet,person_w
 mixkit_23511_009.0s.jpg,pwh,772.9,146.2,1057.4,712.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),354.12499999999994,≥ 160
 mixkit_23511_009.0s.jpg,pwh,220.2,139.2,540.9,711.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),357.625,≥ 160
 mixkit_23511_009.0s.jpg,pwh,499.8,138.6,766.8,714.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),359.625,≥ 160
-mixkit_23511_009.0s.jpg,pnh,753.9,518.4,815.6,631.7,đầu trần,bỏ sót,person_no_helmet,đầu trần,70.81250000000004,40–80
 mixkit_23511_012.0s.jpg,pwh,788.9,109.8,1042.0,713.2,,person_with_helmet,person_with_helmet,(mũ bảo hộ),377.12500000000006,≥ 160
 mixkit_23511_012.0s.jpg,pwh,492.4,137.6,740.8,714.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),360.43749999999994,≥ 160
 mixkit_23511_012.0s.jpg,pwh,169.2,129.8,493.0,714.5,,person_with_helmet,person_with_helmet,(mũ bảo hộ),365.4375,≥ 160
@@ -74,7 +73,6 @@ mixkit_32296_000.0s.jpg,pwh,289.0,325.0,335.0,395.0,,bỏ sót,person_with_helme
 mixkit_32296_000.0s.jpg,pnh,555.8,268.0,604.3,356.9,đầu trần,person_with_helmet,person_no_helmet,đầu trần,55.562499999999986,40–80
 mixkit_32296_000.0s.jpg,pwh,915.0,278.2,964.1,334.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),35.12499999999999,< 40
 mixkit_32296_000.0s.jpg,pwh,728.2,254.2,812.8,372.9,,person_with_helmet,person_with_helmet,(mũ bảo hộ),74.1875,40–80
-mixkit_32296_000.0s.jpg,pwh,1040.0,282.0,1076.0,306.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),15.0,< 40
 mixkit_4648_000.0s.jpg,pwh,557.9,64.1,851.8,711.4,,person_with_helmet,person_with_helmet,(mũ bảo hộ),404.5625,≥ 160
 mixkit_4648_000.0s.jpg,pwh,5.6,1.7,604.9,711.0,,person_with_helmet,person_with_helmet,(mũ bảo hộ),443.3125,≥ 160
 mixkit_4648_000.0s.jpg,pwh,349.6,58.6,621.8,710.8,,person_with_helmet,person_with_helmet,(mũ bảo hộ),407.62499999999994,≥ 160
@@ -186,8 +184,6 @@ news_93e3751b3523.jpg,pwh,94.8,326.9,144.6,440.0,,bỏ sót,person_with_helmet,(
 news_9613d1db785b.jpg,pnh,681.0,358.2,830.4,519.0,mũ vải,person_with_helmet,person_no_helmet,mũ vải,85.76,80–160
 news_98ddef493468.jpg,pnh,331.5,13.0,1114.3,989.1,nón lá,person_with_helmet,person_no_helmet,nón lá,520.5866666666667,≥ 160
 news_9a2ab3fc6962.jpg,pnh,340.5,1.7,898.2,592.0,mũ vải,bỏ sót,person_no_helmet,mũ vải,524.711111111111,≥ 160
-news_9a2ab3fc6962.jpg,pwh,140.0,0.0,345.0,330.0,,bỏ sót,person_with_helmet,(mũ bảo hộ),293.3333333333333,≥ 160
-news_9a2ab3fc6962.jpg,pnh,441.3,369.9,686.6,596.8,mũ vải,bỏ sót,person_no_helmet,mũ vải,201.68888888888887,≥ 160
 news_9a2ab3fc6962.jpg,pwh,0.2,274.4,67.1,422.5,,bỏ sót,person_with_helmet,(mũ bảo hộ),131.64444444444445,80–160
 news_a72616bb0118.jpg,pnh,326.2,144.2,405.9,338.5,mũ vải,person_with_helmet,person_no_helmet,mũ vải,242.875,≥ 160
 news_a72616bb0118.jpg,pwh,20.2,188.6,96.6,361.3,,person_with_helmet,person_with_helmet,(mũ bảo hộ),215.87500000000003,≥ 160
@@ -240,9 +236,8 @@ news_f56f806b9e5c.jpg,pwh,206.7,372.0,288.3,560.4,,person_with_helmet,person_wit
 news_f5cba2638496.jpg,pnh,229.1,366.5,292.6,513.1,mũ vải,person_with_helmet,person_no_helmet,mũ vải,130.31111111111113,80–160
 news_f7ada4720fdd.jpg,pnh,0.1,294.8,76.1,504.8,mũ khác,person_with_helmet,person_no_helmet,mũ khác,186.66666666666666,≥ 160
 news_f7ada4720fdd.jpg,pnh,639.2,257.2,720.9,500.2,mũ vải,person_with_helmet,person_no_helmet,mũ vải,216.0,≥ 160
-news_f7ada4720fdd.jpg,pnh,399.3,299.6,503.3,558.5,mũ lưỡi trai,person_with_helmet,person_no_helmet,mũ lưỡi trai,230.1333333333333,≥ 160
+news_f7ada4720fdd.jpg,pnh,399.3,299.6,503.3,558.5,nón lá,person_with_helmet,person_no_helmet,nón lá,230.1333333333333,≥ 160
 news_f7ada4720fdd.jpg,pnh,476.4,265.0,541.6,523.2,mũ vải,person_with_helmet,person_no_helmet,mũ vải,229.51111111111115,≥ 160
 news_f7ada4720fdd.jpg,pnh,212.2,271.8,254.9,469.2,mũ vải,person_with_helmet,person_no_helmet,mũ vải,175.46666666666664,≥ 160
 news_f7ada4720fdd.jpg,pnh,363.3,313.1,423.3,517.1,mũ vải,person_with_helmet,person_no_helmet,mũ vải,181.33333333333331,≥ 160
-news_f7ada4720fdd.jpg,pnh,405.0,300.0,470.0,520.0,nón lá,bỏ sót,person_no_helmet,nón lá,195.55555555555554,≥ 160
 news_feb0da7e23ac.jpg,pnh,350.0,22.8,1150.7,965.4,nón lá,person_with_helmet,person_no_helmet,nón lá,502.72,≥ 160

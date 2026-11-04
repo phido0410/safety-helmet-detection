@@ -1,0 +1,8 @@
+runs/M0_yolo11n/weights/best.pt, lớp person_no_helmet, IoU 0,5, mục tiêu Recall ≥ 0.80
+Tập val (750 hộp):
+  ngưỡng lớn nhất còn Recall ≥ 0.80 (tuần 7): conf 0.346: Recall 0.801 (KTC 95% 0.771–0.828), Precision 0.823
+  ngưỡng lớn nhất có cận dưới KTC 95% ≥ 0.80 (chọn): conf 0.226: Recall 0.829 (KTC 95% 0.801–0.855), Precision 0.751
+Tập test (743 hộp), áp nguyên ngưỡng chọn trên val:
+  conf 0.346 (tuần 7): Recall 0.808 (KTC 95% 0.778–0.834), Precision 0.827
+  conf 0.226 (chọn): Recall 0.842 (KTC 95% 0.815–0.867), Precision 0.750
+  mAP@0.5 = 0.896, mAP@0.5:0.95 = 0.584

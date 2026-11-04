@@ -60,7 +60,7 @@ mixkit_23511_006.0s.jpg,2,,,,,pwh,,
 mixkit_23511_009.0s.jpg,0,,,,,pwh,,
 mixkit_23511_009.0s.jpg,1,,,,,pwh,,
 mixkit_23511_009.0s.jpg,2,,,,,pwh,,
-mixkit_23511_009.0s.jpg,3,,,,,pnh,"người ở xa, bị che một phần",đầu trần
+mixkit_23511_009.0s.jpg,3,,,,,ignore,"người ở xa, bị che một phần [rà soát 2026-11-04: pnh → ignore: người ở xa bị hai người phía trước che > 40%]",
 mixkit_23511_012.0s.jpg,0,,,,,pwh,,
 mixkit_23511_012.0s.jpg,1,,,,,pwh,,
 mixkit_23511_012.0s.jpg,2,,,,,pwh,,
@@ -89,7 +89,7 @@ mixkit_32296_000.0s.jpg,2,,,,,pnh,"cúi người, vật màu cam là găng tay (
 mixkit_32296_000.0s.jpg,3,,,,,pwh,,
 mixkit_32296_000.0s.jpg,4,,,,,drop,trùng khung 5,
 mixkit_32296_000.0s.jpg,5,,,,,pwh,,
-mixkit_32296_000.0s.jpg,,1040.0,282.0,1076.0,306.0,pwh,"thêm tay: mũ vàng sau cốp pha, bị che gần hết; người ở x 865-905 không phán đoán được mũ, không gán",
+mixkit_32296_000.0s.jpg,,1040.0,282.0,1076.0,306.0,ignore,"thêm tay: mũ vàng sau cốp pha, bị che gần hết; người ở x 865-905 không phán đoán được mũ, không gán [rà soát 2026-11-04: pwh → ignore: người sau đống gỗ, chỉ thấy phần trên, bị che > 40%]",
 mixkit_4648_000.0s.jpg,0,,,,,pwh,,
 mixkit_4648_000.0s.jpg,1,,,,,pwh,,
 mixkit_4648_000.0s.jpg,2,,,,,pwh,,
@@ -149,7 +149,7 @@ news_1dbf0e13d6e9.jpg,12,,,,,drop,khung gộp 2 người 9 và 11,
 news_24fcd60e637f.jpg,,,,,,skip_image,"người duy nhất là tài xế sau kính cabin, không phán đoán được mũ",
 news_27df99f03375.jpg,,,,,,skip_image,"xưởng luyện thép, không phải công trường",
 news_297d3e272ac4.jpg,0,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
-news_297d3e272ac4.jpg,1,,,,,drop,"sau lưới che, không thấy đầu",
+news_297d3e272ac4.jpg,1,,,,,ignore,"sau lưới che, không thấy đầu [rà soát 2026-11-04: drop → ignore: người bị cột che, chỉ thấy chân và tay]",
 news_2a7f18cbd828.jpg,,,,,,skip_image,"nhà sách, không phải công trường",
 news_2a801183ca02.jpg,0,,,,,pnh,mũ vải,mũ vải
 news_2afe61b3640c.jpg,0,,,,,pwh,,
@@ -199,7 +199,7 @@ news_5896e38ebbab.jpg,0,,,,,pnh,mũ cối (không phải mũ bảo hộ),mũ c�
 news_5a169919ba51.jpg,,,,,,skip_image,"cứu hộ trên sông, không phải công trường",
 news_5ad67d705d4e.jpg,0,,,,,pwh,,
 news_5ad67d705d4e.jpg,1,,,,,pwh,mũ bảo hộ gắn vành che nắng,
-news_5ad67d705d4e.jpg,2,,,,,drop,đầu bị người 1 che hết,
+news_5ad67d705d4e.jpg,2,,,,,ignore,đầu bị người 1 che hết [rà soát 2026-11-04: drop → ignore: người phía sau bị người phía trước che > 40%],
 news_5ad67d705d4e.jpg,3,,,,,pwh,,
 news_5ad67d705d4e.jpg,4,,,,,drop,trùng khung 3,
 news_5e272d1017ba.jpg,0,,,,,pnh,nón lá,nón lá
@@ -250,8 +250,8 @@ news_97c62f89e30a.jpg,,,,,,skip_image,"ảnh minh họa thanh toán, không ph�
 news_98a7aab4404b.jpg,,,,,,skip_image,"đi trong rừng, không phải công trường",
 news_98ddef493468.jpg,0,,,,,pnh,nón lá,nón lá
 news_9a2ab3fc6962.jpg,0,,,,,pnh,mũ vải rằn ri,mũ vải
-news_9a2ab3fc6962.jpg,,140.0,0.0,345.0,330.0,pwh,"thêm tay: chỉ thấy mũ cam và một phần đầu, thân bị người 0 che",
-news_9a2ab3fc6962.jpg,1,,,,,pnh,"cúi người, mũ vải tối màu (không chắc)",mũ vải
+news_9a2ab3fc6962.jpg,,140.0,0.0,345.0,330.0,ignore,"thêm tay: chỉ thấy mũ cam và một phần đầu, thân bị người 0 che [rà soát 2026-11-04: pwh → ignore: người đội mũ cam bị người cúi phía trước che > 40%]",
+news_9a2ab3fc6962.jpg,1,,,,,ignore,"cúi người, mũ vải tối màu (không chắc) [rà soát 2026-11-04: pnh → ignore: người phía sau chỉ thấy mặt, thân bị người phía trước che]",
 news_9a2ab3fc6962.jpg,2,,,,,pwh,"mờ do lấy nét, mũ cam",
 news_9b1b779e5fc9.jpg,,,,,,skip_image,"người đi xe máy, không phải công trường",
 news_9c4254479209.jpg,,,,,,skip_image,"giao thông đường phố, không phải công trường",
@@ -262,7 +262,7 @@ news_a72616bb0118.jpg,0,,,,,pnh,mũ vải đỏ,mũ vải
 news_a72616bb0118.jpg,1,,,,,pwh,,
 news_a72616bb0118.jpg,2,,,,,pwh,,
 news_a72616bb0118.jpg,3,,,,,pwh,,
-news_a72616bb0118.jpg,4,,,,,drop,"đầu bị cột che, không phán đoán được mũ",
+news_a72616bb0118.jpg,4,,,,,ignore,"đầu bị cột che, không phán đoán được mũ [rà soát 2026-11-04: drop → ignore: người sau trụ bê tông, bị che > 40%]",
 news_a72616bb0118.jpg,,512.0,205.0,552.0,325.0,pwh,"thêm tay: người sau cốt thép mép phải, mũ cam",
 news_a8458deb1880.jpg,0,,,,,pnh,nón lá,nón lá
 news_a90773af11ad.jpg,0,,,,,pnh,nón lá,nón lá
@@ -330,12 +330,12 @@ news_f56f806b9e5c.jpg,1,,,,,pwh,,
 news_f5cba2638496.jpg,0,,,,,pnh,mũ vải,mũ vải
 news_f7ada4720fdd.jpg,0,,,,,pnh,mũ trùm áo khoác,mũ khác
 news_f7ada4720fdd.jpg,1,,,,,pnh,mũ vải rộng vành,mũ vải
-news_f7ada4720fdd.jpg,2,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
+news_f7ada4720fdd.jpg,2,,,,,pnh,"mũ lưỡi trai [rà soát 2026-11-04: pnh → pnh: cùng người với dòng 336 (áo xanh, nón lá); giữ khung đủ người này, sửa loại mũ]",nón lá
 news_f7ada4720fdd.jpg,3,,,,,pnh,mũ vải rộng vành,mũ vải
 news_f7ada4720fdd.jpg,4,,,,,pnh,mũ vải rộng vành,mũ vải
 news_f7ada4720fdd.jpg,5,,,,,drop,"mép ảnh, không thấy đầu",
 news_f7ada4720fdd.jpg,6,,,,,pnh,"mũ vải, bị người 2 che một phần",mũ vải
-news_f7ada4720fdd.jpg,7,405.0,300.0,470.0,520.0,pnh,"sửa: khung gộp, giữ người đội nón lá đứng giữa",nón lá
+news_f7ada4720fdd.jpg,7,405.0,300.0,470.0,520.0,drop,"sửa: khung gộp, giữ người đội nón lá đứng giữa [rà soát 2026-11-04: pnh → drop: trùng người của dòng 331 (một người một hộp)]",
 news_fbb8a8e54d80.jpg,,,,,,skip_image,"người bán hàng rong, không phải công trường",
 news_fc85346a7d16.jpg,,,,,,skip_image,"gian hàng hội chợ, không phải công trường",
 news_feb0da7e23ac.jpg,0,,,,,pnh,nón lá,nón lá

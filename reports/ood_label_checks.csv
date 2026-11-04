@@ -1,0 +1,10 @@
+set,checked,random,image,check_no,kind,note
+ood,25,20,,,,
+ood2,23,20,,,,
+ood2b,22,20,news_f20027131fc9.jpg,13,làm rõ quy tắc,2 người đội mũ bảo hiểm xe máy → có đội (quy tắc mới: mũ bảo hiểm xe máy = có đội)
+ood3,24,20,news_dda7a7ea53ae.jpg,3,lỗi gán,sót 3 người đầu trần ban đêm (dẫn tới rà lại mọi hộp bị bỏ ở các tập)
+ood3b,33,20,,,,
+ood4,52,20,news_06774acc11fb.jpg,1,lỗi gán,2 hộp cho cùng một người
+ood4,52,20,news_116e39fa1c37.jpg,3,lỗi gán,hộp đặt lên phần áo của người khác
+ood4,52,20,news_388e8bea0624.jpg,6,làm rõ quy tắc,người bị che > 40% → không gán (quy tắc mới: vùng bỏ qua)
+ood4,52,20,news_4478cd082b2c.jpg,8,lỗi gán,bỏ nhầm người cởi trần đứng trong cảnh công trường

@@ -1,1 +1,1 @@
-104 ảnh được gán nhãn (65 ảnh bị bỏ: không phải công trường hoặc không có người gán được); person_with_helmet 146 hộp, person_no_helmet 101 hộp
+104 ảnh được gán nhãn (65 ảnh bị bỏ: không phải công trường hoặc không có người gán được); person_with_helmet 144 hộp, person_no_helmet 98 hộp, vùng bỏ qua 7

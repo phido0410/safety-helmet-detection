@@ -5,7 +5,7 @@ news_019649ef5304.jpg,2,,,,,pwh,mũ vàng,
 news_019649ef5304.jpg,3,,,,,pwh,"cúi người, mũ vàng thấy một phần",
 news_019649ef5304.jpg,4,,,,,drop,khung gộp 2 người (khung 3 và 5),
 news_019649ef5304.jpg,5,,,,,pwh,mũ vàng đội trên nón vành rộng,
-news_019649ef5304.jpg,6,,,,,pwh,"mũ vàng, đứng sau",
+news_019649ef5304.jpg,6,,,,,ignore,"mũ vàng, đứng sau [rà soát 2026-11-04: pwh → ignore: người đứng sau, thân bị người phía trước che > 40%]",
 news_0b1910bfe1e9.jpg,,,,,,skip_image,"người rất nhỏ, mờ, phần lớn là người đi đường/xe máy cạnh công trường",
 news_0fe6f18e726e.jpg,0,,,,,pwh,"mũ trắng, xây tường",
 news_0fe6f18e726e.jpg,1,,,,,pwh,mũ trắng,
@@ -58,7 +58,7 @@ news_51701047482c.jpg,3,,,,,pnh,mũ lưỡi trai,mũ lưỡi trai
 news_51701047482c.jpg,4,,,,,pnh,"đầu trần, khẩu trang",đầu trần
 news_51701047482c.jpg,5,,,,,pnh,mũ vải tối màu rộng vành,mũ vải
 news_51701047482c.jpg,6,,,,,pnh,mũ vải hoa rộng vành,mũ vải
-news_51701047482c.jpg,,690.0,340.0,745.0,440.0,pnh,"thêm: đứng sau khung 4, bị giàn giáo che, không chắc",mũ lưỡi trai
+news_51701047482c.jpg,,690.0,340.0,745.0,440.0,ignore,"thêm: đứng sau khung 4, bị giàn giáo che, không chắc [rà soát 2026-11-04: pnh → ignore: người đứng sau khung 4, bị người và giàn giáo che > 40%]",
 news_51701047482c.jpg,,1095.0,405.0,1185.0,515.0,pnh,"thêm: cúi người sau giàn giáo, không chắc loại mũ",mũ cối
 news_5381512ed004.jpg,,,,,,skip_image,"ảnh chân dung trong văn phòng, không phải công trường",
 news_5859aff63ee4.jpg,0,,,,,drop,trùng khung 1 (phần thân dưới),
@@ -114,8 +114,8 @@ news_70c26578ae85.jpg,10,,,,,pnh,"mũ vải (mũ tai bèo), khăn che mặt",mũ
 news_70c26578ae85.jpg,11,,,,,pnh,"nón lá, trên mái",nón lá
 news_70c26578ae85.jpg,12,,,,,pnh,"mũ cối xanh, nằm cúi trên mái",mũ cối
 news_70c26578ae85.jpg,13,,,,,pnh,"nón lá, trên mái",nón lá
-news_70c26578ae85.jpg,,498.0,255.0,560.0,318.0,pnh,"thêm: người áo rằn ri ngồi cúi dưới khung 9, mũ tối màu, không chắc",không rõ
-news_70c26578ae85.jpg,,590.0,272.0,622.0,300.0,pnh,"thêm: sau tường, chỉ thấy đầu, nhỏ",đầu trần
+news_70c26578ae85.jpg,,498.0,255.0,560.0,318.0,ignore,"thêm: người áo rằn ri ngồi cúi dưới khung 9, mũ tối màu, không chắc [rà soát 2026-11-04: pnh → ignore: người ngồi cúi dưới người áo xanh, bị che > 40%]",
+news_70c26578ae85.jpg,,590.0,272.0,622.0,300.0,ignore,"thêm: sau tường, chỉ thấy đầu, nhỏ [rà soát 2026-11-04: pnh → ignore: sau tường, chỉ thấy đầu (vật che > 40%)]",
 news_734730ef44a8.jpg,,,,,,skip_image,"giao thông đường phố, toàn người đi xe máy",
 news_7387695c07b7.jpg,0,,,,,pnh,đầu trần,đầu trần
 news_7387695c07b7.jpg,1,,,,,pnh,nón lá,nón lá
@@ -219,7 +219,7 @@ news_db96bfaae241.jpg,9,,,,,pwh,"mũ bảo hiểm xe máy màu xám trên mái (
 news_db96bfaae241.jpg,10,,,,,pnh,"đầu trần, cởi trần, trên mái",đầu trần
 news_db96bfaae241.jpg,11,,,,,drop,"cúi người, không thấy đầu",
 news_db96bfaae241.jpg,12,,,,,pwh,mũ vàng,
-news_db96bfaae241.jpg,,585.0,635.0,640.0,690.0,pnh,"thêm: ngồi trên mái, mũ vải tối màu, không chắc",mũ vải
+news_db96bfaae241.jpg,,585.0,635.0,640.0,690.0,ignore,"thêm: ngồi trên mái, mũ vải tối màu, không chắc [rà soát 2026-11-04: pnh → ignore: người ngồi trên mái phía sau, bị người phía trước che > 40%]",
 news_dc04fb9e1677.jpg,,,,,,skip_image,"lễ công bố trong hội trường, không phải công trường",
 news_ddc675ad2c26.jpg,,,,,,skip_image,"giao thông đường phố, người đi xe máy",
 news_e50126d402de.jpg,0,,,,,pnh,"đầu trần, lắp cửa",đầu trần
@@ -243,7 +243,7 @@ news_648ba4f23759.jpg,,188.0,145.0,258.0,250.0,pnh,"thêm: mũ vải xanh, trên
 news_648ba4f23759.jpg,,1515.0,553.0,1562.0,597.0,pnh,"thêm: trong nhà, tối, nhỏ, không chắc (sót khi duyệt)",đầu trần
 news_c80be529e08a.jpg,,105.0,340.0,150.0,392.0,pnh,"thêm: ngồi ở ban công tầng 2, mũ vải tối màu rộng vành (sót khi duyệt)",mũ vải
 news_c80be529e08a.jpg,,645.0,685.0,675.0,745.0,pwh,"thêm: mũ cam, đứng sau cột, nhỏ (sót khi duyệt)",
-news_d8d7c1f4367c.jpg,,812.0,245.0,848.0,300.0,pnh,"thêm: trên mái, mũ vải màu nâu, bị cột che, không chắc (sót khi duyệt)",mũ vải
+news_d8d7c1f4367c.jpg,,812.0,245.0,848.0,300.0,ignore,"thêm: trên mái, mũ vải màu nâu, bị cột che, không chắc (sót khi duyệt) [rà soát 2026-11-04: pnh → ignore: trên mái, bị cột che > 40%]",
 news_d8d7c1f4367c.jpg,,848.0,252.0,895.0,300.0,pwh,"thêm: trên mái, mũ bảo hộ xanh nhạt, nhỏ, không chắc (sót khi duyệt)",
 news_d8d7c1f4367c.jpg,,1976.0,296.0,2000.0,352.0,pwh,"thêm: mũ trắng, mép phải (sót khi duyệt)",
 news_5a1c9eea263a.jpg,,1880.0,612.0,1940.0,678.0,pnh,"thêm: mũ lưỡi trai trắng, ngồi trên mái (sót khi duyệt)",mũ lưỡi trai
