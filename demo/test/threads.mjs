@@ -1,7 +1,7 @@
 // Kiểm tra chọn số luồng WASM (src/lib/model.js): Safari 26.2 treo khi chạy đa luồng nên phải chạy một luồng; Safari mới chạy
 // đa luồng; trình duyệt từng bị treo lần trước (dấu còn lại, cùng user agent, chưa quá 1 ngày) thì chạy một luồng, đổi phiên bản
 // hoặc dấu đã cũ thì thử lại (iPhone 11: dấu kẹt do rời trang lúc đang chạy thử, ứng dụng chạy một luồng mãi, chậm gấp đôi).
-import { singleThread } from "../src/lib/model.js";
+import { OOM_MESSAGE, pickBackend, retryOom, singleThread } from "../src/lib/model.js";
 
 const safari = (v) => `Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/${v} Mobile/15E148 Safari/604.1`;
 const NOW = Date.parse("2026-11-04T20:00:00+07:00");
@@ -21,5 +21,23 @@ let failed = 0;
 for (const [ua, hung, want, name] of cases) {
   if (singleThread(ua, hung, NOW) !== want) { failed++; console.log(`SAI: ${name}: phải ${want ? "một luồng" : "đa luồng"}`); }
 }
-console.log(`threads: ${cases.length} trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+// Chọn WASM hay WebGPU theo số đo trên chính máy (Safari không cho biết đời máy: iPhone 11 và 17 cùng ghi "iPhone OS 18_7", 4 nhân).
+// Số đo bench.html ở cỡ 800: iPhone 17 WASM 1 luồng 206 ms / WebGPU 54 ms; iPhone 11 WASM 229 / WebGPU 253. Chỉ chuyển khi WebGPU nhanh
+// rõ (dưới 80% thời gian WASM), tránh đổi qua lại vì sai số đo.
+const picks = [[206, 54, "webgpu", "iPhone 17"], [229, 253, "wasm", "iPhone 11"], [229, 200, "wasm", "WebGPU nhanh hơn chưa tới 20%"], [160, 50, "webgpu", "Chrome máy Mac"]];
+for (const [w, g, want, name] of picks) if (pickBackend(w, g) !== want) { failed++; console.log(`SAI: ${name}: WASM ${w} ms, WebGPU ${g} ms phải chọn ${want}`); }
+// Khởi tạo lỗi "Out of memory" (iPhone 17, tải lại ngay sau khi trang bị tắt): thử lại đúng một lần bằng bản nạp mới; lỗi khác không thử lại
+const oom = new RangeError("Out of memory"), other = new Error("no available backend found");
+const attempt = (errors) => { const tags = []; return { tags, open: async (tag) => { tags.push(tag); const e = errors.shift(); if (e) throw e; return "ok"; } }; };
+const retries = [
+  ["hết bộ nhớ một lần rồi được", [oom], "ok", ",?retry=1"],
+  ["hết bộ nhớ hai lần", [oom, oom], OOM_MESSAGE, ",?retry=1"],
+  ["lỗi khác không thử lại", [other], other.message, ""],
+  ["không lỗi", [], "ok", ""],
+];
+for (const [name, errors, want, tags] of retries) {
+  const a = attempt([...errors]), got = await retryOom(a.open, 0).catch((e) => e.message);
+  if (got !== want || a.tags.join() !== tags) { failed++; console.log(`SAI: ${name}: ${got} (lần thử: ${a.tags.join()})`); }
+}
+console.log(`threads: ${cases.length + picks.length + retries.length} trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thử chạy camera lâu</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.5 -apple-system, system-ui, sans-serif; margin: 0 auto; padding: 16px; max-width: 760px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  pre { font: 13px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; word-break: break-word; margin: 8px 0; }
+  button { font: inherit; padding: 10px 14px; border-radius: 10px; border: 1px solid #888; background: #1baf7a; color: #fff; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+  video { width: 160px; display: block; }
+</style>
+</head>
+<body>
+<h1>Thử chạy camera lâu</h1>
+<pre id="env"></pre>
+<pre id="history"></pre>
+<div class="row" id="buttons"></div>
+<pre id="log"></pre>
+<video id="cam" playsinline muted autoplay></video>
+<script type="module">
+// Tìm nguyên nhân Safari tắt trang sau khoảng 30 s camera trực tiếp bằng WebGPU: lặp lại đúng công việc mỗi khung của app (chép khung
+// camera ra canvas 1280, tiền xử lý, session.run, hậu xử lý) theo từng cách chạy, không có giao diện. Tiến độ ghi vào localStorage mỗi
+// giây, nên sau khi Safari tải lại trang vẫn biết cách đó sống được bao nhiêu khung. Đếm số bind group còn sống bằng FinalizationRegistry
+// (onnxruntime #33750: WebGPU EP tạo bind group mới cho mỗi dispatch, WebKit chỉ thu hồi khi GC).
+import { preprocess, postprocess } from "./detector.js";
+import { singleThread, captureInfer, GPU_OPTIONS } from "./src/lib/model.js";
+
+const url = (path) => new URL(path, document.baseURI).href, $ = (id) => document.getElementById(id);
+const KEY = "helmetcheck-stress", FRAME_MAX_SIDE = 1280;
+const VARIANTS = {
+  base: { label: "Như app (giữ cả WASM + WebGPU)", wasm: true, gpu: {} },
+  gpu: { label: "Chỉ WebGPU", gpu: {} },
+  gc: { label: "Chỉ WebGPU + dọn rác 32 MB / 16 khung", gpu: {}, gcEvery: 16, gcMB: 32 },
+  capture: { label: "Chỉ WebGPU + graph capture", gpu: GPU_OPTIONS, capture: true },
+  wasm: { label: "Chỉ WASM (đối chứng)", wasm: true },
+};
+
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? "[]"); } catch { return []; } };
+const save = (rows) => { try { localStorage.setItem(KEY, JSON.stringify(rows)); } catch { /* duyệt riêng tư: chỉ mất phần ghi lại */ } };
+const showHistory = () => {
+  $("history").textContent = load().map((r) => `${r.v}: ${r.frames} khung, ${r.s} s, ${r.ms} ms/khung, bind group tạo ${r.made}, chưa thu hồi ${r.live}${r.note ? ", " + r.note : ""}${r.ended ? ", tự dừng" : ", trang bị tắt?"}`).join("\n") || "Chưa có lần chạy nào.";
+};
+
+const counts = { made: 0, live: 0, encoders: 0, buffers: 0 };
+const registry = new FinalizationRegistry(() => { counts.live--; });
+function watchGpu() {
+  if (!globalThis.GPUDevice) return;
+  const P = GPUDevice.prototype, { createBindGroup, createCommandEncoder, createBuffer } = P;
+  P.createBindGroup = function (d) { const g = createBindGroup.call(this, d); counts.made++; counts.live++; registry.register(g, 0); return g; };
+  P.createCommandEncoder = function (d) { counts.encoders++; return createCommandEncoder.call(this, d); };
+  P.createBuffer = function (d) { counts.buffers++; return createBuffer.call(this, d); };
+}
+
+async function bytesOf(path) { const res = await fetch(url(path)); if (!res.ok) throw new Error(`${path}: ${res.status}`); return new Uint8Array(await res.arrayBuffer()); }
+
+window.runStress = async function (v, { seconds = 300, fps = 0 } = {}) {
+  const opt = VARIANTS[v], cfg = await (await fetch(url("model/config.json"))).json();
+  const stats = window.stats = { v, frames: 0, s: 0, ms: 0, ...counts };
+  const bytes = await bytesOf(`model/${cfg.models[cfg.imgsz]}`);
+  const zero = () => new Float32Array(3 * cfg.imgsz * cfg.imgsz);
+  const rows = load(), row = { v, frames: 0, s: 0, ms: 0, made: 0, live: 0 };
+  rows.push(row); save(rows); showHistory();
+  let wasmSession;
+  if (opt.wasm) {
+    const ort = await import(/* @vite-ignore */ url("vendor/ort.wasm.min.mjs"));
+    ort.env.wasm.wasmPaths = url("vendor/");
+    if (singleThread(navigator.userAgent, null)) ort.env.wasm.numThreads = 1;
+    wasmSession = { ort, session: await ort.InferenceSession.create(bytes, { executionProviders: ["wasm"] }) };
+    await wasmSession.session.run({ [wasmSession.session.inputNames[0]]: new ort.Tensor("float32", zero(), [1, 3, cfg.imgsz, cfg.imgsz]) });
+  }
+  let active = wasmSession;
+  if (opt.gpu) {
+    const ort = await import(/* @vite-ignore */ url("vendor/ort.webgpu.min.mjs"));
+    Object.assign(ort.env.wasm, { wasmPaths: url("vendor/"), numThreads: 1 });
+    const session = await ort.InferenceSession.create(bytes, { executionProviders: ["webgpu"], ...opt.gpu });
+    active = { ort, session };
+  }
+  const { ort, session } = active, name = session.inputNames[0], shape = [1, 3, cfg.imgsz, cfg.imgsz];
+  const infer = opt.capture ? captureInfer(ort, session) : async (data) => (await session.run({ [name]: new ort.Tensor("float32", data, shape) }))[session.outputNames[0]].data;
+  const video = $("cam");
+  if (!video.srcObject) {
+    video.srcObject = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: "environment" }, width: { ideal: 1920 }, height: { ideal: 1080 } } });
+    await video.play();
+  }
+  const k = Math.min(1, FRAME_MAX_SIDE / Math.max(video.videoWidth, video.videoHeight));
+  const frame = document.createElement("canvas"), canvas = document.createElement("canvas");
+  frame.width = Math.round(video.videoWidth * k); frame.height = Math.round(video.videoHeight * k);
+  const t0 = performance.now(), times = [];
+  let lastSave = t0, nextAt = t0, keepGarbage;
+  const flush = (ended) => {
+    Object.assign(row, { frames: stats.frames, s: Math.round((performance.now() - t0) / 1000), ms: Math.round(stats.ms), made: counts.made, live: counts.live }, ended ? { ended: true } : {});
+    Object.assign(stats, row, counts);
+    save(rows);
+    $("log").textContent = `${opt.label}\n${row.frames} khung, ${row.s} s, ${row.ms} ms/khung\nbind group: tạo ${counts.made}, chưa thu hồi ${counts.live}; encoder ${counts.encoders}; buffer ${counts.buffers}`;
+  };
+  while (performance.now() - t0 < seconds * 1000) {
+    await new Promise((r) => (video.requestVideoFrameCallback ? video.requestVideoFrameCallback(r) : requestAnimationFrame(r)));
+    if (fps && performance.now() < nextAt) continue;
+    nextAt = performance.now() + (fps ? 1000 / fps : 0);
+    frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
+    const t = performance.now();
+    const { data } = preprocess(frame, frame.width, frame.height, cfg.imgsz, canvas);
+    postprocess(await infer(data), cfg.names.length, cfg);
+    times.push(performance.now() - t);
+    if (times.length > 30) times.shift();
+    stats.frames++;
+    stats.ms = [...times].sort((a, b) => a - b)[times.length >> 1];
+    if (opt.gcEvery && stats.frames % opt.gcEvery === 0) { keepGarbage = Array.from({ length: opt.gcMB }, () => new ArrayBuffer(1 << 20)); keepGarbage = null; }
+    if (performance.now() - lastSave > 1000) { lastSave = performance.now(); flush(false); await new Promise((r) => setTimeout(r)); }
+  }
+  flush(true);
+  showHistory();
+  return stats;
+};
+
+$("env").textContent = `${navigator.userAgent}\nWebGPU: ${navigator.gpu ? "có" : "không"}`;
+watchGpu();
+showHistory();
+for (const [v, o] of Object.entries(VARIANTS)) {
+  const b = document.createElement("button");
+  b.textContent = o.label;
+  b.onclick = () => { document.querySelectorAll("button").forEach((x) => (x.disabled = true)); window.runStress(v).catch((e) => { $("log").textContent = `Lỗi: ${e?.message ?? e}`; }); };
+  $("buttons").append(b);
+}
+const clear = document.createElement("button");
+clear.textContent = "Xóa kết quả";
+clear.onclick = () => { save([]); showHistory(); };
+$("buttons").append(clear);
+</script>
+</body>
+</html>

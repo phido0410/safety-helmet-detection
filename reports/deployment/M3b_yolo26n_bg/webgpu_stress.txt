@@ -1,0 +1,15 @@
+demo/stress.html trên iPhone 17 của Nam (2026-11-05 10:08–10:21), chép từ ảnh chụp màn hình trang (kết quả lưu trong localStorage của máy).
+Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1
+Mỗi khung: chép camera ra canvas 1280, tiền xử lý, session.run, hậu xử lý (như app, không có giao diện). "Chưa thu hồi": bind group WebGPU chưa
+bị dọn rác (FinalizationRegistry). ms/khung: trung vị 30 khung cuối.
+
+Cách chạy                                   Khung   Thời gian   ms/khung   Bind group tạo / chưa thu hồi   Kết thúc
+Như app cũ (giữ cả WASM + WebGPU)              75       5 s         64           15177 / 0                  trang bị Safari tắt
+Chỉ WebGPU + dọn rác 32 MB / 16 khung         130      21 s        140           26232 / 201                trang bị Safari tắt
+Chỉ WebGPU + graph capture                   2987     183 s         74             303 / 201                anh tự dừng
+Chỉ WebGPU + graph capture (lần 2)           3020     197 s         76             303 / 201                anh tự dừng
+Graph capture + dùng lại bộ nhớ đầu vào      2440     190 s        109             303 / 201                anh tự dừng (biến thể này đã bỏ khỏi stress.html)
+
+Kết luận: chỉ graph capture không bị tắt trang; bind group vẫn được thu hồi ở mọi cách (chưa thu hồi 0–201), nên nguyên nhân không phải bind group
+dồn chờ dọn rác (onnxruntime #33750). App sau khi dùng graph capture (dev server, 10:47–10:50): không bị tắt, 46–71 ms, 13,6–21,2 khung/s.
+Kết quả của graph capture giống hệt WebGPU thường: node demo/test/capture.mjs (10 ảnh SHEL5K, lệch tối đa 0).

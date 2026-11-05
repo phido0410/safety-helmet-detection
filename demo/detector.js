@@ -80,11 +80,9 @@ export function scaleBoxes(dets, lb, width, height) {
   }));
 }
 
-// Chạy mô hình trên một ảnh/khung hình; ort là onnxruntime-web đã nạp, session tạo từ model.onnx
-export async function detect(ort, session, cfg, source, width, height, canvas) {
+// Chạy mô hình trên một ảnh/khung hình; infer(tensor đầu vào) trả đầu ra thô của model.onnx
+export async function detect(infer, cfg, source, width, height, canvas) {
   const { data, lb } = preprocess(source, width, height, cfg.imgsz, canvas);
-  const input = new ort.Tensor("float32", data, [1, 3, cfg.imgsz, cfg.imgsz]);
-  const out = await session.run({ [session.inputNames[0]]: input });
-  const dets = postprocess(out[session.outputNames[0]].data, cfg.names.length, cfg);
+  const dets = postprocess(await infer(data), cfg.names.length, cfg);
   return scaleBoxes(dets, lb, width, height);
 }

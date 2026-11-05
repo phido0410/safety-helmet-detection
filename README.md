@@ -4,8 +4,9 @@ Graduation thesis (Data Science, Hanoi University of Mining and Geology, 2026) b
 safety helmets, with label auditing, error analysis, out-of-domain evaluation on Vietnamese construction-site photos, and an
 on-device web demo.
 
-**Demo: [helmetcheck.vercel.app](https://helmetcheck.vercel.app)**. The model runs in the browser (ONNX Runtime Web, WASM). Photos,
-videos and the camera never leave the device. It works on iPhone and iPad with iOS 16.4+ and on desktop browsers.
+**Demo: [helmetcheck.vercel.app](https://helmetcheck.vercel.app)**. The model runs in the browser (ONNX Runtime Web: WebGPU when it
+is clearly faster on the device, otherwise WASM). Photos, videos and the camera never leave the device. It works on iPhone and iPad
+with iOS 16.4+ and on desktop browsers.
 
 ## Classes
 
@@ -28,7 +29,8 @@ motorbike helmets count as helmets.
   missed people are under 80 px tall at the 800 px input.
 - On 199 person-free images (Open Images V7), 6.5% are flagged as containing a person without a helmet (95% CI 3.9–10.9%). The
   target was ≤ 5%, so this criterion is not met.
-- Speed on iPhone 11 Pro Max (Safari, WASM, 800 px input): 229 ms per frame.
+- Speed at 800 px input (Safari): iPhone 11 Pro Max 229 ms per frame (WASM; WebGPU is slower there), iPhone 17 54 ms (WebGPU)
+  (`reports/deployment/M3b_yolo26n_bg/{iphone11,single_thread}_bench.txt`).
 - The web demo keeps a person box only when a head, face or helmet box (confidence ≥ 0.10) has its center inside it, because the
   model detects people from the upper body up; close-ups of legs were reported as people without helmets. With this rule the
   violation threshold is re-selected on validation (0.161). This choice misses the pre-set criterion (person-with-helmet AP50 on

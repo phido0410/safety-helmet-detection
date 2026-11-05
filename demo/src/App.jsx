@@ -11,7 +11,7 @@ export default function App() {
   const [recent, setRecent] = useState({ rec: null, rows: [], unseen: 0 });
 
   useEffect(() => {
-    const ready = loadModel((progress) => setModel((m) => ({ ...m, progress })));
+    const ready = loadModel((progress) => setModel((m) => ({ ...m, progress })), (backend) => setModel((m) => ({ ...m, backend })));
     setModel((m) => ({ ...m, ready }));
     ready.then((m) => setModel((s) => ({ ...s, status: "ready", backend: m.backend, name: m.cfg.name })),
       (err) => setModel((s) => ({ ...s, status: "error", error: err.message })));
