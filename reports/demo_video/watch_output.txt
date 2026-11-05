@@ -1,0 +1,29 @@
+demo_210321_0-14s.mp4 trên https://helmetcheck.vercel.app/ (Google Chrome 156.0.8078.80, màn 1440×900), 5 lượt, 2026-11-05
+lượt 1 (WebGPU): 1 ảnh lưu: 2,1 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 66%, "1 vi phạm không đội mũ" 25%, "Đang xác nhận người không đội mũ…" 7%, "Không thấy người" 2%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,3–1,2 s, "1 vi phạm không đội mũ" 1,2–2,3 s, "1 vi phạm không đội mũ" 4,9–7,4 s
+lượt 2 (WebGPU): 1 ảnh lưu: 2,0 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 85%, "1 vi phạm không đội mũ" 7%, "Đang xác nhận người không đội mũ…" 6%, "Không thấy người" 2%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,3–1,2 s, "1 vi phạm không đội mũ" 1,2–2,1 s
+lượt 3 (WebGPU): 1 ảnh lưu: 2,0 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 58%, "1 vi phạm không đội mũ" 34%, "Đang xác nhận người không đội mũ…" 7%, "Không thấy người" 1%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,2–1,2 s, "1 vi phạm không đội mũ" 1,2–2,1 s, "1 vi phạm không đội mũ" 5,0–8,8 s
+lượt 4 (WebGPU): 1 ảnh lưu: 2,1 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 65%, "1 vi phạm không đội mũ" 26%, "Đang xác nhận người không đội mũ…" 7%, "Không thấy người" 2%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,2–1,2 s, "1 vi phạm không đội mũ" 1,2–2,2 s, "1 vi phạm không đội mũ" 4,9–7,6 s
+lượt 5 (WebGPU): 1 ảnh lưu: 2,0 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 58%, "1 vi phạm không đội mũ" 34%, "Đang xác nhận người không đội mũ…" 7%, "Không thấy người" 2%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,2–1,2 s, "1 vi phạm không đội mũ" 1,2–2,1 s, "1 vi phạm không đội mũ" 5,0–8,7 s
+lỗi trên trang: 0
+
+210321_large.mp4 trên https://helmetcheck.vercel.app/ (Google Chrome 156.0.8078.80, màn 1440×900), 3 lượt, 2026-11-05
+lượt 1 (WebGPU): 1 ảnh lưu: 2,1 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 75%, "1 vi phạm không đội mũ" 21%, "Đang xác nhận người không đội mũ…" 3%, "Không thấy người" 1%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,4–1,2 s, "1 vi phạm không đội mũ" 1,2–2,2 s, "1 vi phạm không đội mũ" 4,9–8,5 s, "1 vi phạm không đội mũ" 27,8–28,5 s, "1 vi phạm không đội mũ" 29,1–29,9 s
+lượt 2 (WebGPU): 1 ảnh lưu: 2,1 s (2 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 79%, "1 vi phạm không đội mũ" 17%, "Đang xác nhận người không đội mũ…" 3%, "Không thấy người" 1%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,2–1,2 s, "1 vi phạm không đội mũ" 1,2–2,2 s, "1 vi phạm không đội mũ" 5,0–7,5 s, "1 vi phạm không đội mũ" 27,8–28,4 s, "1 vi phạm không đội mũ" 28,9–29,9 s
+lượt 3 (WebGPU): 2 ảnh lưu: 2,0 s (2 vi phạm / 3 người), 18,5 s (3 vi phạm / 3 người)
+  dòng kết luận: "2 vi phạm không đội mũ" 66%, "1 vi phạm không đội mũ" 19%, "3 vi phạm không đội mũ" 11%, "Đang xác nhận người không đội mũ…" 3%, "Không thấy người" 1%, "Tất cả đội mũ" 0%
+  khác "2 vi phạm không đội mũ" từ 0,5 s: "Đang xác nhận người không đội mũ…" 0,2–1,3 s, "1 vi phạm không đội mũ" 1,3–2,1 s, "1 vi phạm không đội mũ" 5,0–8,5 s, "3 vi phạm không đội mũ" 18,6–19,9 s, "3 vi phạm không đội mũ" 21,6–23,6 s, "1 vi phạm không đội mũ" 27,8–28,3 s, "1 vi phạm không đội mũ" 28,9–29,8 s
+lỗi trên trang: 0
