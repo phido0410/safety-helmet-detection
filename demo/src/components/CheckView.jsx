@@ -5,7 +5,7 @@ import { IconAlert, IconCamera, IconCheck, IconClose, IconFlip, IconInfo, IconPa
   IconTimer, IconCompass, IconUpload, IconVideo } from "./Icons.jsx";
 import { people as peopleOf } from "../lib/model.js";
 import { addCheck, snapshot } from "../lib/history.js";
-import { CONFIRM, VIEW_DEG, VOTES, createTracker } from "../lib/tracker.js";
+import { CONFIRM_MS, VIEW_DEG, createTracker } from "../lib/tracker.js";
 import { rotationMatrix, unrotateBox, viewAngle, watchOrientation } from "../lib/orientation.js";
 
 const CAPTURE_EVERY_MS = 3000;  // video/camera: hai ảnh cách nhau ít nhất 3 giây, chặn chụp liên tục khi tracker mất dấu (camera rung)
@@ -30,7 +30,7 @@ function metricsOf(people, took, turn, timeLabel = "ms mỗi khung") {
 }
 const pct = (s) => `${Math.round(s * 100)}%`;
 const baseStats = (model) => [["Mô hình", model.name ?? "–"], ["Chạy trên", model.backend ?? "–"]];
-const ruleNote = `Mỗi người không đội mũ chỉ được lưu một lần, khi ${CONFIRM}/${VOTES} khung gần nhất báo vi phạm; hai ảnh cách nhau ít nhất ${CAPTURE_EVERY_MS / 1000} giây. Camera trực tiếp: lia máy lệch quá ${VIEW_DEG}° so với lúc lưu ảnh gần nhất là cảnh mới, người ở cảnh mới vẫn được lưu.`;
+const ruleNote = `Mỗi người không đội mũ chỉ được lưu một lần, sau khi bị báo vi phạm kéo dài khoảng ${CONFIRM_MS / 1000} giây; hai ảnh cách nhau ít nhất ${CAPTURE_EVERY_MS / 1000} giây. Camera trực tiếp: lia máy lệch quá ${VIEW_DEG}° so với lúc lưu ảnh gần nhất là cảnh mới, người ở cảnh mới vẫn được lưu.`;
 const PASTE_KEY = /Mac|iPhone|iPad/.test(navigator.userAgent) ? "⌘V" : "Ctrl+V";
 const FORMATS = "Ảnh JPG, PNG, WebP · video MP4, WebM";  // định dạng mọi trình duyệt đều mở được (HEIC, MOV chỉ Safari)
 const BAD_FILE = "Không mở được tệp này. Hãy dùng ảnh JPG, PNG hoặc video MP4.";
@@ -469,15 +469,16 @@ function useAnalysis(model, onSaved, source, getRotation, getView) {
       // quy tắc của app tính trên khung thẳng đứng (chiều cao người đúng chiều), rồi khung khoanh mới xoay ngược về khung gốc
       const found = peopleOf(dets, m.cfg, src.width, src.height).map((p) => (rot ? { ...p, box: unrotateBox(p.box, rot, c.width, c.height) } : p));
       // đồng hồ của tracker: thời gian của video hoặc thời gian camera đã phân tích, đều không tính lúc tạm dừng
-      const view = getView?.(), { people, due, bad } = tracker.update(found, t * 1000, view), now = performance.now();
+      const view = getView?.(), { people, proof, due, bad } = tracker.update(found, t * 1000, view), now = performance.now();
       if (due.length && now - s.lastCapture >= CAPTURE_EVERY_MS) {
         tracker.captured();
         s.lastCapture = now;
         s.captureView = view;
         s.saved++;
         snapshot(c, c.width, c.height).then((image) => addCheck({ at: Date.now(), source,
-          ...(source === "Video" && { videoTime: t }), width: c.width, height: c.height, people, ms: took, image })).then(onSaved);
+          ...(source === "Video" && { videoTime: t }), width: c.width, height: c.height, people: proof, ms: took, image })).then(onSaved);
       }
+      if (s.saved) s.captureView ??= view;  // lưu lúc cảm biến chưa có số đo: lấy số đo đầu tiên làm mốc, như tracker
       // lệch hướng camera so với lúc lưu ảnh gần nhất: quá VIEW_DEG thì tracker coi là cảnh mới (hiện để kiểm tra trên máy thật)
       const turn = getView ? (view && s.captureView ? viewAngle(s.captureView, view) : null) : undefined;
       setLive({ people, bad, took, fps: s.last ? 1000 / (now - s.last) : 0, saved: s.saved, t, rot, turn, sensor: !!view });

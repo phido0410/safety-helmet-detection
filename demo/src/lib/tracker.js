@@ -1,7 +1,9 @@
 // Theo dõi người qua các khung video/camera để mỗi người không đội mũ chỉ bị chụp một lần. Hộp của khung mới được ghép với người
 // đang theo dõi theo IoU (tham lam, cặp IoU cao trước); hộp cũ được dời theo vận tốc ước lượng vì iPhone chỉ chạy ~4 khung/s, người
 // đi ngang có thể lệch gần hết bề ngang giữa hai khung. Ghép không phân biệt lớp: mô hình hay đổi qua lại có mũ / không mũ ở cùng
-// một người, nên một người chỉ tính là vi phạm khi ít nhất CONFIRM trong VOTES khung gần nhất báo không đội mũ.
+// một người, nên một người chỉ tính là vi phạm khi đã bị báo không đội mũ kéo dài ít nhất CONFIRM_MS, ít nhất CONFIRM khung và chiếm ít
+// nhất CONFIRM/VOTES số khung gần đây (trong VOTE_MS, hoặc VOTES khung cuối nếu máy chậm). Đếm theo thời gian chứ không chỉ theo số khung:
+// ở 20 khung/s (WebGPU) 3/5 khung chỉ dài 0,2 s, báo nhầm thoáng qua lúc lia máy cũng đủ để lưu ảnh.
 // Số hiển thị là số nhỏ nhất chưa dùng trong lúc người đó còn được theo dõi (bong bóng không phình ra 3 chữ số khi chạy lâu).
 // Người đã bị chụp được nhớ thêm REMEMBER_MS sau khi mất dấu: người ở xa / bị che chỉ được mô hình thấy ở một phần khung, mất dấu
 // quá LOST_MS là chuyện thường; nếu quên ngay thì lúc thấy lại sẽ bị coi là người mới và chụp lại. Đổi lại, người vi phạm khác đứng
@@ -18,7 +20,7 @@
 // chụp lại người cũ một lần.
 // Số vi phạm hiển thị (bad) chỉ đếm người đã xác nhận, kể cả người mất dấu chưa quá HOLD_MS: khung báo nhầm lúc có lúc không không
 // làm số nhảy theo từng khung.
-export const MATCH_IOU = 0.2, LOST_MS = 2000, REMEMBER_MS = 10000, VOTES = 5, CONFIRM = 3, CONTAIN = 0.8, VIEW_DEG = 30, HOLD_MS = 1000;
+export const MATCH_IOU = 0.2, LOST_MS = 2000, REMEMBER_MS = 10000, VOTES = 5, CONFIRM = 3, CONTAIN = 0.8, VIEW_DEG = 30, HOLD_MS = 1000, CONFIRM_MS = 1000, VOTE_MS = 1250;
 
 import { viewAngle } from "./orientation.js";
 
@@ -37,15 +39,23 @@ function ios(a, b) {
 // update(people, t, view): people là kết quả một khung (box, score, violation), t là thời điểm khung (ms, đồng hồ của nguồn), view
 // là hướng camera (viewDir, không có cảm biến thì bỏ trống). Trả về người kèm số theo dõi `n`, `due`: số của những người vi phạm
 // (đã xác nhận, khung này cũng báo vi phạm) chưa được chụp, và `bad`: số người vi phạm đã xác nhận để hiển thị.
-// Sau khi lưu ảnh khung đó thì gọi captured(): mọi người khung đó báo vi phạm đều có mặt trong ảnh nên đều tính là đã chụp, kể cả
+// `proof`: người ghi vào ảnh lưu: bỏ khung báo vi phạm chưa xác nhận, để số trong Lịch sử khớp số trên màn hình (iPhone 17: 2 người, ảnh
+// ghi 5 vi phạm vì đếm cả các khung báo nhầm chỉ có ở đúng khung hình đó).
+// Sau khi lưu ảnh khung đó thì gọi captured(): mọi người vừa bị báo vi phạm đều có mặt trong ảnh nên đều tính là đã chụp, kể cả
 // người chưa đủ CONFIRM khung (iPad: người thứ hai / khung báo nhầm bên cạnh từng bị chụp thêm ảnh riêng vài giây sau).
 export function createTracker() {
-  let tracks = [], lastBad = [], lastView;
+  let tracks = [], lastBad = [], lastView, waitFrom = null;
   const free = () => { let n = 1; while (tracks.some((tr) => tr.n === n)) n++; return n; };
 
-  const confirmed = (tr) => tr.votes.filter(Boolean).length >= CONFIRM;
+  const enough = (tr) => {
+    const bad = tr.votes.filter((v) => v.bad);
+    return bad.length >= CONFIRM && bad.length * VOTES >= CONFIRM * tr.votes.length && bad.at(-1).t - bad[0].t >= CONFIRM_MS;
+  };
+  // Đã xác nhận thì giữ tới khi VOTE_MS liền không còn bị báo (đã đội mũ): mô hình hay nhấp nháy ở cả người vi phạm thật.
+  const confirmed = (tr) => tr.sure;
   function update(people, t, view) {
     lastView = view;
+    tracks.forEach((tr) => { if (tr.captured) tr.view ??= view; });  // chụp lúc cảm biến chưa có số đo: lấy số đo đầu tiên làm mốc
     const turned = (tr) => tr.captured && tr.view && view && viewAngle(tr.view, view) > VIEW_DEG;
     tracks = tracks.filter((tr) => t - tr.t <= (tr.captured ? REMEMBER_MS : LOST_MS) && !turned(tr));
     const pairs = [];
@@ -67,20 +77,29 @@ export function createTracker() {
         tr = { n: free(), box: p.box, t, v: [0, 0], votes: [], captured: false };
         tracks.push(tr);
       }
-      tr.votes = [...tr.votes, p.violation].slice(-VOTES);
+      tr.votes = [...tr.votes, { t, bad: p.violation }].filter((v, i, all) => i >= all.length - VOTES || t - v.t <= VOTE_MS);
+      tr.sure = enough(tr) || (tr.sure && tr.votes.some((v) => v.bad && t - v.t <= VOTE_MS));
       return { p: { ...p, n: tr.n }, tr };
     });
     // xét lúc sắp chụp chứ không lúc tạo: khung nửa người có thể có từ đầu, cùng lúc với người, rồi mới thành vi phạm
     const ready = out.filter(({ p, tr }) => p.violation && !tr.captured && confirmed(tr));
     ready.forEach(({ tr }) => { if (tracks.some((o) => o.captured && ios(o.box, tr.box) >= CONTAIN)) Object.assign(tr, { captured: true, view }); });
-    const due = ready.filter(({ tr }) => !tr.captured).map(({ p }) => p.n);
-    lastBad = out.filter(({ p }) => p.violation).map(({ tr }) => tr);
+    const fresh = ready.filter(({ tr }) => !tr.captured);
+    if (fresh.length) waitFrom ??= t;
+    // Có người đang bị báo mà chưa đủ xác nhận: chờ tối đa CONFIRM_MS để người đó vào cùng ảnh (video 210321: người bên phải bị báo sau người
+    // bên trái 1 s, nếu chụp ngay thì người đó không có trong ảnh). Hết giờ thì chụp: khung đã bị báo từ trước lúc bắt đầu chờ mà vẫn chưa đủ xác
+    // nhận là khung nhấp nháy, tính là đã chụp; người mới bị báo trong lúc chờ thì chưa, để còn được chụp ở ảnh sau.
+    const flagged = tracks.filter((tr) => tr.votes.some((v) => v.bad && t - v.t <= VOTE_MS));
+    const pending = flagged.some((tr) => !tr.captured && !confirmed(tr));
+    const due = fresh.length && (!pending || t - waitFrom >= CONFIRM_MS) ? fresh.map(({ p }) => p.n) : [];
+    lastBad = flagged.filter((tr) => confirmed(tr) || tr.votes.find((v) => v.bad).t <= waitFrom);
     const bad = tracks.filter((tr) => t - tr.t <= HOLD_MS && confirmed(tr)).length;
-    return { people: out.map(({ p }) => p).sort((a, b) => a.n - b.n), due, bad };
+    const byN = (a, b) => a.n - b.n;
+    return { people: out.map(({ p }) => p).sort(byN), proof: out.filter(({ p, tr }) => !p.violation || confirmed(tr)).map(({ p, tr }) => ({ ...p, violation: confirmed(tr) })).sort(byN), due, bad };
   }
 
-  const captured = () => lastBad.forEach((tr) => { tr.captured = true; tr.view = lastView; });
+  const captured = () => { waitFrom = null; lastBad.forEach((tr) => { tr.captured = true; tr.view = lastView; }); };
   // Đổi nguồn (camera trước ↔ sau) là cảnh mới: người đã chụp ở cảnh cũ không được che người mới đứng đúng chỗ đó
-  const reset = () => { tracks = []; lastBad = []; };
+  const reset = () => { tracks = []; lastBad = []; waitFrom = null; };
   return { update, captured, reset };
 }

@@ -1,7 +1,7 @@
-cd demo && npm test (2026-11-04, mô hình M3b, config.json như bản đăng Vercel)
+cd demo && npm test (2026-11-05, mô hình M3b, config.json như bản đăng Vercel)
 10 ảnh, 152 hộp: khớp Ultralytics
-tracker: 15 tình huống: đạt
+tracker: 26 tình huống: đạt
 badges: 400 cảnh ngẫu nhiên (thưa + đông) + 1 ca ưu tiên: đạt
-threads: 8 trường hợp: đạt
+threads: 16 trường hợp: đạt
 people: 6 trường hợp: đạt
 orientation: 10 trường hợp: đạt

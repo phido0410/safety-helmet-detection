@@ -1,7 +1,7 @@
 // Kiểm tra tracker (src/lib/tracker.js) trên chuỗi khung giả lập 4 khung/s (như iPhone 11): giữ số khi người đi nhanh, nhấp nháy
 // lớp, mất dấu ngắn; mỗi người vi phạm chỉ được chụp một lần, kể cả người ở xa mô hình lúc thấy lúc không; người chỉ thoáng qua
 // không bị chụp.
-import { createTracker, CONFIRM, LOST_MS, REMEMBER_MS } from "../src/lib/tracker.js";
+import { createTracker, CONFIRM, CONFIRM_MS, LOST_MS, REMEMBER_MS } from "../src/lib/tracker.js";
 import { viewDir } from "../src/lib/orientation.js";
 import { people as peopleOf } from "../src/lib/model.js";
 
@@ -104,8 +104,9 @@ check(run(Array.from({ length: 20 }, (_, i) => [person(100, i % 5 < 2)])).shots.
 {
   let seed = 11;
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
+  const at = CONFIRM_MS / DT;  // khung người đầu tiên đủ xác nhận và được chụp
   const counts = Array.from({ length: 50 }, () => run(Array.from({ length: 60000 / DT }, (_, i) =>
-    [person(100, true), ...(i === 2 || (i > 2 && rnd() < 0.5) ? [{ box: [200, 40, 250, 190], score: 0.3, violation: true }] : [])])).shots.length);
+    [person(100, true), ...(i === at || (i > at && rnd() < 0.5) ? [{ box: [200, 40, 250, 190], score: 0.3, violation: true }] : [])])).shots.length);
   check(counts.every((n) => n === 1), `người + khung báo nhầm bên cạnh: số ảnh mỗi chuỗi ${counts.filter((n) => n !== 1)} (phải 1)`);
 }
 
@@ -175,5 +176,118 @@ check(run(Array.from({ length: 20 }, (_, i) => [person(100, i % 5 < 2)])).shots.
   check(counts[0] === 0, `chưa đủ ${CONFIRM} khung: số vi phạm ${counts[0]} (phải 0)`);
 }
 
-console.log(`tracker: 15 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+// 16. Máy nhanh (20 khung/s, WebGPU): báo nhầm thoáng qua 0,3 s không được lưu dù đủ 3/5 khung; 3/5 khung chỉ dài 0,2 s nên không còn là
+//     bằng chứng như ở 4 khung/s.
+{
+  const tk = createTracker(); let shots = 0;
+  for (let k = 0; k < 40; k++) if (tk.update(k < 6 ? [person(100, true)] : [], k * 50).due.length) { shots++; tk.captured(); }
+  check(shots === 0, `20 khung/s, thoáng qua 0,3 s: chụp ${shots} lần (phải 0)`);
+}
+
+// 17. Máy nhanh, người vi phạm thật đứng yên: một ảnh, lưu sau khoảng CONFIRM_MS (không sớm hơn, không chậm hơn nhiều)
+{
+  const tk = createTracker(), at = [];
+  for (let k = 0; k < 100; k++) if (tk.update([person(100, true)], k * 50).due.length) { at.push(k * 50); tk.captured(); }
+  check(at.length === 1 && at[0] >= CONFIRM_MS && at[0] <= CONFIRM_MS + 100, `20 khung/s, đứng yên: chụp lúc ${at} ms (phải một lần, khoảng ${CONFIRM_MS} ms)`);
+}
+
+// 18. Máy chậm (1 khung/1,4 s, ít hơn VOTES khung trong cửa sổ thời gian) vẫn xác nhận được
+{
+  const tk = createTracker(); let shots = 0;
+  for (let k = 0; k < 8; k++) if (tk.update([person(100, true)], k * 1400).due.length) { shots++; tk.captured(); }
+  check(shots === 1, `máy chậm: chụp ${shots} lần (phải 1)`);
+}
+
+// 19. Ảnh lưu chỉ tính người đã xác nhận: một người vi phạm rõ + hai khung báo nhầm chỉ hiện 0,25 s ngay lúc người kia đủ xác nhận (lỗi trên
+//     iPhone 17: 2 người, ảnh ghi 5 vi phạm) → bản ghi có 1 người vi phạm, người đội mũ vẫn giữ.
+{
+  const tk = createTracker(); let saved;
+  for (let k = 0; k < 80 && !saved; k++) {
+    const ppl = [person(100, true), person(300, false), ...(Math.abs(k * 50 - CONFIRM_MS) <= 100 ? [person(500, true), person(700, true)] : [])];
+    const r = tk.update(ppl, k * 50);
+    if (r.due.length) { saved = r.proof; tk.captured(); }
+  }
+  check(saved?.filter((p) => p.violation).length === 1 && saved?.filter((p) => !p.violation).length === 1, `ảnh lưu: ${JSON.stringify(saved?.map((p) => [p.n, p.violation]))} (phải 1 vi phạm + 1 đội mũ)`);
+}
+
+// 20. Ảnh lưu lúc cảm biến chưa có số đo: số đo đầu tiên sau đó làm mốc, lia máy quá VIEW_DEG vẫn quên người đã chụp
+{
+  const tk = createTracker(), v0 = viewDir(0, 90, 0), v1 = viewDir(45, 90, 0); let shots = 0;
+  const step = (k, view) => { if (tk.update([person(100, true)], k * 250, view).due.length) { shots++; tk.captured(); } };
+  for (let k = 0; k < 6; k++) step(k, undefined);
+  step(6, v0);
+  for (let k = 7; k < 14; k++) step(k, v1);
+  check(shots === 2, `chụp khi chưa có cảm biến rồi lia 45°: chụp ${shots} lần (phải 2)`);
+}
+
+// 21. Người thứ hai bắt đầu bị báo ngay trước lúc chụp (video 210321: người bên phải mới đứng dậy): chờ người đó xác nhận rồi chụp một ảnh
+//     có cả hai, không được đánh dấu đã chụp mà không ghi vào ảnh.
+{
+  const tk = createTracker(), shots = [];
+  for (let k = 0; k < 100; k++) {
+    const r = tk.update([person(100, true), ...(k * 50 >= CONFIRM_MS - 50 ? [person(300, true)] : [])], k * 50);
+    if (r.due.length) { shots.push(r.proof.filter((p) => p.violation).length); tk.captured(); }
+  }
+  check(shots.join() === "2", `người thứ hai vừa bị báo: số vi phạm từng ảnh ${shots} (phải một ảnh có 2)`);
+}
+
+// 22. Người thứ hai xuất hiện sau khi đã chụp người đầu: vẫn được chụp riêng
+{
+  const tk = createTracker(), shots = [];
+  for (let k = 0; k < 100; k++) {
+    const r = tk.update([person(100, true), ...(k * 50 >= CONFIRM_MS + 500 ? [person(300, true)] : [])], k * 50);
+    if (r.due.length) { shots.push(r.proof.filter((p) => p.violation).length); tk.captured(); }
+  }
+  check(shots.join() === "1,2", `người thứ hai đến sau: số vi phạm từng ảnh ${shots} (phải 1 rồi 2)`);
+}
+
+// 23. Chờ người đang nhấp nháy không kéo dài quá CONFIRM_MS: người đã xác nhận vẫn được chụp, khung nhấp nháy không có ảnh riêng về sau
+{
+  const tk = createTracker(), at = [];
+  for (let k = 0; k < 400; k++) {
+    const r = tk.update([person(100, true), ...(k % 2 ? [person(300, true)] : [person(300, false)])], k * 50);
+    if (r.due.length) { at.push(k * 50); tk.captured(); }
+  }
+  check(at.length === 1 && at[0] <= 2 * CONFIRM_MS + 100, `chờ khung nhấp nháy: chụp lúc ${at} ms (phải một lần, không quá ${2 * CONFIRM_MS + 100} ms)`);
+}
+
+// 24. Đang chờ một khung nhấp nháy thì người thật bắt đầu bị báo (video 210321, 2/3 lần chạy: người bên phải bị mất): người đó chưa đủ 1 s lúc
+//     chụp nên không có trong ảnh đầu, nhưng không được tính là đã chụp, phải có mặt ở ảnh sau.
+{
+  const tk = createTracker(), shots = [];
+  for (let k = 0; k < 120; k++) {
+    const ppl = [person(100, true), ...(k >= CONFIRM_MS / 50 ? [person(500, k % 2 === 0)] : []), ...(k * 50 >= CONFIRM_MS + 200 ? [person(300, true)] : [])];
+    const r = tk.update(ppl, k * 50);
+    if (r.due.length) { shots.push(r.proof.filter((p) => p.violation).map((p) => p.box[0]).sort((x, y) => x - y).join("+")); tk.captured(); }
+  }
+  check(shots.length === 2 && shots[0] === "100" && shots[1] === "100+300", `người thật bắt đầu lúc đang chờ: các ảnh ${shots} (phải 100 rồi 100+300)`);
+}
+
+// 25. Người đã xác nhận, riêng khung được chụp mô hình báo có mũ (một khung): vẫn ghi là vi phạm trong ảnh, số khớp màn hình
+{
+  const tk = createTracker(); let saved;
+  for (let k = 0; k < 40 && !saved; k++) {
+    const r = tk.update([person(100, true), person(300, k * 50 !== CONFIRM_MS + 150)], k * 50);
+    if (k * 50 === CONFIRM_MS + 150) saved = r.proof;
+    if (r.due.length) tk.captured();
+  }
+  check(saved?.every((p) => p.violation), `người đã xác nhận, khung chụp báo có mũ: ${JSON.stringify(saved?.map((p) => p.violation))} (phải đều vi phạm)`);
+}
+
+// 26. Người đã xác nhận rồi mô hình báo nhấp nháy có mũ / không mũ (video 210321: người bên trái, giây 1,8–7,5, 3/5 lần chạy bị ghi là đội mũ):
+//     đang chờ người thứ hai thì vẫn giữ là vi phạm, ảnh có đủ cả hai; 1,25 s liền không còn bị báo (đã đội mũ) thì mới thôi.
+{
+  const tk = createTracker(); let shot;
+  const left = (k) => (k * 50 < CONFIRM_MS + 100 ? true : k % 3 === 0);
+  for (let k = 0; k < 80 && !shot; k++) {
+    const r = tk.update([person(100, left(k)), ...(k * 50 >= CONFIRM_MS - 50 ? [person(300, true)] : [])], k * 50);
+    if (r.due.length) { shot = r.proof.filter((p) => p.violation).length; tk.captured(); }
+  }
+  check(shot === 2, `người đã xác nhận nhấp nháy lúc chờ: ảnh có ${shot} vi phạm (phải 2)`);
+  const tk2 = createTracker(), counts = [];
+  for (let k = 0; k < 100; k++) counts.push(tk2.update([person(100, k < 40)], k * 50).bad);
+  check(counts[45] === 1 && counts[70] === 0, `đội mũ vào: số vi phạm sau 0,25 s là ${counts[45]} (phải 1), sau 1,5 s là ${counts[70]} (phải 0)`);
+}
+
+console.log(`tracker: 26 tình huống: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);
