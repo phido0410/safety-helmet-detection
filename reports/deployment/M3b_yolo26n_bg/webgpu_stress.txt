@@ -13,3 +13,6 @@ Graph capture + dùng lại bộ nhớ đầu vào      2440     190 s        10
 Kết luận: chỉ graph capture không bị tắt trang; bind group vẫn được thu hồi ở mọi cách (chưa thu hồi 0–201), nên nguyên nhân không phải bind group
 dồn chờ dọn rác (onnxruntime #33750). App sau khi dùng graph capture (dev server, 10:47–10:50): không bị tắt, 46–71 ms, 13,6–21,2 khung/s.
 Kết quả của graph capture giống hệt WebGPU thường: node demo/test/capture.mjs (10 ảnh SHEL5K, lệch tối đa 0).
+
+Thử lại bản đã đăng trên iPhone 17 của Nam (2026-11-05, anh báo lại, không có ảnh chụp): camera WebGPU 16–17 khung/s; qua Lịch sử rồi về màn hình chính vẫn WebGPU, không chuyển sang WASM.
+Máy đang mở khoảng 300 tab Safari: ứng dụng báo thiếu bộ nhớ, nhắc đóng bớt tab (OOM_MESSAGE trong demo/src/lib/model.js); đóng bớt tab thì chạy bình thường.
