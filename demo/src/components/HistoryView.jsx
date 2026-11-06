@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import Stage, { Capsule, peopleCount, verdictOf } from "./Stage.jsx";
-import Crop, { useObjectUrl } from "./Crop.jsx";
+import Crop, { Zooms, useObjectUrl } from "./Crop.jsx";
 import { IconBack, IconChevron, IconStack, IconTrash } from "./Icons.jsx";
 import { clearChecks, deleteCheck, listChecks, markSeen } from "../lib/history.js";
+import { violators } from "../lib/crop.js";
+import { useWide } from "../lib/wide.js";
 
 const timeFmt = new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" });
 const dateFmt = new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
@@ -76,21 +78,49 @@ export default function HistoryView({ version, initial, onChange, onClose }) {
 }
 
 function Detail({ rec, backLabel, onBack, onDelete }) {
-  const url = useObjectUrl(rec.image);
-  return (
-    <section className="detail" aria-label="Ảnh vi phạm">
-      <nav className="navbar dark">
-        <button type="button" className="link" onClick={onBack}><IconBack size={22} />{backLabel}</button>
-        <button type="button" className="link danger" aria-label="Xóa ảnh này"
-          onClick={() => window.confirm("Xóa ảnh này khỏi lịch sử?") && onDelete()}><IconTrash /></button>
-      </nav>
-      <div className="viewfinder">
-        <Stage width={rec.width} height={rec.height} people={rec.people}><img src={url} alt="Ảnh vi phạm đã lưu" /></Stage>
+  const url = useObjectUrl(rec.image), wide = useWide();
+  const [zoom, setZoom] = useState(false);
+  // chuyển màn thì nút vừa bấm biến mất: đưa tiêu điểm sang màn mới và trả lại nút khi quay về, để bàn phím, VoiceOver không mất chỗ
+  const heading = useRef(), button = useRef(), pushed = useRef(false);
+  useEffect(() => {
+    if (zoom) { heading.current?.focus(); pushed.current = true; } else if (pushed.current) button.current?.focus();
+  }, [zoom]);
+  const verdict = verdictOf(rec.people), bad = violators(rec.people).length, when = `${timeFmt.format(rec.at)}, ${dateFmt.format(rec.at)}`;
+  const meta = `${peopleCount(rec.people)} · ${rec.source} · ${when} · ${Math.round(rec.ms)}\u00a0ms`;
+  if (zoom && !wide) return (
+    <section className="detail" aria-label="Chi tiết vi phạm">
+      <nav className="navbar dark"><button type="button" className="link" onClick={() => setZoom(false)}><IconBack size={22} />Ảnh vi phạm</button><span /></nav>
+      <div className="zoomscreen">
+        <h1 ref={heading} tabIndex={-1}>{verdict.long}</h1>
+        <p>{rec.source} · {when}</p>
+        <Zooms url={url} rec={rec} />
       </div>
-      <footer className="meta">
-        <Capsule {...verdictOf(rec.people)} />
-        <p>{peopleCount(rec.people)} · {rec.source} · {timeFmt.format(rec.at)}, {dateFmt.format(rec.at)} · {Math.round(rec.ms)} ms</p>
-      </footer>
+    </section>
+  );
+  return (
+    <section className={`detail${wide ? " wide" : ""}`} aria-label="Ảnh vi phạm">
+      <div className="shot">
+        <nav className="navbar dark">
+          <button type="button" className="link" onClick={onBack}><IconBack size={22} />{backLabel}</button>
+          <button type="button" className="link danger" aria-label="Xóa ảnh này"
+            onClick={() => window.confirm("Xóa ảnh này khỏi lịch sử?") && onDelete()}><IconTrash /></button>
+        </nav>
+        <div className="viewfinder">
+          <Stage width={rec.width} height={rec.height} people={rec.people}><img src={url} alt="Ảnh vi phạm đã lưu" /></Stage>
+        </div>
+      </div>
+      {wide ? (
+        <aside className="panel" tabIndex={0} aria-label="Chi tiết vi phạm">
+          <div className="verdict"><h2><span className={`dot ${verdict.tone}`} />{verdict.long}</h2><p>{meta}</p></div>
+          {bad > 0 && <Zooms url={url} rec={rec} />}
+        </aside>
+      ) : (
+        <footer className="meta">
+          <Capsule {...verdict} />
+          <p>{meta}</p>
+          {bad > 0 && <button type="button" ref={button} className="btn primary" onClick={() => setZoom(true)}>Xem chi tiết {bad} người<IconChevron size={20} stroke={2.5} /></button>}
+        </footer>
+      )}
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { IconAlert, IconCheck } from "./Icons.jsx";
 import { placeBadges } from "../lib/badges.js";
 
 const pct = (v, total) => `${(100 * v) / total}%`;
-const score = (s) => `${Math.round(s * 100)}%`;
+export const score = (s) => `${Math.round(s * 100)}%`;
 
 // Ảnh / video / camera giữ đúng tỉ lệ giữa khung ngắm (viền đen như app Ảnh); khung phát hiện tính theo % của chính khung hình nên
 // luôn khớp. Người không đội mũ: viền cam dày, nền cam mờ, dấu "!"; người đội mũ: viền xanh, dấu ✓ (không chỉ dựa vào màu).

@@ -1,4 +1,7 @@
 import { useEffect, useMemo } from "react";
+import { score } from "./Stage.jsx";
+import { IconAlert } from "./Icons.jsx";
+import { cropStyle, fitCrop, fitIn, tileRatio, violators } from "../lib/crop.js";
 
 export function useObjectUrl(blob) {
   const url = useMemo(() => blob && URL.createObjectURL(blob), [blob]);
@@ -9,12 +12,29 @@ export function useObjectUrl(blob) {
 // Ảnh cắt vuông quanh một người, lấy thẳng từ ảnh gốc bằng background-position (không lưu ảnh cắt riêng)
 export function CropView({ url, width, height, box, className = "crop" }) {
   const [x1, y1, x2, y2] = box, w = x2 - x1, h = y2 - y1;
-  const side = Math.min(Math.max(w, h) * 1.15, width - 1, height - 1), k = 100 / side;  // lệch về phía đầu
+  const side = Math.min(Math.max(w, h) * 1.15, width - 1, height - 1);  // lệch về phía đầu
   const clamp = (v, hi) => Math.min(Math.max(v, 0), hi);
   const x0 = clamp((x1 + x2) / 2 - side / 2, width - side), y0 = clamp(y1 - h * 0.05, height - side);
+  return <span className={className} style={cropStyle(url, width, height, [x0, y0, side, side])} />;
+}
+
+// Xem chi tiết: mỗi người vi phạm một ô, cắt vừa khung từ ảnh đã lưu
+export function Zooms({ url, rec }) {
+  const bad = violators(rec.people), crops = bad.map((p) => fitCrop(p.box, rec.width, rec.height)), tile = tileRatio(crops);
   return (
-    <span className={className} style={{ backgroundImage: `url(${url})`, backgroundSize: `${width * k}% ${height * k}%`,
-      backgroundPosition: `${(x0 / (width - side)) * 100}% ${(y0 / (height - side)) * 100}%` }} />
+    <ul className={`zooms${bad.length === 1 ? " one" : ""}`} style={{ "--tile": tile }}>
+      {bad.map((p, i) => (
+        <li key={p.n}>
+          <span className="zoomtile bad" style={{ aspectRatio: tile }} role="img" aria-label={`Ảnh cắt người ${i + 1}`}>
+            <span className="zoomimg" style={{ ...cropStyle(url, rec.width, rec.height, crops[i]), ...fitIn(crops[i][2] / crops[i][3], tile) }}>
+              <span className="badge"><IconAlert size={16} stroke={3} /></span>
+            </span>
+          </span>
+          <b>Người {i + 1}</b>
+          <span>Độ tin cậy {score(p.score)}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 

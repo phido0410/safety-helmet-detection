@@ -7,6 +7,7 @@ import { people as peopleOf } from "../lib/model.js";
 import { addCheck, snapshot } from "../lib/history.js";
 import { CONFIRM_MS, VIEW_DEG, createTracker } from "../lib/tracker.js";
 import { rotationMatrix, unrotateBox, viewAngle, watchOrientation } from "../lib/orientation.js";
+import { useWide } from "../lib/wide.js";
 
 const CAPTURE_EVERY_MS = 3000;  // video/camera: hai ảnh cách nhau ít nhất 3 giây, chặn chụp liên tục khi tracker mất dấu (camera rung)
 const FRAME_MAX_SIDE = 1280;    // khung hình được chép ra canvas cỡ này: vừa để phân tích, vừa là ảnh lưu
@@ -15,7 +16,6 @@ const camera = (facing) => ({ video: { facingMode: facing, width: { ideal: 1280 
 // duyệt (Safari trên iPad tự xưng là Mac).
 const DESKTOP = navigator.maxTouchPoints === 0;
 const MODES = [["photo", "Ảnh"], ["video", "Video"], ["live", "Trực tiếp"]].filter(([id]) => !DESKTOP || id !== "live");
-const WIDE = "(min-width: 900px) and (orientation: landscape)";  // máy tính, iPad xoay ngang: ảnh bên trái, bảng bên phải
 const ms = (v) => (v ? `${Math.round(v)} ms` : "–");
 const fps = (v) => (v ? `${v.toFixed(1).replace(".", ",")} khung/s` : "–");
 // Thông số trên màn hình chính (thanh dưới khung ngắm; ô số ở bảng bên phải màn rộng): số người, lệch hướng camera so với ảnh vừa
@@ -36,16 +36,6 @@ const FORMATS = "Ảnh JPG, PNG, WebP · video MP4, WebM";  // định dạng m�
 const BAD_FILE = "Không mở được tệp này. Hãy dùng ảnh JPG, PNG hoặc video MP4.";
 const SAVE_FAILED = "Không lưu được ảnh vào lịch sử trên trình duyệt này (chế độ duyệt riêng tư?).";
 const fileKind = (f) => (f?.type.startsWith("image/") ? "photo" : f?.type.startsWith("video/") ? "video" : null);
-
-function useWide() {
-  const [wide, setWide] = useState(() => matchMedia(WIDE).matches);
-  useEffect(() => {
-    const m = matchMedia(WIDE), on = () => setWide(m.matches);
-    m.addEventListener("change", on);
-    return () => m.removeEventListener("change", on);
-  }, []);
-  return wide;
-}
 
 // Màn chính như app Camera: khung ngắm, kết luận nổi ở trên; màn hẹp có hàng chế độ và nút tròn ở dưới, màn rộng có bảng bên phải.
 // Đổi chế độ là gắn lại component của chế độ đó (camera tắt, video dừng, tracker mới). Ảnh / video kéo thả hoặc dán vào trang thì
