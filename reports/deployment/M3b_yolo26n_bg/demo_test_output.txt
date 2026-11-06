@@ -4,5 +4,5 @@ tracker: 26 tình huống: đạt
 badges: 400 cảnh ngẫu nhiên (thưa + đông) + 1 ca ưu tiên: đạt
 threads: 16 trường hợp: đạt
 people: 6 trường hợp: đạt
-orientation: 10 trường hợp: đạt
+orientation: 11 trường hợp: đạt
 crop: 7 nhóm tình huống: đạt

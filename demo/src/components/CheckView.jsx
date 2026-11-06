@@ -310,7 +310,7 @@ function VideoMode({ model, onSaved, chrome, dropped, consume }) {
 
 // Một video đã chọn: tracker riêng cho video này (key = url)
 function VideoRun({ url, model, onSaved, chrome, onPick, onClear }) {
-  const a = useAnalysis(model, onSaved, "Video");
+  const a = useAnalysis(model, { onSaved, onFailed: () => chrome.notify(SAVE_FAILED) }, "Video");
   const [state, setState] = useState("ready");  // ready | playing | paused | done
   useEffect(() => () => a.stop(), []);
 
@@ -350,7 +350,8 @@ function LiveMode({ model, onSaved, chrome, active }) {
   const [facing, setFacing] = useState("environment");
   const orient = useRef(null), facingNow = useRef(facing);
   facingNow.current = facing;
-  const a = useAnalysis(model, onSaved, "Camera", () => orient.current?.get(facingNow.current) ?? 0, () => orient.current?.view());
+  const a = useAnalysis(model, { onSaved, onFailed: () => chrome.notify(SAVE_FAILED) }, "Camera", () => orient.current?.get(facingNow.current) ?? 0,
+    () => orient.current?.view());
   const [cam, setCam] = useState("off");  // off | opening | on | error
   const [error, setError] = useState(null);
   const stream = useRef(null), opening = useRef(0);
@@ -419,7 +420,7 @@ function LiveMode({ model, onSaved, chrome, active }) {
 // getRotation (camera): góc xoay khung theo hướng cầm máy (lib/orientation.js); mô hình chạy trên khung đã xoay thẳng, khung khoanh
 // được xoay ngược về khung gốc để vẽ và theo dõi; ảnh lưu là khung đã xoay thẳng, khung khoanh xoay theo. getView (camera): hướng camera cho tracker (lia máy
 // sang cảnh khác thì quên người đã chụp).
-function useAnalysis(model, onSaved, source, getRotation, getView) {
+function useAnalysis(model, { onSaved, onFailed }, source, getRotation, getView) {
   const video = useRef(), frame = useRef(null), upright = useRef(null);
   const [tracker] = useState(createTracker);
   const [dims, setDims] = useState(null);
@@ -464,13 +465,15 @@ function useAnalysis(model, onSaved, source, getRotation, getView) {
         tracker.captured();
         s.lastCapture = now;
         s.captureView = view;
-        s.saved++;
         // cầm ngang khi khóa xoay dọc: lưu khung đã xoay thẳng, không phải khung camera nằm nghiêng
         const kept = rot ? proof.map((p) => ({ ...p, box: rotateBox(p.box, rot, c.width, c.height) })) : proof;
         snapshot(src, src.width, src.height).then((image) => addCheck({ at: Date.now(), source,
-          ...(source === "Video" && { videoTime: t }), width: src.width, height: src.height, people: kept, ms: took, image })).then(onSaved);
+          ...(source === "Video" && { videoTime: t }), width: src.width, height: src.height, people: kept, ms: took, image }))
+          // chỉ đếm ảnh đã lưu thật; lưu lỗi (duyệt riêng tư, đầy bộ nhớ) thì báo như chế độ Ảnh. Người đó vẫn tính là đã chụp để
+          // không thử lưu lại liên tục.
+          .then(() => { s.saved++; setLive((l) => ({ ...l, saved: s.saved })); onSaved(); }, onFailed);
       }
-      if (s.saved) s.captureView ??= view;  // lưu lúc cảm biến chưa có số đo: lấy số đo đầu tiên làm mốc, như tracker
+      if (s.lastCapture > -Infinity) s.captureView ??= view;  // lưu lúc cảm biến chưa có số đo: lấy số đo đầu tiên làm mốc, như tracker
       // lệch hướng camera so với lúc lưu ảnh gần nhất: quá VIEW_DEG thì tracker coi là cảnh mới (hiện để kiểm tra trên máy thật)
       const turn = getView ? (view && s.captureView ? viewAngle(s.captureView, view) : null) : undefined;
       setLive({ people, bad, took, fps: s.last ? 1000 / (now - s.last) : 0, saved: s.saved, t, rot, turn, sensor: !!view });
