@@ -119,9 +119,10 @@ const gone = "!document.getElementById('splash')";
 {
   const b = await browser(9375);
   await phone(b);
-  // tải mô hình đứng 22 s sau khối dữ liệu đầu rồi chạy tiếp
-  await b.send("Page.addScriptToEvaluateOnNewDocument", { source: `const f = window.fetch; window.fetch = async (...a) => { const r = await f(...a); if (!/\\.onnx/.test(String(a[0]))) return r; const rd = r.body.getReader(); let n = 0;
-    return new Response(new ReadableStream({ async pull(c) { if (n++ === 1) await new Promise((s) => setTimeout(s, 22000)); const { done, value } = await rd.read(); if (done) c.close(); else c.enqueue(value); } }), { status: r.status }); };` });
+  // mọi file tải kèm (mô hình, WASM) cùng đứng 24 s kể từ khối dữ liệu thứ hai đầu tiên rồi chạy tiếp; đứng riêng một file thì file kia vẫn
+  // về dữ liệu và app đúng là không được báo kẹt
+  await b.send("Page.addScriptToEvaluateOnNewDocument", { source: `const f = window.fetch; window.fetch = async (...a) => { const r = await f(...a); if (!/\\.onnx|\\.wasm/.test(String(a[0]))) return r; const rd = r.body.getReader(); let n = 0;
+    return new Response(new ReadableStream({ async pull(c) { if (n++ >= 1) { window.__stallUntil ??= Date.now() + 24000; const w = window.__stallUntil - Date.now(); if (w > 0) await new Promise((s) => setTimeout(s, w)); } const { done, value } = await rd.read(); if (done) c.close(); else c.enqueue(value); } }), { status: r.status }); };` });
   await b.send("Page.navigate", { url });
   await b.until("document.getElementById('splash')?.classList.contains('fail')", 40000);
   const t = await b.js("({ title: document.getElementById('sp-title').textContent, at: performance.now(), inert: document.getElementById('root').inert })");
