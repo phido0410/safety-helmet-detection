@@ -1,7 +1,7 @@
 // Camera trực tiếp khi điện thoại cầm ngang mà giao diện không xoay theo (khóa xoay dọc): khung hình vẫn dọc nhưng cảnh nằm ngang, và
 // mô hình (chỉ học ảnh người đứng) gần như không nhận ra mũ (OOD-4 xoay 90°: 165 → 6–13 dự đoán "có mũ"). Đọc hướng cầm máy từ cảm
 // biến (deviceorientation: beta, gamma), trừ hướng giao diện, rồi xoay khung về thẳng đứng trước khi đưa vào mô hình; khung khoanh
-// được xoay ngược về khung gốc để vẽ, theo dõi và lưu ảnh như cũ.
+// được xoay ngược về khung gốc để vẽ và theo dõi; ảnh lưu là khung đã xoay thẳng (xem lại trong Lịch sử thì người đứng thẳng).
 
 // Góc của hướng "lên" so với cạnh trên máy (độ, 0..360; 90 = đầu máy quay sang trái), theo công thức vector "lên" từ beta, gamma của
 // đặc tả DeviceOrientation. null khi máy nằm gần phẳng (không xác định được hướng): giữ hướng cũ.
@@ -32,6 +32,13 @@ export function rotationMatrix(rot, W, H) {
   if (rot === 180) return [-1, 0, 0, -1, W, H];
   if (rot === 270) return [0, -1, 1, 0, 0, W];
   return [1, 0, 0, 1, 0, 0];
+}
+
+// Khung [x1, y1, x2, y2] trên khung hình gốc → khung trên canvas đã xoay (ảnh lưu thẳng đứng)
+export function rotateBox([x1, y1, x2, y2], rot, W, H) {
+  const [a, b, c, d, e, f] = rotationMatrix(rot, W, H);
+  const [p, q] = [[x1, y1], [x2, y2]].map(([x, y]) => [a * x + c * y + e, b * x + d * y + f]);
+  return [Math.min(p[0], q[0]), Math.min(p[1], q[1]), Math.max(p[0], q[0]), Math.max(p[1], q[1])];
 }
 
 // Khung [x1, y1, x2, y2] trên canvas đã xoay → khung trên khung hình gốc (nghịch đảo của rotationMatrix)

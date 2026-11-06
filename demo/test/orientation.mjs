@@ -1,7 +1,7 @@
 // Kiểm tra xoay khung theo hướng cầm máy (src/lib/orientation.js): hướng "lên" từ beta/gamma, làm tròn có trễ, góc xoay khung cho
 // camera sau / trước khi giao diện bị khóa dọc hoặc xoay theo, và khung khoanh xoay ngược đúng về khung hình gốc.
 //   node demo/test/orientation.mjs
-import { quadrant, frameRotation, rotationMatrix, unrotateBox, upAngle, viewDir, viewAngle } from "../src/lib/orientation.js";
+import { quadrant, frameRotation, rotateBox, rotationMatrix, unrotateBox, upAngle, viewDir, viewAngle } from "../src/lib/orientation.js";
 
 let failed = 0;
 const check = (ok, msg) => { if (!ok) { failed++; console.log("SAI:", msg); } };
@@ -25,12 +25,15 @@ for (const rot of [0, 90, 180, 270]) {
   const [a, b, c, d, e, f] = rotationMatrix(rot, W, H);
   const pts = [[box[0], box[1]], [box[2], box[1]], [box[0], box[3]], [box[2], box[3]]].map(([x, y]) => [a * x + c * y + e, b * x + d * y + f]);
   const rbox = [Math.min(...pts.map((p) => p[0])), Math.min(...pts.map((p) => p[1])), Math.max(...pts.map((p) => p[0])), Math.max(...pts.map((p) => p[1]))];
-  const back = unrotateBox(rbox, rot, W, H);
-  check(back.every((v, i) => Math.abs(v - box[i]) < 1e-9), `xoay ${rot}°: ${box} → ${rbox} → ${back}`);
+  const back = unrotateBox(rbox, rot, W, H), fwd = rotateBox(box, rot, W, H);
+  check(back.every((v, i) => Math.abs(v - box[i]) < 1e-9) && fwd.every((v, i) => Math.abs(v - rbox[i]) < 1e-9),
+    `xoay ${rot}°: ${box} → ${rbox} (rotateBox ${fwd}) → ${back}`);
 }
 {
   const [a, b, c, d, e, f] = rotationMatrix(90, W, H);
   check(a * 0 + c * 0 + e === H && b * 0 + d * 0 + f === 0, "xoay 90°: góc trên trái phải sang góc trên phải");
+  // ảnh lưu khi cầm ngang: khung rộng 200, cao 600 trên khung gốc 1280×720 → rộng 600, cao 200 trên ảnh 720×1280
+  check(String(rotateBox(box, 90, W, H)) === "70,100,670,300", `rotateBox 90°: ${rotateBox(box, 90, W, H)}`);
 }
 
 // Hướng camera từ cảm biến: cầm dọc rồi quay người 90° quanh trục đứng → hướng camera lệch 90°; ngửa máy 30° → lệch 30°;
@@ -41,5 +44,5 @@ for (const rot of [0, 90, 180, 270]) {
   check(Math.abs(viewAngle(up, viewDir(0, 60, 0)) - 30) < 1e-6 && viewAngle(up, viewDir(0, 90, 0)) < 1e-6, "ngửa máy 30°, không đổi");
 }
 
-console.log(`orientation: 10 trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
+console.log(`orientation: 11 trường hợp: ${failed ? `${failed} chỗ SAI` : "đạt"}`);
 process.exit(failed ? 1 : 0);

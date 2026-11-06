@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Stage, { Capsule, peopleCount, verdictOf } from "./Stage.jsx";
-import Crop, { Zooms, useObjectUrl } from "./Crop.jsx";
+import Crop, { PersonView, Zooms, useObjectUrl } from "./Crop.jsx";
 import { IconBack, IconChevron, IconStack, IconTrash } from "./Icons.jsx";
 import { clearChecks, deleteCheck, listChecks, markSeen } from "../lib/history.js";
 import { violators } from "../lib/crop.js";
@@ -79,21 +79,26 @@ export default function HistoryView({ version, initial, onChange, onClose }) {
 
 function Detail({ rec, backLabel, onBack, onDelete }) {
   const url = useObjectUrl(rec.image), wide = useWide();
-  const [zoom, setZoom] = useState(false);
+  const [zoom, setZoom] = useState(false), [person, setPerson] = useState(null);
   // chuyển màn thì nút vừa bấm biến mất: đưa tiêu điểm sang màn mới và trả lại nút khi quay về, để bàn phím, VoiceOver không mất chỗ
-  const heading = useRef(), button = useRef(), pushed = useRef(false);
+  const heading = useRef(), button = useRef(), pushed = useRef(false), opened = useRef(null);
   useEffect(() => {
     if (zoom) { heading.current?.focus(); pushed.current = true; } else if (pushed.current) button.current?.focus();
   }, [zoom]);
+  useEffect(() => {
+    if (person != null) opened.current = person;
+    else if (opened.current != null) document.querySelectorAll(".zoombtn")[opened.current]?.focus();
+  }, [person]);
   const verdict = verdictOf(rec.people), bad = violators(rec.people).length, when = `${timeFmt.format(rec.at)}, ${dateFmt.format(rec.at)}`;
   const meta = `${peopleCount(rec.people)} · ${rec.source} · ${when} · ${Math.round(rec.ms)}\u00a0ms`;
+  if (person != null) return <PersonView url={url} rec={rec} index={person} backLabel={wide ? "Ảnh vi phạm" : "Chi tiết"} onBack={() => setPerson(null)} />;
   if (zoom && !wide) return (
     <section className="detail" aria-label="Chi tiết vi phạm">
       <nav className="navbar dark"><button type="button" className="link" onClick={() => setZoom(false)}><IconBack size={22} />Ảnh vi phạm</button><span /></nav>
       <div className="zoomscreen">
         <h1 ref={heading} tabIndex={-1}>{verdict.long}</h1>
         <p>{rec.source} · {when}</p>
-        <Zooms url={url} rec={rec} />
+        <Zooms url={url} rec={rec} onOpen={setPerson} />
       </div>
     </section>
   );
@@ -112,7 +117,7 @@ function Detail({ rec, backLabel, onBack, onDelete }) {
       {wide ? (
         <aside className="panel" tabIndex={0} aria-label="Chi tiết vi phạm">
           <div className="verdict"><h2><span className={`dot ${verdict.tone}`} />{verdict.long}</h2><p>{meta}</p></div>
-          {bad > 0 && <Zooms url={url} rec={rec} />}
+          {bad > 0 && <Zooms url={url} rec={rec} onOpen={setPerson} />}
         </aside>
       ) : (
         <footer className="meta">

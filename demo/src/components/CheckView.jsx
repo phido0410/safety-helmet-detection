@@ -6,7 +6,7 @@ import { IconAlert, IconCamera, IconCheck, IconClose, IconFlip, IconInfo, IconPa
 import { people as peopleOf } from "../lib/model.js";
 import { addCheck, snapshot } from "../lib/history.js";
 import { CONFIRM_MS, VIEW_DEG, createTracker } from "../lib/tracker.js";
-import { rotationMatrix, unrotateBox, viewAngle, watchOrientation } from "../lib/orientation.js";
+import { rotateBox, rotationMatrix, unrotateBox, viewAngle, watchOrientation } from "../lib/orientation.js";
 import { useWide } from "../lib/wide.js";
 
 const CAPTURE_EVERY_MS = 3000;  // video/camera: hai ảnh cách nhau ít nhất 3 giây, chặn chụp liên tục khi tracker mất dấu (camera rung)
@@ -414,10 +414,10 @@ function LiveMode({ model, onSaved, chrome, active }) {
 
 // Vòng phân tích dùng chung cho video và camera: chép khung hình hiện tại ra canvas, chạy mô hình (khung mới tới khi lần trước chưa
 // xong thì bỏ qua), theo dõi từng người qua các khung, tự lưu ảnh khi có người không đội mũ chưa được chụp. Ảnh lưu chính là canvas
-// vừa phân tích nên khung khoanh khớp ảnh. Mỗi lần start() là một thế hệ mới: vòng cũ còn đang chờ mô hình sẽ tự dừng, không chạy
+// vừa phân tích (đã xoay thẳng) nên khung khoanh khớp ảnh. Mỗi lần start() là một thế hệ mới: vòng cũ còn đang chờ mô hình sẽ tự dừng, không chạy
 // song song hai vòng. Tracker sống cùng màn video/camera nên tạm dừng rồi chạy tiếp vẫn nhớ ai đã bị chụp.
 // getRotation (camera): góc xoay khung theo hướng cầm máy (lib/orientation.js); mô hình chạy trên khung đã xoay thẳng, khung khoanh
-// được xoay ngược về khung gốc nên phần vẽ, theo dõi và ảnh lưu không đổi. getView (camera): hướng camera cho tracker (lia máy
+// được xoay ngược về khung gốc để vẽ và theo dõi; ảnh lưu là khung đã xoay thẳng, khung khoanh xoay theo. getView (camera): hướng camera cho tracker (lia máy
 // sang cảnh khác thì quên người đã chụp).
 function useAnalysis(model, onSaved, source, getRotation, getView) {
   const video = useRef(), frame = useRef(null), upright = useRef(null);
@@ -465,8 +465,10 @@ function useAnalysis(model, onSaved, source, getRotation, getView) {
         s.lastCapture = now;
         s.captureView = view;
         s.saved++;
-        snapshot(c, c.width, c.height).then((image) => addCheck({ at: Date.now(), source,
-          ...(source === "Video" && { videoTime: t }), width: c.width, height: c.height, people: proof, ms: took, image })).then(onSaved);
+        // cầm ngang khi khóa xoay dọc: lưu khung đã xoay thẳng, không phải khung camera nằm nghiêng
+        const kept = rot ? proof.map((p) => ({ ...p, box: rotateBox(p.box, rot, c.width, c.height) })) : proof;
+        snapshot(src, src.width, src.height).then((image) => addCheck({ at: Date.now(), source,
+          ...(source === "Video" && { videoTime: t }), width: src.width, height: src.height, people: kept, ms: took, image })).then(onSaved);
       }
       if (s.saved) s.captureView ??= view;  // lưu lúc cảm biến chưa có số đo: lấy số đo đầu tiên làm mốc, như tracker
       // lệch hướng camera so với lúc lưu ảnh gần nhất: quá VIEW_DEG thì tracker coi là cảnh mới (hiện để kiểm tra trên máy thật)
