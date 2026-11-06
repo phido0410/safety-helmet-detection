@@ -56,7 +56,7 @@ not reported as a person.
 
 ## Brand Commitments
 
-Name: HelmetCheck. No logo or brand colors exist yet. Report figures use green `#1baf7a` for "đội mũ" and orange `#eb6834` for
+Name: HelmetCheck. Brand mark (user-approved 2026-11-06): a glossy black three-quarter hard hat with a yellow ✓ sticker on safety yellow `#ffd60a`, drawn by hand as SVG (`demo/public/icons/hat.svg`), used for the intro screen and the app icon. Report figures use green `#1baf7a` for "đội mũ" and orange `#eb6834` for
 "không đội mũ"; the app keeps that green/orange pairing (same meaning, same hues) but uses darker values (`#14945f`,
 `#e2541b`) for contrast in outdoor sunlight. The app follows iOS conventions (system font, Camera-app layout), chosen by the
 user on 2026-11-03 from a Figma sketch board after the earlier "Bản vẽ thi công" direction proved hard to read on the phone.

@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import CheckView from "./components/CheckView.jsx";
 import HistoryView from "./components/HistoryView.jsx";
 import { listChecks } from "./lib/history.js";
-import { loadModel } from "./lib/model.js";
+import { OOM_MESSAGE, loadModel } from "./lib/model.js";
+import { splashDone, splashFail, splashProgress } from "./lib/splash.js";
+
+const NETWORK_ERROR = /failed to fetch|load failed|networkerror/i;  // Chrome, Safari, Firefox
+const SERVER_ERROR = /\(\d{3}\)$/;  // fetchBytes: máy chủ trả mã lỗi HTTP
 
 export default function App() {
   const [view, setView] = useState({ name: "check" });  // history: { name, rec } mở sẵn một ảnh
@@ -16,6 +20,16 @@ export default function App() {
     ready.then((m) => setModel((s) => ({ ...s, status: "ready", backend: m.backend, name: m.cfg.name })),
       (err) => setModel((s) => ({ ...s, status: "error", error: err.message })));
   }, []);
+  useEffect(() => { splashProgress(model.progress); }, [model.progress]);
+  useEffect(() => {
+    if (model.status === "ready") splashDone();
+    else if (model.status === "error") {
+      if (model.error === OOM_MESSAGE) splashFail(OOM_MESSAGE[0].toUpperCase() + OOM_MESSAGE.slice(1));
+      else if (NETWORK_ERROR.test(model.error)) splashFail("Kiểm tra kết nối mạng rồi thử lại.", model.error);
+      else if (SERVER_ERROR.test(model.error)) splashFail("Máy chủ chưa gửi được mô hình. Thử lại sau ít phút.", model.error);
+      else splashFail("Mô hình chưa khởi động được trên máy này. Thử lại, hoặc vào app để xem Lịch sử.", model.error);
+    }
+  }, [model.status]);
   useEffect(() => {
     listChecks().then((rows) => setRecent({ rec: rows[0] ?? null, rows: rows.slice(0, 4), unseen: rows.filter((r) => !r.seen).length }));
   }, [version]);

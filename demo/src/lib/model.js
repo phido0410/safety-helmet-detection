@@ -15,6 +15,7 @@ let loading;
 // đánh dấu "<thời điểm>|<user agent>" trước khi khởi tạo đa luồng, chạy thử xong thì xóa; dấu còn lại cùng user agent nghĩa là lần
 // trước bị treo → một luồng. Rời trang lúc đang chạy thử (tải lại, chuyển ứng dụng) cũng để lại dấu (iPhone 11 kẹt một luồng, chậm
 // gấp đôi) → rời trang thì xóa dấu (trang treo thật thì không chạy được sự kiện này), và dấu chỉ có hiệu lực HANG_TTL_MS.
+const GPU_TRY_DELAY_MS = 1500;  // thử WebGPU nặng: đợi màn giới thiệu rời đi (splash.js) để không làm khựng nhịp cuối
 const HANG_KEY = "helmetcheck-thread-hang", HANG_TTL_MS = 24 * 3600e3;
 const hung = (mark, ua, now) => {
   const i = mark?.indexOf("|") ?? -1;  // dấu kiểu cũ (chỉ có user agent) coi như hết hạn
@@ -183,7 +184,7 @@ async function init(onProgress, onBackend) {
       armGpu(ua);
     } catch { stored(GPU_KEY, null); }  // không tạo được phiên WebGPU (lỗi, không phải treo): giữ WASM, lần sau thử lại
   }
-  tryGpu();
+  setTimeout(tryGpu, GPU_TRY_DELAY_MS);
   return { cfg, backend: active.label, run };
 }
 

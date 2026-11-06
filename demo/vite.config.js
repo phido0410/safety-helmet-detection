@@ -11,6 +11,13 @@ const PORT = 8443;
 // header COOP/COEP lấy từ vercel.json để bản chạy thử và bản trên Vercel không lệch nhau
 const ISOLATION = Object.fromEntries(JSON.parse(readFileSync("vercel.json", "utf8")).headers[0].headers.map((h) => [h.key, h.value]));
 
+// mũ của màn giới thiệu và của biểu tượng app (scripts/make_demo_icons.py) dùng chung một file; nhúng vào trang để hiện ngay, không chờ tải
+const inlineHat = { name: "inline-hat", transformIndexHtml: (html) => html.replace("<!--hat-->", readFileSync("public/icons/hat.svg", "utf8")) };
+
+// CSS của app nằm sau màn giới thiệu nên không được chặn lần vẽ đầu của màn đó
+const lazyCss = { name: "lazy-css", transformIndexHtml: { order: "post", handler: (html) => html.replace(/<link rel="stylesheet"( crossorigin)? href="([^"]+)">/,
+  (_, cors = "", href) => `<link rel="stylesheet"${cors} href="${href}" media="print" onload="this.media='all'">`) } };
+
 const lanIp = () => Object.values(networkInterfaces()).flat().find((a) => a.family === "IPv4" && !a.internal)?.address ?? "127.0.0.1";
 
 function devCert() {
@@ -28,7 +35,7 @@ function devCert() {
 export default defineConfig(({ command }) => {
   const server = command === "serve" ? { host: true, port: PORT, strictPort: true, https: devCert(), headers: ISOLATION } : {};
   return {
-    plugins: [react()],
+    plugins: [react(), inlineHat, lazyCss],
     server,
     preview: server,
     build: { rolldownOptions: { input: { main: "index.html", bench: "bench.html" } } },

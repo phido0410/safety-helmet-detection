@@ -3,18 +3,155 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#ffd60a">
 <meta name="description" content="Phát hiện người không đội mũ bảo hộ ở công trường, mô hình chạy ngay trên máy">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="HelmetCheck">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest?v=2">
+<link rel="icon" href="icons/icon-192.png?v=2">
+<link rel="apple-touch-icon" href="icons/icon-180.png?v=2">
 <title>HelmetCheck</title>
+<!-- Màn giới thiệu nằm ngay trong trang để hiện trước khi JS và CSS tải xong. Chuyển động chỉ dùng transform và opacity vì trình duyệt
+     vẫn chạy được chúng khi đang bận nạp mô hình (src/lib/splash.js đổi % và cho rời màn). -->
+<style>
+html:has(#splash:not(.out)), html:has(#splash:not(.out)) body { background: #ffd60a; }
+#splash { --w: min(68vw, 42vh, 380px); --y: #ffd60a; --out: cubic-bezier(0.5, 0, 0.3, 1); position: fixed; inset: 0; z-index: 100; overflow: hidden; color: #000;
+  font: 17px/1.3 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+#splash :focus-visible { outline: 3px solid #000; outline-offset: 3px; }
+/* lớp vàng là một tấm xoay chéo: khi rời màn, tấm trượt đi theo đường chéo, kéo dải băng ở mép theo sau. Kích thước vừa đủ phủ màn
+   vuông (150 × 147 vmax) vì tấm càng lớn càng tốn bộ nhớ đồ họa trên điện thoại. */
+.sp-sheet { position: absolute; left: 50%; top: 50%; width: 150vmax; height: 147vmax; margin: -73.5vmax 0 0 -75vmax; background: var(--y);
+  transform: rotate(-42deg) translateY(-1.5vmax); }
+.sp-tape { --h: 68px; position: absolute; height: var(--h); background: #000; color: var(--y); overflow: hidden; text-align: center; font-size: calc(var(--h) * 0.353); line-height: var(--h);
+  font-weight: 800; letter-spacing: 0.06em; white-space: pre; }
+.sp-tape::before, .sp-tape::after { content: ""; position: absolute; left: 0; right: 0; height: calc(var(--h) * 0.147);
+  background: repeating-linear-gradient(var(--a, -45deg), var(--y) 0 9px, #000 9px 18px); }
+.sp-tape::before { top: 0; }
+.sp-tape::after { bottom: 0; }
+.sp-tape i::before { font-style: normal; content: "HELMETCHECK   ///   HELMETCHECK   ///   HELMETCHECK   ///   HELMETCHECK   ///   HELMETCHECK   ///   HELMETCHECK   ///   HELMETCHECK"; }
+.sp-edge { --a: -70deg; left: 0; right: 0; top: 100%; margin-top: -1px; }  /* tấm đã xoay −42°: góc này để sọc vẫn nghiêng trên màn */
+.sp-body { position: absolute; inset: 0; }
+/* chữ giờ, pin ở app đã cài luôn màu trắng: đặt dải đen phía sau, mép sọc chỉ có khi thật sự có vùng an toàn */
+.sp-notch { position: absolute; inset: 0 0 auto; height: env(safe-area-inset-top); background: #000; }
+.sp-notch::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: calc(min(env(safe-area-inset-top), 1px) * 8);
+  background: repeating-linear-gradient(-45deg, #000 0 9px, var(--y) 9px 18px); }
+#splash.out .sp-notch::after { opacity: 0; transition: opacity 0.2s linear; }
+.sp-hero { position: absolute; left: 50%; top: 46%; width: var(--w); transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; }
+.sp-drop { width: 100%; aspect-ratio: 400 / 240; transform-origin: 50% 100%; will-change: transform; animation: sp-drop 0.72s both; }
+.sp-rock { position: relative; height: 100%; transform-origin: 50% 92%; will-change: transform; animation: sp-rock 3.4s ease-in-out 0.9s infinite alternate; }
+.sp-hat { display: block; width: 100%; height: 100%; }
+/* chờ lâu: một vệt sáng chạy qua mũ theo chu kỳ, lấy đúng hình mũ làm mặt nạ */
+.sp-glint { position: absolute; inset: 0; overflow: hidden; opacity: 0; transition: opacity 0.3s linear;
+  -webkit-mask: url(icons/hat.svg) center / 100% 100% no-repeat; mask: url(icons/hat.svg) center / 100% 100% no-repeat; }
+#splash.slow .sp-glint { opacity: 1; }
+#splash.done .sp-glint { display: none; }
+.sp-glint i { position: absolute; top: 0; bottom: 0; left: 0; width: 34%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent);
+  transform: translateX(-120%); will-change: transform; animation: sp-glint 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.sp-shadow { width: 92%; height: calc(var(--w) * 0.04); margin-top: -1%; border-radius: 50%; background: rgba(0, 0, 0, 0.16); animation: sp-shadow 0.72s both; }
+.sp-name { margin: calc(var(--w) * 0.05) 0 0; font-size: calc(var(--w) * 0.165); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; white-space: nowrap;
+  animation: sp-rise 0.36s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both; }
+/* hai dải băng cắt nhau lệch về bên phải, chừa khe bên trái để mũ vẫn ra dáng mũ; mọi số theo --w để màn nhỏ không bị băng che kín */
+.sp-cross { --h: calc(var(--w) * 0.243); display: none; left: 50%; width: 130vmax; margin-left: -65vmax; }
+.sp-cross.up { top: calc(var(--w) * 0.1575); }
+.sp-cross.down { top: calc(var(--w) * -0.107); }
+.sp-load, .sp-fail { position: absolute; left: 50%; width: min(100% - 80px, 420px); transform: translateX(-50%); }
+.sp-load { bottom: calc(env(safe-area-inset-bottom) + 15vh); opacity: 0; transition: opacity 0.3s linear; }
+#splash.slow .sp-load { opacity: 1; }  /* splash.js bật khi đang tải thật; mở lại từ bộ nhớ đệm thì không hiện */
+.sp-row { display: flex; justify-content: space-between; font-weight: 600; }
+.sp-row b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.sp-rail { position: relative; height: 30px; margin-top: 10px; border-radius: 15px; background: rgba(0, 0, 0, 0.14); overflow: hidden; }
+.sp-rail::after { content: ""; position: absolute; inset: 0; border-radius: 15px; box-shadow: inset 0 0 0 2px #000; }
+#sp-fill { position: absolute; inset: 0; overflow: hidden; border-radius: 15px; transform: translateX(-100%); will-change: transform; transition: transform 0.25s linear; }
+.sp-stripes { position: absolute; top: 0; bottom: 0; left: -40px; right: -40px; will-change: transform;
+  background: repeating-linear-gradient(-45deg, #000 0 14px, var(--y) 14px 28px); animation: sp-run 0.6s linear infinite; }
+.sp-note { position: absolute; left: -20px; right: -20px; top: calc(100% + 9vh); margin: 0; text-align: center; font-size: 13px; font-weight: 500; opacity: 0.72; }
+.sp-fail { bottom: calc(env(safe-area-inset-bottom) + 36px); text-align: center; }
+.sp-fail b { display: block; font-size: 20px; font-weight: 700; }
+.sp-fail p { margin: 4px 0 0; font-size: 15px; }
+.sp-fail small { display: -webkit-box; margin-top: 4px; font-size: 12px; opacity: 0.65; overflow: hidden; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.sp-fail button { display: block; width: 100%; min-height: 50px; margin-top: 16px; border: 0; border-radius: 14px; background: #000; color: var(--y); font: inherit; font-weight: 600; cursor: pointer; }
+.sp-fail button + button { min-height: 44px; margin-top: 6px; background: none; color: #000; }
+#splash.fail .sp-load { display: none; }
+#splash.done .sp-load { opacity: 0; transition-duration: 0.15s; }
+#splash.done .sp-cross { display: block; }
+/* hai nhịp liên tiếp, băng sau đè lên làm mũ khẽ giật, tạo một cú chạm mạnh duy nhất */
+#splash.done .sp-cross.up { animation: sp-up-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+#splash.done .sp-cross.down { animation: sp-down-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both; }
+#splash.done .sp-drop { animation: sp-jolt 0.32s ease-out 0.1s both; }
+#splash.out { pointer-events: none; }
+#splash.out .sp-sheet { animation: sp-wipe 0.95s var(--out) both; }
+#splash.out .sp-body { animation: sp-carry 0.95s var(--out) both; }
+#splash.out .sp-cross.up { animation: sp-up-out 0.32s cubic-bezier(0.5, 0, 1, 0.7) both; }
+#splash.out .sp-cross.down { animation: sp-down-out 0.32s cubic-bezier(0.5, 0, 1, 0.7) both; }
+@keyframes sp-drop {
+  0% { transform: translateY(-75vh); animation-timing-function: cubic-bezier(0.5, 0, 1, 0.6); }
+  58% { transform: none; animation-timing-function: ease-out; }
+  70% { transform: scale(1.06, 0.86); animation-timing-function: ease-in-out; }
+  86% { transform: scale(0.98, 1.03); animation-timing-function: ease-in-out; }
+  100% { transform: none; }
+}
+@keyframes sp-shadow { 0%, 45% { opacity: 0; transform: scaleX(0.4); } 70% { opacity: 1; transform: scaleX(1.05); } 100% { opacity: 1; transform: none; } }
+@keyframes sp-rock { from { transform: rotate(-1.2deg); } to { transform: rotate(1.2deg); } }
+@keyframes sp-glint { 0% { transform: translateX(-120%); } 45%, 100% { transform: translateX(320%); } }
+@keyframes sp-rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes sp-run { to { transform: translate3d(39.598px, 0, 0); } }  /* đúng một chu kỳ sọc theo chiều ngang: 28 px × √2 */
+@keyframes sp-up-in { from { transform: rotate(-9deg) translateX(110vmax); } to { transform: rotate(-9deg); } }
+@keyframes sp-down-in { from { transform: rotate(9deg) translateX(-110vmax); } to { transform: rotate(9deg); } }
+@keyframes sp-up-out { from { transform: rotate(-9deg); } to { transform: rotate(-9deg) translateX(-130vmax); } }
+@keyframes sp-down-out { from { transform: rotate(9deg); } to { transform: rotate(9deg) translateX(130vmax); } }
+@keyframes sp-jolt { 30% { transform: translateY(4px) scale(1.012, 0.985); } }
+@keyframes sp-wipe { to { transform: rotate(-42deg) translateY(-153.5vmax); } }
+@keyframes sp-carry { to { transform: translate(-101.7vmax, -113vmax); } }  /* cùng hướng, cùng quãng đường với tấm vàng: 152vmax theo góc 42° */
+@keyframes sp-gone { to { opacity: 0; } }
+@media (orientation: landscape) and (max-height: 560px) {
+  #splash { --w: min(36vw, 44vh); }
+  .sp-hero { top: 36%; }
+  .sp-load { bottom: calc(env(safe-area-inset-bottom) + 14px); }
+  .sp-fail { bottom: calc(env(safe-area-inset-bottom) + 12px); }
+  .sp-note { display: none; }
+  .sp-fail button { display: inline-block; width: auto; min-width: 140px; margin: 8px 4px 0; }
+}
+@media (orientation: portrait) and (max-height: 620px) {
+  .sp-hero { top: 33%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sp-drop, .sp-rock, .sp-shadow, .sp-name, .sp-stripes { animation: none; }
+  .sp-glint { display: none; }
+  #splash.out { animation: sp-gone 0.24s linear both; }
+  #splash.out .sp-sheet, #splash.out .sp-body { animation: none; }
+}
+</style>
 </head>
 <body>
-<div id="root"></div>
+<div id="splash">
+  <div class="sp-sheet"><div class="sp-tape sp-edge" aria-hidden="true"><i></i></div></div>
+  <div class="sp-body">
+    <div class="sp-hero">
+      <div class="sp-drop"><div class="sp-rock"><!--hat--><div class="sp-glint"><i></i></div></div></div>
+      <div class="sp-shadow"></div>
+      <h1 class="sp-name">HelmetCheck</h1>
+      <div class="sp-tape sp-cross up" aria-hidden="true"><i></i></div>
+      <div class="sp-tape sp-cross down" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="sp-load">
+      <div class="sp-row"><span id="sp-text">Đang tải mô hình</span><b id="sp-pct">0%</b></div>
+      <div class="sp-rail" id="sp-rail" tabindex="-1" role="progressbar" aria-label="Đang tải mô hình" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="sp-fill"><div class="sp-stripes"></div></div>
+      </div>
+      <p class="sp-note">Chạy ngay trên máy, ảnh không gửi đi đâu</p>
+    </div>
+    <div class="sp-fail" id="sp-fail" role="alert" hidden>
+      <b id="sp-title"></b>
+      <p id="sp-why"></p>
+      <small id="sp-detail"></small>
+      <button type="button" id="sp-retry">Thử lại</button>
+      <button type="button" id="sp-skip">Vào app</button>
+    </div>
+  </div>
+  <div class="sp-notch"></div>
+</div>
+<div id="root" inert></div>
 <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
